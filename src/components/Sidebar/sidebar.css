@@ -4,9 +4,9 @@
     display: block;
     left: 0;
     height: 140vh;
-    position: absolute;
+    position: fixed;
     background: #fff;
-    top: 0;
+    top: 0;    z-index: 13;
 }
 .logo{
     width: 170px;

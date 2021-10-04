@@ -12,9 +12,12 @@ padding: 15px 15px 15px 220px;
     background-color: bisque;
     color: rgb(219, 0, 0);
     padding: 15px 25px;
-    margin-left:220px;
+    padding-left: 247px;
     background-image: linear-gradient(to right, #8d448f , #3f53c3);
     min-height: 60px;
+    width: 100%;
+    z-index: 12;
+    position: fixed;
 }
 .topbar-icon {
     font-size: 30px;
