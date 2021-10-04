@@ -51,7 +51,7 @@
     border-radius: 6px;
     margin-top: 5px;
     font-size: 15px;
-    width: 120px;
+    width: 160px;
     float: none;
     margin: 0px auto;
     
@@ -113,4 +113,13 @@
 }
 .border-bottom-0{
     border-bottom: 0;
+}
+
+@media only screen and (max-width: 1700px) {
+    .in-progress-name-thre-colm {
+        font-size: 11px;
+      }
+      .skill-box {
+              font-size: 13px;
+       }
 }
