@@ -1,0 +1,125 @@
+.main-outer-inner{
+    width: 100% !important;
+    float: left;
+}
+.candidate-boxouter{
+    width: 25% !important;
+    padding-left: 10px;
+    padding-right: 10px;
+    float: left;
+    padding-top: 30px;
+    display: flex;
+}
+.candidate-boxouter:first-child{
+    padding-left: 10px;
+}
+.candidate-boxouter:last-child{
+    padding-right: 10px;
+}
+.candidate-box{
+    width: 100%;
+    float: left;
+    flex: 50 0 200px;
+    padding: 16px;
+    background-color: #F0F3FB;
+    border-radius: 8px;
+}
+.drag-sub-box{
+    width: 100%;
+    float: left;
+    background-color: #fff;
+    padding:0 10px 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-top: 4px solid #B93E87;
+    box-shadow: 2px 2px 7px #e0e0e0;
+    display: block;
+}
+.card-head-bg {
+    padding-top: 7px;
+    padding-bottom: 18px;
+    margin-bottom: 15px;
+  }
+  .card-header-bt-rigt {
+    margin-top: -8px;
+}
+.in-progress-card--bt-top {
+    background-color: #B93E87;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-top: 5px;
+    font-size: 15px;
+    width: 160px;
+    float: none;
+    margin: 0px auto;
+    
+    margin-bottom: 2px;
+
+    margin-top: -4px;
+    text-align: center;
+}.main-content-area-inner {
+    padding: 15px 10px 15px;
+}
+.skill-box{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid rgba(215, 215, 215, 0.53);
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    color: #504F4F;
+}
+
+.eye-new-icon {
+    text-align: right;
+    width: 25px;
+    float: right;
+}
+
+.in-progress-card-bx {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid rgba(215, 215, 215, 0.53);
+    float: left;
+    width: 100%;
+}
+.location-outer span{
+    font-size: 14px;
+}
+.location-outer img{
+    width: 17px;
+    margin-right: 3px;
+    margin-top: -2px;
+}
+.location-outer .in-progress-location {
+    float: left;
+    width: 50%;
+    font-size: 13px;
+}
+.in-progress-name-sty {
+    float: left;
+    width: 80%;
+    font-weight: 500;
+   font-size: 19px; 
+}
+.card-head-bg .card-header-sty {
+    
+    color: #BA3F85;
+    float: left;
+    font-size: 20px;
+
+}
+.border-bottom-0{
+    border-bottom: 0;
+}
+
+@media only screen and (max-width: 1700px) {
+    .in-progress-name-thre-colm {
+        font-size: 11px;
+      }
+      .skill-box {
+              font-size: 13px;
+       }
+}
