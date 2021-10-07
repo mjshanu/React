@@ -3,6 +3,14 @@ import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import update from "immutability-helper";
 import {dashboard,asste,eyeico,location,eyeicoSched,eyeicoreject,eyeicowait,eyenew } from '../../images';
+import {Tab, Tabs, AppBar} from '@material-ui/core';
+import { MdList } from "react-icons/md";
+import { MdViewQuilt } from "react-icons/md";
+import { mdiEye } from "react-icons/md";
+import Tablecand from './Tablecand';
+
+
+
 const tasksList = [
   { _id: 1, title: "JAVA DEVELOPER",name:"shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth"},
   { _id: 2, title: "Second Task", name:"shanu",status: "Inprogress", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
@@ -70,6 +78,12 @@ const Kanban = () => {
     [tasks]
   );
 
+  const [value, setValue]=React .useState(0)
+const handlesTabs=(e, val)=>{
+  console.warn(val)
+setValue(val)
+}
+
   return (
     <main >
       <header className="main-otrer-top"> Recruitment </header>
@@ -81,8 +95,18 @@ const Kanban = () => {
     <button type="button" class="btn  btn-maincolor btn-block">  ADD</button> 
     </div>
 </div>
-                
-          {channels.map(channel => (
+<div className="recruitment-top-right-box">fdgfdh
+</div>
+
+  <AppBar position="static"  className="tab-outer-head">
+<Tabs value={value}  onChange={handlesTabs} aria-label="icon tabs example" >
+<Tab icon={<MdViewQuilt />} aria-label="List" />
+<Tab  icon={<MdList />}  aria-label="List" />
+</Tabs>
+  </AppBar>
+  <TabPanel value={value} index={0} >
+<div className="tab-outer">
+  {channels.map(channel => (
             <KanbanColumn
               key={channel}
               status={channel}
@@ -113,7 +137,11 @@ const Kanban = () => {
                                 {item.name}
                                 </div>
                                 <div className="eye-new-icon">
-                                <img src={eyenew}/>
+                                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.957514 3.64635L3.25493 1.55779C5.53914 -0.519262 9.25705 -0.519262 11.5413 1.55779L13.8387 3.64635C14.0538 3.84189 14.0538 4.15798 13.8387 4.35353L11.5413 6.44209C10.3992 7.48037 8.8989 8 7.39811 8C5.89731 8 4.39706 7.48037 3.25496 6.44209L0.95754 4.35353C0.742414 4.15798 0.742414 3.84189 0.957514 3.64635ZM7.39811 6.50061C8.91486 6.50061 10.1489 5.3788 10.1489 3.99993C10.1489 2.62106 8.91486 1.49925 7.39811 1.49925C5.88135 1.49925 4.64736 2.62106 4.64736 3.99993C4.64736 5.3788 5.88135 6.50061 7.39811 6.50061Z" fill="#B93E86"/>
+<path d="M7.39802 2.49902C8.30795 2.49902 9.04846 3.17221 9.04846 3.99943C9.04846 4.82664 8.30795 5.49983 7.39802 5.49983C6.48808 5.49983 5.74757 4.82664 5.74757 3.99943C5.74757 3.17221 6.48805 2.49902 7.39802 2.49902Z" fill="#B93E86"/>
+</svg>
+
                                 </div>
                                 </div>
                                 <div className="skill-box">
@@ -137,12 +165,22 @@ const Kanban = () => {
                       
                         
                       </KanbanItem>
+                    
                     ))}
                 </div>
               </div>
               </div>
             </KanbanColumn>
           ))}
+  </div>
+  </TabPanel>
+  <TabPanel value={value} index={1}>
+  <div className="tab-outer">
+  <Tablecand/>
+    </div>
+    </TabPanel>
+                
+       
           </div>
                   </section>
       </DndProvider>
@@ -161,7 +199,7 @@ const KanbanColumn = ({ status, changeTaskStatus, children }) => {
     }
   });
   drop(ref);
-  return <div ref={ref}> {children}</div>;
+  return <div ref={ref} className="drag-boxs"> {children}</div>;
 };
 
 const KanbanItem = ({ id, children }) => {
@@ -183,3 +221,16 @@ const KanbanItem = ({ id, children }) => {
     </div>
   );
 };
+
+function TabPanel(props){
+  const {children, value, index}=props;
+  return(
+    <div>
+{
+  value===index && (
+    <h1>{children}</h1>
+  )
+}
+    </div>
+  )
+}

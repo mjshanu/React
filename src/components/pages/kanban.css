@@ -42,7 +42,7 @@
     margin-bottom: 15px;
   }
   .card-header-bt-rigt {
-    margin-top: -8px;
+  font-size: 15px;font-size: 15px;
 }
 .in-progress-card--bt-top {
     background-color: #B93E87;
@@ -114,6 +114,113 @@
 .border-bottom-0{
     border-bottom: 0;
 }
+.tab-outer{
+    width: 100%;
+    float: left;
+}
+.tab-outer-head{
+    width: auto !important;
+    float: left;
+    background-color: #F1F2F6 !important;
+    background: none;
+    box-shadow: none !important;
+    border-radius: 8px;
+}
+.tab-outer-head svg
+{
+    height: 27px !important;
+    width: 27px !important;
+}
+.tab-outer-head  .MuiTab-root {
+    min-width: 0;
+}
+.tab-outer-head  .Mui-selected svg{
+color: #4A54D1;
+}
+.drag-boxs:nth-child(2) .in-progress-card--bt-top {
+    background-color: #6555B4;
+}
+.drag-boxs:nth-child(2)  .drag-sub-box {
+      border-top: 4px solid #6555b4;
+}
+.drag-boxs:nth-child(2)  .card-head-bg .card-header-bt-rigt {
+    color: #6555b4; background-color: #D8D8EF;
+ }
+ .drag-boxs:nth-child(2) .card-head-bg .card-header-sty {
+    color:#6555B4;
+}
+.eye-new-icon svg{
+    width: 24px !important;
+    height: 22px;
+}
+.drag-boxs:nth-child(2) .eye-new-icon svg path{
+fill:#6555b4; 
+}
+
+.drag-boxs:nth-child(3) .in-progress-card--bt-top {
+    background-color: #6A6580;
+}
+.drag-boxs:nth-child(3)  .drag-sub-box {
+    border-top: 4px solid #6A6580;
+}
+.drag-boxs:nth-child(3)  .card-head-bg .card-header-bt-rigt {
+    background-color: #D8D9E5;
+    color: #6A6580;
+ }
+ .drag-boxs:nth-child(3) .card-head-bg .card-header-sty {
+    color:#6A6580;
+}
+.eye-new-icon svg{
+    width: 24px !important;
+    height: 22px;
+    float: left;
+}
+.drag-boxs:nth-child(3) .eye-new-icon svg path{
+fill:#6A6580;
+}
+
+.drag-boxs:nth-child(4) .in-progress-card--bt-top {
+    background-color: #2B70A9;
+}
+.drag-boxs:nth-child(4)  .drag-sub-box {
+    border-top: 4px solid #2B70A9;
+}
+.drag-boxs:nth-child(4)  .card-head-bg .card-header-bt-rigt {
+    background-color: #D2DFEF;
+    color: #2B70A9;
+ }
+ .drag-boxs:nth-child(4) .card-head-bg .card-header-sty {
+    color:#2B70A9;
+}
+.eye-new-icon svg{
+    width: 24px !important;
+    height: 22px;
+}
+.drag-boxs:nth-child(4) .eye-new-icon svg path{
+fill:#2B70A9; 
+}
+
+.pull-right {
+    float: right!important;
+    width: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-top: -15px;
+}
+.recruitment-top-right-box{
+    float: right;
+    width: auto;
+    padding-right: 20px;
+}
+
+.recruitment-tabele thead{
+    background: #D6D8F6;
+}
+.recruitment-tabele th, .recruitment-tabele td{
+    font-size: 14px;
+}
+
 
 @media only screen and (max-width: 1700px) {
     .in-progress-name-thre-colm {
