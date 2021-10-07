@@ -230,3 +230,9 @@ fill:#2B70A9;
               font-size: 13px;
        }
 }
+.ReactModal__Overlay{
+    position: fixed;
+    inset: 0px;
+    background-color: rgb(19 19 19 / 75%)!important;
+    z-index: 111;
+}
