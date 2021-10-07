@@ -72,9 +72,7 @@ export default function Sidebar(){
 </clipPath>
 </defs>
 </svg>
- configration</a></li>
-
-</ul>
+ configration</a></li></ul>
 </nav>
         </div>
         </div>
