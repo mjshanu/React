@@ -7,7 +7,6 @@ import {Tab, Tabs, AppBar} from '@material-ui/core';
 import { MdList } from "react-icons/md";
 import { MdViewQuilt } from "react-icons/md";
 import { mdiEye } from "react-icons/md";
-import Tablecand from './Tablecand';
 
 
 
@@ -176,7 +175,7 @@ setValue(val)
   </TabPanel>
   <TabPanel value={value} index={1}>
   <div className="tab-outer">
-  <Tablecand/>
+    Item 2
     </div>
     </TabPanel>
                 
