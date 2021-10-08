@@ -8,8 +8,9 @@ import { MdList } from "react-icons/md";
 import { MdViewQuilt } from "react-icons/md";
 import { mdiEye } from "react-icons/md";
 import Tablecand from './Tablecand'; 
-import Popupmodal from "./Popupmodal";
-
+import Popupmodal from "./Popupmodal"; 
+import BasicTabs from "./Employeetabs";
+import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
 
 
 const tasksList = [
@@ -93,10 +94,25 @@ setValue(val)
             <div className="main-content-area-inner">
             <div className="sub-head">Candidate Information 
     <div className="top-right-outer add-btn-div">
-      <Popupmodal/>    
+   <Popupmodal/>   
     </div>
 </div>
-<div className="recruitment-top-right-box">fdgfdh
+<div className="recruitment-top-right-box">
+<div className="calendar-width">  
+                    <input className="form-control" type="date" id="birthday" name="birthday"/>
+                </div>
+                <div className="calendar-width ">  
+                    <input className="form-control" type="text" id="birthday" name="birthday"/>
+                </div>
+                <div className="calendar-width ">  
+                    <input className="form-control" type="text" id="birthday" name="birthday"/>
+                </div>
+                <div className="search-icon-width ">  
+                <div className="top-right-outer add-btn-div">
+                        <button type="button" class="btn  btn-maincolor btn-block"> <FaSearch className="add-btn-icon"/></button> 
+                    
+                        </div>
+                </div>
 </div>
 
   <AppBar position="static"  className="tab-outer-head">
