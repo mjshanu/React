@@ -7,7 +7,8 @@ import {Tab, Tabs, AppBar} from '@material-ui/core';
 import { MdList } from "react-icons/md";
 import { MdViewQuilt } from "react-icons/md";
 import { mdiEye } from "react-icons/md";
-import Tablecand from './Tablecand';
+import Tablecand from './Tablecand'; 
+import Popupmodal from "./Popupmodal";
 
 
 
@@ -92,7 +93,7 @@ setValue(val)
             <div className="main-content-area-inner">
             <div className="sub-head">Candidate Information 
     <div className="top-right-outer add-btn-div">
-    <button type="button" class="btn  btn-maincolor btn-block">  ADD</button> 
+      <Popupmodal/>    
     </div>
 </div>
 <div className="recruitment-top-right-box">fdgfdh
