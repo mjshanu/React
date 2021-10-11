@@ -11,7 +11,7 @@ export default function Topbar(){
            <nav class="  ">
             
                <div class=" col-md-6 p-l-0">
-                 <a class=" topbar-icon " href="#"><FiAlignRight /> </a>
+                 <a class=" topbar-icon " href="# onClick={this.props.toggle}"><FiAlignRight /> </a>
                </div>               
                <div class="  col-md-6 topbar-col-right">
                  <span className="topbar-icon-right"> <BiTimeFive/></span>

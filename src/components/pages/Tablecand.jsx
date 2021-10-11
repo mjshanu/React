@@ -7,7 +7,6 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-//import TablePagination from '@mui/material/TablePagination';
 
 const styles = theme => ({
   root: {
@@ -39,7 +38,6 @@ const data = [
   createData('Anil Kumar', 'Java developer','Java developer', '10 Years', '5 LK/A', '6 LK/A', '2 Month', 'Kakkanad', 'Inprogress', ''),
   
 ];
-
 
 function SimpleTable(props) {
   const { classes } = props;
