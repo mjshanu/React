@@ -4,8 +4,10 @@ import { SiAddthis } from "@react-icons/all-files/si/SiAddthis";
 import { MdClose } from "@react-icons/all-files/md/MdClose";
 import Modal from 'react-modal'; 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
- 
- 
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
+import {AppBar} from '@material-ui/core';
+import BasicTabs from './Employeetabs';
 import 'react-tabs/style/react-tabs.css';
 const customStyles = {
     content: {
@@ -21,14 +23,17 @@ const customStyles = {
     },
   };
   
-   
+ 
+ 
 
  
 
 export default function Popupmodal(){
+
+   
     const CustomTab = ({ children }) => (
-        <Tab>
-          <div>{children}</div>
+        <Tab >
+          <div >{children}</div>
         </Tab>
       );
       CustomTab.tabsRole = 'Tab';
@@ -48,7 +53,11 @@ export default function Popupmodal(){
       setIsOpen(false);
     }
   
-
+    const [value, setValue]=React .useState(0)
+    const handlesTabs=(e, val)=>{
+      console.warn(val)
+    setValue(val)
+    }
 
   return (
     <div>
@@ -77,214 +86,15 @@ export default function Popupmodal(){
                                 </form>
                             </div>
                             <div class="col-md-8">
-                            <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Status
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <div><a class="dropdown-item" href="#">Action</a></div>
-                                        <div><a class="dropdown-item" href="#">Another </a></div>                                        
-                                    </div>
-                                    </div>
+                           
                             </div>
             </div>
-            <Tabs>
-                <TabList>
-                <CustomTab>Basic Information</CustomTab>
-                <CustomTab>Schedule Details </CustomTab>
-                <CustomTab>Rejection Reasons</CustomTab>
-                </TabList>
-                <TabPanel>
-                     <div class="row popup-content-height">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Name</label>
-                                <input type="email" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Post</label>
-                                <input type="text" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Skill Set</label>
-                                <input type="email" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Personal Email ID </label>
-                                <input type="email" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Contact Number</label>
-                                <input type="email" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Education</label>
-                                <input type="email" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Total years of experience</label>
-                                <input type="email" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">CTC</label>
-                                <input type="email" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">EXP CTC</label>
-                                <input type="email" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Notice Period</label>
-                                <input type="email" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Date Of Birth </label>
-                                <input type="date" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Location</label>
-                                <input type="email" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Current Company</label>
-                                <input type="email" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Domain Experience</label>
-                                <input type="email" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Apply date</label>
-                                <input type="date" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Primary Skills</label>
-                                <textarea  class="form-control" rows="2" > </textarea>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Secondary Skills</label>
-                                <textarea  class="form-control" rows="2" > </textarea>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">References</label>
-                                <textarea  class="form-control" rows="2" > </textarea>
-                            </div>
-                        </div>
-                        
-                     </div>
-                </TabPanel>
-                <TabPanel>
-                <div class="row popup-content-height">
-                        
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Panel Members</label>
-                                <input type="email" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Interview Date and Time</label>
-                                <input type="date" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Interview Place</label>
-                                <input type="email" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Position/Job title</label>
-                                <input type="email" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Department/team</label>
-                                <input type="email" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Interview Rating</label>
-                                <input type="date" class="form-control" ></input>
-                            </div>
-                        </div>
-                         
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Comments</label>
-                                <textarea  class="form-control" rows="3" > </textarea>
-                            </div>
-                        </div>
-                        
-                     </div>
-
-                </TabPanel>
-                <TabPanel>
-                    
-                <div class="row popup-content-height">
-                        
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Candidate Status</label>
-                                <input type="email" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Reasons</label>
-                                <input type="date" class="form-control" ></input>
-                            </div>
-                        </div>
-                        
-                         
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Remark</label>
-                                <textarea  class="form-control" rows="3" > </textarea>
-                            </div>
-                        </div>
-                        
-                     </div>
-                </TabPanel>
-            </Tabs>
+            <div class ="row">
+                <div class="col-md-12">
+                <BasicTabs /> 
+                </div>
+            </div>
+           
         </div>
         <div>
             <button type="button" class="btn  btn-save "  > Save</button>
