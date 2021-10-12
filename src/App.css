@@ -119,6 +119,15 @@ a:focus {
   border-radius: 0px 16.5px 16.5px 0px;
   padding-bottom: 10px;
 }
+.sidebar.is-open .nav-item a svg{
+  margin-left: 15px;
+  margin-right: 10px;
+  float: left;
+}
+
+.nav-item a svg {
+  float: right;
+}
 
 .sidebar.is-open .nav-item.open {
   background: #cd3b78; /* Old browsers */

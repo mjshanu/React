@@ -14,6 +14,9 @@ import SubMenu from "./SubMenu";
 import { Nav, Button } from "react-bootstrap";
 import classNames from "classnames";
 import {dashboard,asste,logonew} from '../../images';
+import {FaThLarge, FaChartLine, FaTools } from "react-icons/fa";
+import { FaUserTie } from "@react-icons/all-files/fa/FaUserTie";
+import { FaFileAlt } from "@react-icons/all-files/fa/FaFileAlt";
 class SideBar extends React.Component {
   render() {
     return (
@@ -37,35 +40,35 @@ class SideBar extends React.Component {
 
           <Nav.Item className="active">
             <Nav.Link href="/board">
-              <FontAwesomeIcon icon={faHome} className="mr-2" />
+            <FaThLarge/>
              Dashboard  
    
             </Nav.Link>
           </Nav.Item>
                <Nav.Item>
             <Nav.Link href="/">
-              <FontAwesomeIcon icon={faBriefcase} className="mr-2" />
+              <FaChartLine/>
              Asset
             </Nav.Link>
           </Nav.Item>
 
           <Nav.Item>
             <Nav.Link href="/">
-              <FontAwesomeIcon icon={faImage} className="mr-2" />
+            <FaUserTie/>
               Employee
             </Nav.Link>
           </Nav.Item>
 
           <Nav.Item>
             <Nav.Link href="/">
-              <FontAwesomeIcon icon={faQuestion} className="mr-2" />
+            <FaFileAlt/>
             projects
             </Nav.Link>
           </Nav.Item>
 
           <Nav.Item>
             <Nav.Link href="/">
-              <FontAwesomeIcon icon={faPaperPlane} className="mr-2" />
+             < FaTools/>
              configration
             </Nav.Link>
           </Nav.Item>
