@@ -613,6 +613,9 @@ label {
     letter-spacing: 0.02857em;
     text-transform: capitalize !important;
 }
+.MuiTab-root:hover {
+    color: #4a54d1 !important;
+}
 .PrivateTabIndicator-colorSecondary-3 {
     background-color: #4a54d1 !important;
 }
