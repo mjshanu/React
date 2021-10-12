@@ -23,7 +23,7 @@ border-top: 1px solid #ccc;
 padding: 30px 0px;
 }
 .nav-taxt{
-    width: 100%;
+     width: 100%;
     float: left;
     font-weight: 600;
     color: #5452E1;
@@ -31,5 +31,6 @@ padding: 30px 0px;
     display: block;
     text-align: left;
     padding-left: 15px;
+    font-size: 20px;
 }
 

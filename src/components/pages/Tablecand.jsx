@@ -73,7 +73,7 @@ function SimpleTable(props) {
               <TableCell numeric className="width-8">{n. expctc}</TableCell>
               <TableCell numeric className="width-10">{n.noticeperiod}</TableCell>
               <TableCell numeric className="width-10">{n.location}</TableCell>
-              <TableCell numeric className="width-8">
+              <TableCell numeric className="width-8 inprogress-td">
               <div className ="inprograss-style">{n.status}</div>
               </TableCell>
               <TableCell numeric className="width-8">

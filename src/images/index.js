@@ -9,3 +9,4 @@ export const eyeicoSched = require('./eyeicoSched.svg').default;
 export const eyeicoreject = require('./eyeicoreject.svg').default;
 export const eyeicowait = require('./eyeicowait.svg').default;
 export const eyenew = require('./eye-new.svg').default;
+export const logomob = require('./logo-new-mob.png').default;

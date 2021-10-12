@@ -122,7 +122,8 @@ setValue(val)
 </Tabs>
   </AppBar>
   <TabPanel value={value} index={0} >
-<div className="tab-outer">
+    <div className="tab-outer-main">
+<div className="tab-outer darg-outer">
   {channels.map(channel => (
             <KanbanColumn
               key={channel}
@@ -189,6 +190,7 @@ setValue(val)
               </div>
             </KanbanColumn>
           ))}
+  </div>
   </div>
   </TabPanel>
   <TabPanel value={value} index={1}>

@@ -104,25 +104,26 @@ a:focus {
 }
 
 .nav-item {
-  /*color: #ced4da;*/
-  color: #adb5bd;
-  width: 100%;
-  float: left;
-  display: block;
-  font-weight: 300;
-  color: #000;
-  width: 97%;
-  font-size: 16px;
-  float: left;
-  padding-left: 0px;
-  padding-top: 10px;
-  border-radius: 0px 16.5px 16.5px 0px;
-  padding-bottom: 10px;
+     /* color: #ced4da; */
+     color: #adb5bd;
+     width: 100%;
+     float: left;
+     display: block;
+     font-weight: 300;
+     color: #000;
+     width: 97%;
+     font-size: 16px;
+     float: left;
+     padding-left: 0px;
+     padding-top: 8px;
+     border-radius: 0px 16.5px 16.5px 0px;
+     padding-bottom: 12px;
+     margin-bottom: 5px;
 }
 .sidebar.is-open .nav-item a svg{
   margin-left: 15px;
   margin-right: 10px;
-  float: left;
+  float: left;    margin-top: 2px;
 }
 
 .nav-item a svg {
@@ -167,7 +168,10 @@ a:focus {
 
 
 .nav-item {
-  width: 100%;
+  width: 98%;
+}
+.nav-item a{
+  line-height: 18px;
 }
 .sidebar.is-open .nav-item {
   width: 97%;
@@ -230,7 +234,7 @@ li a.dropdown-toggle::after {
   
   .content.is-open {
     /*margin-left: 100%;*/
-    display: none;
+    display: block;
     transition: all 0.5s;
   }
   
