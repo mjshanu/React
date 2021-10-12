@@ -87,7 +87,7 @@ setValue(val)
 }
 
   return (
-    <main className="inner-content-box">
+    <main >
       <header className="main-otrer-top"> Recruitment </header>
       <DndProvider backend={HTML5Backend}>
         <section  className="main-content-area">

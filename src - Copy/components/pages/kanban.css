@@ -211,7 +211,7 @@ fill:#2B70A9;
 .recruitment-top-right-box{
     float: right;
     width: auto;
-    padding-right: 0px;
+    padding-right: 20px;
 }
 
 .recruitment-tabele thead{
@@ -308,13 +308,4 @@ border-radius: 7px !important;
     inset: 0px;
     background-color: rgb(19 19 19 / 75%)!important;
     z-index: 111;
-}
-
-
-@media only screen and (max-width: 1500px){
-.in-progress-name-thre-colm {
-    font-size: 10px;
-    padding-right: 2px;
-    padding-left: 3px;
-}
 }
