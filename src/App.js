@@ -18,8 +18,8 @@ import {
 } from "react-router-dom";
 import './css/style.css';
 import Board from './components/pages/Board';
-
-
+import Employee from "./components/pages/Employee";
+import Kanban from "./components/pages/Kanban";
 
 class App extends React.Component {
   constructor(props) {
@@ -74,15 +74,24 @@ class App extends React.Component {
         <SideBar toggle={this.toggle} isOpen={this.state.isOpen} />
         <Content toggle={this.toggle} isOpen={this.state.isOpen} />
 
-      
+        <Router>
+     
+      <Switch>
+      <Router exact path="/">
+      <Board/>
+      </Router>
+      <Router path="/Kanban">
+        <Kanban/>
+        </Router>
+        <Router path="/Employee">
+        <Employee/>
+        </Router> 
+    </Switch>
+    
+    </Router>
       </div>
     );
   }
 }
-
-
-
-
-
 
 export default App;

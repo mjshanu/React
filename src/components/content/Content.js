@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { Container } from "react-bootstrap";
 import NavBar from "./Navbar";
 import ReactDOM from "react-dom";
-
+import Employee from "../pages/Employee";
 import Kanban from './../pages/Kanban'
 class Content extends React.Component {
   render() {
@@ -14,8 +14,7 @@ class Content extends React.Component {
       >
         <NavBar toggle={this.props.toggle} />
 
-
-        <Kanban/> 
+ 
       </Container>
     );
   }
