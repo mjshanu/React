@@ -581,7 +581,7 @@ label {
     box-shadow: inset 0 0px 0px rgb(0 0 0 / 8%);
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;border-radius: 2px;
 }
  
 .form-group {
@@ -992,4 +992,291 @@ label {
                        display: none;
                     }
     
-    
+    .buttons-outer{
+        width: auto;
+        float: left;
+    }
+    .buttons-outer a{
+        width: auto;
+        float: left;
+        padding: 1px 8px;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 5px;
+    }
+    .buttons-outer a svg{
+        margin-right: 5px;
+    }
+.blue-button{
+    background:#4A54D1;
+    color: #fff;  border:1px solid #4A54D1;
+}
+.blue-button:hover{
+        background:#fff;
+    color: #4A54D1;
+    border:1px solid #4A54D1;
+
+}
+.white-button{
+    background:#fff;   
+    color: #4A54D1;; border:1px solid #4A54D1;
+}
+.white-button:hover{
+        background:#4A54D1;
+    color: #fff;
+    border:1px solid #4A54D1;
+ 
+}
+.maring-left-15{
+    margin-left: 10px;
+}
+a.download-bt svg {
+width: 18px;
+height: 24px;
+margin-right: 0px;
+}
+.emplyesearch{
+    min-width: 49%;
+    float: left;
+    position: relative;
+}
+.emplyesearch button{
+    position: absolute;
+    right: 10px;
+    top: 11px;
+    background: none;
+}
+.emplyesearch input{border-radius: 3px;
+     background-origin: padding-box;height: 40px;
+     padding: 12px 12px;
+}
+.emplyesearch button svg {
+    color: #838383 !important;    width: 21px !important;
+}
+.emplyee-top{
+    float: left;
+    padding: 15px;
+    width: 100%;
+}
+.active-swite-toggle .react-switch-bg {
+    height: 23px !important;
+    width: 51px !important;background: #028254 !important;
+    padding-left: 2px;    border-radius: 49px !important;
+}
+.active-swite-toggle .react-switch-bg svg{
+    display: none;
+}
+.active-swite-toggle .react-switch-handle{
+    width:12px  !important;    height: 12px !important;    transform: translateX(26px); 
+    top: 5px  !important;    left: 5px;
+}
+.active-swite-toggle span{
+    padding-top: 3px;
+    float: left;
+    padding-right: 7px;  
+}
+.empoyee-list-content-are{
+    width: 100%;
+    float: left;
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 0px;
+}
+.width-25 {
+    width: 25%;
+    float: left;
+    padding-left: 15px;
+    margin-top: 15px;
+    padding-right: 15px;
+    margin-bottom: 15px;
+}
+.width-25 .card{
+    width: 100%;
+    float: left;
+    padding: 20px;border: 1px solid #F8F8F8;
+    background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+border-radius: 12px;    margin: 0;
+}
+.width-25 .card .content {
+    float: left;
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.emplyee-card-top{
+    width: 100%;
+    float: left;
+    display: block;
+}
+.emplyee-card-left{
+    width: 10px;
+    float: left;
+    display: block;
+}
+.tick-round{
+    width: 22px;
+    height: 22px;
+    float: left;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+.tick-round svg{
+    color: #fff;
+    font-weight: 600;
+    margin-top: 4px;
+    text-align: center;}
+    .tick-round  img
+{
+    width: 15px;
+    margin-top: 5px;
+    margin-left: 4px;
+}
+
+.green-bg{
+    background: #028254;
+}
+.purple-bg{
+    background: #4A54D1;
+}
+.orange-bg{
+    background:#f1845a ;
+}
+.image-box{
+    width: 145px;
+    margin: 0px auto;    margin-top: 10px;
+    border-radius: 50%;filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+}
+.image-box img{
+    border-radius: 50%;
+    float: left;;
+}
+.profile-name{
+    width: 100%;
+    float: left;  margin-top: 20px;
+    display: block;
+}
+.profile-name span{
+
+    text-align: center;
+    float: left;
+    display: block;
+    width: 100%;
+      font-size: 23px;
+    line-height: 16px;
+    color: #4A54D1;
+    padding-bottom: 6px;
+    font-weight: 600;
+
+}
+.profile-name  p{
+    font-size: 16px;
+    color: #4D4C4C;
+    float: left;
+    display: block;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.profile-content{
+    width: 100%;
+    float: left;
+    display: block;
+}
+.profile-content .inner-section{
+    float: left;
+    border-top: 0.5px dashed #CFCFCF;
+    width: 100%;
+    display: block;
+    padding: 10px 0;
+    font-size: 14px;
+    color:#504F4F;
+}
+.profile-content .inner-section .left{
+    width:auto;
+    float: left;
+    display: block;
+    text-align: left;
+}
+.profile-content .inner-section .right{
+    width: auto;
+    float: right;
+    display: block;
+    text-align:right;
+}
+.profile-card-bottom{
+    float: left;
+    display: block;
+    width: 100%; border-top: 0.5px dashed #CFCFCF;
+    margin-top: 0px;
+       padding-top: 25px !important;
+    padding-bottom:  0px !important;
+
+}
+.profile-location{
+    width: auto;
+    float: left;    margin-top: 8px;
+    display: block;
+}.profile-location svg{
+    color: #e74c3c;
+    float: left;
+}
+.profile-location  img{
+     float: left;
+     margin-right: 5px;
+     width: 18px;
+}
+.profile-location  span{
+    float: left;
+    color: #656565;
+    width: auto;
+    font-size: 13px;
+}
+.profile-location-right{
+    float: right;
+    width: auto;
+}
+.profile-location-right .buttons-outer a{
+    width: auto;
+    float: left;
+    padding: 8px 14px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.profile-location-right .buttons-outer a svg {
+    float: left;
+    margin-top: -3px;
+}
+.profile-location-right .buttons-outer a:hover svg path{
+   fill: #fff;
+}
+.pagenation-outer .MuiTypography-body2{
+font-size: 14px;
+}.pagenation-outer  .MuiTablePagination-input {
+    font-size: 14px;
+}
+.pagenation-outer{
+   position: relative;
+    width: 100%;
+    float: left;
+}
+.pagenation-outer .MuiSvgIcon-root{
+color: #4A54D1;
+font-size: 24px;
+}.empoyee-list-content-are .MuiListItem-gutters {
+    padding-left: 0;
+    padding-top: 0;
+    margin-bottom: 20px;
+    float: left;
+    padding-bottom: 25px;
+    display: block;
+    padding-right: 0;
+    border-bottom: 1px solid rgba(215, 215, 215, 0.53);
+}
+.tab-outer .pagenation-outer {
+    margin-top: 18px;
+}

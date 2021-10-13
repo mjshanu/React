@@ -12,6 +12,7 @@ import {
 } from "react-router-dom"; 
 import Employee from "../pages/Employee";
 import Kanban from "../pages/Kanban";
+import Emplyelist from "../pages/Emplyelist";
 
 class Content extends React.Component {
   render() {
@@ -31,8 +32,8 @@ class Content extends React.Component {
       <Router path="/Kanban">
         <Kanban/>
         </Router>
-        <Router path="/Employee">
-        <Employee/>
+        <Router path="/Emplyelist">
+        <Emplyelist/>
         </Router> 
     </Switch>
     

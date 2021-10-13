@@ -17,9 +17,13 @@ import {dashboard,asste,logonew} from '../../images';
 import {FaThLarge, FaChartLine, FaTools } from "react-icons/fa";
 import { FaUserTie } from "@react-icons/all-files/fa/FaUserTie";
 import { FaFileAlt } from "@react-icons/all-files/fa/FaFileAlt";
+import { Link } from 'react-router'
 class SideBar extends React.Component {
   render() {
+    
     return (
+
+      
       <div className={classNames("sidebar", { "is-open": this.props.isOpen })}>
         <div className="sidebar-header">
           <Button
@@ -53,7 +57,7 @@ class SideBar extends React.Component {
           </Nav.Item>
 
           <Nav.Item>
-            <Nav.Link href="/Employee">
+            <Nav.Link href="/Emplyelist">
             <FaUserTie/>
               Employee
             </Nav.Link>
