@@ -10,13 +10,13 @@ import SideBar from "./components/sidebarnew/SideBar";
 import Content from "./components/content/Content";
  
 import './css/style.css';
+import './css/responsvie.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import './css/style.css';
 import Board from './components/pages/Board';
 import Employee from "./components/pages/Employee";
 import Kanban from "./components/pages/Kanban";
