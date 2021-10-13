@@ -39,7 +39,7 @@ class SideBar extends React.Component {
         <div className="nav-taxt">Navigation</div>
 
           <Nav.Item className="active">
-            <Nav.Link href="/Kanban">
+            <Nav.Link href="/">
             <FaThLarge/>
              Dashboard  
    
@@ -72,7 +72,20 @@ class SideBar extends React.Component {
              configration
             </Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/Kanban">
+             < FaTools/>
+             Recruitment
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/">
+             < FaTools/>
+             Job
+            </Nav.Link>
+          </Nav.Item>
         </Nav>
+
       </div>
     );
   }
