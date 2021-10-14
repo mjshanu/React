@@ -7,6 +7,10 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import TablePagination from "@material-ui/core/TablePagination";
 
 const styles = theme => ({
   root: {
@@ -101,8 +105,15 @@ function SimpleTable(props) {
           })}
         </TableBody>
       </Table>
-    
+      <TablePagination className="pagenation-outer"
+        component="nav"
+        page={0}
+        rowsPerPage={10}
+        count={100}
+        onChangePage={() => {}}
+      />
        </Paper>
+       
   );
 }
 

@@ -5,6 +5,29 @@
       .skill-box {
               font-size: 13px;
        }
+       .profile-content .inner-section {
+         font-size: 12px;
+        }
+        .width-25 {
+                     padding-left: 10px;
+               padding-right: 10px;
+        }
+        .profile-name span {
+                      font-size: 20px;
+                     padding-bottom: 2px;
+          }
+          .profile-name p {
+            font-size: 15px;
+                 }
+                 .profile-location-right .buttons-outer a {
+                                padding: 8px 10px;font-size: 13px;
+                      }
+                      a.download-bt svg {
+                        width: 14px;
+                               }
+                               .width-25 .card {
+                                padding: 20px 15px;
+                                                         }
 }
 .ReactModal__Overlay{
     position: fixed;
@@ -70,6 +93,14 @@
         font-size: 15px;
     }.width-8 {
         width: 9%;
+    }
+    .width-25 {
+        width: 33.33%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .width-25 .card {
+        padding: 20px 20px;
     }
 }
 
