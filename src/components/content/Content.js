@@ -12,12 +12,8 @@ import {
 } from "react-router-dom"; 
 import Employeeprofile from "../pages/Employeeprofile";
 import Kanban from "../pages/Kanban";
-<<<<<<< HEAD
-import Dashboard from "../pages/Dashboard";
-=======
 import Emplyelist from "../pages/Emplyelist";
-
->>>>>>> 3ced6839ef570f3ce593b2100deeca3983f1d073
+import Dashboard from "../pages/Dashboard";
 class Content extends React.Component {
   render() {
     return (
@@ -30,20 +26,8 @@ class Content extends React.Component {
         <Router>
      
       <Switch>
-<<<<<<< HEAD
-            <Router exact path="/Dashboard">
-                <Dashboard/>
-            </Router>
-            <Router path="/Kanban">
-                <Kanban/>
-            </Router>
-            <Router path="/Employeeprofile">
-                <Employeeprofile/>
-            </Router> 
-      </Switch>
-=======
-      <Router exact path="/">
-      <Employee/>
+      <Router exact path="/Dashboard">
+      <Dashboard/>
       </Router>
       <Router path="/Kanban">
         <Kanban/>
@@ -51,8 +35,10 @@ class Content extends React.Component {
         <Router path="/Emplyelist">
         <Emplyelist/>
         </Router> 
+        <Router path="/Employeeprofile">
+        <Employeeprofile/>
+        </Router> 
     </Switch>
->>>>>>> 3ced6839ef570f3ce593b2100deeca3983f1d073
     
     </Router>
       </Container>

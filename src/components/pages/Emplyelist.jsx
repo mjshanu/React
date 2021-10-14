@@ -115,7 +115,7 @@ export default class Emplyelist extends Component {
                                             </div>
                                             <div className="profile-location-right">
                                                 <div className="buttons-outer maring-left-15">
-                                                    <a href="add" className="white-button download-bt">
+                                                    <a href="Employeeprofile" className="white-button download-bt">
                                                         View Profile
                                                     </a>
                                                 </div>
@@ -180,7 +180,7 @@ export default class Emplyelist extends Component {
                                             </div>
                                             <div className="profile-location-right">
                                                 <div className="buttons-outer maring-left-15">
-                                                    <a href="add" className="white-button download-bt">
+                                                    <a href="Employeeprofile" className="white-button download-bt">
                                                         View Profile
                                                     </a>
                                                 </div>
@@ -244,7 +244,7 @@ export default class Emplyelist extends Component {
                                             </div>
                                             <div className="profile-location-right">
                                                 <div className="buttons-outer maring-left-15">
-                                                    <a href="add" className="white-button download-bt">
+                                                    <a href="Employeeprofile" className="white-button download-bt">
                                                         View Profile
                                                     </a>
                                                 </div>
@@ -309,7 +309,7 @@ export default class Emplyelist extends Component {
                                             </div>
                                             <div className="profile-location-right">
                                                 <div className="buttons-outer maring-left-15">
-                                                    <a href="add" className="white-button download-bt">
+                                                    <a href="Employeeprofile" className="white-button download-bt">
                                                         View Profile
                                                     </a>
                                                 </div>
