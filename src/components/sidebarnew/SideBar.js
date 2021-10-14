@@ -57,11 +57,7 @@ class SideBar extends React.Component {
           </Nav.Item>
 
           <Nav.Item>
-<<<<<<< HEAD
-            <Nav.Link href="/">
-=======
             <Nav.Link href="/Emplyelist">
->>>>>>> 3ced6839ef570f3ce593b2100deeca3983f1d073
             <FaUserTie/>
               Employee
             </Nav.Link>
