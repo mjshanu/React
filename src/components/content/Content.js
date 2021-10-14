@@ -10,9 +10,9 @@ import {
   Route,
   Link
 } from "react-router-dom"; 
-import Employee from "../pages/Employee";
+import Employeeprofile from "../pages/Employeeprofile";
 import Kanban from "../pages/Kanban";
-
+import Dashboard from "../pages/Dashboard";
 class Content extends React.Component {
   render() {
     return (
@@ -25,16 +25,16 @@ class Content extends React.Component {
         <Router>
      
       <Switch>
-      <Router exact path="/">
-      <Employee/>
-      </Router>
-      <Router path="/Kanban">
-        <Kanban/>
-        </Router>
-        <Router path="/Employee">
-        <Employee/>
-        </Router> 
-    </Switch>
+            <Router exact path="/Dashboard">
+                <Dashboard/>
+            </Router>
+            <Router path="/Kanban">
+                <Kanban/>
+            </Router>
+            <Router path="/Employeeprofile">
+                <Employeeprofile/>
+            </Router> 
+      </Switch>
     
     </Router>
       </Container>

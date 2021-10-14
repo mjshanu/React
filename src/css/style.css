@@ -977,19 +977,108 @@ label {
     } 
     .width-10{
         width: 10%;
-        }
-        .width-12{
-            width: 12%;
-            }
-            .width-15{
-                width: 15%;
-                }
-                .width-8{
-                    width: 8%;
-                    }
+    }
+    .width-12{
+        width: 12%;
+    }
+    .width-15{
+        width: 15%;
+    }
+    .width-8{
+        width: 8%;
+    }
     
-                    .logo-mob{
-                       display: none;
-                    }
+    .logo-mob{
+        display: none;
+    }
+    .flex-box {
+        display: flex;
+      }
     
-    
+      .basic-information-card{
+        width: 100%;
+        float: left;
+        background-color: #fff;
+        padding:20px 15px 15px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-right: 10px;
+        border-radius: 5px;
+        border-top: 4px solid #B93E87;
+        box-shadow: 2px 2px 7px #e0e0e0;
+        display: block;
+    }
+    .personal-information-card{
+        width: 100%;
+        float: left;
+        background-color: #fff;
+        padding:20px 15px 15px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 10px;
+        border-radius: 5px;
+        border-top: 4px solid #4A54D1;
+        box-shadow: 2px 2px 7px #e0e0e0;
+        display: block;
+    }
+    .education-information-card{
+        width: 100%;
+        float: left;
+        background-color: #fff;
+        padding:20px 15px 15px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-right: 10px;
+        border-radius: 5px;
+        border-top: 4px solid #FDC97C;
+        box-shadow: 2px 2px 7px #e0e0e0;
+        display: block;
+    }
+    .employee-information-card{
+        width: 100%;
+        float: left;
+        background-color: #fff;
+        padding:20px 15px 15px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 10px;
+        border-radius: 5px;
+        border-top: 4px solid #8DD0B8;
+        box-shadow: 2px 2px 7px #e0e0e0;
+        display: block;
+    }
+
+.information-card-head {
+        font-size: 18px;
+        font-weight: 600;
+        color: #202020;
+        text-decoration: underline;
+        margin-bottom: 20px;
+    }
+.dot-sty {
+        float: right;
+        font-weight: 700;
+        
+    }
+.info-card-cont{
+        font-weight: 600;
+        color: #515151; 
+    }
+.info-card-cont-rgt{
+        font-weight: 500;
+        color: #515151; 
+    }
+.txt-row-hght{
+    padding-bottom: 20px;
+}
+
+.profilepic {
+    background-image: url(../images/profilei.svg);
+    width: 100px;
+    height: 100px;
+  }
+  
+.info-card-prfl-txt {
+    text-align: center;
+    font-weight: 700;
+}

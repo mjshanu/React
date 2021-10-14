@@ -13,7 +13,7 @@ import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
  
 
   
-const Employee = () => {
+const Employeeprofile = () => {
    
  
   return (
@@ -236,5 +236,5 @@ const Employee = () => {
   );
 };
 
-export default Employee;
+export default Employeeprofile;
  
