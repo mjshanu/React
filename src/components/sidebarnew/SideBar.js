@@ -83,7 +83,7 @@ class SideBar extends React.Component {
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/">
+            <Nav.Link href="/Job">
              < FaTools/>
              Job
             </Nav.Link>
