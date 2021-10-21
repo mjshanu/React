@@ -214,8 +214,14 @@
     height: 400px;
     overflow: scroll;
 }
+.job-outer {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    
 }
-
+}
 @media only screen and (max-width: 980px){
     .sidebar.is-open {
         margin-left: -250px !important;
@@ -267,6 +273,8 @@
 .tab-outer-main {
     width: 98%;
   }
+
+    
   .job-detils-modal {
     height: 520px;
     overflow: hidden;
@@ -306,6 +314,13 @@
     margin-left: 18px;
 }.recruitment-top-right-box {
     padding-left: 12px;
+}
+.job-outer {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    
 }
 }@media only screen and (max-width:573px)
 
