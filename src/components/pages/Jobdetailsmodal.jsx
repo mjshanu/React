@@ -142,37 +142,13 @@ export default function Jobdetailsmodal(){
                                 <input type="email" class="form-control" ></input>
                             </div>
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">description</label>
                                 <input type="email" class="form-control" ></input>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Employee Code</label>
-                                <input type="text" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Referral Employee Name</label>
-                                <input type="text" class="form-control" ></input>
-                            </div>
-                        </div>
-                     
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Email</label>
-                                <input type="text" class="form-control" ></input>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Phone</label>
-                                <input type="text" class="form-control" ></input>
-                            </div>
-                        </div>
+                      
                         
                      </div>
                 </div>
