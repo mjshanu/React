@@ -183,6 +183,15 @@
 .recruitment-top-right-box {
      width: 79%;
 }
+.job-detils-modal {
+    height: 600px;
+    overflow: hidden;
+    width: 85%;
+}
+.job-detils-modal .popup-content-height {
+    height: 400px;
+    overflow: scroll;
+}
 }
 
 @media only screen and (max-width: 980px){
@@ -236,6 +245,33 @@
 .tab-outer-main {
     width: 98%;
   }
+  .job-detils-modal {
+    height: 520px;
+    overflow: hidden;
+    width: 80%;
+}
+.job-detils-modal .popup-content-height {
+    margin-bottom: 8px;
+        height: 314px;
+        overflow: scroll;
+}
+.job-detils-modal .popup-content-height .col-md-4{
+    width: 50%;
+    float: left;
+}
+.job-detils-modal .popup-content-height  .col-md-8{
+    width: 100%;
+    float: left;
+}
+.job-detils-modal .popup-content-height .mob-full{
+    width: 100%;
+}
+.modal-footer-button-bg {
+    border-top: 0.2px solid #dadada;
+    float: left;
+    width: 100%;
+    padding-top: 23px;
+}
 }
 @media only screen and (max-width: 767px){
 .calendar-width {
@@ -258,6 +294,10 @@
     .sidebar.is-open {
         margin-left: 0px !important;
         opacity: 1;
+    }
+    .job-detils-modal .popup-content-height .col-md-4{
+        width: 100%;
+        float: left;
     }
 }
 @media only screen and (max-width:480px){
