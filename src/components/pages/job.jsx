@@ -10,8 +10,8 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Jobdetailsmodal from "./Jobdetailsmodal"; 
 import {profilei} from '../../images/profilei.svg'; 
-
 const styles = theme => ({
   root: {
     display: 'flex',
@@ -53,11 +53,8 @@ export default function Job(props) {
                 <div className="main-content-area-inner">
                     <div className="sub-head"> Job Openings
                         <div className="top-right-outer add-btn-div"> 
-                                    <div className="buttons-outer">
-                                        <a href="add" className="blue-button">
-                                            <SiAddthis className="add-btn-icon" /> Add 
-                                        </a>
-                                    </div>       
+                        <Jobdetailsmodal />
+                                         
                         </div>
                     </div>
                     <div className="recruitment-top-right-box"> </div>  

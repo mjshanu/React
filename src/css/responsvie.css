@@ -109,6 +109,28 @@
     .recruitment-tabele th, .recruitment-tabele td {
         font-size: 12px;
         }
+        .in-progress-name-thre-colm {
+            font-size: 9px;
+        }
+        .skill-box {
+            font-size: 11px;
+        }
+        .location-outer .in-progress-location {
+            font-size: 11px;
+        }
+        .location-outer span {
+            font-size: 11px;
+        }
+        .in-progress-name-sty {
+            font-size: 16px;
+        }
+        .in-progress-card--bt-top {
+            font-size: 12px;    width: 140px;    padding: 6px 9px 4px;
+        }
+        .eye-new-icon svg {
+            width: 22px  !important;
+            height: 22px;
+        }
 }
 
 @media only screen and (max-width: 1300px){
@@ -183,6 +205,15 @@
 .recruitment-top-right-box {
      width: 79%;
 }
+.job-detils-modal {
+    height: 600px;
+    overflow: hidden;
+    width: 85%;
+}
+.job-detils-modal .popup-content-height {
+    height: 400px;
+    overflow: scroll;
+}
 .job-outer {
     margin-left: 0px;
     margin-right: 0px;
@@ -191,7 +222,6 @@
     
 }
 }
-
 @media only screen and (max-width: 980px){
     .sidebar.is-open {
         margin-left: -250px !important;
@@ -243,12 +273,34 @@
 .tab-outer-main {
     width: 98%;
   }
-  .job-outer {
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 5px;
-    margin-bottom: 20px;
+
     
+  .job-detils-modal {
+    height: 520px;
+    overflow: hidden;
+    width: 80%;
+}
+.job-detils-modal .popup-content-height {
+    margin-bottom: 8px;
+        height: 314px;
+        overflow: scroll;
+}
+.job-detils-modal .popup-content-height .col-md-4{
+    width: 50%;
+    float: left;
+}
+.job-detils-modal .popup-content-height  .col-md-8{
+    width: 100%;
+    float: left;
+}
+.job-detils-modal .popup-content-height .mob-full{
+    width: 100%;
+}
+.modal-footer-button-bg {
+    border-top: 0.2px solid #dadada;
+    float: left;
+    width: 100%;
+    padding-top: 23px;
 }
 }
 @media only screen and (max-width: 767px){
@@ -279,6 +331,10 @@
     .sidebar.is-open {
         margin-left: 0px !important;
         opacity: 1;
+    }
+    .job-detils-modal .popup-content-height .col-md-4{
+        width: 100%;
+        float: left;
     }
 }
 @media only screen and (max-width:480px){
