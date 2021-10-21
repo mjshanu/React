@@ -11,7 +11,7 @@ import Tablecand from './Tablecand';
 import Popupmodal from "./Popupmodal"; 
 import BasicTabs from "./Employeetabs";
 import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
-
+ 
 
 const tasksList = [
   { _id: 1, title: "JAVA DEVELOPER",name:"shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth"},

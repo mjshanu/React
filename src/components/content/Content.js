@@ -15,6 +15,8 @@ import Kanban from "../pages/Kanban";
 import Emplyelist from "../pages/Emplyelist";
 import Dashboard from "../pages/Dashboard";
 import Job from "../pages/job";
+import UncontrolledBoard from "../pages/Dragslider";
+
 class Content extends React.Component {
   render() {
     return (
@@ -41,6 +43,9 @@ class Content extends React.Component {
         </Router> 
         <Router path="/Job">
         <Job/>
+        </Router> 
+        <Router path="/Dragslider">
+        <UncontrolledBoard/>
         </Router> 
     </Switch>
     

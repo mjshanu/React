@@ -88,6 +88,12 @@ class SideBar extends React.Component {
              Job
             </Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/Dragslider">
+             < FaTools/>
+             Dragslider
+            </Nav.Link>
+          </Nav.Item>
         </Nav>
 
       </div>
