@@ -1442,3 +1442,49 @@ select
     color: #4A54D1;
     text-decoration: none;
 }
+.candidatelistview-sty {
+    margin-top: 60px;
+    padding-top: 20px;
+}
+ 
+.card-header-styone {
+    color: #161616;
+    font-size: 18px;
+    font-weight: 600;
+}  
+.select-dropdow {
+    background-color: #5353ca;
+    padding: 15px;
+    width: 180px;
+    color: #fff;
+}  
+.select-dropdow option {
+    background-color: #ac4680;
+    padding: 15px !important;
+    width: 200px;
+    height: 30px !important;
+    color: #fff;
+    min-height: 2.2em !important;
+    padding: 20px 12px 11px !important;
+}  
+ 
+.pull-right {
+    float: right!important;
+    margin-top: 0px !important;
+}
+.listview-consty {
+    font-size: 13px;
+    padding-top: 5px;
+}  
+.listview-namesty {
+    font-size: 15px;
+}  
+.listview-conexp{
+    font-size: 13px; 
+    padding-left: 20px;
+}   
+.listview-conctc{
+    font-size: 13px;
+    padding-top: 5px;
+    padding-left: 20px;
+}   

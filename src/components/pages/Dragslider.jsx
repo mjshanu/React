@@ -7,7 +7,9 @@ import "@lourenci/react-kanban/dist/styles.css";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from 'react-dnd-html5-backend'
 const board = {
+    
   columns: [
+      
     {
       id: 1,
       title: "Backlog",
@@ -15,7 +17,8 @@ const board = {
         {
           id: 1,
           title: "Card title 1",
-          description: "Card content"
+          description: "Card content",
+          name:"shanu",
         },
         {
           id: 2,
@@ -92,11 +95,7 @@ export default function UncontrolledBoard() {
                       </div>
                       <div className="col-md-12">    
                                
-                      <Board
-        allowRemoveLane
-        allowRenameColumn
-        allowRemoveCard
-        onLaneRemove={console.log}
+                      <Board allowRemoveLane allowRenameColumn allowRemoveCard onLaneRemove={console.log}
         onCardRemove={console.log}
         onLaneRename={console.log}
         initialBoard={board}
