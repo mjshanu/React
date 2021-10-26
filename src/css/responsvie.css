@@ -140,7 +140,7 @@
         display: block;
         overflow: scroll;
         display: block;
-        display: flex !important;
+        display: block !important;
         flex-wrap: nowrap!important;
         overflow: auto !important;
       }
@@ -199,8 +199,19 @@
          .candidate-boxouter:last-child {
             padding-right: 0;
         }
+
+        .tab-outer .pagenation-outer {
+            position: absolute;
+            width: 100%;
+            float: left;
+            bottom: 0;
+            left: -25px;
+        }
+        .recruitment-table-outer{
+            margin-bottom: 40px;
+        }
       
-}
+       }
 @media only screen and (max-width: 1200px){
 .recruitment-top-right-box {
      width: 79%;
@@ -220,6 +231,12 @@
     margin-top: 0px;
     margin-bottom: 20px;
     
+}
+.in-progress-name-thre-colm {
+    font-size: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    line-height: 16px;
 }
 }
 @media only screen and (max-width: 980px){
@@ -301,6 +318,12 @@
     float: left;
     width: 100%;
     padding-top: 23px;
+}
+.mob-show{
+    display: block;
+}
+.desktop-show{
+    display: none;
 }
 }
 @media only screen and (max-width: 767px){

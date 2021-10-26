@@ -159,7 +159,7 @@ padding-top: 20px;
     padding-left: 0px;
 }
 .add-btn-icon {
-    border-radius: 20px;
+    border-radius: 20px;    font-size: 15px;
     margin-top: -2px;    margin-right: 5px;
     vertical-align: middle;
 }
@@ -216,7 +216,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .calendar-width {
     float: left;
-    width: 29%;
+    width: 28.7%;
     margin-right: 10px;
 }
 .search-icon-width {
@@ -1441,4 +1441,46 @@ select
 .modal-footer-button-bg .btn.focus, .modal-footer-button-bg .btn:focus {
     color: #4A54D1;
     text-decoration: none;
+}
+.drdtsxt{    display: block;
+    float: left;
+}
+.user-drag-box{
+    user-select: none;
+    padding: 0px;
+    min-height: 50px;
+    color: white;
+    float: left;
+}
+.darg-inner-box{
+    height: auto;
+min-height: 500px;
+  width: 100% !important;
+}
+
+.in-progress-name-sty {
+    color: #000;
+}
+.location-outer .in-progress-location {
+     color: #000;
+}
+.mob-show{
+    display: none;
+}
+.desktop-show{
+    display: block;
+}
+.add-btn-div .btn-maincolor {
+      min-height: 38px;
+}
+.search-icon-width .add-btn-div  .add-btn-icon {
+    margin-right: 0;    font-size: 18px;
+  }
+  .search-icon-width {
+    float: left;
+    width: auto;
+    margin-left: 0;
+}
+.in-progress-card-bx .in-progress-name-thre-colm:first-child{
+    padding-left: 0px;
 }

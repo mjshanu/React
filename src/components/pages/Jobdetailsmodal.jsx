@@ -26,8 +26,6 @@ const customStyles = {
  
  
 
- 
-
 export default function Jobdetailsmodal(){
 
    
@@ -71,7 +69,7 @@ export default function Jobdetailsmodal(){
         contentLabel="Example Modal" >
         <div className="popup-head-sty modal-button-bg">
             <div className="popup-head-content-sty">
-                <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Details</h4>
+                <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Job Settings</h4>
             </div>
             <div className="popup-head-icon-sty">
                <MdClose className="popup-close-btn" onClick={closeModal} />

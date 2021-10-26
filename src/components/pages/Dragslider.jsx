@@ -20,7 +20,8 @@ const board = {
         {
           id: 2,
           title: "Card title 2",
-          description: "Card content"
+          description: "Card content",
+          name:"manju"
         },
         {
           id: 3,

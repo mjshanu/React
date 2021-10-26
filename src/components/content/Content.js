@@ -16,6 +16,7 @@ import Emplyelist from "../pages/Emplyelist";
 import Dashboard from "../pages/Dashboard";
 import Job from "../pages/job";
 import UncontrolledBoard from "../pages/Dragslider";
+import Newdrag from "../pages/Newdrgbox.jsx";
 
 class Content extends React.Component {
   render() {
@@ -47,7 +48,10 @@ class Content extends React.Component {
         <Router path="/Dragslider">
         <UncontrolledBoard/>
         </Router> 
-    </Switch>
+        <Router path="/Newdrgbox">
+        <Newdrag/>
+        </Router> 
+         </Switch>
     
     </Router>
       </Container>

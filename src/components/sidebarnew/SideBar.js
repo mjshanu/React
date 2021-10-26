@@ -94,6 +94,12 @@ class SideBar extends React.Component {
              Dragslider
             </Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/Newdrgbox">
+             < FaTools/>
+            Newdrg
+            </Nav.Link>
+          </Nav.Item>
         </Nav>
 
       </div>
