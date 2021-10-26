@@ -20,8 +20,31 @@ import {
 } from "react-beautiful-dnd-next";
 import { v4 as uuid } from "uuid";
 
+import Select from 'react-select';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
+
+
+const options = [
+  {
+    label: "Inprogress",
+    value: "Inprogress",
+  },
+  {
+    label: "Schedule",
+    value: "Schedule",
+  },
+  {
+    label: "Rejection",
+    value: "Rejection",
+  },
+  {
+    label: "Waiting",
+    value: "Waiting",
+  },
+]; 
 
 const Newdrag = () => {
   
@@ -135,7 +158,75 @@ const onDragEnd = (result, columns, setColumns) => {
   </AppBar>
   <TabPanel value={value} index={0} >
     <div className="tab-outer-main">
-<div  className="mob-show"> Test</div>
+<div  className="mob-show mob-listview-top"> 
+<div className="col-md-12">
+
+
+<div className=" ">
+<div  className="candidate-box">
+                <div className="card-head-bg">
+                    <div className="card-header-styone ">
+                    Candidate List View
+                    </div>
+
+                  
+                    </div>
+
+
+                    <div className="candidate-infotm-bx ">  
+<div className="listview-mob-top">
+<div className="col-2 list-head-font">Name</div>
+  <div className="col-2 list-head-font">designation</div>
+  <div className="col-1 list-head-font">EXP</div>
+  <div className="col-1 list-head-font">CTC</div>
+  <div className="col-4 list-head-font">Status</div>
+</div>
+<div className="listview-mob-top listview-mob-contant">
+  <div className="col-2 first-box"> Shanu K K</div>
+  <div className="col-2">Java Developer</div>
+  <div className="col-1">5Yrs</div>
+  <div className="col-1">8LK/A</div>
+  <div className="col-4">
+  <select className="select-dropdow">
+                                  {options.map((option) => (
+                                    <option value={option.value}>{option.label}</option>
+                                  ))}
+                                </select>
+  </div>
+  </div>
+  <div className="listview-mob-top listview-mob-contant">
+  <div className="col-2 first-box"> Shanu K K</div>
+  <div className="col-2">Java Developer</div>
+  <div className="col-1">5Yrs</div>
+  <div className="col-1">8LK/A</div>
+  <div className="col-4">
+  <select className="select-dropdow">
+                                  {options.map((option) => (
+                                    <option value={option.value}>{option.label}</option>
+                                  ))}
+                                </select>
+  </div>
+  </div>
+  <div className="listview-mob-top listview-mob-contant">
+  <div className="col-2 first-box"> Shanu K K</div>
+  <div className="col-2">Java Developer</div>
+  <div className="col-1">5Yrs</div>
+  <div className="col-1">8LK/A</div>
+  <div className="col-4">
+  <select className="select-dropdow">
+                                  {options.map((option) => (
+                                    <option value={option.value}>{option.label}</option>
+                                  ))}
+                                </select>
+  </div>
+  </div>
+
+
+              </div> </div>
+              </div>
+              </div>
+
+</div>
 
 <div className="tab-outer darg-outer desktop-show">
 <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>

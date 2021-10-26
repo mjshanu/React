@@ -1496,9 +1496,13 @@ min-height: 500px;
 }  
 .select-dropdow {
     background-color: #5353ca;
-    padding: 15px;
+    padding: 5px 12px;
     width: 180px;
     color: #fff;
+    line-height: 22px;
+    font-size: 15px;
+    float: left;
+    border-radius: 4px;
 }  
 .select-dropdow option {
     background-color: #ac4680;
@@ -1516,7 +1520,7 @@ min-height: 500px;
 }
 .listview-consty {
     font-size: 13px;
-    padding-top: 5px;
+    padding-top: 12px;
 }  
 .listview-namesty {
     font-size: 15px;
@@ -1527,6 +1531,74 @@ min-height: 500px;
 }   
 .listview-conctc{
     font-size: 13px;
-    padding-top: 5px;
+    padding-top: 12px;
     padding-left: 20px;
 }   
+.listview-mob-top{
+    width: 100%;
+     float: left;  padding: 10px 0;
+      display: block;
+}
+.listview-mob-contant{
+    width: 100%;
+     float: left;
+     display: block;
+  background: #e6e9ef;
+  margin-bottom: 5px;
+  padding: 0px 0px;
+  position: relative;
+  border-bottom: 1px  solid #e6e9ef;
+  }
+  .listview-mob-top .col-2{
+    width: 22%;
+    padding: 5px 10px;
+    font-size: 13px;
+    float: left;  
+}
+.listview-mob-top .col-1{
+    width: 14%;
+    padding: 5px 10px;
+    font-size: 13px;
+    float: left;
+}
+.listview-mob-top  .col-4{      padding: 0px 0px;    font-size: 13px;
+    width: 28%;    float: left;
+}
+
+.listview-mob-top  .col-4 .select-dropdow {
+   width: 100%;
+   font-size: 13px;
+}.listview-mob-contant .col-1, .listview-mob-contant .col-2{
+    line-height: 22px;
+    border-right: 1px solid #fff;
+}
+.listview-mob-top  .list-head-font{       text-transform: capitalize;
+    font-weight: 700; font-size: 14px;
+    color: #824ca3;
+    padding: 5px 10px;
+
+}
+.mob-listview-top .col-md-12{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.listview-mob-contant:before {
+    height: 100%;
+    display: block;
+    width: 2px;
+    background: #ab4681;
+    border-left: 1px white;
+    content: '';
+    position: absolute;
+left:0;
+}
+.listview-mob-contant select
+{
+    background-image: url(../images/select-arrow-white.svg) !important;
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    appearance: none;
+    -webkit-appearance: none;
+
+}

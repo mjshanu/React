@@ -325,6 +325,9 @@
 .desktop-show{
     display: none;
 }
+.mob-listview-top{
+    margin-top: 30px;
+}
 }
 @media only screen and (max-width: 767px){
 .calendar-width {
@@ -334,7 +337,7 @@
     padding-right: 15px;
 }
 .search-icon-width {
-    margin-left: 18px;
+    margin-left: 0;
 }.recruitment-top-right-box {
     padding-left: 12px;
 }
@@ -345,7 +348,27 @@
     margin-bottom: 20px;
     
 }
-}@media only screen and (max-width:573px)
+}
+@media only screen and (max-width:650px){
+    .listview-mob-top .col-2 {
+        width: 23%;
+    }
+    .listview-mob-top .col-4 {
+         width: 26%;  
+       }
+       .listview-mob-contant .col-1, .listview-mob-contant .col-2 {
+        line-height: 21px;
+        border-right: 1px solid #fff;
+        font-size: 11px;
+        padding: 5px 5px;
+    }.listview-mob-top  .col-4 .select-dropdow {
+        font-size: 11px;
+     }
+     .listview-mob-top .list-head-font {
+        font-size: 12px;
+        }
+}
+@media only screen and (max-width:573px)
 
 {
     .sidebar {
@@ -358,6 +381,11 @@
     .job-detils-modal .popup-content-height .col-md-4{
         width: 100%;
         float: left;
+    }
+    .listview-mob-contant .col-1, .listview-mob-contant .col-2 {
+        line-height: 15px;
+        height: 39px;
+        padding: 5px  5px;
     }
 }
 @media only screen and (max-width:480px){
@@ -404,5 +432,46 @@
 .sidebar.is-open {
     margin-left: 0px !important;
     opacity: 1;
+}
+.listview-mob-top .col-1 {
+display:block;
+}
+.listview-mob-top .col-2 {
+    width: 37%;
+}
+.listview-mob-top .col-4 .select-dropdow{
+    padding: 5px 6px;
+}
+.listview-mob-contant .col-1, .listview-mob-contant .col-2 {
+    line-height: 21px;
+    height:auto;
+}
+.candidate-infotm-bx{
+    width: 100%;
+    font: left;    display: block;
+       overflow-y: hidden;
+       height: auto;
+    overflow-x: scroll;
+}
+.listview-mob-top {
+    width:auto;
+    float: left;
+    display: flex;
+    padding: 10px 0;
+}
+.listview-mob-top .col-2{
+    width: 150px;    font-size: 12px;  
+}
+.listview-mob-top .col-1{
+    width: 70px;  
+    font-size: 12px;
+}
+.listview-mob-top  .col-4{     
+    width: 100px;    font-size: 12px;
+}.listview-mob-top .col-4 .select-dropdow {
+    font-size: 12px;
+}
+.listview-mob-contant .col-1, .listview-mob-contant .col-2 {
+  padding: 5px 10px;
 }
 }
