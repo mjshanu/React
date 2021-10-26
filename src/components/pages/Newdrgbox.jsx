@@ -173,7 +173,7 @@ const onDragEnd = (result, columns, setColumns) => {
                     </div>
 
 
-                    <div className="candidate-infotm-bx ">  
+                    <div className="mo ">  
 <div className="listview-mob-top">
 <div className="col-2 list-head-font">Name</div>
   <div className="col-2 list-head-font">designation</div>
