@@ -238,6 +238,15 @@
     padding-left: 10px;
     line-height: 16px;
 }
+.card-header-bt-rigt {
+    font-size: 11px;
+}
+.card-head-bg .pull-right {
+    margin-top: -9
+px
+ !important;
+    width: 100%;
+}
 }
 @media only screen and (max-width: 980px){
     .sidebar.is-open {
