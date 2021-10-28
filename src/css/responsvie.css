@@ -288,7 +288,7 @@
     margin-bottom: 30px;
 }
 .tab-outer-main {
-    width: 98%;
+    width: 100%;
   }
 
     
@@ -328,13 +328,30 @@
 .mob-listview-top{
     margin-top: 30px;
 }
+.accrodion-mob-outer{
+display: block;
+}
+.tb-mob-none{
+    display: none;
+}
+.acc-status-change{
+    float: right;
+    padding-top: 3px;
+}
+.tabmob-none{
+    display: none !important;
+}
+.accrodion-mob-outer  .accordion {
+    padding: 5px 14px;
+}
+
 }
 @media only screen and (max-width: 767px){
 .calendar-width {
     width: 100%;
     margin-bottom: 15px;
     margin-right: 10px;
-    padding-right: 15px;
+    padding-right: 10px;
 }
 .search-icon-width {
     margin-left: 0;
@@ -473,5 +490,48 @@ display:block;
 }
 .listview-mob-contant .col-1, .listview-mob-contant .col-2 {
   padding: 5px 10px;
+}.accrodion-mob-outer  .acc-status-change {
+    float:  right;
+    padding-top: 7px;
+    width: auto;
+    padding-bottom: 5px;
+}
+.accordion-head-text {
+    padding: 2px 1px;
+}
+.accord-detals-box {
+    padding: 15px 15px;
+}
+.acc-status-change select {
+    width: 93px;
+font-size: 13px;    padding: 3px 9px;
+}
+.accordion-bottom-button {
+    width: 210px;
+    margin: 0px auto;
+}
+.accordion-bottom-button .more-button {
+    width: 63px;
+       font-size: 13px;
+    border-radius: 15px;
+    text-align: center;
+    padding: 7px 0;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.top-right-outer.add-btn-div {
+    margin-right: -8px;
+    float: left;
+    margin-top: 8px;width: 100%;
+}
+.add-btn-div .btn-maincolor {
+    min-height: 34px;
+    font-size: 12px;
+    padding: 3px 8px;
+    line-height: 13px;
+}
+.search-icon-width {
+    margin-left: 0;
+    width: 96%;
 }
 }

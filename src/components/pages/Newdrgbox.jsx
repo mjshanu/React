@@ -23,7 +23,16 @@ import { v4 as uuid } from "uuid";
 import Select from 'react-select';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from 'react-accessible-accordion';
 
+// Demo styles, see 'Styles' section below for some notes on use.
+import 'react-accessible-accordion/dist/fancy-example.css';
 
 
 
@@ -334,7 +343,173 @@ const onDragEnd = (result, columns, setColumns) => {
   </TabPanel>
   <TabPanel value={value} index={1}>
   <div className="tab-outer">
+<div className="tb-mob-none">
   <Tablecand/>
+  </div>
+
+  <div className="accrodion-mob-outer">
+  <Accordion preExpanded={"a"}>
+      <AccordionItem uuid="a">
+        <AccordionItemHeading className="accordion-inprogress">
+          <AccordionItemButton >
+            <div className="accordion-head-text">
+            <div className="name">Anil Kumar</div>
+            <div className="desi">Java developer</div>
+            </div>   <div className="col-4 acc-status-change">
+  <select className="select-dropdow">
+                                  {options.map((option) => (
+                                    <option value={option.value}>{option.label}</option>
+                                  ))}
+                                </select>
+  </div></AccordionItemButton>
+        </AccordionItemHeading>
+        <AccordionItemPanel>
+          <div className="accord-detals-box">
+         <div className="left">Skill Set</div>
+         <div className="right">HTML, CSS, JavaScript, Figma</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">EXP </div>
+         <div className="right">4.6 Years</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">CTC </div>
+         <div className="right">5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Location</div>
+         <div className="right">Kakkanad</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="accordion-bottom-button">
+<div className="more-button">View</div>
+<div className="more-button more-outer">Edit</div>
+<div className="more-button more-outer">Delete</div>
+        </div>
+        </div>
+        </AccordionItemPanel>
+      </AccordionItem>
+
+      <AccordionItem uuid="b">
+        <AccordionItemHeading className="accordion-schedule">
+          <AccordionItemButton>   <div className="accordion-head-text">
+            <div className="name">Anil Kumar</div>
+            <div className="desi">Java developer</div>
+            </div>   <div className="col-4 acc-status-change">
+  <select className="select-dropdow">
+                                  {options.map((option) => (
+                                    <option value={option.value}>{option.label}</option>
+                                  ))}
+                                </select>
+  </div></AccordionItemButton>
+        </AccordionItemHeading>
+        <AccordionItemPanel>
+        <div className="accord-detals-box">
+         <div className="left">Skill Set</div>
+         <div className="right">HTML, CSS, JavaScript, Figma</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">EXP </div>
+         <div className="right">4.6 Years</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">CTC </div>
+         <div className="right">5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Location</div>
+         <div className="right">Kakkanad</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="accordion-bottom-button">
+<div className="more-button">View</div>
+<div className="more-button more-outer">Edit</div>
+<div className="more-button more-outer">Delete</div>
+        </div>
+        </div>
+        </AccordionItemPanel>
+      </AccordionItem>
+
+      <AccordionItem uuid="c">
+        <AccordionItemHeading className="accordion-rejection">
+          <AccordionItemButton>   <div className="accordion-head-text">
+            <div className="name">Anil Kumar</div>
+            <div className="desi">Java developer</div>
+            </div>   <div className="col-4 acc-status-change">
+  <select className="select-dropdow">
+                                  {options.map((option) => (
+                                    <option value={option.value}>{option.label}</option>
+                                  ))}
+                                </select>
+  </div></AccordionItemButton>
+        </AccordionItemHeading>
+        <AccordionItemPanel>
+        <div className="accord-detals-box">
+         <div className="left">Skill Set</div>
+         <div className="right">HTML, CSS, JavaScript, Figma</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">EXP </div>
+         <div className="right">4.6 Years</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">CTC </div>
+         <div className="right">5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Location</div>
+         <div className="right">Kakkanad</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="accordion-bottom-button">
+<div className="more-button">View</div>
+<div className="more-button more-outer">Edit</div>
+<div className="more-button more-outer">Delete</div>
+        </div>
+        </div>
+        </AccordionItemPanel>
+      </AccordionItem>
+      <AccordionItem uuid="d">
+        <AccordionItemHeading className="accordion-wating">
+          <AccordionItemButton>   <div className="accordion-head-text">
+            <div className="name">Anil Kumar</div>
+            <div className="desi">Java developer</div>
+            </div>   <div className="col-4 acc-status-change">
+  <select className="select-dropdow">
+                                  {options.map((option) => (
+                                    <option value={option.value}>{option.label}</option>
+                                  ))}
+                                </select>
+  </div></AccordionItemButton>
+        </AccordionItemHeading>
+        <AccordionItemPanel>
+        <div className="accord-detals-box">
+         <div className="left">Skill Set</div>
+         <div className="right">HTML, CSS, JavaScript, Figma</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">EXP </div>
+         <div className="right">4.6 Years</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">CTC </div>
+         <div className="right">5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Location</div>
+         <div className="right">Kakkanad</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="accordion-bottom-button">
+<div className="more-button">View</div>
+<div className="more-button more-outer">Edit</div>
+<div className="more-button more-outer">Delete</div>
+        </div>
+        </div>
+        </AccordionItemPanel>
+      </AccordionItem>
+    </Accordion>
+    </div>
     </div>
     </TabPanel>
                 
