@@ -246,7 +246,10 @@
     width: 100%;
 }
 .recruitment-box-padding {
-    padding-right: 0px;    width: 72%;
+    padding-right: 0px    ;    width: 71%;
+}
+.wrapper .is-open.content .inner-content-box .recruitment-box-padding {
+    padding-right: 0px    ;    width: 81%;
 }
 }
 @media only screen and (max-width: 980px){
@@ -357,7 +360,12 @@ display: block;    margin-top: 0;
 .job-main-tb-outer{
     display: none;
 }
-
+.recruitment-box-padding {
+    padding-right: 0px    ;    width: 100%;
+}
+.wrapper .is-open.content .inner-content-box .recruitment-box-padding {
+    padding-right: 0px    ;    width: 100%;
+}
 }
 @media only screen and (max-width: 767px){
 .calendar-width {
