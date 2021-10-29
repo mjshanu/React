@@ -242,10 +242,11 @@
     font-size: 11px;
 }
 .card-head-bg .pull-right {
-    margin-top: -9
-px
- !important;
+    margin-top: -9px !important;
     width: 100%;
+}
+.recruitment-box-padding {
+    padding-right: 0px;    width: 72%;
 }
 }
 @media only screen and (max-width: 980px){

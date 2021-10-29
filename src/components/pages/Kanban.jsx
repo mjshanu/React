@@ -136,7 +136,7 @@ const Kanban = () => {
    <Popupmodal/>   
     </div>
 </div>
-<div className="recruitment-top-right-box">
+<div className="recruitment-top-right-box recruitment-box-padding">
 <div className="calendar-width">  
                     <input className="form-control" type="date" id="birthday" name="birthday"/>
                 </div>

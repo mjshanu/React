@@ -1942,3 +1942,6 @@ font-weight: 700;
 .mobile-seardh-show{
     display: none;
 }
+.recruitment-box-padding {
+    padding-right: 19px;
+}
