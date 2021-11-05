@@ -143,24 +143,24 @@ export default function Job(props) {
         </AccordionItemHeading>
         <AccordionItemPanel>
           <div className="accord-detals-box">
-         <div className="left">Skill Set</div>
+         <div className="left">Job ID</div>
+         <div className="right">123</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="left">Skill Set </div>
          <div className="right">HTML, CSS, JavaScript, Figma</div>
         </div>
         <div className="accord-detals-box">
-         <div className="left">EXP </div>
-         <div className="right">: 4.6 Years</div>
+         <div className="left">Exp </div>
+         <div className="right">10 Years</div>
         </div>
         <div className="accord-detals-box">
-         <div className="left">CTC </div>
-         <div className="right">: 5 LK/A</div>
+         <div className="left">Posted Date</div>
+         <div className="right">20-10-2021</div>
         </div>
         <div className="accord-detals-box">
-         <div className="left">EXP CTC</div>
-         <div className="right">: 5 LK/A</div>
-        </div>
-        <div className="accord-detals-box">
-         <div className="left">Notice period</div>
-         <div className="right">: 2 Month</div>
+         <div className="left">Post Close</div>
+         <div className="right">10-11-2021</div>
         </div>
                 <div className="accord-detals-box">
         <div className="accordion-bottom-button">
@@ -188,24 +188,24 @@ export default function Job(props) {
         </AccordionItemHeading>
         <AccordionItemPanel>
         <div className="accord-detals-box">
-         <div className="left">Skill Set</div>
-         <div className="right">: HTML, CSS, JavaScript, Figma</div>
+         <div className="left">Job ID</div>
+         <div className="right">1234</div>
         </div>
         <div className="accord-detals-box">
-         <div className="left">EXP </div>
-         <div className="right">: 4.6 Years</div>
+        <div className="left">Skill Set </div>
+         <div className="right">HTML, CSS, JavaScript, Figma</div>
         </div>
         <div className="accord-detals-box">
-         <div className="left">CTC </div>
-         <div className="right">: 5 LK/A</div>
+         <div className="left">Exp </div>
+         <div className="right">10 Years</div>
         </div>
         <div className="accord-detals-box">
-         <div className="left">EXP CTC</div>
-         <div className="right">: 5 LK/A</div>
+         <div className="left">Posted Date</div>
+         <div className="right">20-10-2021</div>
         </div>
         <div className="accord-detals-box">
-         <div className="left">Notice period</div>
-         <div className="right">: 2 Month</div>
+         <div className="left">Post Close</div>
+         <div className="right">10-11-2021</div>
         </div>
               <div className="accord-detals-box">
         <div className="accordion-bottom-button">
@@ -236,24 +236,24 @@ export default function Job(props) {
         </AccordionItemHeading>
         <AccordionItemPanel>
           <div className="accord-detals-box">
-         <div className="left">Skill Set</div>
+         <div className="left">Job ID</div>
+         <div className="right">123</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Skill Set </div>
          <div className="right">HTML, CSS, JavaScript, Figma</div>
         </div>
         <div className="accord-detals-box">
-         <div className="left">EXP </div>
-         <div className="right">: 4.6 Years</div>
+         <div className="left">Exp </div>
+         <div className="right">10 Years</div>
         </div>
         <div className="accord-detals-box">
-         <div className="left">CTC </div>
-         <div className="right">: 5 LK/A</div>
+         <div className="left">Posted Date</div>
+         <div className="right">20-10-2021</div>
         </div>
         <div className="accord-detals-box">
-         <div className="left">EXP CTC</div>
-         <div className="right">: 5 LK/A</div>
-        </div>
-        <div className="accord-detals-box">
-         <div className="left">Notice period</div>
-         <div className="right">: 2 Month</div>
+         <div className="left">Post Close</div>
+         <div className="right">10-11-2021</div>
         </div>
               <div className="accord-detals-box">
         <div className="accordion-bottom-button">
@@ -281,24 +281,24 @@ export default function Job(props) {
         </AccordionItemHeading>
         <AccordionItemPanel>
         <div className="accord-detals-box">
-         <div className="left">Skill Set</div>
-         <div className="right">: HTML, CSS, JavaScript, Figma</div>
+         <div className="left">Job ID</div>
+         <div className="right">1234</div>
         </div>
         <div className="accord-detals-box">
-         <div className="left">EXP </div>
-         <div className="right">: 4.6 Years</div>
+        <div className="left">Skill Set </div>
+         <div className="right">HTML, CSS, JavaScript, Figma</div>
         </div>
         <div className="accord-detals-box">
-         <div className="left">CTC </div>
-         <div className="right">: 5 LK/A</div>
+         <div className="left">Exp </div>
+         <div className="right">10 Years</div>
         </div>
         <div className="accord-detals-box">
-         <div className="left">EXP CTC</div>
-         <div className="right">: 5 LK/A</div>
+         <div className="left">Posted Date</div>
+         <div className="right">20-10-2021</div>
         </div>
         <div className="accord-detals-box">
-         <div className="left">Notice period</div>
-         <div className="right">: 2 Month</div>
+         <div className="left">Post Close</div>
+         <div className="right">10-11-2021</div>
         </div>
                <div className="accord-detals-box">
         <div className="accordion-bottom-button">
