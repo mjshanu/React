@@ -136,22 +136,29 @@ const Kanban = () => {
    <Popupmodal/>   
     </div>
 </div>
-<div className="recruitment-top-right-box">
+<div className="recruitment-top-right-box recruitment-box-padding">
 <div className="calendar-width">  
                     <input className="form-control" type="date" id="birthday" name="birthday"/>
                 </div>
                 <div className="calendar-width ">  
-                    <input className="form-control" type="text" id="birthday" name="birthday"/>
+                <select id="dropdown" class="form-control"><option value="Status">Status</option></select>
                 </div>
-                <div className="calendar-width ">  
-                    <input className="form-control" type="text" id="birthday" name="birthday"/>
+                <div className="calendar-width mobile-search-none">  
+                    <input className="form-control" type="text" id="birthday" name="birthday" placeholder="Candidate name"/>
                 </div>
-                <div className="search-icon-width ">  
-                <div className="top-right-outer add-btn-div">
+     
+                <div className="search-icon-width mobile-search-none "> 
+                      <div className="top-right-outer add-btn-div">
                         <button type="button" class="btn  btn-maincolor btn-block"> <FaSearch className="add-btn-icon"/></button> 
                     
-                        </div>
-                </div>
+                        </div>               </div>
+                        <div className="search-icon-width  mobile-seardh-show"> 
+                <div class="search-box add-btn-div ">
+			<input type="text" class="search-box-input" placeholder="Candidate name"/>
+      <button type="button" class="btn  btn-maincolor search-box-btn"> <FaSearch className="add-btn-icon"/></button> 
+		</div> 
+  </div>      
+              
 </div>
 
   <AppBar position="static"  className="tab-outer-head tabmob-none">
@@ -185,15 +192,15 @@ const Kanban = () => {
         </div>
         <div className="accord-detals-box">
          <div className="left">EXP </div>
-         <div className="right">4.6 Years</div>
+         <div className="right">: 4.6 Years</div>
         </div>
         <div className="accord-detals-box">
          <div className="left">CTC </div>
-         <div className="right">5 LK/A</div>
+         <div className="right">: 5 LK/A</div>
         </div>
         <div className="accord-detals-box">
          <div className="left">Location</div>
-         <div className="right">Kakkanad</div>
+         <div className="right">: Kakkanad</div>
         </div>
         <div className="accord-detals-box">
         <div className="accordion-bottom-button">
@@ -225,15 +232,15 @@ const Kanban = () => {
         </div>
         <div className="accord-detals-box">
          <div className="left">EXP </div>
-         <div className="right">4.6 Years</div>
+         <div className="right">: 4.6 Years</div>
         </div>
         <div className="accord-detals-box">
          <div className="left">CTC </div>
-         <div className="right">5 LK/A</div>
+         <div className="right">: 5 LK/A</div>
         </div>
         <div className="accord-detals-box">
          <div className="left">Location</div>
-         <div className="right">Kakkanad</div>
+         <div className="right">: Kakkanad</div>
         </div>
         <div className="accord-detals-box">
         <div className="accordion-bottom-button">
@@ -261,11 +268,11 @@ const Kanban = () => {
         <AccordionItemPanel>
         <div className="accord-detals-box">
          <div className="left">Skill Set</div>
-         <div className="right">HTML, CSS, JavaScript, Figma</div>
+         <div className="right">: HTML, CSS, JavaScript, Figma</div>
         </div>
         <div className="accord-detals-box">
          <div className="left">EXP </div>
-         <div className="right">4.6 Years</div>
+         <div className="right">: 4.6 Years</div>
         </div>
         <div className="accord-detals-box">
          <div className="left">CTC </div>
@@ -273,7 +280,7 @@ const Kanban = () => {
         </div>
         <div className="accord-detals-box">
          <div className="left">Location</div>
-         <div className="right">Kakkanad</div>
+         <div className="right">: Kakkanad</div>
         </div>
         <div className="accord-detals-box">
         <div className="accordion-bottom-button">
@@ -300,19 +307,19 @@ const Kanban = () => {
         <AccordionItemPanel>
         <div className="accord-detals-box">
          <div className="left">Skill Set</div>
-         <div className="right">HTML, CSS, JavaScript, Figma</div>
+         <div className="right">: HTML, CSS, JavaScript, Figma</div>
         </div>
         <div className="accord-detals-box">
          <div className="left">EXP </div>
-         <div className="right">4.6 Years</div>
+         <div className="right">: 4.6 Years</div>
         </div>
         <div className="accord-detals-box">
          <div className="left">CTC </div>
-         <div className="right">5 LK/A</div>
+         <div className="right">: 5 LK/A</div>
         </div>
         <div className="accord-detals-box">
          <div className="left">Location</div>
-         <div className="right">Kakkanad</div>
+         <div className="right">: Kakkanad</div>
         </div>
         <div className="accord-detals-box">
         <div className="accordion-bottom-button">

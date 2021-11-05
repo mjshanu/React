@@ -35,7 +35,6 @@ import {
 import 'react-accessible-accordion/dist/fancy-example.css';
 
 
-
 const options = [
   {
     label: "Inprogress",
@@ -146,17 +145,24 @@ const onDragEnd = (result, columns, setColumns) => {
                     <input className="form-control" type="date" id="birthday" name="birthday"/>
                 </div>
                 <div className="calendar-width ">  
-                    <input className="form-control" type="text" id="birthday" name="birthday"/>
+                <select id="dropdown" class="form-control"><option value="Status">Status</option></select>
                 </div>
-                <div className="calendar-width ">  
-                    <input className="form-control" type="text" id="birthday" name="birthday"/>
+                <div className="calendar-width mobile-search-none">  
+                    <input className="form-control" type="text" id="birthday" name="birthday" placeholder="Candidate name"/>
                 </div>
-                <div className="search-icon-width ">  
-                <div className="top-right-outer add-btn-div ">
+     
+                <div className="search-icon-width mobile-search-none "> 
+                      <div className="top-right-outer add-btn-div">
                         <button type="button" class="btn  btn-maincolor btn-block"> <FaSearch className="add-btn-icon"/></button> 
                     
-                        </div>
-                </div>
+                        </div>               </div>
+                        <div className="search-icon-width  mobile-seardh-show"> 
+                <div class="search-box add-btn-div ">
+			<input type="text" class="search-box-input" placeholder="Candidate name"/>
+      <button type="button" class="btn  btn-maincolor search-box-btn"> <FaSearch className="add-btn-icon"/></button> 
+		</div> 
+  </div>      
+              
 </div>
 
   <AppBar position="static"  className="tab-outer-head">
@@ -238,6 +244,10 @@ const onDragEnd = (result, columns, setColumns) => {
 </div>
 
 <div className="tab-outer darg-outer desktop-show">
+
+
+
+  
 <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
       <DragDropContext
         onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
@@ -350,17 +360,21 @@ const onDragEnd = (result, columns, setColumns) => {
   <div className="accrodion-mob-outer">
   <Accordion preExpanded={"a"}>
       <AccordionItem uuid="a">
-        <AccordionItemHeading className="accordion-inprogress">
+        <AccordionItemHeading className="accordion-active-status">
           <AccordionItemButton >
             <div className="accordion-head-text">
-            <div className="name">Anil Kumar</div>
-            <div className="desi">Java developer</div>
+            <div className="name notificatio-outer">Java developer
+            <div className="notification-label">
+              12
+              </div>
+            
+            </div>
+            <div className="desi joblocation">
+          <img src={location}/>  
+          <span>Kakkanad</span>            
+            </div>
             </div>   <div className="col-4 acc-status-change">
-  <select className="select-dropdow">
-                                  {options.map((option) => (
-                                    <option value={option.value}>{option.label}</option>
-                                  ))}
-                                </select>
+            <div class="active-status-style">0123</div>
   </div></AccordionItemButton>
         </AccordionItemHeading>
         <AccordionItemPanel>
@@ -370,15 +384,23 @@ const onDragEnd = (result, columns, setColumns) => {
         </div>
         <div className="accord-detals-box">
          <div className="left">EXP </div>
-         <div className="right">4.6 Years</div>
+         <div className="right">: 4.6 Years</div>
         </div>
         <div className="accord-detals-box">
          <div className="left">CTC </div>
-         <div className="right">5 LK/A</div>
+         <div className="right">: 5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">EXP CTC</div>
+         <div className="right">: 5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Notice period</div>
+         <div className="right">: 2 Month</div>
         </div>
         <div className="accord-detals-box">
          <div className="left">Location</div>
-         <div className="right">Kakkanad</div>
+         <div className="right">: Kakkanad</div>
         </div>
         <div className="accord-detals-box">
         <div className="accordion-bottom-button">
@@ -391,34 +413,95 @@ const onDragEnd = (result, columns, setColumns) => {
       </AccordionItem>
 
       <AccordionItem uuid="b">
-        <AccordionItemHeading className="accordion-schedule">
-          <AccordionItemButton>   <div className="accordion-head-text">
-            <div className="name">Anil Kumar</div>
-            <div className="desi">Java developer</div>
+        <AccordionItemHeading className="accordion-inactive-status">
+          <AccordionItemButton>  <div className="accordion-head-text">
+            <div className="name notificatio-outer">Java developer <div className="notification-label">
+              12
+              </div></div>
+              <div className="desi joblocation">
+          <img src={location}/>  
+          <span>Kakkanad</span>            
+            </div>
             </div>   <div className="col-4 acc-status-change">
-  <select className="select-dropdow">
-                                  {options.map((option) => (
-                                    <option value={option.value}>{option.label}</option>
-                                  ))}
-                                </select>
+            <div class="active-status-style">0123</div>
   </div></AccordionItemButton>
         </AccordionItemHeading>
         <AccordionItemPanel>
         <div className="accord-detals-box">
          <div className="left">Skill Set</div>
+         <div className="right">: HTML, CSS, JavaScript, Figma</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">EXP </div>
+         <div className="right">: 4.6 Years</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">CTC </div>
+         <div className="right">: 5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">EXP CTC</div>
+         <div className="right">: 5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Notice period</div>
+         <div className="right">: 2 Month</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Location</div>
+         <div className="right">: Kakkanad</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="accordion-bottom-button">
+<div className="more-button">View</div>
+<div className="more-button more-outer">Edit</div>
+<div className="more-button more-outer">Delete</div>
+        </div>
+        </div>
+        </AccordionItemPanel>
+      </AccordionItem>
+      <AccordionItem uuid="c">
+        <AccordionItemHeading className="accordion-active-status">
+          <AccordionItemButton >
+            <div className="accordion-head-text">
+            <div className="name notificatio-outer">Java developer
+            <div className="notification-label">
+              12
+              </div>
+            
+            </div>
+            <div className="desi joblocation">
+          <img src={location}/>  
+          <span>Kakkanad</span>            
+            </div>
+            </div>   <div className="col-4 acc-status-change">
+            <div class="active-status-style">0123</div>
+  </div></AccordionItemButton>
+        </AccordionItemHeading>
+        <AccordionItemPanel>
+          <div className="accord-detals-box">
+         <div className="left">Skill Set</div>
          <div className="right">HTML, CSS, JavaScript, Figma</div>
         </div>
         <div className="accord-detals-box">
          <div className="left">EXP </div>
-         <div className="right">4.6 Years</div>
+         <div className="right">: 4.6 Years</div>
         </div>
         <div className="accord-detals-box">
          <div className="left">CTC </div>
-         <div className="right">5 LK/A</div>
+         <div className="right">: 5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">EXP CTC</div>
+         <div className="right">: 5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Notice period</div>
+         <div className="right">: 2 Month</div>
         </div>
         <div className="accord-detals-box">
          <div className="left">Location</div>
-         <div className="right">Kakkanad</div>
+         <div className="right">: Kakkanad</div>
         </div>
         <div className="accord-detals-box">
         <div className="accordion-bottom-button">
@@ -430,74 +513,44 @@ const onDragEnd = (result, columns, setColumns) => {
         </AccordionItemPanel>
       </AccordionItem>
 
-      <AccordionItem uuid="c">
-        <AccordionItemHeading className="accordion-rejection">
-          <AccordionItemButton>   <div className="accordion-head-text">
-            <div className="name">Anil Kumar</div>
-            <div className="desi">Java developer</div>
-            </div>   <div className="col-4 acc-status-change">
-  <select className="select-dropdow">
-                                  {options.map((option) => (
-                                    <option value={option.value}>{option.label}</option>
-                                  ))}
-                                </select>
-  </div></AccordionItemButton>
-        </AccordionItemHeading>
-        <AccordionItemPanel>
-        <div className="accord-detals-box">
-         <div className="left">Skill Set</div>
-         <div className="right">HTML, CSS, JavaScript, Figma</div>
-        </div>
-        <div className="accord-detals-box">
-         <div className="left">EXP </div>
-         <div className="right">4.6 Years</div>
-        </div>
-        <div className="accord-detals-box">
-         <div className="left">CTC </div>
-         <div className="right">5 LK/A</div>
-        </div>
-        <div className="accord-detals-box">
-         <div className="left">Location</div>
-         <div className="right">Kakkanad</div>
-        </div>
-        <div className="accord-detals-box">
-        <div className="accordion-bottom-button">
-<div className="more-button">View</div>
-<div className="more-button more-outer">Edit</div>
-<div className="more-button more-outer">Delete</div>
-        </div>
-        </div>
-        </AccordionItemPanel>
-      </AccordionItem>
       <AccordionItem uuid="d">
-        <AccordionItemHeading className="accordion-wating">
-          <AccordionItemButton>   <div className="accordion-head-text">
-            <div className="name">Anil Kumar</div>
-            <div className="desi">Java developer</div>
+        <AccordionItemHeading className="accordion-inactive-status">
+          <AccordionItemButton>  <div className="accordion-head-text">
+            <div className="name notificatio-outer">Java developer <div className="notification-label">
+              12
+              </div></div>
+              <div className="desi joblocation">
+          <img src={location}/>  
+          <span>Kakkanad</span>            
+            </div>
             </div>   <div className="col-4 acc-status-change">
-  <select className="select-dropdow">
-                                  {options.map((option) => (
-                                    <option value={option.value}>{option.label}</option>
-                                  ))}
-                                </select>
+            <div class="active-status-style">0123</div>
   </div></AccordionItemButton>
         </AccordionItemHeading>
         <AccordionItemPanel>
         <div className="accord-detals-box">
          <div className="left">Skill Set</div>
-         <div className="right">HTML, CSS, JavaScript, Figma</div>
+         <div className="right">: HTML, CSS, JavaScript, Figma</div>
         </div>
         <div className="accord-detals-box">
          <div className="left">EXP </div>
-         <div className="right">4.6 Years</div>
+         <div className="right">: 4.6 Years</div>
         </div>
         <div className="accord-detals-box">
          <div className="left">CTC </div>
-         <div className="right">5 LK/A</div>
+         <div className="right">: 5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">EXP CTC</div>
+         <div className="right">: 5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Notice period</div>
+         <div className="right">: 2 Month</div>
         </div>
         <div className="accord-detals-box">
          <div className="left">Location</div>
-         <div className="right">Kakkanad</div>
+         <div className="right">: Kakkanad</div>
         </div>
         <div className="accord-detals-box">
         <div className="accordion-bottom-button">
@@ -508,6 +561,8 @@ const onDragEnd = (result, columns, setColumns) => {
         </div>
         </AccordionItemPanel>
       </AccordionItem>
+
+      
     </Accordion>
     </div>
     </div>
