@@ -46,7 +46,7 @@ class Content extends React.Component {
         <Job/>
         </Router> 
         <Router path="/Dragslider">
-        <UncontrolledBoard/>
+     
         </Router> 
         <Router path="/Newdrgbox">
         <Newdrag/>
