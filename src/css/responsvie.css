@@ -389,7 +389,7 @@ display: block;    margin-top: 0;
 .mobile-seardh-show{
     display: block;
     margin-top: 15px;
-   width: 100%;
+    width: 98.4%;
 }
 .mobile-search-none{
     display: none;
@@ -574,7 +574,7 @@ font-size: 13px;    padding: 3px 9px;
 }
 .search-icon-width {
     margin-left: 0;
-    width: 97.5%;
+    width: 97%;
 }
 .accordion__button {
     padding: 10px 7px 10px 11px;

@@ -2,7 +2,7 @@ import React, { useState, useCallback, useRef } from "react";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import update from "immutability-helper";
-import {dashboard,asste,eyeico,location,eyeicoSched,eyeicoreject,eyeicowait,eyenew } from '../../images';
+import {dashboard,asste,eyeico,location,eyeicoSched,eyeicoreject,eyeicowait,eyenew , uploadimage, uploadicon} from '../../images';
 import {Tab, Tabs, AppBar} from '@material-ui/core';
 import { MdList } from "react-icons/md";
 import { MdViewQuilt } from "react-icons/md";
@@ -34,6 +34,16 @@ import {
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
 
+import { MdOutlineFileDownload, MdOutlinePrint, MdPhone, MdCheck, MdLocationPin, MdEdit } from "react-icons/md";
+import { SiAddthis } from "@react-icons/all-files/si/SiAddthis";
+
+import Radio from "./Radio";
+import MultipleImageUpload from "./MultipleImageUpload";
+//import CheckboxOut from "./Checkbox";
+
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 
 const options = [
   {
@@ -129,6 +139,15 @@ const onDragEnd = (result, columns, setColumns) => {
 
   const [columns, setColumns] = useState(columnsFromBackend);
 
+
+  const [myimage, setMyImage] = React.useState(null);
+  const uploadImage = e => {
+    setMyImage(URL.createObjectURL(e.target.files[0]));
+  };
+
+
+  
+
   return (
     <main className="inner-content-box">
       <header className="main-otrer-top"> Recruitment </header>
@@ -168,6 +187,9 @@ const onDragEnd = (result, columns, setColumns) => {
   <AppBar position="static"  className="tab-outer-head">
 <Tabs value={value}  onChange={handlesTabs} aria-label="icon tabs example" >
 <Tab icon={<MdViewQuilt />} aria-label="List" />
+<Tab  icon={<MdList />}  aria-label="List" />
+<Tab  icon={<MdList />}  aria-label="List" />
+<Tab  icon={<MdList />}  aria-label="List" />
 <Tab  icon={<MdList />}  aria-label="List" />
 </Tabs>
   </AppBar>
@@ -244,7 +266,6 @@ const onDragEnd = (result, columns, setColumns) => {
 </div>
 
 <div className="tab-outer darg-outer desktop-show">
-
 
 
   
@@ -568,13 +589,478 @@ const onDragEnd = (result, columns, setColumns) => {
     </div>
     </TabPanel>
                 
+
+    <TabPanel value={value} index={2}>
+    <div className="tab-outer">
+      <div className="basic-inform-outer">
+<div className="row basic-inform-background ">
+<div className="sub-head basic-inform-main-head">Employee List
+                                <div className="top-right-outer add-btn-div">
+                                    <div className="buttons-outer">
+                                        <a href="add" className="blue-button">
+                                            <SiAddthis className="add-btn-icon" /> Add Employee
+                                        </a>
+                                    </div>
+
+                                    <div className="buttons-outer maring-left-15">
+                                        <a href="add" className="white-button download-bt">
+                                            <MdOutlineFileDownload className="add-btn-icon" /> Download
+                                        </a>
+                                    </div>
+
+                                    <div className="buttons-outer maring-left-15">
+                                        <a href="add" className="white-button  download-bt">
+                                            <MdOutlinePrint className="add-btn-icon" /> Print
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+  
+  <div className="basic-inform-inner">
+<div className="col-md-4">
+<div class="form-group"><label for="exampleFormControlInput1">Name</label><input type="email" class="form-control"/></div>
+<div class="form-group"><label for="exampleFormControlInput1">Designation</label><input type="email" class="form-control"/></div>
+<div class="form-group"><label for="exampleFormControlInput1">Company Email ID</label><input type="email" class="form-control"/></div>
+<div class="form-group"><label for="exampleFormControlInput1">Reporting Person</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+<div class="form-group"><label for="exampleFormControlInput1">Employee Code</label><input type="email" class="form-control"/></div>
+<div class="form-group"><label for="exampleFormControlInput1">Joining Date</label><input type="email" class="form-control"/></div>
+<div class="form-group"><label for="exampleFormControlInput1">Contact Number</label><input type="email" class="form-control"/></div>
+<div class="form-group">
+<label for="exampleFormControlInput1">Employee Code</label>
+<div className="radiobox-outer">
+      <Radio name="test">Male</Radio>
+      <Radio name="test">Female</Radio>
+      </div>
+</div>
+  </div>
+
+  <div className="col-md-4">
+<div className="upload-phot-box">
+  <img src={myimage} alt=""/>
+         <hr />
+      <MultipleImageUpload />
+      <div class='file file--upload'>
+      <label for='input-file'>
+       <img src={uploadicon} alt=""/>
+      </label>
+      <input type="file" onChange={uploadImage} />
+    </div>
+
+
+   </div>
+
+
+</div>
+
+<div className="inner-middile-row">
+<div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Transaction Date</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Effective from</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Position No</label><input type="email" class="form-control"/></div>
+  </div>
+  
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">OU</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Parent OU</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Designation</label><input type="email" class="form-control"/></div>
+  </div>
+
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Grade</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Grade Band</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Department</label><input type="email" class="form-control"/></div>
+  </div>
+  
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Location</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Country</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Region</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Original Hire Date</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Holiday Calendar</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Reporting Manager</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Functional Manager</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Employee Status</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Employment Status</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Next Status</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Next Status on</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Cost center</label><input type="email" class="form-control"/></div>
+  </div>
+
+  <div className="bottom-button-bg">
+            <button type="button" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " > Cancel </button> 
+        </div>
+  
+</div>
+
+
+  </div>
+
+</div>
+
+        </div>
+
+    </div>
+      </TabPanel>
        
+
+
+      <TabPanel value={value} index={3}>
+    <div className="tab-outer">
+      <div className="basic-inform-outer">
+      <div className="sub-head basic-inform-main-head employee-add-education-head">Personal Info Details
+                                <div className="top-right-outer add-btn-div">
+                                    <div className="buttons-outer">
+                                        <a href="add" className="blue-button">
+                                            <SiAddthis className="add-btn-icon" /> Add Education
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+   
+<div className="rowinner-middile-row">
+<div className="col-md-6 mrg-left-0">
+<div className="subhead-background">
+  <span>Permanent Address</span>
+  <div className="right-edit">
+    <a href="">
+  <MdEdit/>
+  </a>
+  </div>
+  </div>
+
+<div className="subbody-background">
+  <div class="form-group"><label for="exampleFormControlInput1">Address</label><textarea class="form-control" rows="3" spellcheck="false"> </textarea></div>
+  <div class="form-group"><label for="exampleFormControlInput1">City</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Zipcode</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Contact Number</label><input class="form-control" type="date" id="" name="birthday"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Home Telephone</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Work Mobile</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Work Telephone</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Extension Number</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Preferred Email Language</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Work Email</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Personal Email</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Personal mobile Number</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Fax Number</label><input class="form-control" type="date" id="" name="birthday"/></div>
+  </div>
+
+  </div>
+  <div className="col-md-6 mrg-right-0">
+  <div className="subhead-background">
+  <span>Current Address</span>
+  <div className="right-edit">
+    <a href="">
+  <MdEdit/>
+  </a>
+  </div>
+  </div>
+
+<div className="subbody-background">
+  <div class="form-group"><label for="exampleFormControlInput1">Address</label><textarea class="form-control" rows="3" spellcheck="false"> </textarea></div>
+  <div class="form-group"><label for="exampleFormControlInput1">City</label><input type="email" class="form-control"/></div>
+   <div class="form-group"><label for="exampleFormControlInput1">Zipcode</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Contact Number</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Home Telephone </label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Work Mobile</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Work Telephone</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Extension Number</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Preferred Email Language</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Work Email</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Personal Email</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Personal mobile Number</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Fax Number</label><input type="email" class="form-control"/></div>
+  </div>
+  </div>
+
+  <div className="col-md-12 mrg-top-30 mrg-left-0 mrg-right-0">
+  <div className="subhead-background">
+  <span>Emergency Contact Details</span>
+  <div className="right-edit">
+    <a href="">
+  <MdEdit/>
+  </a>
+  </div>
+  </div>
+
+<div className="subbody-background emergency-contact-box">
+<div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Name</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Relationship</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+   <div class="form-group"><label for="exampleFormControlInput1">Email ID</label><input type="email" class="form-control"/></div>
+   </div>
+   <div className="col-md-12">
+  <div class="form-group"><label for="exampleFormControlInput1">Relationship Addresss</label><input type="email" class="form-control"/></div>
+  </div>
+   <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Zip Code</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Home Phone</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+   <div class="form-group"><label for="exampleFormControlInput1">Mobile</label><input type="email" class="form-control"/></div>
+   </div>
+    </div>
+  </div>
+
+
+  
+  <div className="col-md-12 mrg-top-30 mrg-left-0 mrg-right-0">
+  <div className="subhead-background">
+  <span>Physician Contact Details</span>
+  <div className="right-edit">
+    <a href="">
+  <MdEdit/>
+  </a>
+  </div>
+  </div>
+
+<div className="subbody-background emergency-contact-box">
+<div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Physician Name</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-8">
+  <div class="form-group"><label for="exampleFormControlInput1">Physician Address</label><input type="email" class="form-control"/></div>
+  </div>
+ 
+   <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Zip Code</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Phone</label><input type="email" class="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+   <div class="form-group"><label for="exampleFormControlInput1">Work Phone</label><input type="email" class="form-control"/></div>
+   </div>
+    </div>
+  </div>
+
+  <div className="bottom-button-bg  mrg-top-30  mrg-left-0 mrg-right-0">
+            <button type="button" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " > Cancel </button> 
+        </div>
+  
+
+
+</div>
+
+        </div>
+
+    </div>
+      </TabPanel>
+
+
+
+      <TabPanel value={value} index={4}>
+    <div className="tab-outer">
+      <div className="basic-inform-outer">
+      <div className="sub-head basic-inform-main-head employee-add-education-head">Employee Information  
+                                <div className="top-right-outer add-btn-div">
+                                    <div className="buttons-outer">
+                                        <a href="add" className="blue-button">
+                                            <SiAddthis className="add-btn-icon" /> Add Education
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+<div className="inner-middile-row">
+<div className="col-md-6 mrg-left-0">
+<div className="subhead-background">
+  <span>Employee Details</span>
+  <div className="right-edit">
+    <a href="">
+  <MdEdit/>
+  </a>
+  </div>
+  </div>
+
+<div className="subbody-background">
+  <div class="form-group"><label for="exampleFormControlInput1">Title</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Official Name</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Place of Birth</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Date of Birth</label><input class="form-control" type="date" id="" name="birthday"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Country of Birth</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Physically Challenged</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Aadhar No</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Marital Status</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">PAN Number</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Blood Group</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">RH Factor</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Ethnic Code</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Wedding Date</label><input class="form-control" type="date" id="" name="birthday"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Unique Identity</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Disability</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">UAN Number</label><input type="email" class="form-control"/></div>
+</div>
+
+
+<div className="subhead-background mrg-top-30">
+  <span>Language Proficiency</span>
+  <div className="right-edit">
+    <a href="">
+  <MdEdit/>
+  </a>
+  </div>
+  </div>
+
+<div className="subbody-background  padding-0">
+<div className="col-md-12 leanguage-box">
+<div className="left">Language Name</div>
+<div className="right">Proficiency</div>
+
+  </div>
+<div className="col-md-12 leanguage-content-box">
+<label for="exampleFormControlInput1">English</label>
+<FormGroup className="col-md-12 checkbox-outer">
+      <FormControlLabel control={<Checkbox defaultChecked />} label="Read" className="col-md-3 "/>
+      <FormControlLabel  control={<Checkbox />} label="Write"  className="col-md-3 "/>
+      <FormControlLabel  control={<Checkbox />} label="Speak "  className="col-md-3 " />
+      <FormControlLabel  control={<Checkbox />} label="Native"  className="col-md-3 " />
+    </FormGroup>
+</div>
+
+<div className="col-md-12 leanguage-content-box">
+<label for="exampleFormControlInput1">English</label>
+<FormGroup className="col-md-12 checkbox-outer">
+      <FormControlLabel control={<Checkbox defaultChecked />} label="Read" className="col-md-3 "/>
+      <FormControlLabel  control={<Checkbox />} label="Write"  className="col-md-3 "/>
+      <FormControlLabel  control={<Checkbox />} label="Speak "  className="col-md-3 " />
+      <FormControlLabel  control={<Checkbox />} label="Native"  className="col-md-3 " />
+    </FormGroup>
+</div>
+
+<div className="col-md-12 leanguage-content-box">
+<label for="exampleFormControlInput1">English</label>
+<FormGroup className="col-md-12 checkbox-outer">
+      <FormControlLabel control={<Checkbox defaultChecked />} label="Read" className="col-md-3 "/>
+      <FormControlLabel  control={<Checkbox />} label="Write"  className="col-md-3 "/>
+      <FormControlLabel  control={<Checkbox />} label="Speak "  className="col-md-3 " />
+      <FormControlLabel  control={<Checkbox />} label="Native"  className="col-md-3 " />
+    </FormGroup>
+</div>
+
+<div className="col-md-12 leanguage-content-box">
+<label for="exampleFormControlInput1">English</label>
+<FormGroup className="col-md-12 checkbox-outer">
+      <FormControlLabel control={<Checkbox defaultChecked />} label="Read" className="col-md-3 "/>
+      <FormControlLabel  control={<Checkbox />} label="Write"  className="col-md-3 "/>
+      <FormControlLabel  control={<Checkbox />} label="Speak "  className="col-md-3 " />
+      <FormControlLabel  control={<Checkbox />} label="Native"  className="col-md-3 " />
+    </FormGroup>
+</div>
+
+
+</div>
+
+  </div>
+  <div className="col-md-6 mrg-right-0">
+  <div className="subhead-background">
+  <span>Family Details</span>
+  <div className="right-edit">
+    <a href="">
+  <MdEdit/>
+  </a>
+  </div>
+  </div>
+
+<div className="subbody-background">
+  <div class="form-group"><label for="exampleFormControlInput1">Relationship</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Name</label><input type="email" class="form-control"/></div>
+   <div class="form-group"><label for="exampleFormControlInput1">Date of Birth</label><input class="form-control" type="date" id="" name="birthday"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Gender</label><div className="radiobox-outer family-details ">
+      <Radio name="test">Male</Radio>
+      <Radio name="test">Female</Radio>
+      </div></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Dependent </label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Address</label><textarea class="form-control" rows="3" spellcheck="false"> </textarea></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Minor</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Guardian Name</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Guardian Address</label><textarea class="form-control" rows="3" spellcheck="false"> </textarea></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Guardian Relation with Nominee</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Guardian Contact Number</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Name ad in Passport</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Passport Number</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Insured</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Occupation</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Graduation Date</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">SSN</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Nationality</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Passport Expiry Date</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Place of Birth</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">ECNR Required</label><input type="email" class="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Upload</label><input type="email" class="form-control"/></div>
+</div>
+  </div>
+
+  <div className="bottom-button-bg mrg-left-0 mrg-right-0">
+            <button type="button" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " > Cancel </button> 
+        </div>
+  
+</div>
+
+
+  </div>
+
+
+
+    </div>
+      </TabPanel>
+
           </div>
                   </section>
       </DndProvider>
     </main>
   );
 };
+
+
+
+
 
 export default Newdrag;
 

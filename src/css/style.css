@@ -473,6 +473,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-color: #4A54D1;
     font-size: 13px;
     width: 100px;
+    text-transform: uppercase;
     float: left;
     margin-right: 15px;
 }
@@ -492,6 +493,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 13px;
     width: 100px;
     float: left;
+    text-transform: uppercase;
     margin-right: 15px;
 }
 .btn-cancel:hover {
@@ -904,7 +906,8 @@ label {
     .recruitment-top-right-box{
         float: right;
         width: auto;
-        padding-right: 0px;    padding-top: 8px;
+        padding-right: 16px ;  
+          padding-top: 8px;
     }
     
     .recruitment-tabele thead{
@@ -1944,4 +1947,314 @@ font-weight: 700;
 }
 .recruitment-box-padding {
     padding-right: 19px;
+}
+
+.basic-inform-outer{
+     width: 100%;
+     float: left;
+     padding-left: 12px;
+     padding-right: 12px;
+     margin-top: 30px;
+ margin-bottom: 30px;
+}
+.basic-inform-background
+{     width: 100%;
+    float: left;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    border-radius: 7px;
+   margin: 0;
+
+}
+.basic-inform-inner{
+    float: left;
+    width: 100%;
+    padding: 20px 15px;
+}
+.basic-inform-inner .form-group {
+    margin-bottom: 10px    ;
+        float: left;
+        width: 100%;
+        margin-bottom: 20px;
+}
+.basic-inform-inner .form-group  label {
+    float: left;
+    margin-top: 4px;
+}
+.basic-inform-main-head{
+width: 100%;
+float: left;
+padding: 20px 30px 20px 25px;
+display: block;
+}
+.upload-phot-box{
+    width: 190px;
+    position: relative;
+margin:0px auto;
+}
+.upload-phot-box img{
+    width: 190px;
+    height: 190px;
+    float: left;    border: 2px solid #cdcbcb;
+    border-radius: 50%;
+    background: #f3f3f3;
+}
+.upload-phot-box input{
+    width: 54px;
+    height: 54px;
+    position: relative;    position: absolute;
+    float: left;
+    background: none;
+}
+.upload-phot-box input[type=file]::file-selector-button {
+    border: 0px solid #6c5ce7;
+    padding:0;
+    border-radius: 50%;
+     background-color: none;
+   background: none;
+color: #fff;
+opacity: 0;
+position: relative;
+}
+  
+.upload-phot-box input[type=file]::file-selector-button:hover {
+    background-color: none;
+    border: 0px solid #00cec9;
+  }
+
+  
+  
+  .file > label {
+    font-size: 1rem;
+    font-weight: 300;
+    cursor: pointer;
+    outline: 0;
+    user-select: none;
+    border-color:#fff;
+    border-style: solid;
+    border-radius: 4px;
+    border-width: 0px;
+    background-color: none;
+    color: hsl(0, 0%, 29%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .file {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 29px;
+    bottom: -14px;
+    cursor: pointer;
+  }
+  .file > label:hover {
+    border-color: hsl(0, 0%, 21%);
+  }
+  
+  .file > label:active {
+    background-color: hsl(0, 0%, 96%);
+  }
+  
+  .file > label > i {
+    padding-right: 5px;
+  }
+  .upload-phot-box  .file > label > img{
+    width: 47px    ;
+        height:47px    ;
+       border: 0;
+  }
+  .file input[type=checkbox]:focus,   .file input[type=file]:focus,   .file input[type=radio]:focus {
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+  .file--upload > label {
+    color: hsl(204, 86%, 53%);
+    border-color: #fff;
+  }
+  
+  .file--upload > label:hover {
+    border-color: hsl(204, 86%, 53%);
+    background-color: hsl(204, 86%, 96%);
+  }
+  
+  .file--upload > label:active {
+    background-color: hsl(204, 86%, 91%);
+  }
+
+
+.inner-middile-row{
+    width: 100%;
+    float: left;
+    display: block;
+}
+.bottom-button-bg{
+    width: 100%;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.radiobox-outer{
+    width: 100%;
+    float: left;
+     display: block;
+    margin-top: 2px;
+}.radiobox-outer .jFcxMn{
+float: left;
+}
+
+.kagvcc:checked + .sc-gsDKAQ{
+    border: 3px solid #4A54D1;
+}
+.kagvcc:checked + .sc-gsDKAQ::after {
+    left: -1px !important;
+    top: -1px !important;
+    background: #ffffff;
+}
+.employee-add-education-head{
+    background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+border-radius: 7px;
+}
+.subhead-background{
+    width: 100%;
+    float: left;background: #D6D8F6;
+    border-radius: 7px 7px 0px 1px;
+    display:block;
+    padding:15px 20px;
+}
+.subhead-background span{
+    font-size: 13px;
+line-height: 15px;
+text-transform: uppercase;
+color: #292929;
+font-weight:800;
+width: auto;
+float: left;
+}
+.subbody-background{
+    width: 100%;
+    float: left;background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+    border-radius: 7px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.subbody-background  .form-group label{
+    width: 35%;
+    float: left;
+}
+.subbody-background  .form-group input{
+    width: 65%;
+    float: left;    height: 32px;
+} 
+.right-edit{
+    float: right;
+}
+.right-edit a{
+    width: auto;
+    float: left;
+}
+.right-edit a svg
+{
+    width: 16px ;
+        float: left;
+        height: 16px ;
+}
+
+.subbody-background .form-group .family-details label {
+    width: 100%;
+    float: left;    margin-top: 3px ;
+}
+.subbody-background .form-group .family-details {
+    width: 50%;
+}
+.subbody-background .form-group textarea {
+    width: 65%;
+    float: left;
+    height: 70px;
+}
+.mrg-top-30{
+    margin-top: 30px;
+}
+.emergency-contact-box {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.emergency-contact-box  .form-group label{
+width: 100%;
+}
+.emergency-contact-box .form-group input{
+    width: 100%;
+}
+.emergency-contact-box .form-group textarea{
+    width: 100%;
+}
+.form-group {
+    margin-bottom: 10px;
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.mrg-left-0{
+   padding-left: 0;
+}
+.mrg-right-0{
+    padding-right: 0;
+}
+.leanguage-box{
+    width: 100%;
+    background: #F1F5F6;
+    padding: 15px;
+    float: left;
+display: block;
+}
+.padding-0{
+    padding:0;
+}
+.leanguage-content-box label{
+    width: 35%;
+    float: left; padding-top: 20px;
+}
+.leanguage-content-box .checkbox-outer{
+    width: 65%;
+    float: left;
+}
+.checkbox-outer .col-md-3{
+    float: left;
+    padding-top: 10px;
+    width: 25%;
+    margin-right: 3px;
+    margin-left: -11px;
+    padding-left: 0;
+}
+.leanguage-content-box .css-dmmspl-MuiFormGroup-root{
+    flex-direction: row !important;
+padding-left: 0;
+padding-right: 0;
+}
+.checkbox-outer .css-i4bv87-MuiSvgIcon-root {
+      font-size: 20px;
+}
+.leanguage-box .left{
+    width: 35%;
+    font-size: 13px;
+font-weight: 600;
+text-transform: uppercase;
+    float: left;
+}
+.leanguage-box .right{
+    width: 65%;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    float: left;
+}
+.subbody-background  .col-md-12:nth-child(odd) {
+    background: #F9F9F9;
 }
