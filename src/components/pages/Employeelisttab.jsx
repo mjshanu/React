@@ -3,7 +3,11 @@ import './Employeelisttab.css';
 import $ from 'jquery';
 import { SiAddthis } from "@react-icons/all-files/si/SiAddthis";
 import {FaThLarge, FaChartLine, FaTools } from "react-icons/fa";
-import {FiAirplay } from "react-icons/fi";
+import {FiAirplay } from "react-icons/fi"; 
+import {MdOutlineSchool } from "react-icons/md"; 
+import {GiReceiveMoney } from "react-icons/gi";
+import {RiFileCloudLine,RiContactsBook2Line, RiFolderUserLine, RiBodyScanFill } from "react-icons/ri";
+ 
 export default function Employeelisttab() {
   $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 
@@ -160,7 +164,7 @@ window.addEventListener("resize", () => {
         <div class="tab-module__tablist" role="tablist">
           <button class="tab-module__tab sub-line"  role="tab" aria-selected="true" aria-controls="colors-tab" id="colors">
          
-          <FiAirplay/>
+          <RiFileCloudLine/>
            <div className="emp-tabhead-txt"> Basic  Information </div>
             
           </button>
@@ -187,7 +191,8 @@ window.addEventListener("resize", () => {
             </section>
           </div>
           <button class="tab-module__tab  sub-line" role="tab" aria-selected="false" aria-controls="styles-tab" id="styles" tabindex="-1" >
-              <FiAirplay/>
+ 
+              <RiContactsBook2Line/>
               <div className="emp-tabhead-txt"> Personal  Information</div>
           </button>
           <div class="tab-module__tabcontent" tabindex="0" role="tabpanel" id="styles-tab" aria-labelledby="styles" >
@@ -213,7 +218,7 @@ window.addEventListener("resize", () => {
             </section>
           </div>
           <button class="tab-module__tab sub-line" role="tab" aria-selected="false" aria-controls="hardware-tab" id="hardware" tabindex="-1" >
-          <FiAirplay/>
+          <RiFolderUserLine/>
            <div className="emp-tabhead-txt"> Employee Information</div>
           </button>
           <div  class="tab-module__tabcontent" tabindex="0" role="tabpanel" id="hardware-tab" aria-labelledby="hardware" >
@@ -239,7 +244,7 @@ window.addEventListener("resize", () => {
             </section>
           </div>
           <button class="tab-module__tab sub-line" role="tab" aria-selected="false" aria-controls="options-tab" id="options" tabindex="-1" >
-          <FiAirplay/>
+          <RiBodyScanFill/>
            <div className="emp-tabhead-txt"> Additional  Info</div>
           </button>
           <div class="tab-module__tabcontent" tabindex="0" role="tabpanel" id="options-tab" aria-labelledby="options" >
@@ -265,7 +270,7 @@ window.addEventListener("resize", () => {
             </section>
           </div>
           <button class="tab-module__tab  sub-line" role="tab" aria-selected="false" aria-controls="accesories-tab" id="accesories" tabindex="-1" >
-          <FiAirplay/>
+          <MdOutlineSchool/>
            <div className="emp-tabhead-txt"> Education Info</div>
           </button>
           <div class="tab-module__tabcontent" tabindex="0" role="tabpanel" id="accesories-tab" aria-labelledby="accesories" >
@@ -291,7 +296,7 @@ window.addEventListener("resize", () => {
             </section>
           </div>
           <button class="tab-module__tab " role="tab" aria-selected="false" aria-controls="accesories-tab" id="accesories" tabindex="-1" >
-          <FiAirplay/>
+          <GiReceiveMoney/>
            <div className="emp-tabhead-txt"> Payroll  Info</div>
           
           </button>
