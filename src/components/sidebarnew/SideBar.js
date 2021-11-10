@@ -17,7 +17,8 @@ import {dashboard,asste,logonew} from '../../images';
 import {FaThLarge, FaChartLine, FaTools } from "react-icons/fa";
 import { FaUserTie } from "@react-icons/all-files/fa/FaUserTie";
 import { FaFileAlt } from "@react-icons/all-files/fa/FaFileAlt";
-import { Link } from 'react-router'
+import { IconName } from "react-icons/ai";
+import { MdPersonSearch, MdOutlineScreenSearchDesktop, MdBusinessCenter } from "react-icons/md";
 class SideBar extends React.Component {
   render() {
     
@@ -78,13 +79,13 @@ class SideBar extends React.Component {
           </Nav.Item>
           <Nav.Item >
             <Nav.Link href="/Kanban">
-             < FaTools/>
+             < MdPersonSearch className="recrutment-menu-icon"/>
              Recruitment
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/Job">
-             < FaTools/>
+             < MdBusinessCenter/>
              Job
             </Nav.Link>
           </Nav.Item>

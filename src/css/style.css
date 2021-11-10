@@ -1984,7 +1984,7 @@ font-weight: 700;
 .basic-inform-main-head{
 width: 100%;
 float: left;
-padding: 20px 30px 20px 25px;
+padding: 20px 30px 20px 30px;
 display: block;
 }
 .upload-phot-box{
@@ -2147,11 +2147,11 @@ float: left;
 }
 .subbody-background  .form-group label{
     width: 35%;
-    float: left;
+    float: left;padding-top: 8px ;
 }
 .subbody-background  .form-group input{
-    width: 65%;
-    float: left;    height: 32px;
+    width: 65%;    line-height: 26px;
+    float: left;      height: 38px;  
 } 
 .right-edit{
     float: right;
@@ -2185,6 +2185,7 @@ float: left;
 .emergency-contact-box {
     padding-left: 5px;
     padding-right: 5px;
+    padding-bottom: 10px;
 }
 .emergency-contact-box  .form-group label{
 width: 100%;
@@ -2257,4 +2258,171 @@ text-transform: uppercase;
 }
 .subbody-background  .col-md-12:nth-child(odd) {
     background: #F9F9F9;
+}
+.employee-attach-second-section{
+    padding-top: 0;
+}
+.inputfile {
+    width: 0.1px;    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.inputfile-5 + label {
+    color: #d3394c;
+}
+.inputfile + label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+}
+.upload-file-bx{
+    position: relative;
+}
+.upload-file-bx .upoload-outer
+{
+    position: absolute;
+    top: 31px;
+    right: 0;
+    right: 6px;
+}
+.upload-file-bx .upoload-outer img{
+  width: 24px;
+}
+.upload-file-bx  input[type=file]::file-selector-button {
+    border: 0px solid #6c5ce7;
+    padding:0;
+    border-radius: 50%;
+     background-color: none;
+   background: none;
+color: #fff;
+opacity: 0;
+display: none;
+position: relative;
+}
+.upload-file-bx  input{
+    background-image: url(../images/upload-small.png);
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+input[type=checkbox]:focus, input[type=file]:focus, input[type=radio]:focus {
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.form-control:focus {
+    border-color: #dadada;
+    outline: 0;
+    box-shadow: none;
+}
+.employee-tab-button{
+    width: 18.2%;
+ height: auto;
+ background: none;
+ margin:0;
+ display: flex;
+ background: none;
+ position: relative;
+        flex-grow: 0;
+        margin-bottom: 30px;
+}
+
+
+.employee-tab-button:after {
+    background: #e5e5e5 none repeat scroll 0 0;
+    content: "";
+    display: block;
+    height: 3px; margin: 0 auto;
+    position: absolute;
+ width: 100%;
+    z-index:0;
+    bottom: 28px ;
+}
+.employee-tab-button .innver-box{
+    width: 64px;
+    z-index: 1;    padding: 15px;
+    height: 64px;    border-radius: 50%;
+    background: #E5E5E5;
+}
+.employee-tab-button .innver-box img{
+    width: 30px;
+}
+.employee-tab-button.tab-module__tab[aria-selected="true"] {
+    background: none;
+}
+.employee-tab-button.tab-module__tab[aria-selected="true"] .innver-box {
+    background: #3f53c3;
+    color: #fff;
+}
+    .employee-tab-button :after {
+    background: #e5e5e5 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 3px;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: -48px;
+    display: none;
+    width: 100%;
+    z-index: -1;
+}
+.employee-tab-button  .emp-tabhead-txt {
+    position: relative;
+    z-index: 111;
+    margin-top: 35px;
+    float: left;
+    color: #000;
+    font-size: 13px;
+   width: 72px ;
+    text-align: center;    margin-left: -15px ;
+}
+.employee-tab-button.tab-module__tab[aria-selected="true"] .innver-box .emp-tabhead-txt {
+    color: #3f53c3;
+}
+.tab-module__tablist .employee-tab-button:nth-of-type(6){
+width:64px; 
+}
+.tab-module__tablist .employee-tab-button:first-child{
+    margin-left:30px;
+}
+
+.tab-module__tab .basic-icon {
+    font-size: 34px;
+    margin-top: 0;
+}
+.tab-module__tab .personal-icon  {
+    font-size: 25px;
+    margin-top: 6px;
+}
+.tab-module__tab .employee-icon  {
+    font-size: 28px;
+    margin-top: 4px;
+    margin-left: 2px;
+}
+.tab-module__tab .additional-icon  {
+    font-size: 25px;
+    margin-top: 4px;    margin-left: 2px;
+}
+.tab-module__tab .education-icon{
+    font-size: 34px;
+    margin-top: 1px;
+    margin-left: 0px;
+}
+.tab-module__tab .payroll-icon{
+    font-size: 31px;
+    margin-top: 1px;
+    margin-left: 4px;
+}
+.recrutment-menu-icon{
+    font-size: 18px;
 }
