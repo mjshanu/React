@@ -37,7 +37,7 @@ export default class Emplyelist extends Component {
                             <div className="sub-head">Employee List
                                 <div className="top-right-outer add-btn-div">
                                     <div className="buttons-outer">
-                                        <a href="add" className="blue-button">
+                                        <a href="Addemployeetab" className="blue-button">
                                             <SiAddthis className="add-btn-icon" /> Add Employee
                                         </a>
                                     </div>

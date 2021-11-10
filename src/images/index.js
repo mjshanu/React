@@ -15,3 +15,6 @@ export const editicon = require('./edit-icon.svg').default;
 export const locationprofile = require('./location-icon.svg').default;
 export const tick = require('./tick.svg').default;
 export const profileimage2 = require('./profile-img-2.png').default;
+export const uploadimage = require('./upload-photo-image.png').default;
+export const uploadicon = require('./upload.png').default;
+export const basicicon = require('./basic-information.svg').default;
