@@ -8,6 +8,7 @@ import "@lourenci/react-kanban/dist/styles.css";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from 'react-dnd-html5-backend'
  import Employeelisttab from "./Employeelisttab";
+ import RecruitmentTabs from "./Recruitmentpopuptab";
  
 export default function UncontrolledBoard() {
     return (
