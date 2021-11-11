@@ -4,57 +4,169 @@ import {Tab, Tabs, AppBar} from '@material-ui/core';
 import PropTypes from 'prop-types'; 
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+import '../../css/tab.css';
+import $ from 'jquery';
+ 
+export default function BasicTabs() {
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
+        var href = $(e.target).attr('href');
+        var $curr = $(".process-model  a[href='" + href + "']").parent();
+    
+        $('.process-model li').removeClass();
+    
+        $curr.addClass("active");
+        $curr.prevAll().addClass("visited");
+    });
+const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+const tablist = document.querySelector('[role="tablist"]');
 
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
+const keys = {
+  end: 35,
+  home: 36,
+  left: 37,
+  up: 38,
+  right: 39,
+  down: 40,
+  enter: 13,
+  space: 32
 };
 
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
-export default function BasicTabs() {
-  const [value, setValue] = React.useState(0);
+const direction = {
+  37: -1,
+  38: -1,
+  39: 1,
+  40: 1
+};
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+const deactivateTabs = () => {
+  tabs.forEach(tab => {
+    tab.setAttribute("tabindex", "-1");
+    tab.setAttribute("aria-selected", "false");
+  });
+};
 
+const activateTab = (tab, setFocus = true) => {
+  deactivateTabs();
+
+  tab.removeAttribute("tabindex");
+  tab.setAttribute("aria-selected", "true");
+
+  if (setFocus) {
+    tab.focus();
+  }
+};
+
+const focusFirstTab = () => tabs[0].focus();
+
+const focusLastTab = () => tabs[tabs.length - 1].focus();
+
+const switchTabOnArrowPress = (keyCode, target) => {
+  const index = tabs.findIndex(tab => tab === target);
+
+  if (direction[keyCode]) {
+    if (index !== -1) {
+      if (tabs[index + direction[keyCode]]) {
+        tabs[index + direction[keyCode]].focus();
+      } else if (keyCode === keys.left || keyCode === keys.up) {
+        focusLastTab();
+      } else if (keyCode === keys.right || keyCode === keys.down) {
+        focusFirstTab();
+      }
+    }
+  }
+};
+
+const determineOrientation = (keyCode, target) => {
+  const vertical = tablist.getAttribute("aria-orientation") === "vertical";
+  let proceed = false;
+
+  if (vertical) {
+    if (keyCode === keys.up || keyCode === keys.down) {
+      proceed = true;
+    }
+  } else {
+    if (keyCode === keys.left || keyCode === keys.right) {
+      proceed = true;
+    }
+  }
+
+  if (proceed) {
+    switchTabOnArrowPress(keyCode, target);
+  }
+};
+
+const handleClick = event => activateTab(event.currentTarget, false);
+
+const handleKeydown = event => {
+  switch (event.keyCode) {
+    case keys.left:
+    case keys.right:
+      determineOrientation(event.keyCode, event.currentTarget);
+      break;
+    case keys.enter:
+    case keys.space:
+      activateTab(event.currentTarget);
+      break;
+    default:
+      break;
+  }
+};
+
+const handleKeyup = event => {
+  event.preventDefault();
+
+  switch (event.keyCode) {
+    case keys.end:
+      focusLastTab();
+      break;
+    case keys.home:
+      focusFirstTab();
+      break;
+    case keys.up:
+    case keys.down:
+      determineOrientation(event.keyCode, event.currentTarget);
+      break;
+    default:
+      break;
+  }
+};
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", handleClick);
+  tab.addEventListener("keydown", handleKeydown);
+  tab.addEventListener("keyup", handleKeyup);
+});
+
+const setDirection = () => {
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    //tablist.setAttribute("aria-orientation", "vertical");
+  } else {
+    //tablist.setAttribute("aria-orientation", "horizontal");
+  }
+};
+
+setDirection();
+
+let timeout = false;
+
+window.addEventListener("resize", () => {
+  clearTimeout(timeout);
+  timeout = setTimeout(setDirection, 200);
+});
+ 
   return (
     <div>
-    <Box sx={{ width: '100%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Basic Information" {...a11yProps(0)} />
-          <Tab label="Schedule Details" {...a11yProps(1)} />
-          <Tab label="Rejection Reasons" {...a11yProps(2)} />
-        </Tabs>
-      </Box>
-      <TabPanel value={value} index={0}>
-      <div class="row popup-content-height">
+     
+
+    <div id="app">
+      <div class="tab-module m-t-25">
+        <div class="tab-module__tablist" role="tablist">
+          <button class="tab-module__tab" role="tab" aria-selected="true" aria-controls="colors-tab" id="colors" >
+            Basic Information
+          </button>
+          <div class="tab-module__tabcontent" tabindex="0" role="tabpanel" id="colors-tab" aria-labelledby="colors" >
+          <div class="row popup-content-height">
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Name</label>
@@ -165,9 +277,12 @@ export default function BasicTabs() {
                         </div>
                         
                      </div>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-      <div class="row popup-content-height">
+          </div>
+          <button class="tab-module__tab" role="tab" aria-selected="false" aria-controls="styles-tab" id="styles" tabindex="-1" >
+            Schedule Details
+          </button>
+              <div class="tab-module__tabcontent" tabindex="0" role="tabpanel" id="styles-tab" aria-labelledby="styles" >
+              <div class="row popup-content-height">
                         
                         <div class="col-md-4">
                             <div class="form-group">
@@ -214,9 +329,12 @@ export default function BasicTabs() {
                         </div>
                         
                      </div>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-      <div class="row popup-content-height">
+              </div>
+          <button class="tab-module__tab" role="tab" aria-selected="false" aria-controls="hardware-tab" id="hardware" tabindex="-1" >
+            Rejection Reasons
+          </button>
+              <div class="tab-module__tabcontent" tabindex="0" role="tabpanel" id="hardware-tab" aria-labelledby="hardware" >
+              <div class="row popup-content-height">
                         
                         <div class="col-md-4">
                             <div class="form-group">
@@ -240,8 +358,11 @@ export default function BasicTabs() {
                         </div>
                         
                      </div>
-      </TabPanel>
-    </Box>
+              </div>
+          
+        </div>
+      </div>
+    </div>
     </div>
   )
 }

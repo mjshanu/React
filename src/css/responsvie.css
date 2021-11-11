@@ -239,6 +239,18 @@
         .employee-tab-button {
             width: 17.5%;
              }
+             .organazation-table-top {
+                 width: 100%;
+             }
+             .organazation-table-top table thead {
+                width: 100%;
+            }
+            .organazation-table-top table tr{
+                width: 100%;
+            }
+            .organazation-table-top .width-8{
+                width: 10%;
+            }
        }
 @media only screen and (max-width: 1200px){
 .recruitment-top-right-box {
