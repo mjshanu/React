@@ -109,6 +109,12 @@
     .employee-tab-button {
         width: 17.5%;
     }
+    .profilepic {
+        width: 125px ;
+    }
+    .info-card-prfl-txt {
+        width: 125px;
+         }
 }
 
 
@@ -137,6 +143,19 @@
         .eye-new-icon svg {
             width: 22px  !important;
             height: 22px;
+        }
+        .info-card-cont {
+              font-size: 12px;
+        }
+        .info-card-cont-rgt {
+            font-size: 12px;
+        }
+        .profilepic {
+            width: 110px  ;
+        }
+        .info-card-prfl-txt {
+            width: 110px;
+            font-size: 13px;
         }
 }
 
@@ -265,6 +284,17 @@
 }.width-25 {
     width: 50%;
 }
+.active-employee-top{
+    width: auto;
+}
+.profile-basic-right{
+    width: 100%;    padding-left: 5px;
+    margin-top: 20px;    float: left;
+}
+.profilepic {
+    margin-top: 0;
+}
+
 }
 @media only screen and (max-width: 980px){
     .sidebar.is-open {
@@ -430,6 +460,59 @@ display: block;    margin-top: 0;
 .width-25 {
     width: 50%;
 }
+.active-employee-top{
+    width:auto;
+    margin-bottom: -34px ;
+    padding-left: 0;
+    padding-top: 20px;
+}
+ .profile-basic-righ{
+    width: 50%;
+}
+.employee-infot-flex{
+    width: 100%;
+    display: block;
+}
+.profilepic {
+    margin-top: 0;
+    float: left;
+}.profilepic img {
+    border-radius: 10px;
+}
+.info-card-prfl-txt {
+    width: 100%;
+    display: block;
+    font-size: 13px;
+    text-align: left;
+    padding-left: 0;
+}
+.info-card-cont{
+    width: 50%;
+    float: left;
+}
+.info-card-cont-rgt{
+    width: 50%;
+    float: left;
+}
+.employee-infot-flex {
+    width: 100%;
+    display: flex;
+}
+.personal-information-card{
+    float: left;
+    width: 50%;      
+}
+.education-information-card{
+    float: left;
+    width: 50%;         
+}
+.employee-information-card{
+    float: left;
+    width: 50%; 
+}
+.basic-information-card {
+    width: 50%;
+}
 }
 @media only screen and (max-width: 767px){
 .calendar-width {
@@ -473,6 +556,11 @@ display: block;    margin-top: 0;
     height: auto;
     border-radius:7px;
     background: #E5E5E5;
+ 
+
+}
+.employee-tab-button.tab-module__tab[aria-selected="true"] .innver-box{
+    border-bottom-right-radius:0px ;        border-bottom-left-radius: 0px   
 }
 .employee-tab-button .emp-tabhead-txt {
     margin-top: 2px;
@@ -556,6 +644,84 @@ display: block;    margin-top: 0;
 .width-25 {
     width: 100%;
 }
+.employee-infot-flex {
+    width: 100%;
+    display: block;
+    float: left;             margin-left: 0px;
+    margin-right: 0px;
+}
+.personal-information-card{
+    float: left;
+    width: 100%;             margin-left: 0px;
+    margin-right: 0px;
+}
+.education-information-card{
+    float: left;
+    width: 100%;               margin-left: 0px;
+    margin-right: 0px;
+}
+.employee-information-card{
+    float: left;
+    width: 100%; 
+    margin-left: 0px;
+  margin-right: 0px;
+}
+.active-employee-top{
+    width:100%;
+}
+.emplyesearch{
+    width: 100%;
+}
+.profilepic img {
+    border-radius: 9px;
+}
+.basic-information-card {
+    width: 100%;
+}
+.tab-module__tab[aria-selected="true"] {
+  margin-bottom: -9px;
+}
+.tab-module__tabcontent .employee-personal-box-mob{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 16%);
+    border-radius: 7px; padding-bottom: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}.employee-personal-box-mob .sub-head
+{    box-shadow: none;
+    border: 0;
+    margin-bottom: 17px;
+    padding-bottom: 0;    padding-right: 1px ;
+    padding-left: 5px;
+}
+.employee-personal-box-mob  .subbody-background {
+    border: 0.5px solid rgba(215, 215, 215, 0.53);    box-shadow: none;
+    border-radius: 0;
+    border-top: 0;
+   
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.employee-personal-box-mob   .subhead-background {
+    background: #f0f1fe;
+    padding: 10px 20px;
+}
+.employee-personal-box-mob  .bottom-button-bg, .employee-personal-box-mob  .mrg-right-0{
+    margin-top: 20px;
+}
+.empoyee-paddong-lef{
+    padding-left: 8px;
+}
+.buttons-outer a {
+   padding: 1px 6px;
+    font-size: 12px;
+}
+.add-btn-icon {
+    font-size: 15px;
+}
+
 }
 @media only screen and (max-width:650px){
     .listview-mob-top .col-2 {
@@ -601,7 +767,12 @@ display: block;    margin-top: 0;
     .accord-detals-box .right{
    font-size: 12px;
     }
-    
+    .tab-outer .top-right-outer{
+        width: 100%;
+        float: left;
+        margin-top: 5px;
+    }
+ 
 }
 @media only screen and (max-width:480px){
     .topbar-icon-right {
@@ -746,6 +917,47 @@ font-size: 13px;    padding: 3px 9px;
     margin-top: 7px;
     margin-left: 2px;
 }
+.txt-row-hght {
+    padding-left: 10px ;
+padding-right: 10px ;
+border-bottom: 0.5px solid #cccccc6b;
+padding-bottom: 10px ;
+margin-bottom: 10px    ;
+}
+.info-card-cont {
+width: 100%;
+float: left;
+padding-bottom: 8px ;
+}
+.border-0{border: 0;    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.profile-sub{
+    padding-bottom: 5px;
+}
+.employee-basic-outer {
+    padding-right: 0;
+}
+.education-information-card .txt-row-hght:last-child,  .employee-information-card .txt-row-hght:last-child,  .personal-information-card  .txt-row-hght:last-child, .employee-basic-outer .txt-row-hght:last-child{
+    border: 0;    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.leanguage-content-box .checkbox-outer {
+    width: 100%;
+  }
+  .checkbox-outer .col-md-3 {
+    padding-top: 0;
+      margin-bottom: 0;
+}
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
+    padding: 2px 9px;
+}
+.leanguage-box{
+    display: none;
+}
+.language-padding{
+    padding-bottom: 15px;
+}
 }
 
 @media only screen and (max-width:330px){
@@ -764,4 +976,6 @@ font-size: 13px;    padding: 3px 9px;
           font-size: 13px;
         margin-top: 0px ;
       }
-}
+     
+      
+  }

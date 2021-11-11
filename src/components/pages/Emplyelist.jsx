@@ -61,7 +61,7 @@ export default class Emplyelist extends Component {
                                     <input className="form-control" type="text" id="birthday" name="birthday" placeholder="Search " />
                                     <button type="button"> <FaSearch className="add-btn-icon" /></button>
                                 </div>
-                                <div className="recruitment-top-right-box">
+                                <div className="recruitment-top-right-box active-employee-top">
 
                                     <label className="active-swite-toggle">
                                         <span>Active Empolyees</span>

@@ -1345,6 +1345,7 @@ font-size: 24px;
 .information-card-head {
     font-size: 18px;
     font-weight: 600;
+    padding-left: 10px;
     color: #202020;
     text-decoration: underline;
     margin-bottom: 20px;
@@ -1355,21 +1356,30 @@ font-size: 24px;
     
 }
 .info-card-cont{
-    font-weight: 600;
-    color: #515151; 
+    font-weight: 800;
+    color: #515151;
+    font-size: 13px;
 }
 .info-card-cont-rgt{
     font-weight: 500;
-    color: #515151; 
+    color: #515151;  font-size: 13px;
 }
 .txt-row-hght{
-padding-bottom: 20px;
+padding-bottom: 20px;    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .profilepic {
-background-image: url(../images/profilei.svg);
-width: 100px;
-height: 100px;
+    width: 155px;
+    margin: 0px auto;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    float: left;
+    border-radius: 50%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+}
+.profilepic img{
+    border-radius: 50%;
 }
 
 .dot-ico {
@@ -1380,8 +1390,13 @@ height: 100px;
     margin-top: 3px;
     }
 .info-card-prfl-txt {
-text-align: center;
+text-align: left;
 font-weight: 700;
+float: left;
+width: 155px;
+color: #000;
+margin-top: 10px;
+text-align: center;
 }
 .inprograss-style {
     background: #4A54D1;
@@ -2425,4 +2440,7 @@ width:64px;
 }
 .recrutment-menu-icon{
     font-size: 18px;
+}
+.employee-basic-outer{
+     padding-right: 0;
 }
