@@ -18,7 +18,7 @@ import {FaThLarge, FaChartLine, FaTools } from "react-icons/fa";
 import { FaUserTie } from "@react-icons/all-files/fa/FaUserTie";
 import { FaFileAlt } from "@react-icons/all-files/fa/FaFileAlt";
 import { IconName } from "react-icons/ai";
-import { MdPersonSearch, MdOutlineScreenSearchDesktop, MdBusinessCenter } from "react-icons/md";
+import { MdPersonSearch, MdOutlineScreenSearchDesktop, MdBusinessCenter, MdOutlineAccountTree } from "react-icons/md";
 class SideBar extends React.Component {
   render() {
     
@@ -101,7 +101,12 @@ class SideBar extends React.Component {
             Newdrg
             </Nav.Link>
           </Nav.Item>
- 
+          <Nav.Item>
+            <Nav.Link href="/Organization">
+             < MdOutlineAccountTree/>
+             Organization & Branches
+            </Nav.Link>
+          </Nav.Item>
         </Nav>
 
       </div>

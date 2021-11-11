@@ -10,6 +10,8 @@ import Paper from '@material-ui/core/Paper';
 import Jobdetailsmodal from "./Jobdetailsmodal"; 
 import {location} from '../../images';
 import {profilei} from '../../images/profilei.svg'; 
+import Addorganization from './Addorgaization';
+import Addbranches from './Addbranches';
 
 import {
   Accordion,
@@ -57,10 +59,14 @@ const data = [
       <header className="main-otrer-top"> Organization Branches </header>
              <section  className="main-content-area">
                 <div className="main-content-area-inner">
-                    <div className="sub-head"> Branch Details
-                        <div className="top-right-outer add-btn-div"> 
-                        <Jobdetailsmodal />
-                                         
+                    <div className="sub-head organization-sub-head"> Branch Details
+                        <div className="top-right-outer add-btn-div organization-top-rt"> 
+                        <div className="organization-button" >
+                        <Addorganization />
+                        </div>
+                        <div className="organization-button">  
+                         <Addbranches /> 
+                         </div>              
                         </div>
                     </div>
                    
@@ -73,7 +79,7 @@ const data = [
         
             <TableCell className="width-18">Branch Name</TableCell>
             <TableCell className="width-18">Branch Code</TableCell>
-            <TableCell className="width-18">Company Name </TableCell>
+            <TableCell className="width-18">Organization Name </TableCell>
             <TableCell className="width-20">Branch Type</TableCell>
             <TableCell className="width-18">Location</TableCell>
                   <TableCell className="width-8">Action</TableCell>
@@ -128,7 +134,7 @@ const data = [
                     </div>
 
                     <div className="accrodion-mob-outer">
-  <Accordion preExpanded={"a"}>
+  <Accordion preExpanded={"a"} className="job-accrodion">
   <AccordionItem uuid="a">
         <AccordionItemHeading className="accordion-active-status">
           <AccordionItemButton >
