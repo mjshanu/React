@@ -122,7 +122,7 @@ export default function Job(props) {
                     </div>
 
                     <div className="accrodion-mob-outer">
-  <Accordion preExpanded={"a"}>
+  <Accordion preExpanded={"a"} className="job-accrodion">
   <AccordionItem uuid="a">
         <AccordionItemHeading className="accordion-active-status">
           <AccordionItemButton >

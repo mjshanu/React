@@ -361,8 +361,8 @@ window.addEventListener("resize", () => {
               </div>
           </button>
           <div class="tab-module__tabcontent" tabindex="0" role="tabpanel" id="styles-tab" aria-labelledby="styles" >
-          <div className="tab-outer">
-      <div className="basic-inform-outer">
+          <div className="tab-outer empoyee-paddong-lef">
+      <div className="basic-inform-outer employee-personal-box-mob">
       <div className="sub-head basic-inform-main-head employee-add-education-head">Personal Info Details
                                 <div className="top-right-outer add-btn-div">
                                     <div className="buttons-outer">
@@ -517,8 +517,8 @@ window.addEventListener("resize", () => {
            </div>
           </button>
           <div class="tab-module__tabcontent" tabindex="0" role="tabpanel" id="options-tab" aria-labelledby="options" >
-          <div className="tab-outer">
-      <div className="basic-inform-outer">
+          <div className="tab-outer empoyee-paddong-lef">
+      <div className="basic-inform-outer employee-personal-box-mob">
       <div className="sub-head basic-inform-main-head employee-add-education-head">Employee Information  
                                 <div className="top-right-outer add-btn-div">
                                     <div className="buttons-outer">
@@ -569,7 +569,7 @@ window.addEventListener("resize", () => {
   </div>
   </div>
 
-<div className="subbody-background  padding-0">
+<div className="subbody-background  padding-0 language-padding">
 <div className="col-md-12 leanguage-box">
 <div className="left">Language Name</div>
 <div className="right">Proficiency</div>
