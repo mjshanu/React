@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 import { constants } from 'smooth-dnd';
 import BasicTabs from "./Employeetabs";
 import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
-import axios from 'axios';
+
 import {
   DragDropContext,
   Draggable,
@@ -48,72 +48,76 @@ const Kanban = () => {
   const handlesTabs=(e, val)=>{
     console.warn(val)
   setValue(val)
-  }
-  
-  
-  const itemsFromBackend = [
-    { id: uuid(), content: "First task",  title: "JAVA DEVELOPER2", name:"shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
-    { id: uuid(),  content: "First task",  title: "JAVA DEVELOPER", name:"shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth"},
-    { id: uuid(),  content: "First task",  title: "JAVA DEVELOPER2", name:"shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth"},
-    { id: uuid(),  content: "First task",  title: "JAVA DEVELOPER", name:"shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
-    { id: uuid(),  content: "First task",  title: "JAVA DEVELOPER", name:"shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" }
-  ];
-  const [productsList, setProductsList] = useState([]);
-  const [columns, setColumns] = useState([]);
-  const loadData=async() =>
-  {
-   // alert("hii");
-   const response=await fetch("http://localhost:8000/api/getcandidates/");
-   const scheduleresponse=await fetch("http://localhost:8000/api/getcandidates_schedule/");
-   const rejectionresponse=await fetch("http://localhost:8000/api/getcandidates_rejection/");
-   const waitingresponse=await fetch("http://localhost:8000/api/getcandidates_waiting/");
-   const data=await response.json();
-   const scheduledata=await scheduleresponse.json();
-   const rejectiondata=await rejectionresponse.json();
-   const waitingdata=await waitingresponse.json();
-  // console.log(data);
-   const savedate=data.candidate;
-   const schedulesavedata=scheduledata.candidate;
-   const rejectionsavedata=rejectiondata.candidate;
-   const waitingsavedata=waitingdata.candidate;
-   //console.log(savedate);
-   var inprogessObj = JSON.parse(savedate);
-   var scheduleObj=JSON.parse(schedulesavedata);
-   var rejectionObj=JSON.parse(rejectionsavedata);
-   var waitingObj=JSON.parse(waitingsavedata);
-   setColumns({
-    [uuid()]: {
-      name: "Inprogress", 
-      items: inprogessObj
-    },
-    [uuid()]: {
-      name: "Schedule",
-      items: scheduleObj
-    },
-    [uuid()]: {
-      name: "Rejection",
-      items: rejectionObj
-    },
-    [uuid()]: {
-      name: "Waiting",
-      items: waitingObj
-    }
-   })
   };
+  
+  
+  const [columns, setColumns] = useState({});
+  const [res,SetRes]=useState([]);
+  ///const [isLoading, setisLoading] = useState(true);
+  const loadData=async() =>
+   {
+    // alert("hii");
+    const response=await fetch("http://localhost:8000/api/getcandidates/");
+    
+    const data=await response.json();
+   // console.log(data);
+    const savedate=data.candidate;
+    var myObject = JSON.parse(savedate);
+    setProductsList(myObject);
+    setColumnsFromBackend({
+      [uuid()]: {
+        name: "Inprogress", 
+        items: productsList
+      },
+      [uuid()]: {
+        name: "Schedule",
+        items: []
+      },
+      [uuid()]: {
+        name: "Rejection",
+        items: []
+      },
+      [uuid()]: {
+        name: "Waiting",
+        items: []
+      }
+    });
+    setColumns(columnsFromBackend);
+   };
   useEffect(() => {
     loadData();
-   },[]); 
-  
-  
-  const onDragEnd = (result, columns, setColumns) => {
+   },[])
  
+
+ //debugger;
+
+ /*const columnsFromBackend = {
+  [uuid()]: {
+    name: "Inprogress", 
+    items: productsList
+  },
+  [uuid()]: {
+    name: "Schedule",
+    items: []
+  },
+  [uuid()]: {
+    name: "Rejection",
+    items: []
+  },
+  [uuid()]: {
+    name: "Waiting",
+    items: []
+  }
+};
+*/
+
+
+ 
+  const onDragEnd = (result, columns, setColumns) => { 
     if (!result.destination) return;
     const { source, destination } = result;
-    var values = {};
+  
     if (source.droppableId !== destination.droppableId) {
-     
-      
-
       const sourceColumn = columns[source.droppableId];
       const destColumn = columns[destination.droppableId];
       const sourceItems = [...sourceColumn.items];
@@ -131,13 +135,6 @@ const Kanban = () => {
           items: destItems
         }
       });
-     // console.log(destItems);
-      values['id'] = result.draggableId;
-      values['column']=destColumn;
-      values['index']=destination.index;
-      values['itemsnew']=destItems;
-      values['type']="another";
-      const update= axios.post('http://localhost:8000/api/updatecolumn', values);
     } else {
       const column = columns[source.droppableId];
       const copiedItems = [...column.items];
@@ -150,16 +147,10 @@ const Kanban = () => {
           items: copiedItems
         }
       });
-      values['type']="self";
-  
-      values['itemsnew']=copiedItems;
-      const update= axios.post('http://localhost:8000/api/updatecolumn', values);
-     // console.log(copiedItems);
     }
   };
   
-   // const [columns, setColumns] = useState(columnsFromBackend);
-
+    
   return (
     <main className="inner-content-box">
       <header className="main-otrer-top"> Recruitment </header>
@@ -304,8 +295,8 @@ const Kanban = () => {
                         {column.items.map((item, index) => {
                           return (
                             <Draggable
-                              key={item.id}
-                              draggableId={item.id}
+                              key={item.b_id}
+                              draggableId={item.b_id}
                               index={index}
                             >
                               {(provided, snapshot) => {
@@ -318,7 +309,7 @@ const Kanban = () => {
                                   >
                                       <div className="drag-sub-box">
                             <div className="in-progress-card--bt-top">
-                            {item.post}
+                            {item.name}
                             </div>
                             <div className=" in-progress-card-bx">
                                 <div className="in-progress-name-sty">
@@ -333,19 +324,19 @@ const Kanban = () => {
                                 </div>
                                 </div>
                                 <div className="skill-box">
-                            {item.skillset}
+                            {item.name}
                             </div>
                             <div className=" in-progress-card-bx">
-                                <div className="in-progress-name-thre-colm p-l-0 ">EXP : {item.total_exp}</div>
-                                <div className="in-progress-name-thre-colm  ">CTC :{item.ctc}</div>
-                                <div className="in-progress-name-thre-colm b-r-0 ">EXCTC : {item.exp_ctc}</div>
+                                <div className="in-progress-name-thre-colm p-l-0 ">EXP : {item.name}</div>
+                                <div className="in-progress-name-thre-colm  ">CTC :{item.name}</div>
+                                <div className="in-progress-name-thre-colm b-r-0 ">EXCTC : {item.name}</div>
                                 </div>
                                 <div className=" in-progress-card-bx location-outer border-bottom-0">
                                <div className="in-progress-location ">
-                               <img src={location}/>  <span>{item.location}</span> 
+                               <img src={location}/>  <span>{item.name}</span> 
                                    </div>
                                    <div class="in-progress-location t-r">
-                                   NP: {item.np}
+                                   NP: {item.name}
                  </div>
                                 </div>
 
@@ -431,3 +422,5 @@ function TabPanel(props){
     </div>
   )
 }
+
+
