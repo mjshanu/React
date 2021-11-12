@@ -2456,19 +2456,6 @@ width:64px;
 .recrutment-menu-icon{
     font-size: 18px;
 }
-<<<<<<< HEAD
-.Candidatedetails-tab {
-    -webkit-appearance: none;
-    appearance: none;
-    border: 0pxsolid #fff;
-    flex-grow: 1;
-    padding: 0px;
-    margin: 0px !important;
-    border-radius: 0% !important;
-   
-    height: 45px !important;
-    background-color: #E5E5E5;
-=======
 .employee-basic-outer{
      padding-right: 0;
 }
@@ -2500,5 +2487,16 @@ width:64px;
 }
 .organization-button button{
     text-transform: uppercase;
->>>>>>> e05647f53091d1bd266e8dc67c667cc5f3f74292
+}
+.Candidatedetails-tab {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0pxsolid #fff;
+    flex-grow: 1;
+    padding: 0px;
+    margin: 0px !important;
+    border-radius: 0% !important;
+   
+    height: 45px !important;
+    background-color: #E5E5E5;
 }
