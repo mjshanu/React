@@ -1949,11 +1949,9 @@ font-weight: 700;
 .recruitment-box-padding {
     padding-right: 19px;
 }
-
-<<<<<<< HEAD
 .m-t-25 {
     margin-top: 25px;
-=======
+}
 .basic-inform-outer{
      width: 100%;
      float: left;
@@ -2430,5 +2428,16 @@ width:64px;
 }
 .recrutment-menu-icon{
     font-size: 18px;
->>>>>>> d53ed7d10dc8897f676cabcb29c07247db4a59c1
+}
+.Candidatedetails-tab {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0pxsolid #fff;
+    flex-grow: 1;
+    padding: 0px;
+    margin: 0px !important;
+    border-radius: 0% !important;
+   
+    height: 45px !important;
+    background-color: #E5E5E5;
 }

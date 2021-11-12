@@ -9,6 +9,7 @@ import 'react-dropdown/style.css';
 import {AppBar} from '@material-ui/core';
 import BasicTabs from './Employeetabs';
 import 'react-tabs/style/react-tabs.css';
+
 const customStyles = {
     content: {
       top: '50%',
@@ -29,8 +30,7 @@ const customStyles = {
  
 
 export default function Popupmodal(){
-
-   
+ 
     const CustomTab = ({ children }) => (
         <Tab >
           <div >{children}</div>
@@ -64,8 +64,10 @@ export default function Popupmodal(){
      
       <button type="button" class="btn  btn-maincolor btn-block" onClick={openModal} > <SiAddthis className="add-btn-icon"/> ADD</button> 
       <Modal
+       className="modal"
         isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
+        ariaHideApp={false}
+        onAfterOpen={afterOpenModal} 
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal" >

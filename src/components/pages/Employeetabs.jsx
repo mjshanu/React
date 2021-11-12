@@ -4,10 +4,12 @@ import {Tab, Tabs, AppBar} from '@material-ui/core';
 import PropTypes from 'prop-types'; 
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import '../../css/tab.css';
+import './Employeetabs.css'; 
 import $ from 'jquery';
+import Modal from 'react-modal';
  
 export default function BasicTabs() {
+ 
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 
         var href = $(e.target).attr('href');
@@ -18,6 +20,7 @@ export default function BasicTabs() {
         $curr.addClass("active");
         $curr.prevAll().addClass("visited");
     });
+    
 const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
 const tablist = document.querySelector('[role="tablist"]');
 
@@ -140,9 +143,9 @@ tabs.forEach(tab => {
 
 const setDirection = () => {
   if (window.matchMedia("(max-width: 768px)").matches) {
-    //tablist.setAttribute("aria-orientation", "vertical");
+    tablist.setAttribute("aria-orientation", "vertical");
   } else {
-    //tablist.setAttribute("aria-orientation", "horizontal");
+    tablist.setAttribute("aria-orientation", "horizontal");
   }
 };
 
@@ -162,7 +165,7 @@ window.addEventListener("resize", () => {
     <div id="app">
       <div class="tab-module m-t-25">
         <div class="tab-module__tablist" role="tablist">
-          <button class="tab-module__tab" role="tab" aria-selected="true" aria-controls="colors-tab" id="colors" >
+          <button  class="tab-module__tab Candidatedetails-tab" role="tab" aria-selected="true" aria-controls="colors-tab" id="colors" >
             Basic Information
           </button>
           <div class="tab-module__tabcontent" tabindex="0" role="tabpanel" id="colors-tab" aria-labelledby="colors" >
@@ -278,7 +281,7 @@ window.addEventListener("resize", () => {
                         
                      </div>
           </div>
-          <button class="tab-module__tab" role="tab" aria-selected="false" aria-controls="styles-tab" id="styles" tabindex="-1" >
+          <button class="tab-module__tab Candidatedetails-tab" role="tab" aria-selected="false" aria-controls="styles-tab" id="styles" tabindex="-1" >
             Schedule Details
           </button>
               <div class="tab-module__tabcontent" tabindex="0" role="tabpanel" id="styles-tab" aria-labelledby="styles" >
@@ -330,7 +333,7 @@ window.addEventListener("resize", () => {
                         
                      </div>
               </div>
-          <button class="tab-module__tab" role="tab" aria-selected="false" aria-controls="hardware-tab" id="hardware" tabindex="-1" >
+          <button class="tab-module__tab Candidatedetails-tab" role="tab" aria-selected="false" aria-controls="hardware-tab" id="hardware" tabindex="-1" >
             Rejection Reasons
           </button>
               <div class="tab-module__tabcontent" tabindex="0" role="tabpanel" id="hardware-tab" aria-labelledby="hardware" >
@@ -366,4 +369,5 @@ window.addEventListener("resize", () => {
     </div>
   )
 }
+ 
 
