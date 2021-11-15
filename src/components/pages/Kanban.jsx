@@ -12,7 +12,8 @@ import Popupmodal from "./Popupmodal";
 import PropTypes from 'prop-types';
 import { constants } from 'smooth-dnd';
 import BasicTabs from "./Employeetabs";
-import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
+import { FaSearch } from "@react-icons/all-files/fa/FaSearch";import Recruitmentnewmodal from "./Recruitmentnewmodal";
+
 import {
   DragDropContext,
   Draggable,
@@ -134,7 +135,12 @@ const Kanban = () => {
             <div className="sub-head">Candidate Information 
     <div className="top-right-outer add-btn-div">
    <Popupmodal/>   
+   <div>
+     <Recruitmentnewmodal />
+     </div>
     </div>
+
+
 </div>
 <div className="recruitment-top-right-box recruitment-box-padding">
 <div className="calendar-width">  

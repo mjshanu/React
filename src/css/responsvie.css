@@ -549,6 +549,9 @@ display: block;    margin-top: 0;
     padding:14px;
     background: none;
 }
+.candiate-modal-bx  {
+    width: 80% !important;
+   }
 }
 @media only screen and (max-width: 767px){
 .calendar-width {
