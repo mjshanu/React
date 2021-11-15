@@ -221,7 +221,6 @@ li a.dropdown-toggle::after {
 .nav-item.active a, .nav-item:hover a {
   color: #B93E87;
 }
-
 .wrapper .is-open .nav-item.active a, .wrapper .is-open .nav-item:hover a {
   color: #fff;
 }
