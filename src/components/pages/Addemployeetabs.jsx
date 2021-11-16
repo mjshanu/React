@@ -189,7 +189,24 @@ window.addEventListener("resize", () => {
             <div className="main-content-area-inner">
             <div className="sub-head">Candidate Information 
     <div className="top-right-outer add-btn-div">
-   <Popupmodal/>   
+   <div className="buttons-outer">
+                                        <a href="add" className="blue-button">
+                                            <SiAddthis className="add-btn-icon" /> Add Employee
+                                        </a>
+                                    </div>
+
+                                    <div className="buttons-outer maring-left-15">
+                                        <a href="add" className="white-button download-bt">
+                                            <MdOutlineFileDownload className="add-btn-icon" /> Download
+                                        </a>
+                                    </div>
+
+                                    <div className="buttons-outer maring-left-15">
+                                        <a href="add" className="white-button  download-bt">
+                                            <MdOutlinePrint className="add-btn-icon" /> Print
+                                        </a>
+                                    </div>
+
     </div>
 </div>
 
@@ -211,23 +228,8 @@ window.addEventListener("resize", () => {
 <div className="row basic-inform-background ">
 <div className="sub-head basic-inform-main-head">Employee List
                                 <div className="top-right-outer add-btn-div">
-                                    <div className="buttons-outer">
-                                        <a href="add" className="blue-button">
-                                            <SiAddthis className="add-btn-icon" /> Add Employee
-                                        </a>
-                                    </div>
-
-                                    <div className="buttons-outer maring-left-15">
-                                        <a href="add" className="white-button download-bt">
-                                            <MdOutlineFileDownload className="add-btn-icon" /> Download
-                                        </a>
-                                    </div>
-
-                                    <div className="buttons-outer maring-left-15">
-                                        <a href="add" className="white-button  download-bt">
-                                            <MdOutlinePrint className="add-btn-icon" /> Print
-                                        </a>
-                                    </div>
+                                <button type="button" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " > Cancel </button> 
 
                                 </div>
                             </div>
@@ -364,12 +366,10 @@ window.addEventListener("resize", () => {
           <div className="tab-outer empoyee-paddong-lef">
       <div className="basic-inform-outer employee-personal-box-mob">
       <div className="sub-head basic-inform-main-head employee-add-education-head">Personal Info Details
-                                <div className="top-right-outer add-btn-div">
-                                    <div className="buttons-outer">
-                                        <a href="add" className="blue-button">
-                                            <SiAddthis className="add-btn-icon" /> Add Education
-                                        </a>
-                                    </div>
+      <div className="top-right-outer add-btn-div">
+                                <button type="button" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " > Cancel </button> 
+
                                 </div>
                             </div>
 
@@ -520,12 +520,10 @@ window.addEventListener("resize", () => {
           <div className="tab-outer empoyee-paddong-lef">
       <div className="basic-inform-outer employee-personal-box-mob">
       <div className="sub-head basic-inform-main-head employee-add-education-head">Employee Information  
-                                <div className="top-right-outer add-btn-div">
-                                    <div className="buttons-outer">
-                                        <a href="add" className="blue-button">
-                                            <SiAddthis className="add-btn-icon" /> Add Education
-                                        </a>
-                                    </div>
+      <div className="top-right-outer add-btn-div">
+                                <button type="button" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " > Cancel </button> 
+
                                 </div>
                             </div>
 

@@ -219,7 +219,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .calendar-width {
     float: left;
-    width: 28.7%;
+    width: 28.4%;
     margin-right: 10px;
 }
 .search-icon-width {
@@ -1972,7 +1972,6 @@ font-weight: 700;
     padding-right: 19px;
 }
 
-
 .m-t-25 {
     margin-top: 25px;
 }
@@ -2485,7 +2484,100 @@ width:64px;
 .organization-button button{
     text-transform: uppercase;
 }
-.Candidatedetails-tab {
+.candiate-modal-bx  {
+    width: 800px !important;
+    position: absolute;
+    inset: 50% auto auto 50%;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+}
+.candiate-modal-bx .nav-tabs>li.active>a, .candiate-modal-bx .nav-tabs>li.active>a:focus, .candiate-modal-bx .nav-tabs>li.active>a:hover {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 0px solid #ddd;
+    border-bottom-color: #4a54d1;
+    border-bottom: 1px solid #4a54d1;
+}
+.candiate-modal-bx  .nav-tabs>li>a:hover {
+    border-color: none;background: none;    border: 0;
+}
+.candiate-modal-bx  .nav-tabs>li>a{
+    border: 0;
+    border-bottom: 1px solid #ddd;
+}
+.panel-default>.panel-heading+.panel-collapse>.panel-body{
+    background: #fff;
+}
+.panel-default>.panel-heading {
+    color: #fff;
+    background-color: #3f53c3;
+    border-color: #3f53c3;
+    background-image: none;
+
+}
+.candidate-inform-search {
+    position: relative;
+}
+.candidate-inform-search  button{
+    position: absolute;
+    top: 9px;
+    right: 27px;
+    background: none;
+}
+.popup-row-mrg {
+    margin-right: -3px;   height: 270px;
+    padding-right: 0;
+    margin-left: 0;
+}
+
+@media (min-width: 768px) {
+    .panel-heading {
+      display: none;
+    }
+    .panel {
+      border: none;
+      box-shadow: none;
+    }
+    .panel-collapse {
+      height: auto;
+    }
+    .panel-collapse.collapse {
+      display: block;
+    }
+  }
+  @media (max-width: 767px) {
+    .tab-content .tab-pane {
+      display: block;    margin-bottom: 10px      ;
+    }
+    .nav-tabs {
+      display: none;
+    }
+    .panel-title a {
+      display: block;
+      color: #fff;
+    }
+    .panel {
+      margin: 0;
+      box-shadow: none;
+      border-radius: 0;
+      margin-top: -2px;
+    }
+    .tab-pane:first-child .panel {
+      border-radius: 5px 5px 0 0;
+    }
+    .tab-pane:last-child .panel {
+      border-radius: 0 0 5px 5px;
+    }
+  }
+  .Candidatedetails-tab {
     -webkit-appearance: none;
     appearance: none;
     border: 0pxsolid #fff;
@@ -2496,4 +2588,7 @@ width:64px;
    
     height: 45px !important;
     background-color: #E5E5E5;
+}
+.candidate-tab-outer .panel-body {
+    padding: 15px 0;
 }
