@@ -60,7 +60,7 @@ export default function BasicTabs() {
         <div class="panel-heading">
           <h4 class="panel-title">
             <a data-toggle="collapse" data-parent=".tab-pane" href="#collapseOne">
-              Tab 1
+            Basic Information
             </a>
           </h4>
         </div>
@@ -186,7 +186,7 @@ export default function BasicTabs() {
         <div class="panel-heading">
           <h4 class="panel-title">
             <a data-toggle="collapse" data-parent=".tab-pane" href="#collapseTwo">
-              Tab 2
+            Schedule Details
             </a>
           </h4>
         </div>
@@ -248,7 +248,7 @@ export default function BasicTabs() {
         <div class="panel-heading">
           <h4 class="panel-title">
             <a data-toggle="collapse" data-parent=".tab-pane" href="#collapseThree">
-              Tab 3
+            Rejection Reasons
             </a>
           </h4>
         </div>

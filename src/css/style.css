@@ -1972,7 +1972,6 @@ font-weight: 700;
     padding-right: 19px;
 }
 
-
 .m-t-25 {
     margin-top: 25px;
 }
@@ -2578,3 +2577,18 @@ width:64px;
       border-radius: 0 0 5px 5px;
     }
   }
+  .Candidatedetails-tab {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0pxsolid #fff;
+    flex-grow: 1;
+    padding: 0px;
+    margin: 0px !important;
+    border-radius: 0% !important;
+   
+    height: 45px !important;
+    background-color: #E5E5E5;
+}
+.candidate-tab-outer .panel-body {
+    padding: 15px 0;
+}

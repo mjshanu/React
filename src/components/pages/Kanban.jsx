@@ -134,7 +134,6 @@ const Kanban = () => {
             <div className="main-content-area-inner">
             <div className="sub-head">Candidate Information 
     <div className="top-right-outer add-btn-div">
-   <Popupmodal/>   
    <div>
      <Recruitmentnewmodal />
      </div>
