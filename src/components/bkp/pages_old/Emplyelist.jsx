@@ -37,7 +37,7 @@ export default class Emplyelist extends Component {
                             <div className="sub-head">Employee List
                                 <div className="top-right-outer add-btn-div">
                                     <div className="buttons-outer">
-                                        <a href="Addemployeetab" className="blue-button">
+                                        <a href="add" className="blue-button">
                                             <SiAddthis className="add-btn-icon" /> Add Employee
                                         </a>
                                     </div>
@@ -61,7 +61,7 @@ export default class Emplyelist extends Component {
                                     <input className="form-control" type="text" id="birthday" name="birthday" placeholder="Search " />
                                     <button type="button"> <FaSearch className="add-btn-icon" /></button>
                                 </div>
-                                <div className="recruitment-top-right-box active-employee-top">
+                                <div className="recruitment-top-right-box">
 
                                     <label className="active-swite-toggle">
                                         <span>Active Empolyees</span>

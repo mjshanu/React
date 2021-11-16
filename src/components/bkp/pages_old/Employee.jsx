@@ -2,7 +2,7 @@ import React, { useState, useCallback, useRef } from "react";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import update from "immutability-helper";
-import {dashboard,asste,eyeico,location,eyeicoSched,eyeicoreject,eyeicowait,eyenew, profileimage1 } from '../../images';
+import {dashboard,asste,eyeico,location,eyeicoSched,eyeicoreject,eyeicowait,eyenew, } from '../../images';
 import {Tab, Tabs, AppBar} from '@material-ui/core';
 import {profilei} from '../../images/profilei.svg'; 
 import { mdiEye } from "react-icons/md";
@@ -13,7 +13,7 @@ import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
  
 
   
-const Employeeprofile = () => {
+const Employee = () => {
    
  
   return (
@@ -23,21 +23,25 @@ const Employeeprofile = () => {
             <section  className="main-content-area">
                 <div className="main-content-area-inner">
                     <div className=" ">    
-                            <div className="sub-head profile-sub">Employee Profile
-                                                           </div>
-                                               </div>
+                            <div className="sub-head">Employee Profile
+                                <div className="top-right-outer add-btn-div">        
+                                </div>
+                            </div>
+                            <div className="recruitment-top-right-box">                    
+                            </div>
+                    </div>
                     <div className="col-md-12">    
                              
-                          <div class="flex-box employee-infot-flex">
+                          <div class="flex-box ">
                             <div  className="col-md-6 basic-information-card"> 
                                   <div  className="information-card-head">Basic Information
                                   </div>
-                                  <div  className="row txt-row-hght border-0 employee-basic-outer"> 
-                                        <div  className="col-md-4  "> 
-                                              <div className="profilepic"> <img src={profileimage1} /></div>
+                                  <div  className="row txt-row-hght"> 
+                                        <div  className="col-md-3  "> 
+                                              <div className="profilepic"></div>
                                               <div className="info-card-prfl-txt "> Arun Kumar</div>                                            
                                         </div> 
-                                        <div  className="col-md-8 profile-basic-right">
+                                        <div  className="col-md-9 ">
                                                 <div  className="row txt-row-hght">                                                     
                                                     <div  className="col-md-6 info-card-cont "> Employee Code             <span className="dot-sty">:</span>
                                                     </div>
@@ -153,7 +157,7 @@ const Employeeprofile = () => {
                             </div>
                              
                           </div>  
-                          <div class="flex-box employee-infot-flex">
+                          <div class="flex-box ">
                              
                             <div  className="col-md-6 education-information-card"> 
                                   <div  className="information-card-head"> Education Details
@@ -232,5 +236,5 @@ const Employeeprofile = () => {
   );
 };
 
-export default Employeeprofile;
+export default Employee;
  
