@@ -32,6 +32,9 @@
                .employee-tab-button {
                       width: 17.8%;
             }
+            .Candidate-tab-button {
+                width: 30%;
+                          }
 }
 .ReactModal__Overlay{
     position: fixed;
@@ -115,6 +118,9 @@
     .info-card-prfl-txt {
         width: 125px;
          }
+         .Candidate-tab-button {
+            width: 29.5%;
+        }
 }
 
 
@@ -156,6 +162,9 @@
         .info-card-prfl-txt {
             width: 110px;
             font-size: 13px;
+        }
+        .Candidate-tab-button {
+            width: 28.9%;
         }
 }
 
@@ -251,6 +260,9 @@
             .organazation-table-top .width-8{
                 width: 10%;
             }
+            .Candidate-tab-button {
+                width: 28.5%;
+            }
        }
 @media only screen and (max-width: 1200px){
 .recruitment-top-right-box {
@@ -309,7 +321,9 @@
 .addabrch-modal{
     height: auto;
 }
-
+.Candidate-tab-button {
+    width: 28%;
+}
 }
 @media only screen and (max-width: 980px){
     .sidebar.is-open {
@@ -552,6 +566,9 @@ display: block;    margin-top: 0;
 .candiate-modal-bx  {
     width: 80% !important;
    }
+   .Candidate-tab-button {
+    width: 28.3%;
+}
 }
 @media only screen and (max-width: 767px){
 .calendar-width {
@@ -583,12 +600,12 @@ display: block;    margin-top: 0;
 .search-icon-width .add-btn-div .add-btn-icon {
     font-size: 28px;
 }
-.employee-tab-button {
+.employee-tab-button, .Candidate-tab-button {
     width: 100%;
     padding:0;
      margin-bottom: 20px;
 }
-.employee-tab-button .innver-box {
+.employee-tab-button .innver-box , .Candidate-tab-button  .innver-box{
     width: 100%;
     z-index: 1;
     padding: 10px 15px;
@@ -598,10 +615,10 @@ display: block;    margin-top: 0;
  
 
 }
-.employee-tab-button.tab-module__tab[aria-selected="true"] .innver-box{
+.employee-tab-button.tab-module__tab[aria-selected="true"] .innver-box, .Candidate-tab-button.tab-module__tab[aria-selected="true"] .innver-box{
     border-bottom-right-radius:0px ;        border-bottom-left-radius: 0px   
 }
-.employee-tab-button .emp-tabhead-txt {
+.employee-tab-button .emp-tabhead-txt,  .Candidate-tab-button .emp-tabhead-txt  {
     margin-top: 2px;
     float: left;
   font-size: 16px;
@@ -610,20 +627,20 @@ display: block;    margin-top: 0;
     font-weight: 600;
     margin-left: 10px;
 }
-.employee-tab-button .emp-tabhead-txt br{
+.employee-tab-button .emp-tabhead-txt br, .Candidate-tab-button .emp-tabhead-txt br{
     display: none;
 }
 .tab-module__tab svg{
     float: left;
     font-size: 21px;
 }
-.employee-tab-button.tab-module__tab[aria-selected="true"] .innver-box .emp-tabhead-txt {
+.employee-tab-button.tab-module__tab[aria-selected="true"] .innver-box .emp-tabhead-txt, .Candidate-tab-button.tab-module__tab[aria-selected="true"] .innver-box .emp-tabhead-txt {
     color: #fff;
 }
-.employee-tab-button:after {
+.employee-tab-button:after, .Candidate-tab-button:after {
    display: none;
 }
-.tab-module__tablist .employee-tab-button {
+.tab-module__tablist .employee-tab-button, .tab-module__tablist .Candidate-tab-button {
     padding-left: 15px;
     padding-right: 12px;
 }
@@ -640,6 +657,12 @@ display: block;    margin-top: 0;
     margin-left: 0px;
 }
 .tab-module__tablist .employee-tab-button:nth-of-type(6) {
+    width: 100%;
+}
+.tab-module__tablist .Candidate-tab-button:first-child {
+    margin-left: 0px;
+}
+.tab-module__tablist .Candidate-tab-button:nth-of-type(4) {
     width: 100%;
 }
 .tab-module__tab .basic-icon {

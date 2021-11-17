@@ -2455,6 +2455,80 @@ width:64px;
 .employee-basic-outer{
      padding-right: 0;
 }
+.Candidate-tab-button{
+    width: 30.5%;
+ height: auto;
+ background: none;
+ margin:0;
+ display: flex;
+ background: none;
+ position: relative;
+        flex-grow: 0;
+        margin-bottom: 30px;
+}
+
+
+.Candidate-tab-button:after {
+    background: #e5e5e5 none repeat scroll 0 0;
+    content: "";
+    display: block;
+    height: 3px; margin: 0 auto;
+    position: absolute;
+ width: 100%;
+    z-index:0;
+    bottom: 28px ;
+}
+.Candidate-tab-button .innver-box{
+    width: 64px;
+    z-index: 1;    padding: 15px;
+    height: 64px;    border-radius: 50%;
+    background: #E5E5E5;
+}
+.Candidate-tab-button .innver-box img{
+    width: 30px;
+}
+.Candidate-tab-button.tab-module__tab[aria-selected="true"] {
+    background: none;
+}
+.Candidate-tab-button.tab-module__tab[aria-selected="true"] .innver-box {
+    background: #3f53c3;
+    color: #fff;
+}
+    .Candidate-tab-button :after {
+    background: #e5e5e5 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 3px;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: -48px;
+    display: none;
+    width: 100%;
+    z-index: -1;
+}
+.Candidate-tab-button  .emp-tabhead-txt {
+    position: relative;
+    z-index: 111;
+    margin-top: 35px;
+    float: left;
+    color: #000;
+    font-size: 13px;
+   width: 72px ;
+    text-align: center;    margin-left: -15px ;
+}
+.Candidate-tab-button.tab-module__tab[aria-selected="true"] .innver-box .emp-tabhead-txt {
+    color: #3f53c3;
+}
+.tab-module__tablist .Candidate-tab-button:nth-of-type(4){
+width:64px; 
+}
+.tab-module__tablist .Candidate-tab-button:first-child{
+    margin-left:30px;
+}
+
+
 .edit-new-icon{
     float: left;
     width: 25px;

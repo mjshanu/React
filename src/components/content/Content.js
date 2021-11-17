@@ -19,6 +19,7 @@ import UncontrolledBoard from "../pages/Dragslider";
 import Newdrag from "../pages/Newdrgbox.jsx";
 import Addemployeetab from "../pages/Addemployeetabs";
 import  Organization from "../pages/Organization";
+import Addassets from "../pages/Addassets";
 
 class Content extends React.Component {
   render() {
@@ -59,8 +60,11 @@ class Content extends React.Component {
         <Router path="/Organization">
         <Organization/>
         </Router> 
+        <Router path="/Addassets">
+        <Addassets/>
+        </Router> 
          </Switch>
-    
+         
 
          
     </Router>
