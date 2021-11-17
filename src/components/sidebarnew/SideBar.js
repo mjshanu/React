@@ -51,7 +51,7 @@ class SideBar extends React.Component {
             </Nav.Link>
           </Nav.Item>
                <Nav.Item>
-            <Nav.Link href="/">
+            <Nav.Link href="/Assets">
               <FaChartLine/>
              Asset
             </Nav.Link>
