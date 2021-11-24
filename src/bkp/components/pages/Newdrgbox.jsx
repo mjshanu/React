@@ -2,7 +2,7 @@ import React, { useState, useCallback, useRef } from "react";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import update from "immutability-helper";
-import {dashboard,asste,eyeico,location,eyeicoSched,eyeicoreject,eyeicowait,eyenew } from '../../images';
+import {dashboard,asste,eyeico,location,eyeicoSched,eyeicoreject,eyeicowait,eyenew , uploadimage, uploadicon} from '../../images';
 import {Tab, Tabs, AppBar} from '@material-ui/core';
 import { MdList } from "react-icons/md";
 import { MdViewQuilt } from "react-icons/md";
@@ -23,9 +23,27 @@ import { v4 as uuid } from "uuid";
 import Select from 'react-select';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from 'react-accessible-accordion';
 
+// Demo styles, see 'Styles' section below for some notes on use.
+import 'react-accessible-accordion/dist/fancy-example.css';
 
+import { MdOutlineFileDownload, MdOutlinePrint, MdPhone, MdCheck, MdLocationPin, MdEdit } from "react-icons/md";
+import { SiAddthis } from "@react-icons/all-files/si/SiAddthis";
 
+import Radio from "./Radio";
+import MultipleImageUpload from "./MultipleImageUpload";
+//import CheckboxOut from "./Checkbox";
+
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 
 const options = [
   {
@@ -121,6 +139,15 @@ const onDragEnd = (result, columns, setColumns) => {
 
   const [columns, setColumns] = useState(columnsFromBackend);
 
+
+  const [myimage, setMyImage] = React.useState(null);
+  const uploadImage = e => {
+    setMyImage(URL.createObjectURL(e.target.files[0]));
+  };
+
+
+  
+
   return (
     <main className="inner-content-box">
       <header className="main-otrer-top"> Recruitment </header>
@@ -137,22 +164,35 @@ const onDragEnd = (result, columns, setColumns) => {
                     <input className="form-control" type="date" id="birthday" name="birthday"/>
                 </div>
                 <div className="calendar-width ">  
-                    <input className="form-control" type="text" id="birthday" name="birthday"/>
+                <select id="dropdown" className="form-control"><option value="Status">Status</option></select>
                 </div>
-                <div className="calendar-width ">  
-                    <input className="form-control" type="text" id="birthday" name="birthday"/>
+                <div className="calendar-width mobile-search-none">  
+                    <input className="form-control" type="text" id="birthday" name="birthday" placeholder="Candidate name"/>
                 </div>
-                <div className="search-icon-width ">  
-                <div className="top-right-outer add-btn-div ">
+     
+                <div className="search-icon-width mobile-search-none "> 
+                      <div className="top-right-outer add-btn-div">
                         <button type="button" class="btn  btn-maincolor btn-block"> <FaSearch className="add-btn-icon"/></button> 
                     
-                        </div>
-                </div>
+                        </div>               </div>
+                        <div className="search-icon-width  mobile-seardh-show"> 
+                <div class="search-box add-btn-div ">
+			<input type="text" class="search-box-input" placeholder="Candidate name"/>
+      <button type="button" class="btn  btn-maincolor search-box-btn"> <FaSearch className="add-btn-icon"/></button> 
+		</div> 
+  </div>      
+              
 </div>
 
   <AppBar position="static"  className="tab-outer-head">
 <Tabs value={value}  onChange={handlesTabs} aria-label="icon tabs example" >
 <Tab icon={<MdViewQuilt />} aria-label="List" />
+<Tab  icon={<MdList />}  aria-label="List" />
+<Tab  icon={<MdList />}  aria-label="List" />
+<Tab  icon={<MdList />}  aria-label="List" />
+<Tab  icon={<MdList />}  aria-label="List" />
+<Tab  icon={<MdList />}  aria-label="List" />
+<Tab  icon={<MdList />}  aria-label="List" />
 <Tab  icon={<MdList />}  aria-label="List" />
 </Tabs>
   </AppBar>
@@ -229,6 +269,9 @@ const onDragEnd = (result, columns, setColumns) => {
 </div>
 
 <div className="tab-outer darg-outer desktop-show">
+
+
+  
 <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
       <DragDropContext
         onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
@@ -334,17 +377,950 @@ const onDragEnd = (result, columns, setColumns) => {
   </TabPanel>
   <TabPanel value={value} index={1}>
   <div className="tab-outer">
+<div className="tb-mob-none">
   <Tablecand/>
+  </div>
+
+  <div className="accrodion-mob-outer">
+  <Accordion preExpanded={"a"}>
+      <AccordionItem uuid="a">
+        <AccordionItemHeading className="accordion-active-status">
+          <AccordionItemButton >
+            <div className="accordion-head-text">
+            <div className="name notificatio-outer">Java developer
+            <div className="notification-label">
+              12
+              </div>
+            
+            </div>
+            <div className="desi joblocation">
+          <img src={location}/>  
+          <span>Kakkanad</span>            
+            </div>
+            </div>   <div className="col-4 acc-status-change">
+            <div class="active-status-style">0123</div>
+  </div></AccordionItemButton>
+        </AccordionItemHeading>
+        <AccordionItemPanel>
+          <div className="accord-detals-box">
+         <div className="left">Skill Set</div>
+         <div className="right">HTML, CSS, JavaScript, Figma</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">EXP </div>
+         <div className="right">: 4.6 Years</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">CTC </div>
+         <div className="right">: 5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">EXP CTC</div>
+         <div className="right">: 5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Notice period</div>
+         <div className="right">: 2 Month</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Location</div>
+         <div className="right">: Kakkanad</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="accordion-bottom-button">
+<div className="more-button">View</div>
+<div className="more-button more-outer">Edit</div>
+<div className="more-button more-outer">Delete</div>
+        </div>
+        </div>
+        </AccordionItemPanel>
+      </AccordionItem>
+
+      <AccordionItem uuid="b">
+        <AccordionItemHeading className="accordion-inactive-status">
+          <AccordionItemButton>  <div className="accordion-head-text">
+            <div className="name notificatio-outer">Java developer <div className="notification-label">
+              12
+              </div></div>
+              <div className="desi joblocation">
+          <img src={location}/>  
+          <span>Kakkanad</span>            
+            </div>
+            </div>   <div className="col-4 acc-status-change">
+            <div class="active-status-style">0123</div>
+  </div></AccordionItemButton>
+        </AccordionItemHeading>
+        <AccordionItemPanel>
+        <div className="accord-detals-box">
+         <div className="left">Skill Set</div>
+         <div className="right">: HTML, CSS, JavaScript, Figma</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">EXP </div>
+         <div className="right">: 4.6 Years</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">CTC </div>
+         <div className="right">: 5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">EXP CTC</div>
+         <div className="right">: 5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Notice period</div>
+         <div className="right">: 2 Month</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Location</div>
+         <div className="right">: Kakkanad</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="accordion-bottom-button">
+<div className="more-button">View</div>
+<div className="more-button more-outer">Edit</div>
+<div className="more-button more-outer">Delete</div>
+        </div>
+        </div>
+        </AccordionItemPanel>
+      </AccordionItem>
+      <AccordionItem uuid="c">
+        <AccordionItemHeading className="accordion-active-status">
+          <AccordionItemButton >
+            <div className="accordion-head-text">
+            <div className="name notificatio-outer">Java developer
+            <div className="notification-label">
+              12
+              </div>
+            
+            </div>
+            <div className="desi joblocation">
+          <img src={location}/>  
+          <span>Kakkanad</span>            
+            </div>
+            </div>   <div className="col-4 acc-status-change">
+            <div class="active-status-style">0123</div>
+  </div></AccordionItemButton>
+        </AccordionItemHeading>
+        <AccordionItemPanel>
+          <div className="accord-detals-box">
+         <div className="left">Skill Set</div>
+         <div className="right">HTML, CSS, JavaScript, Figma</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">EXP </div>
+         <div className="right">: 4.6 Years</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">CTC </div>
+         <div className="right">: 5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">EXP CTC</div>
+         <div className="right">: 5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Notice period</div>
+         <div className="right">: 2 Month</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Location</div>
+         <div className="right">: Kakkanad</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="accordion-bottom-button">
+<div className="more-button">View</div>
+<div className="more-button more-outer">Edit</div>
+<div className="more-button more-outer">Delete</div>
+        </div>
+        </div>
+        </AccordionItemPanel>
+      </AccordionItem>
+
+      <AccordionItem uuid="d">
+        <AccordionItemHeading className="accordion-inactive-status">
+          <AccordionItemButton>  <div className="accordion-head-text">
+            <div className="name notificatio-outer">Java developer <div className="notification-label">
+              12
+              </div></div>
+              <div className="desi joblocation">
+          <img src={location}/>  
+          <span>Kakkanad</span>            
+            </div>
+            </div>   <div className="col-4 acc-status-change">
+            <div class="active-status-style">0123</div>
+  </div></AccordionItemButton>
+        </AccordionItemHeading>
+        <AccordionItemPanel>
+        <div className="accord-detals-box">
+         <div className="left">Skill Set</div>
+         <div className="right">: HTML, CSS, JavaScript, Figma</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">EXP </div>
+         <div className="right">: 4.6 Years</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">CTC </div>
+         <div className="right">: 5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">EXP CTC</div>
+         <div className="right">: 5 LK/A</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Notice period</div>
+         <div className="right">: 2 Month</div>
+        </div>
+        <div className="accord-detals-box">
+         <div className="left">Location</div>
+         <div className="right">: Kakkanad</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="accordion-bottom-button">
+<div className="more-button">View</div>
+<div className="more-button more-outer">Edit</div>
+<div className="more-button more-outer">Delete</div>
+        </div>
+        </div>
+        </AccordionItemPanel>
+      </AccordionItem>
+
+      
+    </Accordion>
+    </div>
     </div>
     </TabPanel>
                 
+
+    <TabPanel value={value} index={2}>
+    <div className="tab-outer">
+      <div className="basic-inform-outer">
+<div className="row basic-inform-background ">
+<div className="sub-head basic-inform-main-head">Employee List
+                                <div className="top-right-outer add-btn-div">
+                                    <div className="buttons-outer">
+                                        <a href="add" className="blue-button">
+                                            <SiAddthis className="add-btn-icon" /> Add Employee
+                                        </a>
+                                    </div>
+
+                                    <div className="buttons-outer maring-left-15">
+                                        <a href="add" className="white-button download-bt">
+                                            <MdOutlineFileDownload className="add-btn-icon" /> Download
+                                        </a>
+                                    </div>
+
+                                    <div className="buttons-outer maring-left-15">
+                                        <a href="add" className="white-button  download-bt">
+                                            <MdOutlinePrint className="add-btn-icon" /> Print
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+  
+  <div className="basic-inform-inner">
+<div className="col-md-4">
+<div class="form-group"><label for="exampleFormControlInput1">Name</label><input type="email" className="form-control"/></div>
+<div class="form-group"><label for="exampleFormControlInput1">Designation</label><input type="email" className="form-control"/></div>
+<div class="form-group"><label for="exampleFormControlInput1">Company Email ID</label><input type="email" className="form-control"/></div>
+<div class="form-group"><label for="exampleFormControlInput1">Reporting Person</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+<div class="form-group"><label for="exampleFormControlInput1">Employee Code</label><input type="email" className="form-control"/></div>
+<div class="form-group"><label for="exampleFormControlInput1">Joining Date</label><input type="email" className="form-control"/></div>
+<div class="form-group"><label for="exampleFormControlInput1">Contact Number</label><input type="email" className="form-control"/></div>
+<div class="form-group">
+<label for="exampleFormControlInput1">Employee Code</label>
+<div className="radiobox-outer">
+      <Radio name="test">Male</Radio>
+      <Radio name="test">Female</Radio>
+      </div>
+</div>
+  </div>
+
+  <div className="col-md-4">
+<div className="upload-phot-box">
+  <img src={myimage} alt=""/>
+         <hr />
+      <MultipleImageUpload />
+      <div class='file file--upload'>
+      <label for='input-file'>
+       <img src={uploadicon} alt=""/>
+      </label>
+      <input type="file" onChange={uploadImage} />
+    </div>
+
+
+   </div>
+
+
+</div>
+
+<div className="inner-middile-row">
+<div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Transaction Date</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Effective from</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Position No</label><input type="email" className="form-control"/></div>
+  </div>
+  
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">OU</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Parent OU</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Designation</label><input type="email" className="form-control"/></div>
+  </div>
+
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Grade</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Grade Band</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Department</label><input type="email" className="form-control"/></div>
+  </div>
+  
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Location</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Country</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Region</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Original Hire Date</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Holiday Calendar</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Reporting Manager</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Functional Manager</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Employee Status</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Employment Status</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Next Status</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Next Status on</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Cost center</label><input type="email" className="form-control"/></div>
+  </div>
+
+  <div className="bottom-button-bg">
+            <button type="button" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " > Cancel </button> 
+        </div>
+  
+</div>
+
+
+  </div>
+
+</div>
+
+        </div>
+
+    </div>
+      </TabPanel>
        
+
+
+      <TabPanel value={value} index={3}>
+    <div className="tab-outer">
+      <div className="basic-inform-outer">
+      <div className="sub-head basic-inform-main-head employee-add-education-head">Personal Info Details
+                                <div className="top-right-outer add-btn-div">
+                                    <div className="buttons-outer">
+                                        <a href="add" className="blue-button">
+                                            <SiAddthis className="add-btn-icon" /> Add Education
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+   
+<div className="rowinner-middile-row">
+<div className="col-md-6 mrg-left-0">
+<div className="subhead-background">
+  <span>Permanent Address</span>
+  <div className="right-edit">
+    <a href="">
+  <MdEdit/>
+  </a>
+  </div>
+  </div>
+
+<div className="subbody-background">
+  <div class="form-group"><label for="exampleFormControlInput1">Address</label><textarea className="form-control" rows="3" spellcheck="false"> </textarea></div>
+  <div class="form-group"><label for="exampleFormControlInput1">City</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Zipcode</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Contact Number</label><input className="form-control" type="date" id="" name="birthday"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Home Telephone</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Work Mobile</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Work Telephone</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Extension Number</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Preferred Email Language</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Work Email</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Personal Email</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Personal mobile Number</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Fax Number</label><input className="form-control" type="date" id="" name="birthday"/></div>
+  </div>
+
+  </div>
+  <div className="col-md-6 mrg-right-0">
+  <div className="subhead-background">
+  <span>Current Address</span>
+  <div className="right-edit">
+    <a href="">
+  <MdEdit/>
+  </a>
+  </div>
+  </div>
+
+<div className="subbody-background">
+  <div class="form-group"><label for="exampleFormControlInput1">Address</label><textarea className="form-control" rows="3" spellcheck="false"> </textarea></div>
+  <div class="form-group"><label for="exampleFormControlInput1">City</label><input type="email" className="form-control"/></div>
+   <div class="form-group"><label for="exampleFormControlInput1">Zipcode</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Contact Number</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Home Telephone </label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Work Mobile</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Work Telephone</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Extension Number</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Preferred Email Language</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Work Email</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Personal Email</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Personal mobile Number</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Fax Number</label><input type="email" className="form-control"/></div>
+  </div>
+  </div>
+
+  <div className="col-md-12 mrg-top-30 mrg-left-0 mrg-right-0">
+  <div className="subhead-background">
+  <span>Emergency Contact Details</span>
+  <div className="right-edit">
+    <a href="">
+  <MdEdit/>
+  </a>
+  </div>
+  </div>
+
+<div className="subbody-background emergency-contact-box">
+<div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Name</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Relationship</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+   <div class="form-group"><label for="exampleFormControlInput1">Email ID</label><input type="email" className="form-control"/></div>
+   </div>
+   <div className="col-md-12">
+  <div class="form-group"><label for="exampleFormControlInput1">Relationship Addresss</label><input type="email" className="form-control"/></div>
+  </div>
+   <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Zip Code</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Home Phone</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+   <div class="form-group"><label for="exampleFormControlInput1">Mobile</label><input type="email" className="form-control"/></div>
+   </div>
+    </div>
+  </div>
+
+
+  
+  <div className="col-md-12 mrg-top-30 mrg-left-0 mrg-right-0">
+  <div className="subhead-background">
+  <span>Physician Contact Details</span>
+  <div className="right-edit">
+    <a href="">
+  <MdEdit/>
+  </a>
+  </div>
+  </div>
+
+<div className="subbody-background emergency-contact-box">
+<div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Physician Name</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-8">
+  <div class="form-group"><label for="exampleFormControlInput1">Physician Address</label><input type="email" className="form-control"/></div>
+  </div>
+ 
+   <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Zip Code</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Phone</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+   <div class="form-group"><label for="exampleFormControlInput1">Work Phone</label><input type="email" className="form-control"/></div>
+   </div>
+    </div>
+  </div>
+
+  <div className="bottom-button-bg  mrg-top-30  mrg-left-0 mrg-right-0">
+            <button type="button" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " > Cancel </button> 
+        </div>
+  
+
+
+</div>
+
+        </div>
+
+    </div>
+      </TabPanel>
+
+
+
+      <TabPanel value={value} index={4}>
+    <div className="tab-outer">
+      <div className="basic-inform-outer">
+      <div className="sub-head basic-inform-main-head employee-add-education-head">Employee Information  
+                                <div className="top-right-outer add-btn-div">
+                                    <div className="buttons-outer">
+                                        <a href="add" className="blue-button">
+                                            <SiAddthis className="add-btn-icon" /> Add Education
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+<div className="inner-middile-row">
+<div className="col-md-6 mrg-left-0">
+<div className="subhead-background">
+  <span>Employee Details</span>
+  <div className="right-edit">
+    <a href="">
+  <MdEdit/>
+  </a>
+  </div>
+  </div>
+
+<div className="subbody-background">
+  <div class="form-group"><label for="exampleFormControlInput1">Title</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Official Name</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Place of Birth</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Date of Birth</label><input className="form-control" type="date" id="" name="birthday"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Country of Birth</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Physically Challenged</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Aadhar No</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Marital Status</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">PAN Number</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Blood Group</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">RH Factor</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Ethnic Code</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Wedding Date</label><input className="form-control" type="date" id="" name="birthday"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Unique Identity</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Disability</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">UAN Number</label><input type="email" className="form-control"/></div>
+</div>
+
+
+<div className="subhead-background mrg-top-30">
+  <span>Language Proficiency</span>
+  <div className="right-edit">
+    <a href="">
+  <MdEdit/>
+  </a>
+  </div>
+  </div>
+
+<div className="subbody-background  padding-0">
+<div className="col-md-12 leanguage-box">
+<div className="left">Language Name</div>
+<div className="right">Proficiency</div>
+
+  </div>
+<div className="col-md-12 leanguage-content-box">
+<label for="exampleFormControlInput1">English</label>
+<FormGroup className="col-md-12 checkbox-outer">
+      <FormControlLabel control={<Checkbox defaultChecked />} label="Read" className="col-md-3 "/>
+      <FormControlLabel  control={<Checkbox />} label="Write"  className="col-md-3 "/>
+      <FormControlLabel  control={<Checkbox />} label="Speak "  className="col-md-3 " />
+      <FormControlLabel  control={<Checkbox />} label="Native"  className="col-md-3 " />
+    </FormGroup>
+</div>
+
+<div className="col-md-12 leanguage-content-box">
+<label for="exampleFormControlInput1">English</label>
+<FormGroup className="col-md-12 checkbox-outer">
+      <FormControlLabel control={<Checkbox defaultChecked />} label="Read" className="col-md-3 "/>
+      <FormControlLabel  control={<Checkbox />} label="Write"  className="col-md-3 "/>
+      <FormControlLabel  control={<Checkbox />} label="Speak "  className="col-md-3 " />
+      <FormControlLabel  control={<Checkbox />} label="Native"  className="col-md-3 " />
+    </FormGroup>
+</div>
+
+<div className="col-md-12 leanguage-content-box">
+<label for="exampleFormControlInput1">English</label>
+<FormGroup className="col-md-12 checkbox-outer">
+      <FormControlLabel control={<Checkbox defaultChecked />} label="Read" className="col-md-3 "/>
+      <FormControlLabel  control={<Checkbox />} label="Write"  className="col-md-3 "/>
+      <FormControlLabel  control={<Checkbox />} label="Speak "  className="col-md-3 " />
+      <FormControlLabel  control={<Checkbox />} label="Native"  className="col-md-3 " />
+    </FormGroup>
+</div>
+
+<div className="col-md-12 leanguage-content-box">
+<label for="exampleFormControlInput1">English</label>
+<FormGroup className="col-md-12 checkbox-outer">
+      <FormControlLabel control={<Checkbox defaultChecked />} label="Read" className="col-md-3 "/>
+      <FormControlLabel  control={<Checkbox />} label="Write"  className="col-md-3 "/>
+      <FormControlLabel  control={<Checkbox />} label="Speak "  className="col-md-3 " />
+      <FormControlLabel  control={<Checkbox />} label="Native"  className="col-md-3 " />
+    </FormGroup>
+</div>
+
+
+</div>
+
+  </div>
+  <div className="col-md-6 mrg-right-0">
+  <div className="subhead-background">
+  <span>Family Details</span>
+  <div className="right-edit">
+    <a href="">
+  <MdEdit/>
+  </a>
+  </div>
+  </div>
+
+<div className="subbody-background">
+  <div class="form-group"><label for="exampleFormControlInput1">Relationship</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Name</label><input type="email" className="form-control"/></div>
+   <div class="form-group"><label for="exampleFormControlInput1">Date of Birth</label><input className="form-control" type="date" id="" name="birthday"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Gender</label><div className="radiobox-outer family-details ">
+      <Radio name="test">Male</Radio>
+      <Radio name="test">Female</Radio>
+      </div></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Dependent </label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Address</label><textarea className="form-control" rows="3" spellcheck="false"> </textarea></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Minor</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Guardian Name</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Guardian Address</label><textarea className="form-control" rows="3" spellcheck="false"> </textarea></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Guardian Relation with Nominee</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Guardian Contact Number</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Name ad in Passport</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Passport Number</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Insured</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Occupation</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Graduation Date</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">SSN</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Nationality</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Passport Expiry Date</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">Place of Birth</label><input type="email" className="form-control"/></div>
+  <div class="form-group"><label for="exampleFormControlInput1">ECNR Required</label><input type="email" className="form-control"/></div>
+  <div class="form-group upload-file-bx"><label for="exampleFormControlInput1">Upload</label><input type="file" className="form-control " /></div>
+</div>
+  </div>
+
+  <div className="bottom-button-bg mrg-left-0 mrg-right-0">
+            <button type="button" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " > Cancel </button> 
+        </div>
+  
+</div>
+
+
+  </div>
+
+
+
+    </div>
+      </TabPanel>
+      
+
+
+      <TabPanel value={value} index={5}>
+    <div className="tab-outer">
+      <div className="basic-inform-outer">
+<div className="row basic-inform-background ">
+<div className="sub-head basic-inform-main-head">Additional Info
+                                <div className="top-right-outer add-btn-div">
+                                <button type="button" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " > Cancel </button> 
+
+                                </div>
+                            </div>
+  
+  <div className="basic-inform-inner">
+
+<div className="inner-middile-row">
+<div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Shift</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Attendance</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Part/Full Time</label><input type="email" className="form-control"/></div>
+  </div>
+  
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Contract Type</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Contract End</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Notice Period</label><input type="email" className="form-control"/></div>
+  </div>
+
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Hours per week</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Secretary</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Experience Category</label><input type="email" className="form-control"/></div>
+  </div>
+  
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Mentor</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Weekly Holiday list</label><input type="email" className="form-control"/></div>
+  </div>
+  </div>
+  </div>
+ 
+
+  <div className="sub-head basic-inform-main-head employee-attach-second-section">Employee Attachment Details</div>
+  <div className="basic-inform-inner employee-attach-second-section">
+
+<div className="inner-middile-row">
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Category</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Type</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Comment</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group upload-file-bx"><label for="exampleFormControlInput1">Upload Details</label> <input type="file" className="form-control " />
+
+  </div>
+  </div>
+      <div className="bottom-button-bg">
+            <button type="button" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " > Cancel </button> 
+        </div>
+  
+</div>
+
+
+  </div>
+
+</div>
+
+        </div>
+
+    </div>
+      </TabPanel>
+       
+
+      <TabPanel value={value} index={6}>
+    <div className="tab-outer">
+      <div className="basic-inform-outer">
+<div className="row basic-inform-background ">
+<div className="sub-head basic-inform-main-head">Education Details
+                                <div className="top-right-outer add-btn-div">
+                                <button type="button" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " > Cancel </button> 
+                                </div>
+                            </div>
+  
+  <div className="basic-inform-inner">
+
+<div className="inner-middile-row">
+<div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Type of Establishment</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Name of Establishment</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Discipline</label><input type="email" className="form-control"/></div>
+  </div>
+  
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Year of Passing</label><input className="form-control" type="date" id="" name="birthday"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Grade</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Level</label><input type="email" className="form-control"/></div>
+  </div>
+
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Subject</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Major Field</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Minor Field</label><input type="email" className="form-control"/></div>
+  </div>
+  
+  <div className="col-md-4">
+  <div class="form-group upload-file-bx"><label for="exampleFormControlInput1">Upload</label><input type="file" className="form-control " /></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Affiliated To</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Address of Institute</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Attended From</label><input className="form-control" type="date" id="" name="birthday"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Attended To</label><input className="form-control" type="date" id="" name="birthday"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Company Sponsored</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Amount</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Reimbursement Date</label><input className="form-control" type="date" id="" name="birthday"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Explain Breaks During Education</label><input type="email" className="form-control"/></div>
+  </div>
+    <div className="bottom-button-bg">
+            <button type="button" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " > Cancel </button> 
+        </div>
+  
+</div>
+
+
+  </div>
+
+</div>
+
+        </div>
+
+    </div>
+      </TabPanel>
+
+
+      <TabPanel value={value} index={7}>
+    <div className="tab-outer">
+      <div className="basic-inform-outer">
+<div className="row basic-inform-background ">
+<div className="sub-head basic-inform-main-head">Payroll Info
+                                <div className="top-right-outer add-btn-div">
+                                     <button type="button" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " > Cancel </button> 
+                                </div>
+                            </div>
+  
+  <div className="basic-inform-inner">
+
+<div className="inner-middile-row">
+<div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Salary Hold</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Pay Process Status</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">PF Applicable</label><input type="email" className="form-control"/></div>
+  </div>
+  
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">PF No</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">GL Code</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Pay Mode</label><input type="email" className="form-control"/></div>
+  </div>
+
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">PT Location</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">PT Applicable</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Applicable ESI</label><input type="email" className="form-control"/></div>
+  </div>
+  
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">ESI Number</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Applied From</label><input type="email" className="form-control"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Increment from Date</label><input className="form-control" type="date" id="" name="birthday"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Increment Released Date</label><input className="form-control" type="date" id="" name="birthday"/></div>
+  </div>
+  <div className="col-md-4">
+  <div class="form-group"><label for="exampleFormControlInput1">Pay Group</label><input type="email" className="form-control"/></div>
+  </div>
+      <div className="bottom-button-bg">
+            <button type="button" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " > Cancel </button> 
+        </div>
+  
+</div>
+
+
+  </div>
+
+</div>
+
+        </div>
+
+    </div>
+      </TabPanel>
           </div>
                   </section>
       </DndProvider>
     </main>
   );
 };
+
+
+
+
 
 export default Newdrag;
 

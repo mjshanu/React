@@ -17,7 +17,9 @@ import Dashboard from "../pages/Dashboard";
 import Job from "../pages/job";
 import UncontrolledBoard from "../pages/Dragslider";
 import Newdrag from "../pages/Newdrgbox.jsx";
-
+import Addemployeetab from "../pages/Addemployeetabs";
+import  Organization from "../pages/Organization";
+import Assets from "../pages/Assets";
 class Content extends React.Component {
   render() {
     return (
@@ -36,6 +38,9 @@ class Content extends React.Component {
       <Router path="/Kanban">
         <Kanban/>
         </Router>
+        <Router path="/Assets">
+        <Assets/>
+        </Router> 
         <Router path="/Emplyelist">
         <Emplyelist/>
         </Router> 
@@ -51,8 +56,17 @@ class Content extends React.Component {
         <Router path="/Newdrgbox">
         <Newdrag/>
         </Router> 
+        <Router path="/Addemployeetab">
+        <Addemployeetab/>
+        </Router> 
+        <Router path="/Organization">
+        <Organization/>
+        </Router> 
+
          </Switch>
     
+
+         
     </Router>
       </Container>
     );

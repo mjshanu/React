@@ -1,79 +1,85 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Tab, Tabs, AppBar } from '@material-ui/core';
+
+
 import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { SliderValueLabelUnstyled } from '@mui/core';
 import useForm from './useForm';
 import validate from '../validation/employee_val';
-import { ErrorSharp } from '@material-ui/icons';
-function TabPanel(props) {
-    const { children, value, index, ...other } = props;
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
 
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`simple-tabpanel-${index}`}
-            aria-labelledby={`simple-tab-${index}`}
-            {...other}
-        >
-            {value === index && (
-                <Box sx={{ p: 3 }}>
-                    <Typography>{children}</Typography>
-                </Box>
-            )}
-        </div>
-    );
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
 }
 
 TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
 };
 
 function a11yProps(index) {
-    return {
-        id: `simple-tab-${index}`,
-        'aria-controls': `simple-tabpanel-${index}`,
-    };
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
 }
 export default function BasicTabs() {
-    const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(0);
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
-    const { handleChange1, values, handleSubmit, errors } = useForm(validate);
-    return (
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  const { handleChange1, values, handleSubmit, errors } = useForm(validate);
+  return (
+   <div class="candidate-tab-outer">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Basic Information</a></li>  
+    <li><a href="#tab2" data-toggle="tab">Schedule Details</a></li>
+    <li><a href="#tab3" data-toggle="tab">Rejection Reasons</a></li>
+  </ul>
 
-        <div>
-            <form onSubmit={handleSubmit} className='form' noValidate>
-                <Box sx={{ width: '100%' }}>
-                    <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                            <Tab label="Basic Information" {...a11yProps(0)} />
-                            <Tab label="Schedule Details" {...a11yProps(1)} />
-                            <Tab label="Rejection Reasons" {...a11yProps(2)} />
-                        </Tabs>
-                    </Box>
-                    <TabPanel value={value} index={0}>
-                        <div class="row popup-content-height">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Name</label>
-                                    <input name="username" onChange={handleChange1} value={values.username} type="text" class="form-control" ></input>
-                                    {errors.username && <p>{errors.username}</p>}
-                                </div>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent=".tab-pane" href="#collapseOne">
+            Basic Information
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+          <div class="panel-body">
+          <div class="row popup-content-height popup-row-mrg">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Name</label>
+                                <input type="email" class="form-control" ></input>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Post</label>
                                     <input name="postvalue" onChange={handleChange1} value={values.postvalue} type="text" class="form-control" ></input>
+                                    {errors.postvalue && <p>{errors.postvalue}</p>}
                                 </div>
-                                {errors.postvalue && <p>{errors.postvalue}</p>}
+                               
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
@@ -173,15 +179,29 @@ export default function BasicTabs() {
                             </div>
 
                         </div>
-                    </TabPanel>
-                    <TabPanel value={value} index={1}>
-                        <div class="row popup-content-height">
-
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Panel Members</label>
-                                    <input type="text" name="p_members" onChange={handleChange1}   value={values.p_members} class="form-control" ></input>
-                                </div>
+                        
+                     </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane" id="tab2">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent=".tab-pane" href="#collapseTwo">
+            Schedule Details
+            </a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body">
+          <div class="row popup-content-height popup-row-mrg">
+                        
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Panel Members</label>
+                                <input type="email" class="form-control" ></input>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
@@ -222,15 +242,29 @@ export default function BasicTabs() {
                             </div>
 
                         </div>
-                    </TabPanel>
-                    <TabPanel value={value} index={2}>
-                        <div class="row popup-content-height">
-
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Candidate Status</label>
-                                    <input type="text" name="c_status" onChange={handleChange1} value={values.c_status} class="form-control" ></input>
-                                </div>
+                        
+                     </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane" id="tab3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent=".tab-pane" href="#collapseThree">
+            Rejection Reasons
+            </a>
+          </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse">
+          <div class="panel-body">
+          <div class="row popup-content-height popup-row-mrg">
+                        
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Candidate Status</label>
+                                <input type="email" class="form-control" ></input>
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
@@ -248,17 +282,14 @@ export default function BasicTabs() {
                             </div>
 
                         </div>
-                    </TabPanel>
-
-                </Box>
-                <div>
-
-                    <button type="submit" class="btn  btn-save "  > Save</button>
-                    <button type="button" class="btn  btn-cancel "  > Cancel </button>
-                </div>
-
-            </form>
+                        
+                     </div>
         </div>
-    )
+      </div>
+    </div>
+
+  </div>
+</div></div>
+  )
 }
 
