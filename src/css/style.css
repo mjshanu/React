@@ -494,7 +494,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     width: 100px;
     float: left;
     text-transform: uppercase;
-    margin-right: 15px;
+    margin-right: 9px;
 }
 .btn-cancel:hover {
     color: #ac4680;
@@ -503,7 +503,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 13px;
     width: 100px;
     float: left;
-    margin-right: 15px;
+    margin-right: 9px;
 }
 .popup-head-sty {
     border-bottom: 1px solid #dadada;
@@ -2665,4 +2665,107 @@ width:64px;
 }
 .candidate-tab-outer .panel-body {
     padding: 15px 0;
+}
+.padding-top-0{
+    padding-top: 0;
+}
+ .add-category-bt{
+    width: auto;
+      float: left;
+      margin-top: 30px;
+ }
+ .add-category-bt .btn-maincolor {
+    color: #fff;
+    background-color: #4A54D1;
+    border-color: #4A54D1;
+    width: 42px;
+    font-size: 16px;
+    height: 38px;
+}
+.add-category-bt  .add-btn-icon {
+    margin-top: -3px;
+}
+.add-category-bt .btn-maincolor:hover {
+    color: #fff;
+    background-color: #ac4680;
+    border-color: #ac4680;
+   }
+   .add-category-seearch{
+       width: 100%;
+       margin-top: 30px;
+   }
+   .add-category-seearch input{
+    height: 38px;
+   }
+   .add-category-show-box{
+    width: 100%;
+    float: left;
+    padding: 0px 6px;
+    display: block;
+    margin-right: 0;
+    margin-top: 10px;
+    margin-left: 0;
+   }
+   .add-category-show-box .inner-box{
+       width: 100%;
+       padding: 30px;
+       float: left;
+       background: #f3f3f3;
+   }
+   .padding-left-5{
+       padding-left: 5px;
+   }
+   .add-category-show-box .heading {
+    font-size: 13px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #292929;
+    font-weight: 800;
+    width: auto;
+    border: 0;
+    width: 100%;
+    margin-bottom: 20px;
+    float: left;
+}
+.add-category-show-box {
+    display: block;
+    margin-right: 0;
+    margin-top: 10px;
+    margin-left: 0;
+    width: 100%;
+    float: left;
+}
+.add-category-save-outer{
+    width: 227px;
+    margin: 0px auto;
+ 
+}
+.add-category-save-outer button{
+    margin-top: 15px;
+    float: left;
+}
+.add-category-save-outer  .btn-cancel:hover , .add-category-save-outer  .btn-cancel{
+       margin-right: 0px;
+}
+.border-top{
+    border-bottom: 0.5px solid rgba(215, 215, 215, 0.53);
+    float: left;
+    width: 100%;
+    display: block;
+    padding-top: 15px;
+}
+.border-0{
+    border: 0;
+    padding-bottom: 0;
+}
+.addproperty-inner {
+    float: left;
+    width: 100%;
+    padding: 0px 3px;
+}
+.addproperty-bg{
+    background: #FFFFFF !important; 
+}
+.desktop-edt-none{
+    display: none;
 }

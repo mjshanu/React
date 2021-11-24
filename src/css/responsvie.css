@@ -569,6 +569,12 @@ display: block;    margin-top: 0;
    .Candidate-tab-button {
     width: 28.3%;
 }
+.mobile-editnone{
+    display: none;
+}
+.desktop-edt-none{
+display:block;
+}
 }
 @media only screen and (max-width: 767px){
 .calendar-width {

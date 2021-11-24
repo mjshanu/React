@@ -198,7 +198,7 @@ window.addEventListener("resize", () => {
           </button>
           <div class="tab-module__tabcontent" tabindex="0"  role="tabpanel" id="colors-tab" aria-labelledby="colors">
           <div className="tab-outer">
-      <div className="basic-inform-outer">
+      <div className="basic-inform-outer ">
 <div className="row basic-inform-background ">
 <div className="sub-head basic-inform-main-head">Specification
                                 <div className="top-right-outer add-btn-div">
@@ -208,7 +208,7 @@ window.addEventListener("resize", () => {
                                 </div>
                             </div>
   
-  <div className="basic-inform-inner">
+  <div className="basic-inform-inner padding-top-0">
 
 <div className="col-md-4">
   <div class="form-group"><label for="exampleFormControlInput1">Category</label>
@@ -262,7 +262,7 @@ window.addEventListener("resize", () => {
                                 </div>
                             </div>
   
-  <div className="basic-inform-inner">
+  <div className="basic-inform-inner  padding-top-0">
 
 <div className="col-md-3">
   <div class="form-group"><label for="exampleFormControlInput1">Connector Type</label><input type="email" className="form-control"/></div>
@@ -303,7 +303,7 @@ window.addEventListener("resize", () => {
           <div class="tab-module__tabcontent" tabindex="0" role="tabpanel" id="options-tab" aria-labelledby="options" >
     
           <div className="tab-outer">
-      <div className="basic-inform-outer">
+      <div className="basic-inform-outer ">
 <div className="row basic-inform-background ">
 <div className="sub-head basic-inform-main-head">Purchase
                                 <div className="top-right-outer add-btn-div">
@@ -313,7 +313,7 @@ window.addEventListener("resize", () => {
                                 </div>
                             </div>
   
-  <div className="basic-inform-inner">
+  <div className="basic-inform-inner padding-top-0">
 
 <div className="col-md-3">
   <div class="form-group"><label for="exampleFormControlInput1">purchase Date</label><input type="email" className="form-control"/></div>
@@ -360,7 +360,7 @@ window.addEventListener("resize", () => {
           </button>
           <div class="tab-module__tabcontent" tabindex="0" role="tabpanel" id="accesories-tab" aria-labelledby="accesories" >
           <div className="tab-outer">
-      <div className="basic-inform-outer">
+      <div className="basic-inform-outer ">
 <div className="row basic-inform-background ">
 <div className="sub-head basic-inform-main-head">More Info
                                 <div className="top-right-outer add-btn-div">
@@ -370,7 +370,7 @@ window.addEventListener("resize", () => {
                                 </div>
                             </div>
   
-  <div className="basic-inform-inner">
+  <div className="basic-inform-inner padding-top-0">
 
 <div className="col-md-3">
   <div class="form-group"><label for="exampleFormControlInput1">Status</label><input type="email" className="form-control"/></div>

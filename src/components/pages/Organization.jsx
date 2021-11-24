@@ -12,6 +12,7 @@ import {location} from '../../images';
 import {profilei} from '../../images/profilei.svg'; 
 import Addorganization from './Addorgaization';
 import Addbranches from './Addbranches';
+import Editbranches from './Editbranches';
 
 import {
   Accordion,
@@ -99,13 +100,7 @@ const data = [
                     <div className="action-outer">
              
              <div className="edit-new-icon ">
-               <a href="">
-               <svg width="14" height="14" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.76911 5.80111L3.04833 0.0803333C2.94122 -0.0267778 2.76767 -0.0267778 2.66067 0.0803333L0.0803334 2.66067C-0.0267778 2.76778 -0.0267778 2.94133 0.0803334 3.04833L5.80111 8.76911L8.76911 5.80111Z" fill="#4A54D1"/>
-<path d="M9.59266 9.98866L6.0791 9.04722L9.04722 6.0791L9.98866 9.59266C10.053 9.83311 9.83311 10.053 9.59266 9.98866Z" fill="#4A54D1"/>
-</svg>
-
-</a>
+  <Editbranches/>
                              </div>
 <div className="delete-icon">
   <a href="">
@@ -161,7 +156,7 @@ const data = [
                     <div className="accord-detals-box">
         <div className="accordion-bottom-button">
 <div className="more-button">View</div>
-<div className="more-button more-outer">Edit</div>
+<div className="more-button more-outer"> <Editbranches/></div>
 <div className="more-button more-outer">Delete</div>
         </div>
         </div>
@@ -192,7 +187,7 @@ const data = [
                     <div className="accord-detals-box">
         <div className="accordion-bottom-button">
 <div className="more-button">View</div>
-<div className="more-button more-outer">Edit</div>
+<div className="more-button more-outer"> <Editbranches/></div>
 <div className="more-button more-outer">Delete</div>
         </div>
         </div>
@@ -224,7 +219,7 @@ const data = [
                     <div className="accord-detals-box">
         <div className="accordion-bottom-button">
 <div className="more-button">View</div>
-<div className="more-button more-outer">Edit</div>
+<div className="more-button more-outer"> <Editbranches/></div>
 <div className="more-button more-outer">Delete</div>
         </div>
         </div>
@@ -255,7 +250,7 @@ const data = [
                     <div className="accord-detals-box">
         <div className="accordion-bottom-button">
 <div className="more-button">View</div>
-<div className="more-button more-outer">Edit</div>
+<div className="more-button more-outer"> <Editbranches/></div>
 <div className="more-button more-outer">Delete</div>
         </div>
         </div>
