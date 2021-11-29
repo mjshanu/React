@@ -2744,8 +2744,12 @@ width:64px;
     margin-top: 15px;
     float: left;
 }
-.add-category-save-outer  .btn-cancel:hover , .add-category-save-outer  .btn-cancel{
+.add-category-save-outer  .btn-cancel:hover  , .add-category-save-outer  .btn-cancel{
        margin-right: 0px;
+}
+
+.btn-cancel.focus,  .btn-cancel:focus{
+color: #4A54D1;
 }
 .border-top{
     border-bottom: 0.5px solid rgba(215, 215, 215, 0.53);
@@ -2769,3 +2773,26 @@ width:64px;
 .desktop-edt-none{
     display: none;
 }
+.boc-outer{
+    width: 100%;
+    float: left;
+}
+
+.btn-large {
+    color: #fff;
+    background-color: #4A54D1;
+    border-color: #4A54D1;
+    font-size: 13px;
+    width: auto;
+    text-transform: uppercase;
+    float: left;
+    margin-right: 15px;
+}
+.btn-large:hover {
+    color: #fff;
+    background-color: #ac4680;
+    border-color: #ac4680;
+ }
+ .open-close{
+     
+ }
