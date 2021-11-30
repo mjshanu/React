@@ -2871,10 +2871,15 @@ color: #4A54D1;
 }
 .sub-table tr{
     border-bottom: 0;
+    display: table;
 }
 .left-table-arrow{
      color: #000;
     font-size: 16px;  
+}
+
+.organazation-new-table td tr table {
+    margin-bottom: 10px;
 }
 .organazation-new-table td tr table   thead
 {
