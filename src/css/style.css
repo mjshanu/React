@@ -2794,5 +2794,89 @@ color: #4A54D1;
     border-color: #ac4680;
  }
  .open-close{
-     
+
  }
+ .organazation-new-table {
+    margin-top: 0;
+    margin-left: 5px;
+    margin-right: 0;box-shadow: 0px 4px 4px rgb(0 0 0 / 16%) !important;
+    border-radius: 7px !important;    float: left;
+    width: 100%;    margin-bottom: 20px;
+}
+.organazation-new-table table{
+    width: 100%;
+    float: left;
+}
+
+.organazation-new-table thead {
+    background: #D6D8F6;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    float: left;
+    width: 100%;
+}
+.organazation-new-table  tr{
+     width: 100%;    display: flex;
+     padding: 12px 10px;
+     float: left; border-bottom: 1px solid rgba(224, 224, 224, 1);
+}
+.organazation-new-table  tbody{
+    width: 100%;
+    float: left;
+}.organazation-new-table td {
+    font-size: 14px;
+    line-height: 24px;    color: rgba(0, 0, 0, 0.87);
+    text-transform: capitalize;   
+    padding: 0px 15px 0px;
+}
+.organazation-new-table  th{
+    
+    color: rgba(0, 0, 0, 0.87);
+    padding: 0px 15px 0px;
+}
+.trust{
+    display: block;
+}
+.organazation-new-table td tr table:first-child{
+    display: block;transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: #fff;
+}
+.organazation-new-table td tr table{
+    display: none;
+}
+.organazation-new-table th:first-child, .organazation-new-table td:first-child{
+    width:6%;
+}
+.organazation-new-table th, .organazation-new-table td{
+    width: 24%;
+}
+.organazation-new-table tr.header-outer:first-child{
+    display: none;
+}
+.organazation-new-table td tr table tr{
+    display: table;
+}
+.sub-table{
+    width: 100% !important;
+    display:flex !important;
+}
+.sub-table td:first-child{
+    width: 100%;
+}
+.sub-table td:first-child table td:first-child{
+    width: 20%;
+}
+.sub-table td:first-child table td{
+    width: 20%;        padding: 9px 15px;
+}
+.sub-table tr{
+    border-bottom: 0;
+}
+.left-table-arrow{
+     color: #000;
+    font-size: 16px;  
+}
+.organazation-new-table td tr table   thead
+{
+    background: #ac468126;
+}
