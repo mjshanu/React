@@ -2592,3 +2592,45 @@ width:64px;
 .candidate-tab-outer .panel-body {
     padding: 15px 0;
 }
+.asset-top {
+    float: left;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: -10px;
+}
+.asset-right-dropdwn {
+    float: left;
+    width: 30.4%;
+    margin-right: 10px;
+}
+.asset-top-right-box {
+    float: right;
+    width: 47%;
+    padding-right: 0px;
+    padding-top: 8px;
+    margin-right: -25px;
+}
+.asset-filter-stl {
+    padding-left: 15%;
+    padding-top: 2%;
+    font-weight: bold;
+    color: #000;
+}
+.subtable{
+    margin: 0;
+    padding: 10px !important;
+    border-bottom: 1px solid #d6d6d6  !important;
+    border-right: 0px solid white !important;
+    color: #000;
+}
+.fUSRex table {
+    border-spacing: 0;
+    border: 0px solid #fffefe !important;
+}
+.kSAGaG table {
+    border-spacing: 0;
+    border: 0px solid #fff  !important;;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 16%) !important;
+    border-radius: 7px !important;
+}

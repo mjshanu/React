@@ -309,7 +309,18 @@
 .addabrch-modal{
     height: auto;
 }
-
+.asset-filter-stl {
+    padding-left: 10%;
+    padding-top: 2%;
+    font-weight: bold;
+    color: #000;
+}
+.asset-right-dropdwn {
+    float: left;
+    width: 29.4%;
+    margin-right: 10px;
+}
+ 
 }
 @media only screen and (max-width: 980px){
     .sidebar.is-open {
@@ -552,6 +563,27 @@ display: block;    margin-top: 0;
 .candiate-modal-bx  {
     width: 80% !important;
    }
+   .asset-top-right-box {
+    float: right;
+    width:100%;
+    padding-right: 0px;
+    padding-top: 15px;
+    margin-right: -25px;
+}
+.emplyesearch {
+    min-width: 100%;
+    float: left;
+    position: relative;
+}
+.asset-right-dropdwn {
+    float: left;
+    width: 31.4%;
+    margin-right: 10px;
+}
+.width-8 {
+    width: 11%;
+}
+
 }
 @media only screen and (max-width: 767px){
 .calendar-width {
@@ -774,6 +806,11 @@ display: block;    margin-top: 0;
 .organization-top-rt .btn-maincolor {
     font-size: 12px;
 }
+.asset-right-dropdwn {
+    float: left;
+    width: 30.4%;
+    margin-right: 10px;
+}
 }
 @media only screen and (max-width:650px){
     .listview-mob-top .col-2 {
@@ -792,6 +829,11 @@ display: block;    margin-top: 0;
      }
      .listview-mob-top .list-head-font {
         font-size: 12px;
+        }
+        .asset-right-dropdwn {
+            float: left;
+            width: 29.4%;
+            margin-right: 10px;
         }
 }
 @media only screen and (max-width:573px)

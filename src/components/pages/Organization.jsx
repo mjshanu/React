@@ -12,7 +12,7 @@ import {location} from '../../images';
 import {profilei} from '../../images/profilei.svg'; 
 import Addorganization from './Addorgaization';
 import Addbranches from './Addbranches';
-
+import App from './Organizationlist';
 import {
   Accordion,
   AccordionItem,
@@ -70,7 +70,8 @@ const data = [
                         </div>
                     </div>
                    
-                    <div className="col-md-12 job-main-tb-outer">    
+                    <div className="col-md-12 job-main-tb-outer">   
+                    <App/> 
                     <Paper className="recruitment-table-outer job-outer organazation-table-top">
       <Table className="recruitment-tabele">
         <TableHead>

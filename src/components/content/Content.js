@@ -20,6 +20,8 @@ import Newdrag from "../pages/Newdrgbox.jsx";
 import Addemployeetab from "../pages/Addemployeetabs";
 import  Organization from "../pages/Organization";
 import Assets from "../pages/Assets";
+import Assetsdetails from "../pages/Assetsdetails";
+import Organizationlist from "../pages/Organizationlist";
 class Content extends React.Component {
   render() {
     return (
@@ -32,14 +34,18 @@ class Content extends React.Component {
         <Router>
      
       <Switch>
+        
       <Router exact path="/Dashboard">
       <Dashboard/>
       </Router>
-      <Router path="/Kanban">
+      <Router path="/Kanban" >
         <Kanban/>
         </Router>
         <Router path="/Assets">
         <Assets/>
+        </Router> 
+        <Router path="/Assetsdetails">
+        <Assetsdetails/>
         </Router> 
         <Router path="/Emplyelist">
         <Emplyelist/>
@@ -62,6 +68,9 @@ class Content extends React.Component {
         <Router path="/Organization">
         <Organization/>
         </Router> 
+        <Router path="/Organizationlist">
+        <Organizationlist/>
+        </Router>
 
          </Switch>
     
