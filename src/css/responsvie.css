@@ -263,6 +263,10 @@
             .Candidate-tab-button {
                 width: 28.5%;
             }
+            .categroy-top
+                .col-md-3 {    width: 30%;
+                    float: left;
+            }
        }
 @media only screen and (max-width: 1200px){
 .recruitment-top-right-box {
@@ -803,6 +807,22 @@ display:block;
 .organization-top-rt .btn-maincolor {
     font-size: 12px;
 }
+.categroy-top .col-md-3 {
+    width: 87%;
+    float: left;
+}
+.categroy-top .mob-category-wdth{
+    width: 100%;
+    margin-bottom: 20px;
+    padding-left: 5px;    padding-right: 8px;
+}
+.categroy-top .mob-category-wdth .add-category-seearch {
+    margin-top: 10px;
+}
+.add-category-bt {
+           float: right;
+           padding-right: 8px;
+}
 }
 @media only screen and (max-width:650px){
     .listview-mob-top .col-2 {
@@ -822,6 +842,7 @@ display:block;
      .listview-mob-top .list-head-font {
         font-size: 12px;
         }
+    
 }
 @media only screen and (max-width:573px)
 
@@ -865,6 +886,26 @@ display:block;
     padding-right: 15px;
     padding-left: 0px;
 }
+
+.basic-inform-inner .add-category-show-box  .col-md-4 {
+    width: 100%;
+    max-width: 100%;
+}
+.category-top-button{
+    width: 100%;
+    padding-left: 0;
+    margin-left: 0;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-right: 0!important;
+}
+.addproperty-inner .col-md-4 {
+        width: 100%;
+        max-width: 100%;
+        }
+        .addproperty-inner{
+            padding: 20px 0px 10px;
+        }
 }
 @media only screen and (max-width:480px){
     .topbar-icon-right {
@@ -1059,7 +1100,15 @@ padding-bottom: 10px;
     margin-bottom: 0px;
      border: 0;
 }
-
+.categroy-top .col-md-3 {
+    width: 80%;
+}
+.categroy-top .mob-category-wdth {
+    width: 100%;
+}
+.category-top-button button{
+    margin-bottom: 15px;
+}
 }
 
 @media only screen and (max-width:330px){
