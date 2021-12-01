@@ -45,7 +45,7 @@ import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
                     <section className="main-content-area">
                         <div className="main-content-area-inner">
                             <div className="sub-head border-0">Add Category
-                                <div className="top-right-outer add-btn-div">
+                                <div className="top-right-outer add-btn-div category-top-button">
                                 <a href="Addproperty"> <button type="button" class="btn  btn-large "  >Add Property</button></a>
                                 <button type="button" class="btn  btn-cancel"  > Save</button>
             <button type="button" class="btn  btn-cancel " > Cancel </button> 
@@ -55,7 +55,7 @@ import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
                                                                    <div className="border-top"></div>
                             </div>
 
-                            <div className="basic-inform-inner padding-top-0" >
+                            <div className="basic-inform-inner padding-top-0 categroy-top" >
                             <div className="col-md-3 padding-left-5">
   <div class="form-group"><label for="exampleFormControlInput1">Product Name</label>
   <select id = "dropdown" class="form-control">
@@ -67,7 +67,7 @@ import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
   <button type="button" class="btn  btn-maincolor"  onClick={() => dispatch({ type: "expand-all" })}
            disabled={state.every((s) => s === true)}> <SiAddthis className="add-btn-icon"/></button> 
   </div>
-  <div className="col-md-3">
+  <div className="col-md-3 mob-category-wdth">
   <div className="emplyesearch add-category-seearch">
                                     <input className="form-control" type="text" id="birthday" name="birthday" placeholder="Search " />
                                     <button type="button"> <FaSearch className="add-btn-icon" /></button>
