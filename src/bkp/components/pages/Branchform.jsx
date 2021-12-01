@@ -1,22 +1,23 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import swal from 'sweetalert';
-const Organizationform = org_validation => {
+const Branchform = () => {
   const [values, SetValues] = useState({
-    org_name: '',
-    org_code: '',
-    org_type: '',
-    org_category: '',
-    org_registration: '',
-    org_location: ''
-
-
+   branch_name:'',
+   branch_code:'',
+   branch_company:'',
+   branch_type:'',
+   branch_location:'',
+   branch_date:'',
+   branch_landline:'',
+   branch_email:''
   });
  
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [options, setOptions] = useState(["IT service", "Design"]);
-
+  const[listnew,setListnew]=useState([]);
+ //const [locationorg,Setlocationorg]=useState([]);
   const handleChange = e => {
     const { name, value } = e.target
     SetValues({
@@ -26,7 +27,8 @@ const Organizationform = org_validation => {
   };
 
   useEffect(() => {
-   
+    getCompanyName();
+    
     if (Object.keys(errors).length === 0 && isSubmitting) {
       onSubmitform();
     }
@@ -36,23 +38,32 @@ const Organizationform = org_validation => {
     const orgresponse=await fetch("http://localhost:8000/api/getOrganization/");
     setOrg(orgresponse.data);
   }*/
-  const getSelectDropdown = async () => {
-    const response = await fetch("http://localhost:8000/api/getOrgnaization_type");
+  const getCompanyName = async () => {
+    const response = await fetch("http://localhost:8000/api/getOrgnaizationname");
     const data = await response.json();
-    const list = data.list;
-
+  
+    const listnewtest = data.org;
+  
+    //const lo=JSON.stringify(listnew);
+   
+    setListnew(listnewtest);
+     
   }
+ 
+  
+ // console.log(locationorg);
   const handleSubmit = e => {
 
     e.preventDefault();
-    const test = setErrors(org_validation(values));
-    setIsSubmitting(true);
+   // const test = setErrors(org_validation(values));
+   // setIsSubmitting(true);
+   onSubmitform();
 
   }
   const onSubmitform = e => {
 
     //console.log(values)
-    const response = axios.post('http://localhost:8000/api/add_organization', values);
+    const response = axios.post('http://localhost:8000/api/add_branches', values);
     response.then(function (res) {
       if (res.data.status === 200) {
         //console.log(res.data.message);
@@ -63,12 +74,14 @@ const Organizationform = org_validation => {
           button: "ok",
         });
         SetValues({
-          org_name: "",
-          org_code: "",
-          org_type: "",
-          org_category: "",
-          org_registration: "",
-          org_location: "",
+            branch_name:'',
+            branch_code:'',
+            branch_company:'',
+            branch_type:'',
+            branch_location:'',
+            branch_date:'',
+            branch_landline:'',
+            branch_email:''
         })
       }
     })
@@ -76,6 +89,6 @@ const Organizationform = org_validation => {
 
 
 
-  return { handleChange, values, handleSubmit, errors, options };
+  return { handleChange,values,listnew,handleSubmit};
 }
-export default Organizationform;
+export default Branchform;

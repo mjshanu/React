@@ -16,7 +16,7 @@ import Addbranches from './Addbranches';
 import axios from 'axios';
 import Modal from 'react-modal'; 
 import { Link } from 'react-router-dom';
-import swal from 'sweetalert';
+
 import {
   Accordion,
   AccordionItem,

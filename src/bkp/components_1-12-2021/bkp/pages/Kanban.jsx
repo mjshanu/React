@@ -13,7 +13,6 @@ import PropTypes from 'prop-types';
 import { constants } from 'smooth-dnd';
 import BasicTabs from "./Employeetabs";
 import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
-import Recruitmentnewmodal from "./Recruitmentnewmodal";
 import axios from 'axios';
 import {
   DragDropContext,
@@ -178,12 +177,8 @@ const Kanban = () => {
             <div className="main-content-area-inner">
             <div className="sub-head">Candidate Information 
     <div className="top-right-outer add-btn-div">
-   <div>
-     <Recruitmentnewmodal />
-     </div>
+   <Popupmodal/>   
     </div>
-
-
 </div>
 <div className="recruitment-top-right-box recruitment-box-padding">
 <div className="calendar-width">  

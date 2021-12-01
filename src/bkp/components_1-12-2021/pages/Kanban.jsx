@@ -12,8 +12,7 @@ import Popupmodal from "./Popupmodal";
 import PropTypes from 'prop-types';
 import { constants } from 'smooth-dnd';
 import BasicTabs from "./Employeetabs";
-import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
-import Recruitmentnewmodal from "./Recruitmentnewmodal";
+import { FaSearch } from "@react-icons/all-files/fa/FaSearch";import Recruitmentnewmodal from "./Recruitmentnewmodal";
 import axios from 'axios';
 import {
   DragDropContext,

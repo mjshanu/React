@@ -20,12 +20,8 @@ import { FaFileAlt } from "@react-icons/all-files/fa/FaFileAlt";
 import { IconName } from "react-icons/ai";
 import { MdPersonSearch, MdOutlineScreenSearchDesktop, MdBusinessCenter, MdOutlineAccountTree } from "react-icons/md";
 class SideBar extends React.Component {
-  
   render() {
-    const $ = window.$;
-    $(".sidebar").on('click', '.nav-item', function() {
-      $(this).addClass("active"); // adding active class
-   });
+    
     return (
 
       
@@ -55,7 +51,7 @@ class SideBar extends React.Component {
             </Nav.Link>
           </Nav.Item>
                <Nav.Item>
-            <Nav.Link href="/Assets"  >
+            <Nav.Link href="/Assets">
               <FaChartLine/>
              Asset
             </Nav.Link>
@@ -76,7 +72,7 @@ class SideBar extends React.Component {
           </Nav.Item>
 
           <Nav.Item>
-            <Nav.Link href="/Addcategory">
+            <Nav.Link href="/">
              < FaTools/>
              configration
             </Nav.Link>
@@ -111,13 +107,6 @@ class SideBar extends React.Component {
              Organization & Branches
             </Nav.Link>
           </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/Addassets">
-            < MdOutlineAccountTree/>
-             Add Assets
-            </Nav.Link>
-          </Nav.Item>
-
         </Nav>
 
       </div>

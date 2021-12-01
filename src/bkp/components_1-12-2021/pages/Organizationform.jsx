@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
-import swal from 'sweetalert';
 const Organizationform = org_validation => {
   const [values, SetValues] = useState({
     org_name: '',
@@ -56,12 +55,6 @@ const Organizationform = org_validation => {
     response.then(function (res) {
       if (res.data.status === 200) {
         //console.log(res.data.message);
-        swal({
-          title: "Good job!",
-          text: "Organization added successfully",
-          icon: "success",
-          button: "ok",
-        });
         SetValues({
           org_name: "",
           org_code: "",

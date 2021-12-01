@@ -9,7 +9,6 @@ import 'react-dropdown/style.css';
 import {AppBar} from '@material-ui/core';
 import BasicTabs from './Employeetabs';
 import 'react-tabs/style/react-tabs.css';
-import Branchform from './Branchform';
 const customStyles = {
     content: {
       top: '50%',
@@ -27,7 +26,7 @@ const customStyles = {
  
  
 
-export default function Addbranches(){
+ function Editbranches(){
 
    
     const CustomTab = ({ children }) => (
@@ -56,28 +55,26 @@ export default function Addbranches(){
     const handlesTabs=(e, val)=>{
       console.warn(val)
     setValue(val)
-    };
-    const sha = [
-      { value: 'flavor', label: 'flavor' },
-      { value: 'yummy', label: 'yummy' },
-      { value: 'red', label: 'red' },  
-      { value: 'green', label: 'green' },
-      { value: 'yellow', label: 'yellow' },
-  ];
-  
-    const { handleChange,values,listnew,handleSubmit} = Branchform();
-    console.log(listnew);
+    }
+   
   return (
     <div>
      
-      <button type="button" class="btn  btn-maincolor btn-block" onClick={openModal} > <SiAddthis className="add-btn-icon"/> ADD Branches</button> 
+     <a href="#" onClick={openModal} >
+                 <div className="desktop-edt-none">Edit</div>
+                 <svg width="14" height="14" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="mobile-editnone">
+  <path d="M8.76911 5.80111L3.04833 0.0803333C2.94122 -0.0267778 2.76767 -0.0267778 2.66067 0.0803333L0.0803334 2.66067C-0.0267778 2.76778 -0.0267778 2.94133 0.0803334 3.04833L5.80111 8.76911L8.76911 5.80111Z" fill="#4A54D1"/>
+  <path d="M9.59266 9.98866L6.0791 9.04722L9.04722 6.0791L9.98866 9.59266C10.053 9.83311 9.83311 10.053 9.59266 9.98866Z" fill="#4A54D1"/>
+  </svg>
+  
+  </a>
+     
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
        className="job-detils-modal addabrch-modal"
         contentLabel="Example Modal" >
-          <form onSubmit={handleSubmit} className='form' noValidate>
         <div className="popup-head-sty modal-button-bg">
             <div className="popup-head-content-sty">
                 <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Add Branches</h4>
@@ -93,58 +90,57 @@ export default function Addbranches(){
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Branch Name</label>
-                                <input type="text" name="branch_name"   onChange={handleChange} value={values.branch_name}  class="form-control" ></input>
+                                <input type="email" class="form-control" ></input>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Branch Code</label>
-                                <input type="text" name="branch_code" onChange={handleChange} value={values.branch_code} class="form-control" ></input>
+                                <input type="email" class="form-control" ></input>
                     
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Company Name</label>
-                                <select id = "dropdown" name="branch_company" onChange={handleChange} value={values.branch_company} class="form-control">
-                                <option value="">Select Company name</option>
-                                {listnew.map(({ org_name, id }, index) => 
-                                <option value={id} >{org_name}</option>
-                                )} 
+                                <select id = "dropdown" class="form-control">
+    <option value="Post">Post</option>
+    <option value="1">1</option>
  </select>
                                
                             </div>
                         </div>
-                      
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Branch Type</label>
-                                <input type="text" name ="branch_type" onChange={handleChange} value={values.branch_type}  class="form-control" placeholder="Development Center" ></input>
+                                <input type="email" class="form-control" placeholder="Development Center" ></input>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Location</label>
-                                <input type="text" name ="branch_location" onChange={handleChange} value={values.branch_location}  class="form-control" placeholder="Development Center" ></input>
+                                <select id = "dropdown" class="form-control">
+    <option value="Post">Kochi</option>
+ </select>
                             </div>
                         </div>
                       
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Date of Establishment</label>
-                                <input type="date" name="branch_date" onChange={handleChange} value={values.branch_date}   class="form-control" ></input>
+                                <input type="date" class="form-control" ></input>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Brach Landline</label>
-                                <input type="text" name="branch_landline" onChange={handleChange} value={values.branch_landline} class="form-control" ></input>
+                                <input type="email" class="form-control" ></input>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Email</label>
-                                <input type="email" name="branch_email" onChange={handleChange} value={values.branch_email}  class="form-control" ></input>
+                                <input type="email" class="form-control" ></input>
                             </div>
                         </div>
                                              
@@ -155,14 +151,14 @@ export default function Addbranches(){
            
         </div>
         <div className=" modal-footer-button-bg">
-            <button type="submit" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-save "  > Save</button>
             <button type="button" class="btn  btn-cancel "  onClick={closeModal} > Cancel </button> 
         </div>
         
-       </form>
+       
                 
       </Modal>
     </div>
   );
 }
- 
+export default Editbranches;
