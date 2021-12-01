@@ -1,11 +1,37 @@
 import React, { Component } from 'react';
-import { MdOutlineFileDownload, MdOutlinePrint, MdPhone, MdCheck, MdLocationPin } from "react-icons/md";
 import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
  import { SiAddthis } from "@react-icons/all-files/si/SiAddthis";
-export default class  Addcategory extends Component {
+ import Collapse from "@kunukn/react-collapse";
 
-
-    render() {
+ const initialState = [false, false, false];
+ function reducer(state, { type, index }) {
+   switch (type) {
+     case "expand-all":
+       return [true, true, true];
+     case "collapse-all":
+       return [false, false, false];
+     case "toggle":
+       state[index] = !state[index];
+       return [...state];
+ 
+     default:
+       throw new Error();
+   }
+ }
+ 
+ function Block({ isOpen, title, onToggle, children }) {
+   return (
+     <div className="block boc-outer">
+        <Collapse layoutEffect isOpen={isOpen} >
+         {children}
+       </Collapse>
+     </div>
+   );
+ }
+ 
+ export default function  Addcategory () {
+   const [state, dispatch] = React.useReducer(reducer, initialState);
+ 
 
         
         return (
@@ -19,8 +45,9 @@ export default class  Addcategory extends Component {
                     <section className="main-content-area">
                         <div className="main-content-area-inner">
                             <div className="sub-head border-0">Add Category
-                                <div className="top-right-outer add-btn-div">
-                                <button type="button" class="btn  btn-save "  > Save</button>
+                                <div className="top-right-outer add-btn-div category-top-button">
+                                <a href="Addproperty"> <button type="button" class="btn  btn-large "  >Add Property</button></a>
+                                <button type="button" class="btn  btn-cancel"  > Save</button>
             <button type="button" class="btn  btn-cancel " > Cancel </button> 
 
                                                                    </div>
@@ -28,7 +55,7 @@ export default class  Addcategory extends Component {
                                                                    <div className="border-top"></div>
                             </div>
 
-                            <div className="basic-inform-inner padding-top-0" >
+                            <div className="basic-inform-inner padding-top-0 categroy-top" >
                             <div className="col-md-3 padding-left-5">
   <div class="form-group"><label for="exampleFormControlInput1">Product Name</label>
   <select id = "dropdown" class="form-control">
@@ -37,9 +64,10 @@ export default class  Addcategory extends Component {
   </div>
   </div>
   <div className="add-category-bt">
-  <button type="button" class="btn  btn-maincolor"> <SiAddthis className="add-btn-icon"/></button> 
+  <button type="button" class="btn  btn-maincolor"  onClick={() => dispatch({ type: "expand-all" })}
+           disabled={state.every((s) => s === true)}> <SiAddthis className="add-btn-icon"/></button> 
   </div>
-  <div className="col-md-3">
+  <div className="col-md-3 mob-category-wdth">
   <div className="emplyesearch add-category-seearch">
                                     <input className="form-control" type="text" id="birthday" name="birthday" placeholder="Search " />
                                     <button type="button"> <FaSearch className="add-btn-icon" /></button>
@@ -47,6 +75,10 @@ export default class  Addcategory extends Component {
 </div>
 
 
+     <Block
+         isOpen={state[0]}
+         onToggle={() => dispatch({ type: "toggle", index: 0 }) } className="open-close"
+       >
 <div className="row add-category-show-box ">
 <div className="col-md-12 inner-box">
 <div className="heading">Add  Specifications</div>
@@ -97,14 +129,15 @@ export default class  Addcategory extends Component {
   </div>
 
   <div className="add-category-save-outer">
-  <a href="Addproperty"><button type="button" class="btn  btn-save ">  Add</button></a>
-            <button type="button" class="btn  btn-cancel " > Cancel </button> 
+  <button type="button" class="btn  btn-save ">  Add</button>
+            <button type="button" class="btn  btn-cancel "  onClick={() => dispatch({ type: "collapse-all" })}
+           disabled={state.every((s) => s === false)} > Cancel </button> 
 
   </div>
     </div>
     </div>
 
-</div>
+</div>  </Block>
                             </div>
 
                         </div>
@@ -115,4 +148,4 @@ export default class  Addcategory extends Component {
             </div>
         )
     }
-}
+
