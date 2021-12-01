@@ -5,6 +5,13 @@ import Addbranches from './Addbranches';
 import Editbranches from './Editbranches';import Addorganization from './Addorgaization';
 import {location} from '../../images';
 //import "./styles.css";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from 'react-accessible-accordion';
 
  function Table({ columns: userColumns, data, renderRowSubComponent }) {
   const {
@@ -90,6 +97,93 @@ import {location} from '../../images';
       </tbody>
     </table>
     </div>
+    
+    </div>
+    <div className="accrodion-mob-outer">
+  <Accordion preExpanded={"a"} className="job-accrodion">
+  <AccordionItem uuid="a">
+        <AccordionItemHeading className="accordion-active-status">
+          <AccordionItemButton >
+            <div className="accordion-head-text">
+            <div className="name notificatio-outer">Encaps
+                  </div>
+            <div className="desi joblocation">
+          <img src={location}/>  
+          <span>Kakkanad</span>            
+            </div>
+            </div>   <div className="col-4 acc-status-change">
+            <div class="active-status-style">ENC</div>
+  </div></AccordionItemButton>
+        </AccordionItemHeading>
+        <AccordionItemPanel>
+          <div className="accord-detals-box">
+         <div className="left">Branch Name	</div>
+         <div className="right">: Encaps</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="left">Branch Code	 </div>
+         <div className="right">: ENC</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="left">Branch Type		 </div>
+         <div className="right">: Organization Center	</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="left">Location	 </div>
+         <div className="right">: Kochi</div>
+        </div>
+         
+                    <div className="accord-detals-box">
+        <div className="accordion-bottom-button">
+<div className="more-button">View</div>
+<div className="more-button more-outer">Edit</div>
+<div className="more-button more-outer">Delete</div>
+        </div>
+        </div>
+        </AccordionItemPanel>
+      </AccordionItem>
+
+      <AccordionItem uuid="b">
+        <AccordionItemHeading className="accordion-inactive-status">
+          <AccordionItemButton>  <div className="accordion-head-text">
+            <div className="name notificatio-outer">Bourntec</div>
+              <div className="desi joblocation">
+          <img src={location}/>  
+          <span>Bhuvaneshwar</span>            
+            </div>
+            </div>   <div className="col-4 acc-status-change">
+            <div class="active-status-style">BNC</div>
+  </div></AccordionItemButton>
+        </AccordionItemHeading>
+        <AccordionItemPanel>
+        <div className="accord-detals-box">
+         <div className="left">Branch Name	</div>
+         <div className="right">: Bourntec</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="left">Branch Code	 </div>
+         <div className="right">: BNC</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="left">Branch Type		 </div>
+         <div className="right">: Development Center	</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="left">Location	 </div>
+         <div className="right">: Kochi</div>
+        </div>
+                    <div className="accord-detals-box">
+        <div className="accordion-bottom-button">
+<div className="more-button">View</div>
+<div className="more-button more-outer">Edit</div>
+<div className="more-button more-outer">Delete</div>
+        </div>
+        </div>
+        </AccordionItemPanel>
+      </AccordionItem>
+       
+     
+    </Accordion>
     </div>
     </div>
     </section>
@@ -135,7 +229,12 @@ export default function  Organization() {
           {
             Header: "Location",
             accessor: "location"
+          },
+          {
+            Header: "Action",
+            accessor: "action"
           }
+          
         ]
       },
      ],
