@@ -1,0 +1,36 @@
+.sidebar-main{
+    width: 220px;
+    float: left;
+    display: block;
+    left: 0;
+    height: 140vh;
+    position: fixed;
+    background: #fff;
+    top: 0;    z-index: 13;
+}
+.logo{
+    width: 170px;
+    float: left;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.nav-start{
+    width: 100%;
+    float: left;
+   display: block;
+border-top: 1px solid #ccc;
+padding: 30px 0px;
+}
+.nav-taxt{
+     width: 100%;
+    float: left;
+    font-weight: 600;
+    color: #5452E1;
+    margin-bottom: 21px;
+    display: block;
+    text-align: left;
+    padding-left: 15px;
+    font-size: 20px;
+}
+

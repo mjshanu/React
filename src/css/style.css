@@ -2930,3 +2930,9 @@ color: #4A54D1;
 .job-main-tb-outer  .recruitment-table-outer {
     margin-top: 10px;
 }
+.org-edit {
+    color: #4a54d1;    
+}
+.org-delete {
+    color: #f04e47;
+}

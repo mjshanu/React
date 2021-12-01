@@ -1,5 +1,7 @@
 //import namor from "namor";
-
+import {location} from '../../images';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 const range = (len) => {
   const arr = [];
   for (let i = 0; i < len; i++) {
@@ -14,7 +16,8 @@ const newPerson = () => {
     organizationname: "Encaps",
     organizationcode: "DPC",
     organizationtype: 'Bourntec Solutions',
-    location: 'Cochin'
+    location: 'Cochin',
+    action: <div><EditIcon className="org-edit"/><DeleteIcon className="org-delete"/></div>   ,
   };
 };
 
