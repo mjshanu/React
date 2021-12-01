@@ -3,7 +3,8 @@ import Popupmodal from "./Popupmodal";
 import Switch from "react-switch";
 import { MdOutlineFileDownload, MdOutlinePrint, MdPhone, MdCheck, MdLocationPin } from "react-icons/md";
 import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
-import { HTML5Backend } from 'react-dnd-html5-backend'; import { SiAddthis } from "@react-icons/all-files/si/SiAddthis";
+import { HTML5Backend } from 'react-dnd-html5-backend'; 
+import { SiAddthis } from "@react-icons/all-files/si/SiAddthis";
 import { Card, Icon, Image } from 'semantic-ui-react';
 import { profileimage1, editicon, locationprofile, tick, profileimage2 } from '../../images';
 import { FaCheck } from "react-icons/fa";
@@ -111,7 +112,7 @@ export default class Emplyelist extends Component {
                                         </Card.Content>
                                         <Card.Content extra className="profile-card-bottom">
                                             <div className="profile-location">
-                                                <img src={locationprofile} /><span>Cochin</span>
+                                                <img src={locationprofile} /><span>Cochin </span>
                                             </div>
                                             <div className="profile-location-right">
                                                 <div className="buttons-outer maring-left-15">

@@ -328,6 +328,17 @@
 .Candidate-tab-button {
     width: 28%;
 }
+.asset-filter-stl {
+    padding-left: 10%;
+    padding-top: 2%;
+    font-weight: bold;
+    color: #000;
+}
+.asset-right-dropdwn {
+    float: left;
+    width: 29.4%;
+    margin-right: 10px;
+}
 }
 @media only screen and (max-width: 980px){
     .sidebar.is-open {
@@ -579,6 +590,26 @@ display: block;    margin-top: 0;
 .desktop-edt-none{
 display:block;
 }
+.asset-top-right-box {
+    float: right;
+    width:100%;
+    padding-right: 0px;
+    padding-top: 15px;
+    margin-right: -25px;
+}
+.emplyesearch {
+    min-width: 100%;
+    float: left;
+    position: relative;
+}
+.asset-right-dropdwn {
+    float: left;
+    width: 31.4%;
+    margin-right: 10px;
+}
+.width-8 {
+    width: 11%;
+}
 }
 @media only screen and (max-width: 767px){
 .calendar-width {
@@ -821,7 +852,11 @@ display:block;
 }
 .add-category-bt {
            float: right;
-           padding-right: 8px;
+           padding-right: 8px;}
+.asset-right-dropdwn {
+    float: left;
+    width: 30.4%;
+    margin-right: 10px;
 }
 }
 @media only screen and (max-width:650px){
@@ -843,6 +878,11 @@ display:block;
         font-size: 12px;
         }
     
+        .asset-right-dropdwn {
+            float: left;
+            width: 29.4%;
+            margin-right: 10px;
+        }
 }
 @media only screen and (max-width:573px)
 
