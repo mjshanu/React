@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect,useState } from "react"
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { SiAddthis } from "@react-icons/all-files/si/SiAddthis";
@@ -13,7 +13,7 @@ import Paper from '@material-ui/core/Paper';
 import Jobdetailsmodal from "./Jobdetailsmodal"; 
 import {location} from '../../images';
 import {profilei} from '../../images/profilei.svg'; 
-
+import axios from 'axios';
 import {
   Accordion,
   AccordionItem,
@@ -46,7 +46,7 @@ function createData(jobid, post, skillset, exp, openings, location, posteddate, 
 }
 
 const data = [
-  createData('0123', 'Java developer','Java, Spring', '10 Years', '12', 'Kakkanad', '20-10-2021', '10-11-2021', 'description', ''),
+  createData('000', 'Java developer','Java, Spring', '10 Years', '12', 'Kakkanad', '20-10-2021', '10-11-2021', 'description', ''),
   createData('0224', 'Java developer','Java, Spring', '09 Years', '05', 'Kakkanad', '20-10-2021', '10-11-2021', 'description', ''),
   createData('0123', 'Java developer','Java, Spring', '03 Years', '06', 'Kakkanad', '20-10-2021', '10-11-2021', 'description', ''),
   createData('0125', 'Java developer','Java, Spring', '05 Years', '03', 'Kakkanad', '20-10-2021', '10-11-2021', 'description', ''),
@@ -56,6 +56,20 @@ const data = [
 ];
 
 export default function Job(props) {
+  const [joblist, SetJoblist] = useState([]);
+  useEffect(() => {
+    loadJobs();
+   },[]);
+   const loadJobs=async() =>
+  {
+    const res=await fetch("http://localhost:8000/api/getJobs/");
+    const data = await res.json();
+    const list=data.job;
+    SetJoblist(list);
+    
+  
+  } 
+  console.log(joblist);
   const { classes } = props;
     return (
         <main className="inner-content-box">
@@ -91,19 +105,19 @@ export default function Job(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-        {data.map(n => {
+        {joblist.map(n => {
             return (
               <TableRow  key={n.id} >
-                    <TableCell  className="width-8"> {n.jobid}</TableCell>
-                    <TableCell numeric className="width-12">{n.post}</TableCell>                          
-                    <TableCell numeric className=" width-15">{n.skillset} </TableCell>
-                    <TableCell numeric className="width-8">{n.exp}</TableCell>
-                    <TableCell numeric className="width-8">{n.openings} </TableCell>
-                    <TableCell numeric className="width-8">{n.location}</TableCell>
-                    <TableCell numeric className="width-10">{n.posteddate}</TableCell>  
-                    <TableCell numeric className="width-10">{n.postclose}</TableCell>  
+                    <TableCell  className="width-8"> {n.id}</TableCell>
+                    <TableCell numeric className="width-12">{n.post_name}</TableCell>                          
+                    <TableCell numeric className=" width-15">{n.job_skillset} </TableCell>
+                    <TableCell numeric className="width-8">{n.job_experience}</TableCell>
+                    <TableCell numeric className="width-8">{n.job_openings} </TableCell>
+                    <TableCell numeric className="width-8">{n.job_location}</TableCell>
+                    <TableCell numeric className="width-10">{n.job_date_open}</TableCell>  
+                    <TableCell numeric className="width-10">{n.job_date_close}</TableCell>  
                    
-                    <TableCell numeric className="width-15"> {n.description}                      
+                    <TableCell numeric className="width-15"> {n.job_description}                      
                     </TableCell>
                     <TableCell numeric className="width-8 inprogress-td">
                           <div className ="inprograss-style">Active</div>
