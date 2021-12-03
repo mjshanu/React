@@ -117,7 +117,12 @@ class SideBar extends React.Component {
              Add Assets
             </Nav.Link>
           </Nav.Item>
-
+          <Nav.Item>
+          <Nav.Link href="/Organizationlist">
+             < MdOutlineAccountTree/>
+             Organization  
+            </Nav.Link>
+          </Nav.Item>
         </Nav>
 
       </div>

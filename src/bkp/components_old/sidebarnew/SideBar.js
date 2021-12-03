@@ -17,10 +17,15 @@ import {dashboard,asste,logonew} from '../../images';
 import {FaThLarge, FaChartLine, FaTools } from "react-icons/fa";
 import { FaUserTie } from "@react-icons/all-files/fa/FaUserTie";
 import { FaFileAlt } from "@react-icons/all-files/fa/FaFileAlt";
-import { Link } from 'react-router'
+import { IconName } from "react-icons/ai";
+import { MdPersonSearch, MdOutlineScreenSearchDesktop, MdBusinessCenter, MdOutlineAccountTree } from "react-icons/md";
 class SideBar extends React.Component {
+  
   render() {
-    
+    const $ = window.$;
+    $(".sidebar").on('click', '.nav-item', function() {
+      $(this).addClass("active"); // adding active class
+   });
     return (
 
       
@@ -50,7 +55,7 @@ class SideBar extends React.Component {
             </Nav.Link>
           </Nav.Item>
                <Nav.Item>
-            <Nav.Link href="/">
+            <Nav.Link href="/Assets"  >
               <FaChartLine/>
              Asset
             </Nav.Link>
@@ -71,20 +76,20 @@ class SideBar extends React.Component {
           </Nav.Item>
 
           <Nav.Item>
-            <Nav.Link href="/">
+            <Nav.Link href="/Addcategory">
              < FaTools/>
              configration
             </Nav.Link>
           </Nav.Item>
           <Nav.Item >
             <Nav.Link href="/Kanban">
-             < FaTools/>
+             < MdPersonSearch className="recrutment-menu-icon"/>
              Recruitment
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/Job">
-             < FaTools/>
+             < MdBusinessCenter/>
              Job
             </Nav.Link>
           </Nav.Item>
@@ -100,6 +105,19 @@ class SideBar extends React.Component {
             Newdrg
             </Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/Organization">
+             < MdOutlineAccountTree/>
+             Organization & Branches
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/Addassets">
+            < MdOutlineAccountTree/>
+             Add Assets
+            </Nav.Link>
+          </Nav.Item>
+
         </Nav>
 
       </div>

@@ -66,7 +66,7 @@ const data = [
                     <div className="sub-head organization-sub-head">Assets List
                     <div className="top-right-outer add-btn-div">
                                     <div className="buttons-outer">
-                                        <a href="Addemployeetab" className="blue-button">
+                                        <a href="Assetsdetails" className="blue-button">
                                             <SiAddthis className="add-btn-icon" /> Add Assets
                                         </a>
                                     </div>
@@ -85,14 +85,21 @@ const data = [
 
                                 </div>
                     </div>
-                    <div className="emplyee-top">
+                    <div className="asset-top">
                                 <div className="emplyesearch">
                                     <input className="form-control" type="text" id=" " name=" " placeholder="Search " />
                                     <button type="button"> <FaSearch className="add-btn-icon" /></button>
                                 </div>
-                                <div className="recruitment-top-right-box active-employee-top">
-
-                                    
+                                <div className="asset-top-right-box -top-right-box ">
+                                    <div className="asset-right-dropdwn asset-filter-stl ">  
+                                    Filter by
+                                    </div>
+                                    <div className="asset-right-dropdwn ">  
+                                        <select id="dropdown" class="form-control"><option value="Status">Cochin</option></select>
+                                    </div>
+                                    <div className="asset-right-dropdwn ">  
+                                        <select id="dropdown" class="form-control"><option value="Status">Laptop</option></select>
+                                    </div> 
                                 </div>
                             </div>
                     <div className="col-md-12 job-main-tb-outer">    
@@ -126,10 +133,10 @@ const data = [
                     <div className="action-outer">
              
              <div className="edit-new-icon ">
-               <a href="">
-               <svg width="14" height="14" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.76911 5.80111L3.04833 0.0803333C2.94122 -0.0267778 2.76767 -0.0267778 2.66067 0.0803333L0.0803334 2.66067C-0.0267778 2.76778 -0.0267778 2.94133 0.0803334 3.04833L5.80111 8.76911L8.76911 5.80111Z" fill="#4A54D1"/>
-<path d="M9.59266 9.98866L6.0791 9.04722L9.04722 6.0791L9.98866 9.59266C10.053 9.83311 9.83311 10.053 9.59266 9.98866Z" fill="#4A54D1"/>
+               <a href="/Assetsdetails">
+               <svg width="16" height="12" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.957514 3.64635L3.25493 1.55779C5.53914 -0.519262 9.25705 -0.519262 11.5413 1.55779L13.8387 3.64635C14.0538 3.84189 14.0538 4.15798 13.8387 4.35353L11.5413 6.44209C10.3992 7.48037 8.8989 8 7.39811 8C5.89731 8 4.39706 7.48037 3.25496 6.44209L0.95754 4.35353C0.742414 4.15798 0.742414 3.84189 0.957514 3.64635ZM7.39811 6.50061C8.91486 6.50061 10.1489 5.3788 10.1489 3.99993C10.1489 2.62106 8.91486 1.49925 7.39811 1.49925C5.88135 1.49925 4.64736 2.62106 4.64736 3.99993C4.64736 5.3788 5.88135 6.50061 7.39811 6.50061Z" fill="#B93E86"/>
+<path d="M7.39802 2.49902C8.30795 2.49902 9.04846 3.17221 9.04846 3.99943C9.04846 4.82664 8.30795 5.49983 7.39802 5.49983C6.48808 5.49983 5.74757 4.82664 5.74757 3.99943C5.74757 3.17221 6.48805 2.49902 7.39802 2.49902Z" fill="#B93E86"/>
 </svg>
 
 </a>
