@@ -109,6 +109,7 @@ export default function Addorganization(){
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Category</label>
                                 <select id = "dropdown" name="org_category" onChange={handleChange} value={values.org_category}  class="form-control">
+                                  <option value="">Choose category</option>
                                 { options.map((element, index) => <option value={element} key={index}>{element}</option>) }
   </select>
                             </div>
