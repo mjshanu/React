@@ -51,6 +51,7 @@ export default function Jobdetailsmodal() {
 
   function closeModal() {
     setIsOpen(false);
+    window.location.reload();
   }
 
   const [value, setValue] = React.useState(0)
@@ -99,26 +100,29 @@ export default function Jobdetailsmodal() {
                           <option value={id} >{post_name}</option>
                         )}
                       </select>
-
+                      {errors.job_post && <p>{errors.job_post}</p>}
                     </div>
-                    {errors.job_post && <p>{errors.job_post}</p>}
+                    
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="exampleFormControlInput1">Skill Set</label>
                       <input type="text" name="job_skillset" onChange={handleChange} value={values.job_skillset} class="form-control" ></input>
+                      {errors.job_skillset && <p>{errors.job_skillset}</p>}
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="exampleFormControlInput1">experience</label>
                       <input type="text" name="job_experience" onChange={handleChange} value={values.job_experience} class="form-control" ></input>
+                      {errors.job_experience && <p>{errors.job_experience}</p>}
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="exampleFormControlInput1">Openings</label>
                       <input type="email" name="job_openings" onChange={handleChange} value={values.job_openings} class="form-control" ></input>
+                      {errors.job_openings && <p>{errors.job_openings}</p>}
                     </div>
                   </div>
 
@@ -131,30 +135,35 @@ export default function Jobdetailsmodal() {
                         <option value="1">open</option>
                         <option value="0">close</option>
                       </select>
+                      {errors.job_status && <p>{errors.job_status}</p>}
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="exampleFormControlInput1">Date open</label>
                       <input type="date" name="job_date_open" onChange={handleChange} value={values.job_date_open} class="form-control" ></input>
+                      {errors.job_date_open && <p>{errors.job_date_open}</p>}
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="exampleFormControlInput1">date close</label>
                       <input type="date" name="job_date_close" onChange={handleChange} value={values.job_date_close} class="form-control" ></input>
+                      {errors.job_date_close && <p>{errors.job_date_close}</p>}
                     </div>
                   </div>
                   <div class="col-md-4 mob-full">
                     <div class="form-group">
                       <label for="exampleFormControlInput1">Location</label>
                       <input type="text" name="job_location" onChange={handleChange} value={values.job_location} class="form-control" ></input>
+                      {errors.job_location && <p>{errors.job_location}</p>}
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
                       <label for="exampleFormControlInput1">description</label>
                       <input type="email" name="job_description" onChange={handleChange} value={values.job_description} class="form-control" ></input>
+                      {errors.job_description && <p>{errors.job_description}</p>}
                     </div>
                   </div>
 

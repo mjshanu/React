@@ -141,6 +141,7 @@ export default function Job(props) {
 
   function closeModal() {
     setIsOpen(false);
+    window.location.reload();
   }
   return (
     <div>
