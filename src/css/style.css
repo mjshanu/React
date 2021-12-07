@@ -2847,6 +2847,9 @@ color: #4A54D1;
 .organazation-new-table th:first-child, .organazation-new-table td:first-child{
     width:6%;
 }
+.organazation-new-table th:last-child, .organazation-new-table td:last-child{
+    width:10%;
+}
 .organazation-new-table th, .organazation-new-table td{
     width: 24%;
 }
@@ -2935,4 +2938,7 @@ color: #4A54D1;
 }
 .org-delete {
     color: #f04e47;
+}
+.candiate-modal-inner-tab .col-md-4 , .candiate-modal-inner-tab .col-md-12, .candiate-modal-inner-tab .col-md-8{
+    padding-left: 0px;
 }

@@ -39,7 +39,7 @@ const Branchform = () => {
     setOrg(orgresponse.data);
   }*/
   const getCompanyName = async () => {
-    const response = await fetch("http://localhost:8000/api/getOrgnaizationname");
+    const response = await fetch("http://localhost:3000/api/getOrgnaizationname");
     const data = await response.json();
   
     const listnewtest = data.org;
