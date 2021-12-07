@@ -2993,3 +2993,6 @@ color: #4A54D1;
 .organazation-edit-new{
     width: auto;
 }
+ .organazation-new-table td:last-child svg{
+     margin-right: 10px;
+ }

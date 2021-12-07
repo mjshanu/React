@@ -27,7 +27,6 @@ import Organization from "../pages/Organization";
 import Assets from "../pages/Assets";
 import Assetsdetails from "../pages/Assetsdetails";
 import Organizationlist from "../pages/Organizationlist";
-import Organizationnew from "../pages/Organization-new";
 class Content extends React.Component {
   render() {
     return (
@@ -89,8 +88,8 @@ class Content extends React.Component {
         <Router path="/Organizationold">
         <Organizationold/>
         </Router>
-        <Router path="/Organizationnew">
-        < Organizationnew/>
+        <Router path="/Organizationold">
+        < Organizationold/>
         </Router>
          </Switch>
          
