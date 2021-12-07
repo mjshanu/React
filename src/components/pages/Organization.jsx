@@ -101,6 +101,7 @@ const data = [
     }
      closeModal() {
       this.setState({modalIsOpen: false});
+      window.location.reload();
     }
     
    async edit (id) { 
@@ -130,7 +131,7 @@ const data = [
   
     e.preventDefault();
    const res=await axios.put('http://localhost:8000/api/update_organization',this.state.formData);
-
+   alert("Organization updated successfully");
    
   };
   deleteOrganization =async(e,id) => {

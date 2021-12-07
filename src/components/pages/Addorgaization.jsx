@@ -51,6 +51,7 @@ export default function Addorganization(){
   
     function closeModal() {
       setIsOpen(false);
+      window.location.reload();
     }
   
     const [value, setValue]=React .useState(0)
@@ -101,16 +102,20 @@ export default function Addorganization(){
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Organization Type</label>
+                                <label for="exampleFormControlInput1">Organization Type1</label>
                                 <input type="text" name="org_type" onChange={handleChange} value={values.org_type} class="form-control" ></input>
+                                {errors.org_type && <p>{errors.org_type}</p>}
+
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Category</label>
                                 <select id = "dropdown" name="org_category" onChange={handleChange} value={values.org_category}  class="form-control">
+                                  <option value="">Choose your Category</option>
                                 { options.map((element, index) => <option value={element} key={index}>{element}</option>) }
   </select>
+  {errors.org_category && <p>{errors.org_category}</p>}
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -118,12 +123,14 @@ export default function Addorganization(){
                                 <label for="exampleFormControlInput1">Organization Registration</label>
                                 <input type="text" name="org_registration" onChange={handleChange} value={values.org_registration} class="form-control" ></input>
                             </div>
+                            {errors.org_registration && <p>{errors.org_registration}</p>}
                         </div>
                       
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Location</label>
                                 <input type="text" name="org_location" onChange={handleChange} value={values.org_location} class="form-control" ></input>
+                                {errors.org_location && <p>{errors.org_location}</p>}
                             </div>
                         </div>
                         
