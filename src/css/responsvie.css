@@ -35,6 +35,14 @@
             .Candidate-tab-button {
                 width: 30%;
                           }
+                          .job-new-outer .inprograss-style {
+                            padding: 2px 7px;
+                     }
+                     .job-new-outer td:last-child.width-12, .job-new-outer th:last-child.width-12  {
+                        width: 12%;
+                    }
+                    
+
 }
 .ReactModal__Overlay{
     position: fixed;
@@ -121,6 +129,13 @@
          .Candidate-tab-button {
             width: 29.5%;
         }
+        .job-new-outer td:last-child , .job-new-outer th:last-child{
+         padding-right: 10px;
+           }
+           .job-edit-icon {
+            margin-left: 4px;
+                  }
+           
 }
 
 
@@ -166,6 +181,9 @@
         .Candidate-tab-button {
             width: 28.9%;
         }
+        .job-edit-icon {
+                   padding: 2px 8px;
+             }
 }
 
 @media only screen and (max-width: 1300px){
@@ -266,6 +284,15 @@
             .categroy-top
                 .col-md-3 {    width: 30%;
                     float: left;
+            }
+            .job-new-outer td:last-child.width-12 {
+                width: 108px;
+            }
+            .job-new-outer th:last-child.width-12 {
+                width: 112px;
+            }
+            .job-edit-icon {
+                margin-left: 8px;
             }
        }
 @media only screen and (max-width: 1200px){

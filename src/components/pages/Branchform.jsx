@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import swal from 'sweetalert';
-const Branchform = () => {
+const Branchform = branch_validation => {
   const [values, SetValues] = useState({
    branch_name:'',
    branch_code:'',
@@ -55,8 +55,8 @@ const Branchform = () => {
   const handleSubmit = e => {
 
     e.preventDefault();
-   // const test = setErrors(org_validation(values));
-   // setIsSubmitting(true);
+    const test = setErrors(branch_validation(values));
+    setIsSubmitting(true);
    onSubmitform();
 
   }
@@ -89,6 +89,6 @@ const Branchform = () => {
 
 
 
-  return { handleChange,values,listnew,handleSubmit};
+  return { handleChange,values,listnew,handleSubmit,errors};
 }
 export default Branchform;

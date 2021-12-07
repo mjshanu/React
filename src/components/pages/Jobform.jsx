@@ -55,13 +55,13 @@ const Jobform = job_validation => {
   const onSubmitform = e => {
 
     //console.log(values)
-    const response = axios.post('http://localhost:3000/api/add_organization', values);
+    const response = axios.post('http://localhost:8000/api/add_jobs', values);
     response.then(function (res) {
       if (res.data.status === 200) {
         //console.log(res.data.message);
         swal({
           title: "Good job!",
-          text: "Organization added successfully",
+          text: "Job added successfully",
           icon: "success",
           button: "ok",
         });

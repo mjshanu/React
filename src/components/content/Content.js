@@ -18,14 +18,16 @@ import Job from "../pages/job";
 import UncontrolledBoard from "../pages/Dragslider";
 import Newdrag from "../pages/Newdrgbox.jsx";
 import Addemployeetab from "../pages/Addemployeetabs";
-import  Organization from "../pages/Organizationold";
+import  Organizationold from "../pages/Organizationold";
 import Addassets from "../pages/Addassets";
 import Addcategory from "../pages/Addcategory";
 import Addproperty from '../pages/Addproperty';
+import Organization from "../pages/Organization";
 
 import Assets from "../pages/Assets";
 import Assetsdetails from "../pages/Assetsdetails";
 import Organizationlist from "../pages/Organizationlist";
+import Organizationnew from "../pages/Organization-new";
 class Content extends React.Component {
   render() {
     return (
@@ -83,6 +85,12 @@ class Content extends React.Component {
         </Router> 
         <Router path="/Organizationlist">
         <Organizationlist/>
+        </Router>
+        <Router path="/Organizationold">
+        <Organizationold/>
+        </Router>
+        <Router path="/Organizationnew">
+        < Organizationnew/>
         </Router>
          </Switch>
          

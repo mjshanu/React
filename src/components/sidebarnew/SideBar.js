@@ -118,7 +118,7 @@ class SideBar extends React.Component {
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-          <Nav.Link href="/Organizationlist">
+          <Nav.Link href="/Organizationnew">
              < MdOutlineAccountTree/>
              Organization  
             </Nav.Link>

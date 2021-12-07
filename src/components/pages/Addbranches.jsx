@@ -10,6 +10,7 @@ import {AppBar} from '@material-ui/core';
 import BasicTabs from './Employeetabs';
 import 'react-tabs/style/react-tabs.css';
 import Branchform from './Branchform';
+import branch_validation from '../validation/branch_validation';
 const customStyles = {
     content: {
       top: '50%',
@@ -50,6 +51,7 @@ export default function Addbranches(){
   
     function closeModal() {
       setIsOpen(false);
+      window.location.reload();
     }
   
     const [value, setValue]=React .useState(0)
@@ -65,7 +67,7 @@ export default function Addbranches(){
       { value: 'yellow', label: 'yellow' },
   ];
   
-    const { handleChange,values,listnew,handleSubmit} = Branchform();
+    const { handleChange,values,listnew,handleSubmit,errors} = Branchform(branch_validation);
     console.log(listnew);
   return (
     <div>
@@ -94,13 +96,14 @@ export default function Addbranches(){
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Branch Name</label>
                                 <input type="text" name="branch_name"   onChange={handleChange} value={values.branch_name}  class="form-control" ></input>
+                                {errors.branch_name && <p>{errors.branch_name}</p>}
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Branch Code</label>
                                 <input type="text" name="branch_code" onChange={handleChange} value={values.branch_code} class="form-control" ></input>
-                    
+                                {errors.branch_code && <p>{errors.branch_code}</p>}
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -112,7 +115,7 @@ export default function Addbranches(){
                                 <option value={id} >{org_name}</option>
                                 )} 
  </select>
-                               
+ {errors.branch_company && <p>{errors.branch_company}</p>}           
                             </div>
                         </div>
                       
@@ -120,12 +123,14 @@ export default function Addbranches(){
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Branch Type</label>
                                 <input type="text" name ="branch_type" onChange={handleChange} value={values.branch_type}  class="form-control" placeholder="Development Center" ></input>
+                                {errors.branch_type && <p>{errors.branch_type}</p>}   
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Location</label>
                                 <input type="text" name ="branch_location" onChange={handleChange} value={values.branch_location}  class="form-control" placeholder="Development Center" ></input>
+                                {errors.branch_location && <p>{errors.branch_location}</p>} 
                             </div>
                         </div>
                       
@@ -133,18 +138,21 @@ export default function Addbranches(){
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Date of Establishment</label>
                                 <input type="date" name="branch_date" onChange={handleChange} value={values.branch_date}   class="form-control" ></input>
+                                {errors.branch_date && <p>{errors.branch_date}</p>} 
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Brach Landline</label>
                                 <input type="text" name="branch_landline" onChange={handleChange} value={values.branch_landline} class="form-control" ></input>
+                                {errors.branch_landline && <p>{errors.branch_landline}</p>} 
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Email</label>
                                 <input type="email" name="branch_email" onChange={handleChange} value={values.branch_email}  class="form-control" ></input>
+                                {errors.branch_email && <p>{errors.branch_email}</p>} 
                             </div>
                         </div>
                                              
