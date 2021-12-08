@@ -2996,3 +2996,64 @@ color: #4A54D1;
  .organazation-new-table td:last-child svg{
      margin-right: 10px;
  }
+ .organazation-table-inner-tb table tr td  table thead {
+    background: #ac468126;
+}
+.organazation-table-inner-tb table tr td  table thead  tr{
+    padding: 8px;
+    float: left;
+    display: table;
+}
+.organazation-table-inner-tb  table tr td{
+    border: 0;
+}
+.css-dsuxgy-MuiTableCell-root{
+    border: 0;
+}
+.organazation-table-inner-tb  th {
+    color: rgba(0, 0, 0, 0.87);
+    padding: 0px 15px 0px;
+    font-size: 14px;
+    font-weight: 400;
+    border-bottom: 0;
+}
+.organazation-table-inner-tb  td
+{
+   color: rgb(70 70 70 / 87%);
+}
+
+.organazation-new-table table  tr td  table th:first-child, .organazation-new-table table  tr td  table td:first-child{
+   width: 20%;
+}
+.organazation-new-table table  tr td  table th:last-child, .organazation-new-table table  tr td  table td:last-child{
+    width: 20%;
+ }
+ .organazation-new-table table  tr td  table th,  .organazation-new-table table  tr td  table td{
+    width: 20%;     padding: 14px;
+ }
+ .organazation-new-table table  tr td  table
+ {
+    background: #f9f9fb;
+    border-radius: 11px;
+    margin: 15px 0 25px;
+ }
+ .organazation-new-table  tr {
+    border-top:0.5px solid rgba(224, 224, 224, 0.5);
+    border-bottom: 0.5px solid rgba(224, 224, 224, 0.5);
+}
+
+ .organazation-new-table  .sub-table {
+    padding: 0 !important;
+    border-top: 0;
+    border-bottom: 0;
+}
+.organazation-new-table  .sub-table tr{
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+    border-top: 0;
+}
+.organazation-new-table  .sub-table tr:last-child{
+    border-bottom: 0;
+}
+.organazation-new-table .sub-table td:first-child {
+ border-bottom: 0px solid rgba(224, 224, 224, 1);
+}
