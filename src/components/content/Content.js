@@ -27,7 +27,6 @@ import Organization from "../pages/Organization";
 import Assets from "../pages/Assets";
 import Assetsdetails from "../pages/Assetsdetails";
 import Organizationlist from "../pages/Organizationlist";
-import CollapsibleTable from "../pages/Organizationtestnew";
 
 class Content extends React.Component {
   render() {
@@ -63,6 +62,7 @@ class Content extends React.Component {
         <Router path="/Job">
         <Job/>
         </Router> 
+        
         <Router path="/Dragslider">
         <UncontrolledBoard/>
         </Router> 
@@ -94,10 +94,7 @@ class Content extends React.Component {
         < Organizationold/>
         </Router>
 
-        <Router path="/Organizationtestnew">
-        < CollapsibleTable/>
-        </Router>
-
+     
          </Switch>
          
         
