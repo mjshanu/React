@@ -89,6 +89,9 @@ class Content extends React.Component {
         <Router path="/Organizationold">
         <Organizationold/>
         </Router>
+        <Router path="/Organizationold">
+        < Organizationold/>
+        </Router>
          </Switch>
          
         

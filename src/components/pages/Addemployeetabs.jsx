@@ -273,7 +273,7 @@ window.addEventListener("resize", () => {
 </div>
 
 <div className="inner-middile-row">
-<div className="col-md-4">
+  <div className="col-md-4">
   <div class="form-group"><label for="exampleFormControlInput1">Transaction Date</label><input type="email" className="form-control"/></div>
   </div>
   <div className="col-md-4">
