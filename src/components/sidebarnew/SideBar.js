@@ -93,18 +93,23 @@ class SideBar extends React.Component {
              Job
             </Nav.Link>
           </Nav.Item>
+          {/* A JSX comment 
+
           <Nav.Item>
             <Nav.Link href="/Dragslider">
              < FaTools/>
              Dragslider
             </Nav.Link>
           </Nav.Item>
+          
           <Nav.Item>
             <Nav.Link href="/Newdrgbox">
              < FaTools/>
             Newdrg
             </Nav.Link>
           </Nav.Item>
+
+          */}
           <Nav.Item>
             <Nav.Link href="/Organization">
              < MdOutlineAccountTree/>
@@ -122,7 +127,9 @@ class SideBar extends React.Component {
              < MdOutlineAccountTree/>
              Organization  
             </Nav.Link>
+          
           </Nav.Item>
+           
         </Nav>
 
       </div>

@@ -281,7 +281,7 @@ export default function Job(props) {
                         <TableCell className="width-8">Location</TableCell>
                         <TableCell className="width-10">Posted Date </TableCell>
                         <TableCell className="width-10">Post Close</TableCell>
-                        <TableCell className="width-15">description</TableCell>
+                        <TableCell className="width-15">Description</TableCell>
                         <TableCell className="width-12">Status</TableCell>
 
                       </TableRow>

@@ -294,6 +294,15 @@
             .job-edit-icon {
                 margin-left: 8px;
             }
+            .organazation-new-table table  th:last-child, .organazation-new-table table  td:last-child{
+                width: 14%;
+             }
+             .organazation-new-table table .sub-table td:first-child{
+                width: 100%;
+            }
+            .organazation-new-table td,  .organazation-new-table th{
+                font-size: 13px;
+            }
        }
 @media only screen and (max-width: 1200px){
 .recruitment-top-right-box {
@@ -365,6 +374,9 @@
     float: left;
     width: 29.4%;
     margin-right: 10px;
+}
+.organazation-new-table td,  .organazation-new-table th{
+    font-size: 12px;    line-height: 17px;
 }
 }
 @media only screen and (max-width: 980px){

@@ -113,7 +113,7 @@ export default function Jobdetailsmodal() {
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <label for="exampleFormControlInput1">experience</label>
+                      <label for="exampleFormControlInput1">Experience</label>
                       <input type="text" name="job_experience" onChange={handleChange} value={values.job_experience} class="form-control" ></input>
                       {errors.job_experience && <p>{errors.job_experience}</p>}
                     </div>
@@ -140,14 +140,14 @@ export default function Jobdetailsmodal() {
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <label for="exampleFormControlInput1">Date open</label>
+                      <label for="exampleFormControlInput1">Date Open</label>
                       <input type="date" name="job_date_open" onChange={handleChange} value={values.job_date_open} class="form-control" ></input>
                       {errors.job_date_open && <p>{errors.job_date_open}</p>}
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <label for="exampleFormControlInput1">date close</label>
+                      <label for="exampleFormControlInput1">Date Close</label>
                       <input type="date" name="job_date_close" onChange={handleChange} value={values.job_date_close} class="form-control" ></input>
                       {errors.job_date_close && <p>{errors.job_date_close}</p>}
                     </div>
@@ -161,7 +161,7 @@ export default function Jobdetailsmodal() {
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="exampleFormControlInput1">description</label>
+                      <label for="exampleFormControlInput1">Description</label>
                       <input type="email" name="job_description" onChange={handleChange} value={values.job_description} class="form-control" ></input>
                       {errors.job_description && <p>{errors.job_description}</p>}
                     </div>
@@ -174,7 +174,7 @@ export default function Jobdetailsmodal() {
 
           </div>
           <div className=" modal-footer-button-bg">
-            <button type="submit" class="btn  btn-save "  > Save</button>
+            <button type="submit" class="btn  btn-save "  >Save</button>
             <button type="button" class="btn  btn-cancel " onClick={closeModal} > Cancel </button>
           </div>
 
