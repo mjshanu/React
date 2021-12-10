@@ -130,13 +130,8 @@ const data = [
   {
   
     e.preventDefault();
-<<<<<<< HEAD
    const res=await axios.put('http://auditportal2.bourntec.com:3001/audit_portal/public/api/update_organization',this.state.formData);
-
-=======
-   const res=await axios.put('http://localhost:8000/api/update_organization',this.state.formData);
    alert("Organization updated successfully");
->>>>>>> f8e6d345f19263405d16a682c188feeea1f5b7fb
    
   };
   deleteOrganization =async(e,id) => {
