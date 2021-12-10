@@ -26,8 +26,6 @@ import {
   AccordionItemPanel,
 } from 'react-accessible-accordion';
 
-
-
 function createData(
   name: string,
   calories: number,

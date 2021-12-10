@@ -19,6 +19,9 @@ import { FaUserTie } from "@react-icons/all-files/fa/FaUserTie";
 import { FaFileAlt } from "@react-icons/all-files/fa/FaFileAlt";
 import { IconName } from "react-icons/ai";
 import { MdPersonSearch, MdOutlineScreenSearchDesktop, MdBusinessCenter, MdOutlineAccountTree } from "react-icons/md";
+import { Navbar } from "react-bootstrap";
+import { NavLink } from "react-router-dom";  
+
 class SideBar extends React.Component {
   
   render() {
@@ -26,10 +29,11 @@ class SideBar extends React.Component {
     $(".sidebar").on('click', '.nav-item', function() {
       $(this).addClass("active"); // adding active class
    });
+
+   
     return (
 
-      
-      <div className={classNames("sidebar", { "is-open": this.props.isOpen })}>
+        <div className={classNames("sidebar", { "is-open": this.props.isOpen })}>
         <div className="sidebar-header">
           <Button
             variant="link"
@@ -44,41 +48,21 @@ class SideBar extends React.Component {
         </div>
         </div>
 
-        <Nav className="flex-column pt-2">
+        <Nav className="flex-column pt-2"  >
         <div className="nav-taxt">Navigation</div>
 
+   
           <Nav.Item className="active">
-            <Nav.Link href="/Dashboard">
+            <Nav.Link href="/Dashboard" >
             <FaThLarge/>
              Dashboard  
    
-            </Nav.Link>
-          </Nav.Item>
-               <Nav.Item>
-            <Nav.Link href="/Assets"  >
-              <FaChartLine/>
-             Asset
-            </Nav.Link>
-          </Nav.Item>
-
-          <Nav.Item>
-            <Nav.Link href="/Emplyelist">
-            <FaUserTie/>
-              Employee
-            </Nav.Link>
-          </Nav.Item>
-
-          <Nav.Item>
-            <Nav.Link href="/">
-            <FaFileAlt/>
-            projects
-            </Nav.Link>
-          </Nav.Item>
-
-          <Nav.Item>
-            <Nav.Link href="/Addcategory">
-             < FaTools/>
-             configration
+            </Nav.Link>  
+             </Nav.Item>
+            <Nav.Item>
+            <Nav.Link href="/Job">
+             < MdBusinessCenter/>
+             Job Portal
             </Nav.Link>
           </Nav.Item>
           <Nav.Item >
@@ -87,12 +71,37 @@ class SideBar extends React.Component {
              Recruitment
             </Nav.Link>
           </Nav.Item>
+
           <Nav.Item>
-            <Nav.Link href="/Job">
-             < MdBusinessCenter/>
-             Job
+            <Nav.Link href="/Emplyelist" activeClassName='active'  exact>
+            <FaUserTie/>
+              Employee
             </Nav.Link>
           </Nav.Item>
+            
+               <Nav.Item>
+            <Nav.Link href="/Assets"  >
+              <FaChartLine/>
+             Asset
+            </Nav.Link>
+          </Nav.Item>
+
+        
+
+          <Nav.Item>
+            <Nav.Link href="/">
+            <FaFileAlt/>
+            projects
+            </Nav.Link>
+          </Nav.Item>
+
+            <SubMenu
+            title="Administration"
+            icon={faCopy}
+            items={[<a href="/Organization">  < MdOutlineAccountTree/>Organization & Branches</a>, <a href="/Addcategory">< FaTools/> Configuration</a> ]}
+          />
+        
+       
           {/* A JSX comment 
 
           <Nav.Item>
@@ -110,19 +119,7 @@ class SideBar extends React.Component {
           </Nav.Item>
 
           */}
-          <Nav.Item>
-            <Nav.Link href="/Organization">
-             < MdOutlineAccountTree/>
-             Organization & Branches
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/Addassets">
-            < MdOutlineAccountTree/>
-             Add Assets
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
+                      <Nav.Item>
           <Nav.Link href="/Organizationold">
              < MdOutlineAccountTree/>
              Organization  

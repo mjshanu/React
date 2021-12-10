@@ -66,7 +66,7 @@ const data = [
                     <div className="sub-head organization-sub-head">Assets List
                     <div className="top-right-outer add-btn-div">
                                     <div className="buttons-outer">
-                                        <a href="Assetsdetails" className="blue-button">
+                                        <a href="Addassets" className="blue-button">
                                             <SiAddthis className="add-btn-icon" /> Add Assets
                                         </a>
                                     </div>
