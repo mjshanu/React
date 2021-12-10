@@ -89,7 +89,7 @@ const data = [
       });
     };
     async componentDidMount(){
-     const res=await axios.get("http://localhost:8000/api/getOrganization/");
+     const res=await axios.get("http://localhost:8000/api/getOrganization");
      //console.log(res.data.sta);
      if(res.data.sta===200)
      {
