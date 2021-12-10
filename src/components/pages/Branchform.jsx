@@ -57,7 +57,7 @@ const Branchform = branch_validation => {
     e.preventDefault();
     const test = setErrors(branch_validation(values));
     setIsSubmitting(true);
-   onSubmitform();
+  
 
   }
   const onSubmitform = e => {
