@@ -50,7 +50,37 @@ const Kanban = () => {
   setValue(val)
   };
   
+  const tasksList = [
+    { b_id: 1, title: "JAVA DEVELOPER",name:"shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth"},
+    { b_id: 2, title: "Second Task", name:"shanu",status: "Inprogress", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+    { b_id: 3, title: "Third Task", name:"shanu",status: "Inprogress", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+    { b_id: 4, title: "Fourth Task",name:"shanu", status: "Schedule" , Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+    { b_id: 5, title: "Fifth Task",name:"shanu", status: "Schedule", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+    { b_id: 6, title: "Sixth Task", name:"shanu",status: "rejection", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+    { b_id: 7, title: "Seventh Task",name:"shanu", status: "review", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+    { b_id: 8, title: "Eighth Task",name:"shanu", status: "review", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+    { b_id: 9, title: "Ninth Task", name:"shanu",status: "rejection", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+    { b_id: 10, title: "Tenth Task",name:"shanu", status: "Waiting", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" }
+  ];
   
+const task2=  [
+    {"b_id":1,"applied_date":null,"post":"1","skillset":"ui\/ux","email":"mjshanukk@gmail.com","contact_number":"12345678912","education":"B.tech","total_exp":10,"ctc":5,"exp_ctc":6,"notice_prd":null,"dob":null,"location":null,"name":"shanu k k","c_company":null,"domain_exp":null,"primary_skill":null,"sec_skill":null,"ref":null,"status":"Inprogress","post_dummy":"JAVA DEVELOPER"},
+    {"b_id":2,"applied_date":null,"post":"1","skillset":"ui\/ux","email":"mjshanukk@gmail.com","contact_number":"12345678912","education":"B.tech","total_exp":10,"ctc":5,"exp_ctc":6,"notice_prd":null,"dob":null,"location":null,"name":"shanu mithun","c_company":null,"domain_exp":null,"primary_skill":null,"sec_skill":null,"ref":null,"status":"Inprogress","post_dummy":"JAVA DEVELOPER"},
+    {"b_id":3,"applied_date":"2021-10-20","post":"1","skillset":"ui\/ux","email":"mjshanukk@gmail.com","contact_number":"12345678912","education":"B.tech","total_exp":10,"ctc":5,"exp_ctc":6,"notice_prd":10,"dob":"2021-10-12","location":"kochi","name":"Parvathy","c_company":"bourntec","domain_exp":5,"primary_skill":"test  skill A","sec_skill":"as","ref":"no","status":"Inprogress","post_dummy":"JAVA DEVELOPER"}
+];
+  const items2FromBackend = [
+    { b_id: 1, content: "First task",  title: "JAVA DEVELOPER2", name:"shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+    { b_id: 2,  content: "First task",  title: "JAVA DEVELOPER", name:"shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth"},
+    { b_id: 3,  content: "First task",  title: "JAVA DEVELOPER2", name:"shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth"},
+    { b_id: 4,  content: "First task",  title: "JAVA DEVELOPER", name:"shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+    { b_id: 5,  content: "First task",  title: "JAVA DEVELOPER", name:"shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript" , view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" }
+  ];
+const a=  [{"b_id":1,"applied_date":null,"post":"1","skillset":"ui\/ux","email":"mjshanukk@gmail.com","contact_number":"12345678912","education":"B.tech","total_exp":10,"ctc":5,"exp_ctc":6,"notice_prd":null,"dob":null,"location":null,"name":"shanu k k","c_company":null,"domain_exp":null,"primary_skill":null,"sec_skill":null,"ref":null,"status":"Inprogress","post_dummy":"JAVA DEVELOPER"},
+  {"b_id":2,"applied_date":null,"post":"1","skillset":"ui\/ux","email":"mjshanukk@gmail.com","contact_number":"12345678912","education":"B.tech","total_exp":10,"ctc":5,"exp_ctc":6,"notice_prd":null,"dob":null,"location":null,"name":"shanu mithun","c_company":null,"domain_exp":null,"primary_skill":null,"sec_skill":null,"ref":null,"status":"Inprogress","post_dummy":"JAVA DEVELOPER"},
+  {"b_id":3,"applied_date":"2021-10-20","post":"1","skillset":"ui\/ux","email":"mjshanukk@gmail.com","contact_number":"12345678912","education":"B.tech","total_exp":10,"ctc":5,"exp_ctc":6,"notice_prd":10,"dob":"2021-10-12","location":"kochi","name":"Parvathy","c_company":"bourntec","domain_exp":5,"primary_skill":"test  skill A","sec_skill":"as","ref":"no","status":"Inprogress","post_dummy":"JAVA DEVELOPER"}];
+  const [productsList, setProductsList] = useState([]);
+  const [columnsFromBackend, setColumnsFromBackend] = useState({
+  });
   const [columns, setColumns] = useState({});
   const [res,SetRes]=useState([]);
   ///const [isLoading, setisLoading] = useState(true);

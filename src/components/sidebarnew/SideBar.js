@@ -131,6 +131,7 @@ class SideBar extends React.Component {
              < MdOutlineAccountTree/>
              Organization  
             </Nav.Link>
+          
           </Nav.Item>
            
         </Nav>

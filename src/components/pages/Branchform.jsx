@@ -39,7 +39,7 @@ const Branchform = branch_validation => {
     setOrg(orgresponse.data);
   }*/
   const getCompanyName = async () => {
-    const response = await fetch("http://localhost:3000/api/getOrgnaizationname");
+    const response = await fetch("http://localhost:8000/api/getOrgnaizationname");
     const data = await response.json();
   
     const listnewtest = data.org;
@@ -57,13 +57,13 @@ const Branchform = branch_validation => {
     e.preventDefault();
     const test = setErrors(branch_validation(values));
     setIsSubmitting(true);
-   onSubmitform();
+  
 
   }
   const onSubmitform = e => {
 
     //console.log(values)
-    const response = axios.post('http://localhost:3000/api/add_branches', values);
+    const response = axios.post('http://localhost:8000/api/add_branches', values);
     response.then(function (res) {
       if (res.data.status === 200) {
         //console.log(res.data.message);
