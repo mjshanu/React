@@ -62,8 +62,16 @@ class SideBar extends React.Component {
         </div>
         </div>
 
+
+
+
+
         <Nav className="flex-column pt-2"  >
         <div className="nav-taxt">Navigation</div>
+
+   
+
+
    
           <Nav.Item>
             <Nav.Link href="/Dashboard" >
