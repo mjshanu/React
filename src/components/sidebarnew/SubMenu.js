@@ -43,7 +43,7 @@ class SubMenu extends React.Component {
           <Accordion.Collapse eventKey="0">
             <nav className="nav flex-column">
               {items.map(item => (
-                <a
+                <div
                   className={`nav-link nav-item pl-5 ${
                     item === "Active" ? "active" : ""
                   } `}
@@ -51,7 +51,7 @@ class SubMenu extends React.Component {
                   key={item}
                 >
                   {item}
-                </a>
+                </div>
               ))}
             </nav>
           </Accordion.Collapse>
