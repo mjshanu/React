@@ -20,7 +20,7 @@ import { FaFileAlt } from "@react-icons/all-files/fa/FaFileAlt";
 import { IconName } from "react-icons/ai";
 import { MdPersonSearch, MdOutlineScreenSearchDesktop, MdBusinessCenter, MdOutlineAccountTree } from "react-icons/md";
 class SideBar extends React.Component {
-  
+ 
   render() {
     const $ = window.$;
     $(".sidebar").on('click', '.nav-item', function() {
@@ -47,7 +47,7 @@ class SideBar extends React.Component {
         <Nav className="flex-column pt-2">
         <div className="nav-taxt">Navigation</div>
 
-          <Nav.Item className="active">
+          <Nav.Item exact className="active">
             <Nav.Link href="/Dashboard">
             <FaThLarge/>
              Dashboard  

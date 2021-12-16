@@ -37,12 +37,11 @@ const handleChange1 =e => {
         [name]:value
     })
 }
-const handleSubmit =e => {
+const handleSubmit =e => { alert("hii");
     e.preventDefault();
     setErrors(validate(values));
-    setIsSubmitting(true);
-    if (Object.keys(errors).length === 0 && isSubmitting) 
-  {
+   // setIsSubmitting(true);
+   
    const promise= axios.post('http://localhost:8000/api/add_employee_first', values);
    promise.then(function(res) {
     if(res.data.status===200)
@@ -58,10 +57,8 @@ const handleSubmit =e => {
       //  console.log("failed")
   //  })
     
-  }
-  else {
-    
-  }
+  
+ 
     
 }
 
