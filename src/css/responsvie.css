@@ -35,6 +35,14 @@
             .Candidate-tab-button {
                 width: 30%;
                           }
+                          .job-new-outer .inprograss-style {
+                            padding: 2px 7px;
+                     }
+                     .job-new-outer td:last-child.width-12, .job-new-outer th:last-child.width-12  {
+                        width: 12%;
+                    }
+                    
+
 }
 .ReactModal__Overlay{
     position: fixed;
@@ -121,6 +129,13 @@
          .Candidate-tab-button {
             width: 29.5%;
         }
+        .job-new-outer td:last-child , .job-new-outer th:last-child{
+         padding-right: 10px;
+           }
+           .job-edit-icon {
+            margin-left: 4px;
+                  }
+           
 }
 
 
@@ -166,6 +181,9 @@
         .Candidate-tab-button {
             width: 28.9%;
         }
+        .job-edit-icon {
+                   padding: 2px 8px;
+             }
 }
 
 @media only screen and (max-width: 1300px){
@@ -267,6 +285,24 @@
                 .col-md-3 {    width: 30%;
                     float: left;
             }
+            .job-new-outer td:last-child.width-12 {
+                width: 108px;
+            }
+            .job-new-outer th:last-child.width-12 {
+                width: 112px;
+            }
+            .job-edit-icon {
+                margin-left: 8px;
+            }
+            .organazation-new-table table  th:last-child, .organazation-new-table table  td:last-child{
+                width: 14%;
+             }
+             .organazation-new-table table .sub-table td:first-child{
+                width: 100%;
+            }
+            .organazation-new-table td,  .organazation-new-table th{
+                font-size: 13px;
+            }
        }
 @media only screen and (max-width: 1200px){
 .recruitment-top-right-box {
@@ -338,6 +374,9 @@
     float: left;
     width: 29.4%;
     margin-right: 10px;
+}
+.organazation-new-table td,  .organazation-new-table th{
+    font-size: 12px;    line-height: 17px;
 }
 }
 @media only screen and (max-width: 980px){
@@ -857,6 +896,9 @@ display:block;
     float: left;
     width: 30.4%;
     margin-right: 10px;
+}
+.candiate-modal-inner-tab .col-md-4, .candiate-modal-inner-tab .col-md-12, .candiate-modal-inner-tab .col-md-8 {
+    padding-left: 15px;
 }
 }
 @media only screen and (max-width:650px){

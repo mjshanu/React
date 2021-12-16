@@ -267,7 +267,7 @@ export default function Job(props) {
               </div>
 
               <div className="col-md-12 job-main-tb-outer">
-                <Paper className="recruitment-table-outer job-outer">
+                <Paper className="recruitment-table-outer job-outer job-new-outer">
                   <Table className="recruitment-tabele">
                     <TableHead>
 
@@ -281,8 +281,8 @@ export default function Job(props) {
                         <TableCell className="width-8">Location</TableCell>
                         <TableCell className="width-10">Posted Date </TableCell>
                         <TableCell className="width-10">Post Close</TableCell>
-                        <TableCell className="width-15">description</TableCell>
-                        <TableCell className="width-8">Status</TableCell>
+                        <TableCell className="width-15">Description</TableCell>
+                        <TableCell className="width-12">Status</TableCell>
 
                       </TableRow>
                     </TableHead>
@@ -301,9 +301,12 @@ export default function Job(props) {
 
                             <TableCell numeric className="width-15"> {n.job_description}
                             </TableCell>
-                            <TableCell numeric className="width-8 inprogress-td">
+                            <TableCell numeric className="width-12 inprogress-td">
                               <div className="inprograss-style">Active</div>
-                              <button onClick={() => Edit_job(n.id)}>Edit</button>
+                              <button onClick={() => Edit_job(n.id)} className="job-edit-icon"> <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M8.76911 5.80111L3.04833 0.0803333C2.94122 -0.0267778 2.76767 -0.0267778 2.66067 0.0803333L0.0803334 2.66067C-0.0267778 2.76778 -0.0267778 2.94133 0.0803334 3.04833L5.80111 8.76911L8.76911 5.80111Z" fill="#4A54D1" />
+                                                            <path d="M9.59266 9.98866L6.0791 9.04722L9.04722 6.0791L9.98866 9.59266C10.053 9.83311 9.83311 10.053 9.59266 9.98866Z" fill="#4A54D1" />
+                                                        </svg></button>
                             </TableCell>
                           </TableRow>
 

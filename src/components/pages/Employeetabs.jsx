@@ -67,11 +67,12 @@ export default function BasicTabs() {
         </div>
         <div id="collapseOne" class="panel-collapse collapse in">
           <div class="panel-body">
-          <div class="row popup-content-height popup-row-mrg">
+          <div class="row popup-content-height popup-row-mrg  candiate-modal-inner-tab">
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Name</label>
                                 <input type="email" class="form-control" ></input>
+                            </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
@@ -178,7 +179,7 @@ export default function BasicTabs() {
                                 </div>
                             </div>
 
-                        </div>
+                      
                         
                      </div>
           </div>
@@ -196,13 +197,15 @@ export default function BasicTabs() {
         </div>
         <div id="collapseTwo" class="panel-collapse collapse">
           <div class="panel-body">
-          <div class="row popup-content-height popup-row-mrg">
+          <div class="row popup-content-height popup-row-mrg  candiate-modal-inner-tab">
                         
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Panel Members</label>
                                 <input type="email" class="form-control" ></input>
                             </div>
+                            
+                        </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Interview Date and Time</label>
@@ -241,7 +244,6 @@ export default function BasicTabs() {
                                 </div>
                             </div>
 
-                        </div>
                         
                      </div>
           </div>
@@ -259,12 +261,13 @@ export default function BasicTabs() {
         </div>
         <div id="collapseThree" class="panel-collapse collapse">
           <div class="panel-body">
-          <div class="row popup-content-height popup-row-mrg">
+          <div class="row popup-content-height popup-row-mrg  candiate-modal-inner-tab">
                         
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Candidate Status</label>
                                 <input type="email" class="form-control" ></input>
+                            </div>
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
@@ -281,7 +284,7 @@ export default function BasicTabs() {
                                 </div>
                             </div>
 
-                        </div>
+                        
                         
                      </div>
         </div>
