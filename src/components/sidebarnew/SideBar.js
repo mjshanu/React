@@ -34,7 +34,7 @@ import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 
 
 class SideBar extends React.Component {
-  
+ 
   render() {
     const $ = window.$;
     var path = window.location.href; // because the 'href' property of the DOM element is the absolute path
@@ -75,12 +75,8 @@ class SideBar extends React.Component {
         <Nav className="flex-column pt-2"  >
         <div className="nav-taxt">Navigation</div>
 
-   
-
-
-   
-          <Nav.Item>
-            <Nav.Link href="/Dashboard" >
+          <Nav.Item exact className="active">
+            <Nav.Link href="/Dashboard">
             <FaThLarge/>
              Dashboard  
    
