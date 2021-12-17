@@ -63,12 +63,6 @@ class SideBar extends React.Component {
         </div>
 
 
-<ul>
-<li><a href="#">test</a></li>
-<li><a href="#">test</a></li><li><a href="#">test</a></li>
-</ul>
-
-
 
 
 
