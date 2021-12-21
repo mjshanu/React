@@ -95,10 +95,7 @@ export default function Recruitmentnewmodal(){
             </div>
            
         </div>
-        <div>
-            <button type="button" class="btn  btn-save "  > Save</button>
-            <button type="button" class="btn  btn-cancel "  onClick={closeModal} > Cancel </button> 
-        </div>
+        
         
        
                 

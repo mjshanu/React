@@ -1,9 +1,9 @@
 import React from "react";
 import classNames from "classnames";
-import { Container } from "react-bootstrap";
-import NavBar from "./Navbar";
-import ReactDOM from "react-dom";
- 
+import { Container } from "reactstrap";
+
+import Topbar from "./Topbar";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -28,47 +28,22 @@ import Assets from "../pages/Assets";
 import Assetsdetails from "../pages/Assetsdetails";
 import Organizationlist from "../pages/Organizationlist";
 
-class Content extends React.Component {
-  render() {
-    return (
-      <Container
-        fluid
-        className={classNames("content", { "is-open": this.props.isOpen })}
-      >
-        <NavBar toggle={this.props.toggle} />
+const Content = ({ sidebarIsOpen, toggleSidebar }) => (
+  <Container
+    fluid
+    className={classNames("content", { "is-open": sidebarIsOpen })}
+  >
+    <Topbar toggleSidebar={toggleSidebar} />
+    <Switch>
 
-        <Router>
-     
-      <Switch>
-        
-      <Router exact path="/Dashboard">
-      <Dashboard/>
-      </Router>
-      <Router path="/Kanban" >
-        <Kanban/>
-        </Router>
-        <Router path="/Assets"   >
-        <Assets/>
-        </Router> 
-        <Router path="/Assetsdetails">
-        <Assetsdetails/>
-        </Router> 
-        <Router path="/Emplyelist">
-        <Emplyelist/>
-        </Router> 
-        <Router path="/Employeeprofile">
-        <Employeeprofile/>
-        </Router> 
-        <Router path="/Job">
-        <Job/>
-        </Router> 
-        
-        <Router path="/Dragslider">
-        <UncontrolledBoard/>
-        </Router> 
-        <Router path="/Newdrgbox">
-        <Newdrag/>
-        </Router> 
+    <Route exactly path="/Dashboard" component={Dashboard} />
+    <Route exactly path="/Kanban" component={Kanban} />
+    <Route exact path="/Assets" component={Assets} />
+    <Route exact path="/Assetsdetails" component={Assetsdetails} />
+    <Route exact path="/Emplyelist" component={Emplyelist} />
+    <Route exact path="/Employeeprofile" component={Employeeprofile} />
+    <Route exact path="/Job" component={Job} />
+    <Route exact path="/Addemployeetab" component={Addemployeetab} />     
         <Router path="/Addemployeetab">
         <Addemployeetab/>
         </Router> 
@@ -94,15 +69,8 @@ class Content extends React.Component {
         < Organizationold/>
         </Router>
 
-     
-         </Switch>
-         
-        
-         
-    </Router>
-      </Container>
-    );
-  }
-}
+    </Switch>
+  </Container>
+);
 
 export default Content;

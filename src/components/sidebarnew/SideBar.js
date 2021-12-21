@@ -7,131 +7,147 @@ import {
   faPaperPlane,
   faQuestion,
   faImage,
-  faCopy,
-  faTimes
+  faCopy
 } from "@fortawesome/free-solid-svg-icons";
-import SubMenu from "./SubMenu";
-import { Nav, Button } from "react-bootstrap";
+import { NavItem, NavLink, Nav } from "reactstrap";
 import classNames from "classnames";
+import { Link , useLocation } from "react-router-dom";
 import {dashboard,asste,logonew} from '../../images';
 import {FaThLarge, FaChartLine, FaTools } from "react-icons/fa";
 import { FaUserTie } from "@react-icons/all-files/fa/FaUserTie";
 import { FaFileAlt } from "@react-icons/all-files/fa/FaFileAlt";
 import { IconName } from "react-icons/ai";
 import { MdPersonSearch, MdOutlineScreenSearchDesktop, MdBusinessCenter, MdOutlineAccountTree } from "react-icons/md";
-import { Navbar } from "react-bootstrap";
-import { NavLink } from "react-router-dom";  
+import SubMenu from "./SubMenu";
 
-class SideBar extends React.Component {
+
+
+const $ = window.$;
+ var path = window.location.href; // because the 'href' property of the DOM element is the absolute path
+  $('.side-menu .nav-item a').each(function() {
+   if (this.href === path) {
+    $(this).addClass('active');
+   }
+  });
+
+
+  $(document).ready(function () {
+    $(".side-menu .nav-item a").click(function (e) {
+     $(".side-menu .nav-item a").removeClass("active");
+     $(this).addClass("active");
+      });
+
+  });
+
+  $(function() {
+    $('.side-menu .nav-item a[href^="/' + window.location.pathname.split("/")[1] + '"]').addClass('active');
+  });
+
+ 
+ 
+
+
+
+  const SideBar = ({ isOpen, toggle }) => (
   
-  render() {
-    const $ = window.$;
-    $(".sidebar").on('click', '.nav-item', function() {
-      $(this).addClass("active"); // adding active class
-   });
-
-   
-    return (
-
-        <div className={classNames("sidebar", { "is-open": this.props.isOpen })}>
-        <div className="sidebar-header">
-          <Button
-            variant="link"
-            onClick={this.props.toggle}
-            style={{ color: "#fff" }}
-            className="mt-4"
-          >
-            <FontAwesomeIcon icon={faTimes} pull="right" size="xs" />
-          </Button>
-          <div className="logo">
+  <div className={classNames("sidebar", { "is-open": isOpen })}>
+    <div className="sidebar-header">
+      <span color="info" onClick={toggle} style={{ color: "#fff" }}>
+        &times;
+      </span>
+      <div className="logo">
 			<img src={logonew}/>
         </div>
-        </div>
-
-        <Nav className="flex-column pt-2"  >
-        <div className="nav-taxt">Navigation</div>
-
+    </div>
+    <div className="side-menu">
+      <Nav vertical className="list-unstyled pb-3">
+      <div className="nav-taxt">Navigation</div>
    
-          <Nav.Item className="active">
-            <Nav.Link href="/Dashboard" >
-            <FaThLarge/>
-             Dashboard  
-   
-            </Nav.Link>  
-             </Nav.Item>
-            <Nav.Item>
-            <Nav.Link href="/Job">
-             < MdBusinessCenter/>
-             Job Portal
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item >
-            <Nav.Link href="/Kanban">
-             < MdPersonSearch className="recrutment-menu-icon"/>
+         <NavItem>
+          <NavLink exact tag={Link} to={"/Dashboard"} exact activeClassName="active">
+          < MdBusinessCenter/>
+            Dashboard  
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink exact tag={Link} to={"/Job"} >
+            <FontAwesomeIcon icon={faBriefcase} className="mr-2" />
+            Job Portal
+          </NavLink>
+        </NavItem>
+
+        <NavItem>
+          <NavLink tag={Link} to={"/Kanban"} >
+          < MdPersonSearch className="recrutment-menu-icon"/>
              Recruitment
-            </Nav.Link>
-          </Nav.Item>
+          </NavLink>
+        </NavItem>
 
-          <Nav.Item>
-            <Nav.Link href="/Emplyelist" activeClassName='active'  exact>
-            <FaUserTie/>
+        <NavItem>
+          <NavLink tag={Link} to={"/Emplyelist"} >
+          <FaUserTie/>
               Employee
-            </Nav.Link>
-          </Nav.Item>
-            
-               <Nav.Item>
-            <Nav.Link href="/Assets"  >
-              <FaChartLine/>
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink tag={Link} to={"/Assets"} >
+          <FaChartLine/>
              Asset
-            </Nav.Link>
-          </Nav.Item>
+          </NavLink>
+        </NavItem>
 
-        
-
-          <Nav.Item>
-            <Nav.Link href="/">
-            <FaFileAlt/>
-            projects
-            </Nav.Link>
-          </Nav.Item>
-
-            <SubMenu
-            title="Administration"
-            icon={faCopy}
-            items={[<a href="/Organization">  < MdOutlineAccountTree/>Organization & Branches</a>, <a href="/Addcategory">< FaTools/> Configuration</a> ]}
-          />
-        
-       
-          {/* A JSX comment 
-
-          <Nav.Item>
-            <Nav.Link href="/Dragslider">
-             < FaTools/>
-             Dragslider
-            </Nav.Link>
-          </Nav.Item>
+        <NavItem>
+          <NavLink tag={Link} to={"/"} >
+          <FaFileAlt/>
+            Projects
+          </NavLink>
+        </NavItem>
           
-          <Nav.Item>
-            <Nav.Link href="/Newdrgbox">
-             < FaTools/>
-            Newdrg
-            </Nav.Link>
-          </Nav.Item>
 
-          */}
-                      <Nav.Item>
-          <Nav.Link href="/Organizationold">
-             < MdOutlineAccountTree/>
+        <SubMenu title="Administration" icon={faCopy} items={submenus[1]} />
+
+
+        
+        <NavItem>
+          <NavLink tag={Link} to={"/Organizationold"}>
+          < MdOutlineAccountTree/>
              Organization  
-            </Nav.Link>
-          
-          </Nav.Item>
-           
-        </Nav>
+          </NavLink>
+        </NavItem>
+     
+      </Nav>
+    </div>
+  </div>
+);
 
-      </div>
-    );
-  }
-}
+const submenus = [
+  [
+    {
+      title: "Home 1",
+      target: "Home-1"
+    },
+    {
+      title: "Home 2",
+      target: "Home-2"
+    },
+    {
+      itle: "Home 3",
+      target: "Home-3"
+    }
+  ],
+  [
+    {
+      icon: < MdOutlineAccountTree/>,
+         title: "Organization",  
+      target: "Organization",
+  
+    },
+    {
+      icon:< FaTools/>,
+      title: "Configuration",
+      target: "Addcategory"
+    }
+  ]
+];
 
 export default SideBar;

@@ -47,6 +47,7 @@ export default function BasicTabs() {
     setValue(newValue);
   };
   const { handleChange1, values, handleSubmit, errors } = useForm(validate);
+  
   return (
    <div class="candidate-tab-outer">
   <ul class="nav nav-tabs">
@@ -54,7 +55,7 @@ export default function BasicTabs() {
     <li><a href="#tab2" data-toggle="tab">Schedule Details</a></li>
     <li><a href="#tab3" data-toggle="tab">Rejection Reasons</a></li>
   </ul>
-
+  <form onSubmit={handleSubmit} className='form' noValidate>
   <div class="tab-content">
     <div class="tab-pane active" id="tab1">
       <div class="panel panel-default">
@@ -292,7 +293,13 @@ export default function BasicTabs() {
     </div>
 
   </div>
-</div></div>
+</div>
+<div>
+            <button type="submit" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel "  > Cancel </button> 
+        </div>
+ </form>
+</div>
   )
 }
 
