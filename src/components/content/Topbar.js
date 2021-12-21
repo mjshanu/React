@@ -11,6 +11,10 @@ import {
   NavLink,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import { FiAlignRight } from "@react-icons/all-files/fi/FiAlignRight";
+import { BiTimeFive } from "@react-icons/all-files/bi/BiTimeFive";
+import { BsBell } from "@react-icons/all-files/bs/BsBell";
+import {dashboard,asste,Grouplog, logomob} from '../../images';
 
 const Topbar = ({ toggleSidebar }) => {
   const [topbarIsOpen, setTopbarOpen] = useState(true);
@@ -20,38 +24,24 @@ const Topbar = ({ toggleSidebar }) => {
     <Navbar
       color="light"
       light
-      className="navbar shadow-sm p-3 mb-5 bg-white rounded"
-      expand="md"
+      className="navbar shadow-sm p-3 mb-5 bg-white rounded maintop-bar"
+      expand
     >
-      <Button color="info" onClick={toggleSidebar}>
-        <FontAwesomeIcon icon={faAlignLeft} />
+      <Button  variant="outline-info" className="hamber-icon" onClick={toggleSidebar} >
+      <FontAwesomeIcon icon={faAlignLeft} />
       </Button>
       <NavbarToggler onClick={toggleTopbar} />
-      <Collapse isOpen={topbarIsOpen} navbar>
-        <Nav className="ml-auto" navbar>
-          <NavItem>
-            <NavLink tag={Link} to={"/page-1"}>
-              page 1
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink tag={Link} to={"/page-2"}>
-              page 2
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink tag={Link} to={"/page-3"}>
-              page 3
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink tag={Link} to={"/page-4"}>
-              page 4
-            </NavLink>
-          </NavItem>
-        </Nav>
-      </Collapse>
-    </Navbar>
+      <div className="logo-mob">
+			<img src={logomob}/>
+        </div>
+               <Navbar>
+        <div class="  topbar-col-right">
+                 <span className="topbar-icon-right"> <BiTimeFive/></span>
+                 <span  className="topbar-icon-right"> <BsBell/></span>
+                 <span> 	<img className="topbar-icon-right-img" src={Grouplog}/> <sup className="topbar-icon-right-img-txt">Ayer</sup></span>
+               </div>
+        </Navbar>
+       </Navbar>
   );
 };
 

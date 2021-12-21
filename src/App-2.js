@@ -11,6 +11,7 @@ const App = () => {
   const [sidebarIsOpen, setSidebarOpen] = useState(true);
   const toggleSidebar = () => setSidebarOpen(!sidebarIsOpen);
 
+  
   return (
     <Router>
       <div className="App wrapper">
