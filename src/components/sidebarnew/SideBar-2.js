@@ -1,5 +1,4 @@
 import React from "react";
-import './Sidebar.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
@@ -11,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { NavItem, NavLink, Nav } from "reactstrap";
 import classNames from "classnames";
-import { Link , useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {dashboard,asste,logonew} from '../../images';
 import {FaThLarge, FaChartLine, FaTools } from "react-icons/fa";
 import { FaUserTie } from "@react-icons/all-files/fa/FaUserTie";
@@ -20,62 +19,25 @@ import { IconName } from "react-icons/ai";
 import { MdPersonSearch, MdOutlineScreenSearchDesktop, MdBusinessCenter, MdOutlineAccountTree } from "react-icons/md";
 import SubMenu from "./SubMenu";
 
-
-
 const $ = window.$;
  var path = window.location.href; // because the 'href' property of the DOM element is the absolute path
-  $('.side-menu .nav-item a').each(function() {
-   if (this.href === path) {
-    $(this).addClass('active');
-   }
-  });
-
+ $(".side-menu .nav-item a").click(function (e) {
+  $(".side-menu .nav-item a").removeClass("active");
+  $(this).addClass("active");
+   });
 
   $(document).ready(function () {
     $(".side-menu .nav-item a").click(function (e) {
      $(".side-menu .nav-item a").removeClass("active");
      $(this).addClass("active");
       });
-
-
-
   });
 
-  $(function() {
-    //   $('.side-menu .nav-item a[href^="/' + window.location.pathname.split("/")[1] + '"]').addClass('active');
-  });
 
- 
-  $(document).ready(function(){
-    if(window.matchMedia("(max-width: 980px)").matches){
-        // The viewport is less than 768 pixels wide
-        
-        $( '.side-menu .nav-item a' ).on("click", function(){
-          $('.hamber-icon').click();
-          });
-          
-
-
-
-    } else{
-        // The viewport is at least 768 pixels wide
-       // alert("This is a tablet or desktop.");
-       $( '.side-menu .nav-item a' ).on("click", function(){
-        $('.sidebar').show();
-        });
-    }
-});
-
-
-
- 
-
-
-  const SideBar = ({ isOpen, toggle }) => (
-  
+const SideBar = ({ isOpen, toggle }) => (
   <div className={classNames("sidebar", { "is-open": isOpen })}>
     <div className="sidebar-header">
-      <span color="info" onClick={toggle} style={{ color: "#5452E1" }} className="side-bar-close">
+      <span color="info" onClick={toggle} style={{ color: "#fff" }}>
         &times;
       </span>
       <div className="logo">
@@ -84,17 +46,17 @@ const $ = window.$;
     </div>
     <div className="side-menu">
       <Nav vertical className="list-unstyled pb-3">
-      <div className="nav-taxt">Navigation</div>
+        <p>Dummy Heading</p>
    
          <NavItem>
-          <NavLink exact tag={Link} to={""} exact activeClassName="active"  >
+          <NavLink exact tag={Link} to={"/Dashboard"} exact activeClassName="active">
           < MdBusinessCenter/>
             Dashboard  
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink exact tag={Link} to={"/Job"} >
-          < MdBusinessCenter/>
+          <NavLink exact tag={Link} to={"/Job"} exact activeClassName="active">
+            <FontAwesomeIcon icon={faBriefcase} className="mr-2" />
             Job Portal
           </NavLink>
         </NavItem>
@@ -160,13 +122,10 @@ const submenus = [
   ],
   [
     {
-      icon: < MdOutlineAccountTree/>,
-         title: "Organization",  
-      target: "Organization",
-  
+      title: "Organization",  
+      target: "Organization"
     },
     {
-      icon:< FaTools/>,
       title: "Configuration",
       target: "Addcategory"
     }

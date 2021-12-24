@@ -30,6 +30,7 @@ const[values, SetValues] = useState ({
 })
 const[errors,setErrors]=useState({})
 const [isSubmitting, setIsSubmitting] = useState(false);
+const[job,setJob]=useState([]);
 const handleChange1 =e => { 
     const{name,value}=e.target
     SetValues({
@@ -37,6 +38,18 @@ const handleChange1 =e => {
         [name]:value
     })
 }
+const getpostName = async () => {
+    const response = await fetch("http://localhost:8000/api/getJobs");
+    const data = await response.json();
+  
+    const listnewtest = data.job;
+  
+    //const lo=JSON.stringify(listnew);
+   
+    setJob(listnewtest);
+    
+  }
+  console.log(job); 
 const handleSubmit =e => { alert("hii");
     e.preventDefault();
     setErrors(validate(values));
@@ -67,7 +80,7 @@ const handleSubmit =e => { alert("hii");
     
 
 
-return {handleChange1,values,handleSubmit,errors};
+return {handleChange1,values,handleSubmit,errors,getpostName,job};
 
 }
 export default useForm;

@@ -3090,3 +3090,87 @@ color: #4A54D1;
 .nav-item.open a{
     color: #fff;
 }
+.active{
+color: red;
+}
+.navbar-collapse.collapse {
+    display: none !important;
+}
+.collapse.show, .collapsing {
+     display: block !important;
+}
+.navbar {
+    position: relative;
+    min-height: 18px;
+    float: right;
+    margin-bottom: -2px;
+    border: 1px solid transparent;
+}
+.main-otrer-top {
+    margin-top: 0;
+}
+.admin-menu-space a{
+    padding-left: 17px;
+}
+.admin-menu-space .navbar-collapse {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 0;
+}
+.admin-menu-space .navbar-collapse a{
+    padding-left: 31px;
+}
+.nav-taxt {
+    width: 100%;
+    float: left;
+    font-weight: 600;
+    color: #5452E1;
+    margin-bottom: 21px;
+    display: block;
+    text-align: left;
+    padding-left: 15px;
+    font-size: 20px;
+}
+.sidebar {
+    padding-right: 0px;
+}
+.sidebar.is-open .nav-item a svg{
+   margin-left: 0;
+}
+.nav-item a {
+    padding-left: 18px;
+}
+.sidebar.is-open .admin-menu-space .menu-open a {
+    background: #cd3b78;
+    background: linear-gradient(to right, #cd3b78 0%,#5452e1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cd3b78', endColorstr='#5452e1',GradientType=1 );
+    color: #fff;
+}
+.sidebar .admin-menu-space  .close-tog, .sidebar .admin-menu-space  .open-tog{
+    display:none;
+}
+
+.sidebar.is-open  .admin-menu-space .nav-item .close-tog{
+    display:block;
+}
+.sidebar.is-open  .admin-menu-space .nav-item .open-tog{
+    display:none;
+}
+.sidebar.is-open  .admin-menu-space .menu-open.nav-item .open-tog{
+    display: block;
+}
+.sidebar.is-open  .admin-menu-space .menu-open.nav-item .close-tog{
+    display:none;
+}
+.admin-menu-space .dropdown-toggle svg{
+margin-right: 14px;
+margin-left: 5px;
+}
+
+.admin-menu-space .navbar-collapse {
+    padding-right: 15px;
+}
+
+.sidebar-header .side-bar-close{
+    display: none;
+}
