@@ -3170,3 +3170,7 @@ margin-left: 5px;
 .admin-menu-space .navbar-collapse {
     padding-right: 15px;
 }
+
+.sidebar-header .side-bar-close{
+    display: none;
+}

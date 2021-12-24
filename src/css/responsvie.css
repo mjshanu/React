@@ -649,6 +649,52 @@ display:block;
 .width-8 {
     width: 11%;
 }
+.sidebar-header .side-bar-close{
+    display: block;
+    font-size: 26px;
+    float: right;
+    margin-top: 5px;
+    font-weight: 800;
+    margin-right: 15px;
+}
+.sidebar-header .logo {
+    margin-top: 27px;
+}
+.nav-item svg:not(:root).svg-inline--fa {
+    float: left;
+}
+.active {
+    background: #cd3b78;
+    background: linear-gradient(to right, #cd3b78 0%,#5452e1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cd3b78', endColorstr='#5452e1',GradientType=1 );
+    color: #fff !important;
+}
+.admin-menu-space .dropdown-toggle svg {
+     margin-left: 16px;
+}
+ .admin-menu-space .menu-open a {
+    background: #cd3b78;
+    background: linear-gradient(to right, #cd3b78 0%,#5452e1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cd3b78', endColorstr='#5452e1',GradientType=1 );
+    color: #fff;
+}
+.sidebar .admin-menu-space .nav-item .close-tog {
+    display: block;
+}
+.sidebar .admin-menu-space .menu-open.nav-item .close-tog {
+    display: none;
+}
+
+.sidebar .admin-menu-space .nav-item .open-tog {
+    display:none;
+}
+
+.sidebar .admin-menu-space .menu-open.nav-item .open-tog {
+    display: block;
+}
+.collapse.show .nav-item a.active {
+    color: #fff !important;
+}
 }
 @media only screen and (max-width: 767px){
 .calendar-width {
