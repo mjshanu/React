@@ -37,22 +37,45 @@ const $ = window.$;
      $(this).addClass("active");
       });
 
+
+
   });
 
   $(function() {
-    $('.side-menu .nav-item a[href^="/' + window.location.pathname.split("/")[1] + '"]').addClass('active');
+    //   $('.side-menu .nav-item a[href^="/' + window.location.pathname.split("/")[1] + '"]').addClass('active');
   });
 
  
- 
+  $(document).ready(function(){
+    if(window.matchMedia("(max-width: 980px)").matches){
+        // The viewport is less than 768 pixels wide
+        
+        $( '.side-menu .nav-item a' ).on("click", function(){
+          $('.hamber-icon').click();
+          });
+          
 
+
+
+    } else{
+        // The viewport is at least 768 pixels wide
+       // alert("This is a tablet or desktop.");
+       $( '.side-menu .nav-item a' ).on("click", function(){
+        $('.sidebar').show();
+        });
+    }
+});
+
+
+
+ 
 
 
   const SideBar = ({ isOpen, toggle }) => (
   
   <div className={classNames("sidebar", { "is-open": isOpen })}>
     <div className="sidebar-header">
-      <span color="info" onClick={toggle} style={{ color: "#fff" }}>
+      <span color="info" onClick={toggle} style={{ color: "#5452E1" }} className="side-bar-close">
         &times;
       </span>
       <div className="logo">
@@ -64,14 +87,14 @@ const $ = window.$;
       <div className="nav-taxt">Navigation</div>
    
          <NavItem>
-          <NavLink exact tag={Link} to={"/Dashboard"} exact activeClassName="active">
+          <NavLink exact tag={Link} to={""} exact activeClassName="active"  >
           < MdBusinessCenter/>
             Dashboard  
           </NavLink>
         </NavItem>
         <NavItem>
           <NavLink exact tag={Link} to={"/Job"} >
-            <FontAwesomeIcon icon={faBriefcase} className="mr-2" />
+          < MdBusinessCenter/>
             Job Portal
           </NavLink>
         </NavItem>
