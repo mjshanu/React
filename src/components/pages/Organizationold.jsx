@@ -30,8 +30,6 @@ import {
 } from 'react-accessible-accordion';
 import axios from 'axios';
 
-
-
 function createData(
   org_name: string,
   org_code: number,

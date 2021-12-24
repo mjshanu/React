@@ -21,32 +21,18 @@ import { IconName } from "react-icons/ai";
 import { MdPersonSearch, MdOutlineScreenSearchDesktop, MdBusinessCenter, MdOutlineAccountTree } from "react-icons/md";
 import { Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";  
-import ReactDOM from "react-dom";
-
-import SideNav, {
-  Toggle,
-
-  NavItem,
-  NavIcon,
-  NavText
-} from "@trendmicro/react-sidenav";
-import "@trendmicro/react-sidenav/dist/react-sidenav.css";
-
 
 class SideBar extends React.Component {
- 
+  
   render() {
     const $ = window.$;
-    var path = window.location.href; // because the 'href' property of the DOM element is the absolute path
-    $('.sidebar .nav-item a').each(function() {
-     if (this.href === path) {
-      $(this).addClass('active');
-       }
-    });
-    
-      
+    $(".sidebar").on('click', '.nav-item', function() {
+      $(this).addClass("active"); // adding active class
+   });
+
+   
     return (
-    
+
         <div className={classNames("sidebar", { "is-open": this.props.isOpen })}>
         <div className="sidebar-header">
           <Button
@@ -62,22 +48,19 @@ class SideBar extends React.Component {
         </div>
         </div>
 
-
-
-
-
         <Nav className="flex-column pt-2"  >
         <div className="nav-taxt">Navigation</div>
 
-          <Nav.Item exact className="active">
-            <Nav.Link href="/Dashboard">
+   
+          <Nav.Item className="active">
+            <Nav.Link href="/Dashboard" >
             <FaThLarge/>
              Dashboard  
    
             </Nav.Link>  
              </Nav.Item>
             <Nav.Item>
-            <Nav.Link  href="/Job">
+            <Nav.Link href="/Job">
              < MdBusinessCenter/>
              Job Portal
             </Nav.Link>

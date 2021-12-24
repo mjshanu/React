@@ -3057,3 +3057,36 @@ color: #4A54D1;
 .organazation-new-table .sub-table td:first-child {
  border-bottom: 0px solid rgba(224, 224, 224, 1);
 }
+.main-nav-active{
+    background: #000;
+}
+.nav-outer {
+    width: 100%;
+    float: left;
+}
+.nav-outer a{
+    width: 100%;
+    float: left;
+    display: block;
+}
+.nav-item .accordion {
+    background: none;
+    float: left;
+    padding: 0px 0px;
+    position: relative;
+    display: block;
+}
+.collapse.show, .collapsing {
+    background: none;
+    padding-top: 10px;
+    margin-bottom: -7px;
+    float: left;
+}.is-active{
+    color: red;
+}
+.collapse.show .nav-item a {
+    color: #fff;
+}
+.nav-item.open a{
+    color: #fff;
+}

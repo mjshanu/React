@@ -1,5 +1,4 @@
 import React from "react";
-
 import logo from './logo.svg';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -8,7 +7,6 @@ import Topbar from './components/topbar/Topbar';
 //import Sidebar from './components/Sidebar/Sidebar';
 import Mainouter from './components/page-main/main-outer';
 import SideBar from "./components/sidebarnew/SideBar";
- //import Appmenu from "./components/Sidebarrouter/Appmenu";
 import Content from "./components/content/Content";
  
 import './css/style.css';
@@ -24,8 +22,6 @@ import Employee from "./components/pages/Employee";
 import Kanban from "./components/pages/Kanban";
 
 class App extends React.Component {
-
-  
   constructor(props) {
     super(props);
 
@@ -75,8 +71,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="App wrapper">
-        
-        
         <SideBar toggle={this.toggle} isOpen={this.state.isOpen} />
         <Content toggle={this.toggle} isOpen={this.state.isOpen} />
 
