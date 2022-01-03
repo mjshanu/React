@@ -18,3 +18,5 @@ export const profileimage2 = require('./profile-img-2.png').default;
 export const uploadimage = require('./upload-photo-image.png').default;
 export const uploadicon = require('./upload.png').default;
 export const basicicon = require('./basic-information.svg').default;
+export const PencilNew = require('./pencil-new.svg').default;
+export const DeferTime = require('./defertime.svg').default;
