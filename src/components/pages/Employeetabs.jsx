@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useState, useEffect } from "react";
 
 import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
@@ -46,8 +46,11 @@ export default function BasicTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const { handleChange1, values, handleSubmit, errors } = useForm(validate);
-  
+  const { handleChange1, values, handleSubmit, errors,getpostName,job } = useForm(validate);
+
+  useEffect(() => {
+   getpostName();
+  });
   return (
    <div class="candidate-tab-outer">
   <ul class="nav nav-tabs">
@@ -222,7 +225,14 @@ export default function BasicTabs() {
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Position/Job title</label>
-                                    <input type="text" name="jobtitle" onChange={handleChange1} value={values.jobtitle} class="form-control" ></input>
+                                 
+                                    <select id = "dropdown" name="jobtitle" onChange={handleChange1} value={values.jobtitle} class="form-control">
+                                <option value="">Select Job name</option>
+                                {job.map(({ post_name , id }, index) => 
+                                <option value={id} >{post_name}</option>
+                                )} 
+ </select>
+                                  
                                 </div>
                             </div>
                             <div class="col-md-4">

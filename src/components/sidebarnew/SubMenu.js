@@ -34,7 +34,7 @@ const SubMenu = (props) => {
       >
         {items.map((item, index) => (
           <NavItem key={index} className="pl-4">
-            <NavLink tag={Link} to={item.target}>
+            <NavLink tag={Link} to={item.target} className="mob-menu-clik">
               {item.title}
               {item.icon}
              

@@ -42,7 +42,9 @@
                         width: 12%;
                     }
                     
-
+                    .offer-map-width{
+                        width: 22%;
+                    }
 }
 .ReactModal__Overlay{
     position: fixed;
@@ -135,7 +137,9 @@
            .job-edit-icon {
             margin-left: 4px;
                   }
-           
+                  .offer-map-width .inprograss-style {
+                          font-size: 12px;
+                }
 }
 
 
@@ -184,6 +188,9 @@
         .job-edit-icon {
                    padding: 2px 8px;
              }
+             .offer-map-width {
+                width: 24%;
+            }
 }
 
 @media only screen and (max-width: 1300px){
@@ -302,6 +309,9 @@
             }
             .organazation-new-table td,  .organazation-new-table th{
                 font-size: 13px;
+            }
+            .offer-map-width {
+                width: 175px;
             }
        }
 @media only screen and (max-width: 1200px){
@@ -649,6 +659,52 @@ display:block;
 .width-8 {
     width: 11%;
 }
+.sidebar-header .side-bar-close{
+    display: block;
+    font-size: 26px;
+    float: right;
+    margin-top: 5px;
+    font-weight: 800;
+    margin-right: 15px;
+}
+.sidebar-header .logo {
+    margin-top: 27px;
+}
+.nav-item svg:not(:root).svg-inline--fa {
+    float: left;
+}
+.active {
+    background: #cd3b78;
+    background: linear-gradient(to right, #cd3b78 0%,#5452e1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cd3b78', endColorstr='#5452e1',GradientType=1 );
+    color: #fff !important;
+}
+.admin-menu-space .dropdown-toggle svg {
+     margin-left: 16px;
+}
+ .admin-menu-space .menu-open a {
+    background: #cd3b78;
+    background: linear-gradient(to right, #cd3b78 0%,#5452e1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cd3b78', endColorstr='#5452e1',GradientType=1 );
+    color: #fff;
+}
+.sidebar .admin-menu-space .nav-item .close-tog {
+    display: block;
+}
+.sidebar .admin-menu-space .menu-open.nav-item .close-tog {
+    display: none;
+}
+
+.sidebar .admin-menu-space .nav-item .open-tog {
+    display:none;
+}
+
+.sidebar .admin-menu-space .menu-open.nav-item .open-tog {
+    display: block;
+}
+.collapse.show .nav-item a.active {
+    color: #fff !important;
+}
 }
 @media only screen and (max-width: 767px){
 .calendar-width {
@@ -925,6 +981,15 @@ display:block;
             width: 29.4%;
             margin-right: 10px;
         }
+        .offer-release-right-top-box {
+                 padding-top: 0px;
+            }
+            .release-calendar-width {
+                        width: 146px;
+                    }
+                    .release-to-date {
+                                    padding-right: 7px;
+                    }
 }
 @media only screen and (max-width:573px)
 
@@ -1020,7 +1085,7 @@ display:block;
         margin-top: -44px;
     }.sub-head {
         font-size: 17px;
-        padding-left: 6px;
+        padding-left: 10px;
         padding-right: 10px;
         padding-bottom: 25px;
         margin-bottom: 20px;
@@ -1191,6 +1256,33 @@ padding-bottom: 10px;
 .category-top-button button{
     margin-bottom: 15px;
 }
+.Offer-release-bt-buttons {
+    width: 238px;
+}
+.accordion-bottom-button .mapping-button {
+    width: 98px;
+}
+.offer-release-right-top-box {
+    padding-top: 15px;
+    width: 100%;
+    margin-right: 0px;
+}
+.offer-release-top-section{
+    float: left;
+    padding: 20px 11px;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: -10px;
+}
+.offer-release-seasrch {
+    min-width: 100%;
+
+}
+.release-calendar-width {
+    width: 85%;
+    float: right;
+    margin-right: 0;
+}
 }
 
 @media only screen and (max-width:330px){
@@ -1210,5 +1302,7 @@ padding-bottom: 10px;
         margin-top: 0px ;
       }
      
-      
+      .release-calendar-width {
+        width: 82%;
+    }
   }

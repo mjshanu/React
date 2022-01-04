@@ -21,6 +21,8 @@ import schedule_validation from "../validation/schedule_validation";
 import ScheduleInterviewform from "./ScheduleInterviewform";
 import Rejectionform from "./Rejectionform";
 import rejection_validation from "../validation/rejection_validation";
+import release_validation from "../validation/release_validation";
+import Releaseform from "./Releaseform";
 import {
   DragDropContext,
   Draggable,
@@ -65,6 +67,8 @@ const Kanban = () => {
   const [modalIsOpen, setIsOpen] = React.useState(false);
   
   const [isShowingrejectpopup, setIsShowingrejectpopup] = useState(false);
+  const [isShowingreleasepopup, setIsShowingreleasepopup] = useState(false);
+
   const handlesTabs = (e, val) => {
     console.warn(val)
     setValue(val)
@@ -154,6 +158,14 @@ const Kanban = () => {
   function closeModalRejection() {
     setIsShowingrejectpopup(false);
   }
+  function afterOpenModalRelease() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = '#f00';
+  }
+
+  function closeModalRelease() {
+    setIsShowingreleasepopup(false);
+  }
  
   const ViewSchedulepopUp = async (dragid) => {
     const schid = dragid;
@@ -161,9 +173,18 @@ const Kanban = () => {
     values.s_id=schid;
     setIsOpen(true);
   };
- const ViewRejectionpopUp = async(dragid) => {
+ const ViewRejectionpopUp = async(dragidr) => {
+   const r_id=dragidr;
+   valuesrejection.r_id=r_id;
   setIsShowingrejectpopup(true);
- }
+ }      
+   
+ const ViewReleasePopup = async(dragidrelease) => {
+  const release_id=dragidrelease;
+  valuesrelease.release_id=release_id;
+  setIsShowingreleasepopup(true);
+
+} 
 
   const onDragEnd = (result, columns, setColumns) => {
 
@@ -192,7 +213,7 @@ const Kanban = () => {
         }
       });
       // console.log(destItems);
-
+     
       if (destColumn.name == 'Schedule') {
         ViewSchedulepopUp(result.draggableId);
       } 
@@ -200,6 +221,12 @@ const Kanban = () => {
      {
       ViewRejectionpopUp(result.draggableId);
      }
+     else if(destColumn.name == 'Release')
+     {
+        ViewReleasePopup(result.draggableId);
+
+     }
+   
       else {
         values['id'] = result.draggableId;
         values['column'] = destColumn;
@@ -231,6 +258,7 @@ const Kanban = () => {
   // const [columns, setColumns] = useState(columnsFromBackend);
   const { handleChange, values,handleSubmit,errors } = ScheduleInterviewform(schedule_validation);
   const { handleChangerejection, valuesrejection,handleSubmitrejection,errorsrejection } = Rejectionform(rejection_validation);
+  const { handleChangeRelease, valuesrelease, handleSubmitrelease, errorsrelease  } = Releaseform(release_validation);
   return (
     <div>
       <Modal
@@ -415,7 +443,7 @@ const Kanban = () => {
                               <div class="col-md-8">
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Reasons</label>
-                                    <input type="text" name="reason" onChange={handleChangerejection} class="form-control"  value={valuesrejection.reason}></input>
+                                    <input type="text" name="reason" onChange={handleChangerejection} class="form-control" value={valuesrejection.reason}></input>
                                     {errorsrejection.reason && <p>{errorsrejection.reason}</p>}
                                 </div>
                             </div>
@@ -424,13 +452,96 @@ const Kanban = () => {
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Remark</label>
-                                    <textarea class="form-control"   name="remark"  onChange={handleChangerejection}  rows="3" value={valuesrejection.remark}> </textarea>
+                                    <textarea class="form-control"  type="text"   name="remark"  onChange={handleChangerejection}  rows="3" value={valuesrejection.remark}> </textarea>
                                 </div>
                             </div>
                              
                            
                              
                               <input type="hidden" name="r_id"  onChange={handleChangerejection}  class="form-control"   ></input>
+                             
+                              
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div></div>
+              </div>
+            </div>
+
+          </div>
+          <div>
+            <button type="submit" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " onClick={closeModalRejection} > Cancel </button>
+          </div>
+
+
+        </form>
+      </Modal>
+      <Modal
+        isOpen={isShowingreleasepopup}
+        onAfterOpen={afterOpenModalRelease}
+        onRequestClose={closeModalRelease}
+        contentLabel="Example Modal" className="candiate-modal-bx">
+        <form  onSubmit={handleSubmitrelease}  className='form' noValidate>
+          <div className="popup-head-sty candidate-tab-outer">
+            <div className="popup-head-content-sty">
+              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Joining Details</h4>
+            </div>
+            <div className="popup-head-icon-sty">
+              <MdClose className="popup-close-btn" onClick={closeModalRelease} />
+            </div>
+          </div>
+          <div className="popup-content-bg">
+            <div class="row ">
+              <div class="col-md-6 candidate-inform-search">
+                <form class="form-group btn-secondary" >
+                  <input type="text" placeholder="Search.." name="search" class="form-control"></input>
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+              </div>
+              <div class="col-md-8">
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="candidate-tab-outer">
+                  <ul class="nav nav-tabs">
+
+                    <li><a href="#tab2" data-toggle="tab">Candidate Joining Details</a></li>
+
+                  </ul>
+
+                  <div class="tab-content">
+
+                    <div class="tab-pane active" id="tab2">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent=".tab-pane" href="#collapseTwo">
+                            Candidate Joining Details
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <div class="row popup-content-height popup-row-mrg  candiate-modal-inner-tab">
+
+                             
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                  <label for="exampleFormControlInput1">Joinng Date and Time</label>
+                                  <input type="date" name="release_date"  onChange={handleChangeRelease} value={valuesrelease.release_date} class="form-control" ></input>
+                                  {errorsrelease.release_date && <p>{errorsrelease.release_date}</p>}
+                                </div>
+                              </div>
+                           
+                             
+                              <input type="hidden" name="release_id"  onChange={handleChangeRelease}  class="form-control"   ></input>
                              
                               
 

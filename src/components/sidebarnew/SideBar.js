@@ -37,15 +37,38 @@ const $ = window.$;
      $(this).addClass("active");
       });
 
+
+
   });
 
   $(function() {
-    $('.side-menu .nav-item a[href^="/' + window.location.pathname.split("/")[1] + '"]').addClass('active');
+    //   $('.side-menu .nav-item a[href^="/' + window.location.pathname.split("/")[1] + '"]').addClass('active');
   });
 
  
- 
+  $(document).ready(function(){
+    if(window.matchMedia("(max-width: 980px)").matches){
+        // The viewport is less than 768 pixels wide
+        
+        $( '.side-menu .nav-item a.mob-menu-clik' ).on("click", function(){
+          $('.hamber-icon').click();
+          });
+          
 
+
+
+    } else{
+        // The viewport is at least 768 pixels wide
+       // alert("This is a tablet or desktop.");
+       $( '.side-menu .nav-item a' ).on("click", function(){
+        $('.sidebar').show();
+        });
+    }
+});
+
+
+
+ 
 
 
   const SideBar = ({ isOpen, toggle }) => (
@@ -53,7 +76,7 @@ const $ = window.$;
   
   <div className={classNames("sidebar", { "is-open": isOpen })}>
     <div className="sidebar-header">
-      <span color="info" onClick={toggle} style={{ color: "#fff" }}>
+      <span color="info" onClick={toggle} style={{ color: "#5452E1" }} className="side-bar-close">
         &times;
       </span>
       <div className="logo">
@@ -65,52 +88,47 @@ const $ = window.$;
       <div className="nav-taxt">Navigation</div>
    
          <NavItem>
-          <NavLink exact tag={Link} to={"/Dashboard"} exact ClassName="active">
+          <NavLink exact tag={Link} to={""} exact activeClassName="active" className="mob-menu-clik" >
           < MdBusinessCenter/>
             Dashboard  
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink exact tag={Link} to={"/Job"} >
-            <FontAwesomeIcon icon={faBriefcase} className="mr-2" />
+          <NavLink exact tag={Link} to={"/Job"}  className="mob-menu-clik">
+          < MdBusinessCenter/>
             Job Portal
           </NavLink>
         </NavItem>
+    
 
+        <SubMenu title="Recruitment" icon={faCopy} items={submenus[1]} />
         <NavItem>
-          <NavLink tag={Link} to={"/Kanban"} >
-          < MdPersonSearch className="recrutment-menu-icon"/>
-             Recruitment
-          </NavLink>
-        </NavItem>
-
-        <NavItem>
-          <NavLink tag={Link} to={"/Emplyelist"} >
+          <NavLink tag={Link} to={"/Emplyelist"} className="mob-menu-clik" >
           <FaUserTie/>
               Employee
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink tag={Link} to={"/Assets"} >
+          <NavLink tag={Link} to={"/Assets"}  className="mob-menu-clik">
           <FaChartLine/>
              Asset
           </NavLink>
         </NavItem>
 
         <NavItem>
-          <NavLink tag={Link} to={"/"} >
+          <NavLink tag={Link} to={"/"} className="mob-menu-clik" >
           <FaFileAlt/>
             Projects
           </NavLink>
         </NavItem>
           
 
-        <SubMenu title="Administration" icon={faCopy} items={submenus[1]} />
+        <SubMenu title="Administration" icon={faCopy} items={submenus[2]} />
 
 
         
         <NavItem>
-          <NavLink tag={Link} to={"/Organizationold"}>
+          <NavLink tag={Link} to={"/Organizationold"} className="mob-menu-clik">
           < MdOutlineAccountTree/>
              Organization  
           </NavLink>
@@ -134,6 +152,19 @@ const submenus = [
     {
       itle: "Home 3",
       target: "Home-3"
+    }
+  ],
+  [
+    {
+      icon: <MdPersonSearch/>,
+         title: "Recruitment",  
+      target: "Kanban",
+  
+    },
+    {
+      icon:< FaTools/>,
+      title: "Offer Release Report",
+      target: "OfferReleasereport"
     }
   ],
   [

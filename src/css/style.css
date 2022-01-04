@@ -2548,7 +2548,7 @@ width:64px;
 .recruitment-tabele td {
     font-size: 14px;
     line-height: 24px;    text-transform: capitalize;
-    padding: 10px 15px 5px;
+     padding: 8px 15px 6px;
 }
 .organization-button{
     float: left;
@@ -3169,4 +3169,72 @@ margin-left: 5px;
 
 .admin-menu-space .navbar-collapse {
     padding-right: 15px;
+}
+
+.sidebar-header .side-bar-close{
+    display: none;
+}
+.emp-map-outer{
+    background: #B93E87;
+    margin-right: 15px;    font-size: 13px;
+    border: 0.5px solid #B93E87;
+}
+.emp-edit-new-icon {
+    float: left;
+    width: 13px;
+    margin-top: 6px;
+    text-align: left;
+}
+.emp-defer-icon {
+    float: left;
+    text-align: left;
+    padding-top: 4px;
+    margin-left: 15px;
+    width: 15px;
+}
+.emp-map-iocn-outer{
+    display: flex;
+}
+.offer-map-width{
+    width: 20%;
+}
+.offer-release-right-top-box {
+    float: right;
+    width: auto;
+    padding-right: 0px;
+    padding-top:0px;
+    margin-right: -12px;
+}
+.release-to-date{
+    padding-left: 0;
+    padding-top: 10px;
+    font-weight: bold;
+    color: #000;
+    float: left;
+    width: auto;
+    padding-right: 15px;
+}
+.release-calendar-width {
+    float: left;
+    width: 190px;
+    margin-right: 10px;
+}
+.offer-release-seasrch {
+    min-width: 25%;
+    float: left;
+    position: relative;
+}
+.offer-release-seasrch button {
+    position: absolute;
+    right: 10px;
+    top: 11px;
+    background: none;
+}
+.accordion-bottom-button .mapping-button {
+    width: 98px;
+}
+
+.offer-release-top-section{
+    padding: 10px 20px;
+
 }
