@@ -49,6 +49,7 @@ const $ = window.$;
 
 
   const SideBar = ({ isOpen, toggle }) => (
+     
   
   <div className={classNames("sidebar", { "is-open": isOpen })}>
     <div className="sidebar-header">
@@ -64,7 +65,7 @@ const $ = window.$;
       <div className="nav-taxt">Navigation</div>
    
          <NavItem>
-          <NavLink exact tag={Link} to={"/Dashboard"} exact activeClassName="active">
+          <NavLink exact tag={Link} to={"/Dashboard"} exact ClassName="active">
           < MdBusinessCenter/>
             Dashboard  
           </NavLink>
