@@ -21,7 +21,7 @@ import {
 import { v4 as uuid } from "uuid";
 
 import Select from 'react-select';
-import 'bootstrap/dist/css/bootstrap.min.css';
+ 
 
 import {
   Accordion,

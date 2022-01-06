@@ -72,6 +72,7 @@ const $ = window.$;
 
 
   const SideBar = ({ isOpen, toggle }) => (
+     
   
   <div className={classNames("sidebar", { "is-open": isOpen })}>
     <div className="sidebar-header">
