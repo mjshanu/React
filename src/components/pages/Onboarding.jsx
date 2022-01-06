@@ -61,7 +61,7 @@ const data = [
       <header className="main-otrer-top"> Recruitment </header>
              <section  className="main-content-area">
                 <div className="main-content-area-inner">
-                    <div className="sub-head organization-sub-head">Offer Release Report
+                    <div className="sub-head organization-sub-head">Onboarding
                     <div className="top-right-outer add-btn-div">
                                     <div className="buttons-outer">
                                         <a href="Addassets" className="blue-button">

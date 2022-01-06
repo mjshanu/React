@@ -162,7 +162,7 @@ const submenus = [
     },
     {
       icon:< FaTools/>,
-      title: "Offer Release Report",
+      title: "Onboarding",
       target: "OfferReleasereport"
     }
   ],

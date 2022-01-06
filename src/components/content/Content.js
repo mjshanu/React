@@ -27,7 +27,7 @@ import Organization from "../pages/Organization";
 import Assets from "../pages/Assets";
 import Assetsdetails from "../pages/Assetsdetails";
 import Organizationlist from "../pages/Organizationlist";
-import OfferReleasereport from "../pages/OfferReleasereport";
+import OfferReleasereport from "../pages/Onboarding";
 
 const Content = ({ sidebarIsOpen, toggleSidebar }) => (
   <Container
