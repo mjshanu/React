@@ -11,7 +11,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Jobdetailsmodal from "./Jobdetailsmodal"; 
-import {location, PencilNew, DeferTime} from '../../images';
+import {location, PencilNew, DeferTime, Hireprogress,  Hirestatred, Hirecompleted} from '../../images';
 import {profilei,  } from '../../images/profilei.svg'; 
 import Addorganization from './Addorgaization';
 import Addbranches from './Addbranches';
@@ -62,7 +62,11 @@ const data = [
              <section  className="main-content-area">
                 <div className="main-content-area-inner">
                     <div className="sub-head organization-sub-head">Onboarding
-                    <div className="top-right-outer add-btn-div">
+                    <div className="top-right-outer add-btn-div onboar-main-top-right">
+                              <div className="offer-release-top">
+                                    <input className="form-control" type="text" id=" " name=" " placeholder="Search " />
+                                    <button type="button"> <FaSearch className="add-btn-icon" /></button>
+                                </div>
                                     <div className="buttons-outer">
                                         <a href="Addassets" className="blue-button">
                                             Export
@@ -72,20 +76,52 @@ const data = [
                                     
                                 </div>
                     </div>
-                    <div className="asset-top offer-release-top-section">
-                                <div className="offer-release-seasrch">
-                                    <input className="form-control" type="text" id=" " name=" " placeholder="Search " />
-                                    <button type="button"> <FaSearch className="add-btn-icon" /></button>
-                                </div>
-                                <div className="offer-release-right-top-box">
-                                    <div className="release-to-date ">  
-                                    Date
-                                    </div>
-                                    <div className="release-calendar-width ">
-                  <input className="form-control" type="date" id="birthday" name="birthday" />
-                </div>
-                                </div>
-                            </div>
+                 
+<div className='onboarding-top-outer'>
+<div className='box'>
+<div className="box-inner">
+  <div className='left'>
+  <p>New Hire Inprogress</p>
+<span>50</span>
+  </div>
+<img src={Hireprogress} />
+</div>
+<div className="box-inner onboard-ligt-gray">
+  <div className='left'>
+  <p>Onboarding Started</p>
+<span>110</span>
+  </div>
+<img src={Hirestatred} />
+</div>
+<div className="box-inner onboard-ligt-blue">
+  <div className='left'>
+  <p>Onboarding Completed</p>
+<span>90</span>
+  </div>
+<img src={Hirecompleted} />
+</div>
+</div>
+
+</div>
+<div className='onboard-top-select-outer'>
+<div className='select'>
+<div className='select-inner'>
+  <div className='left'>Joining</div>
+<select id="dropdown" class="form-control"><option value="Status">Today</option></select>
+</div>
+<div className='select-inner'>
+  <div className='left'>Status</div>
+<select id="dropdown" class="form-control"><option value="Status">Onboarding Statared</option></select>
+</div>
+<div className='select-inner'>
+  <div className='left'>Sort By</div>
+<select id="dropdown" class="form-control"><option value="Status">Joining Date</option></select>
+</div>
+</div>
+
+</div>
+
+
                     <div className="col-md-12 job-main-tb-outer">    
                     <Paper className="recruitment-table-outer job-outer organazation-table-top">
       <Table className="recruitment-tabele">

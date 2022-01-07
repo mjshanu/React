@@ -3238,3 +3238,129 @@ margin-left: 5px;
     padding: 10px 20px;
 
 }
+.offer-release-top {
+    min-width: 250px;
+    float: left;
+    position: relative;
+    margin-right: 15px;
+}
+.offer-release-top .form-control {
+        height: 35px;
+}
+
+.offer-release-top  button {
+    position: absolute;
+    right: 10px;
+    top: 1px;
+    color: #838383;
+    background: none;
+}
+.onboarding-top-outer{
+    width: 100%;
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.onboarding-top-outer .box{
+    width: 100%;
+    float: left;
+    display: block;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px 40px;
+    grid-auto-rows: minmax(100px,auto);
+    }
+   
+     .onboarding-top-outer .box-inner
+    {width: 100%;
+        float: left;
+        background: #6555B4;
+        border-radius: 5px;
+        padding: 20px;
+    }
+    .onboarding-top-outer  .onboard-ligt-gray{
+        background: #6A6580;
+    }
+    .onboarding-top-outer  .onboard-ligt-blue{
+        background: #2B70A9;
+    }
+    .onboarding-top-outer .box-inner .left{
+        width: 80%;
+        float: left;
+    }
+    .onboarding-top-outer .box-inner .left p{
+        width: 100%;
+        float: left;
+        display: block;
+        color: #fff;
+        line-height: 25px;
+        font-size: 22px;
+        font-weight: 600;
+        padding-bottom: 14px
+    }
+    .onboarding-top-outer .box-inner .left span{
+        width: 100%;
+        float: left;
+        display: block;
+        font-size: 40px;
+        color: #fff;
+        line-height: 30px;
+        font-weight: 600;
+    } 
+    .onboarding-top-outer .box-inner  img{
+        width: 69px;
+    float: right;
+       }
+       .onboard-top-select-outer {
+           padding-right: 20px;
+        padding-left: 20px;
+        float: left;
+        width: 100%;
+      margin-bottom: 25px;
+       }
+
+       .onboard-top-select-outer .select{
+        width: 100%;
+        float: left;
+        display: block;
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 30px 40px;
+        grid-auto-rows: minmax(38px,auto);
+        }
+       
+         .onboard-top-select-outer .select-inner
+        {    width: 100%;
+            float: left;
+            display: flex;
+            border-radius: 5px;
+        }
+        .onboard-top-select-outer .select-inner .left{
+            width: 20%;
+            float: left;
+          background: #4A54D1;
+            height: 38px;
+            box-shadow: none;
+            border: 0;
+            color: #fff;
+            padding:9px 15px;
+            border:  1px solid #4A54D1;
+                      border-top-left-radius:3px;
+            border-bottom-left-radius: 3px;
+            border-right: 0;
+        }
+        .onboard-top-select-outer .select-inner select{
+            width: 80%;
+            float: left;
+            outline: 0;
+            box-shadow: none;
+            border: 0;
+            border-radius: 0px;
+            border:  1px solid #02010126;
+            border-left: 0;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
