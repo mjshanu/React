@@ -87,7 +87,7 @@ export default function Job(props) {
     getPostname();
   }, []);
   const loadJobs = async () => {
-    const res = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getJobs");
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/getJobs/`);
     const data = await res.json();
     const list = data.job;
     SetJoblist(list);

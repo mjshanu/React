@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react";
 
 import axios from 'axios';
-const useForm = validate => {
+const TableCandValidation = () => {
 const[values, SetValues] = useState ({
     username : '',
     postvalue :'',
@@ -11,9 +11,12 @@ const[values, SetValues] = useState ({
     exp : '',
     ctc : '',
     expect_ctc : '',
+    noticeprd:'',
+    panel_members: '',
     dob : '',
     location : '',
     current_company : '',
+    interview_rating:'',
     domain_exp : '',
     app_date : '',
     primary_skill : '',
@@ -26,7 +29,9 @@ const[values, SetValues] = useState ({
     comments : '',
     c_status : '',
     reason : '',
-    reason : '',
+    secskill:'',
+    skillset:'',
+    id:'',
 })
 const[errors,setErrors]=useState({})
 const [isSubmitting, setIsSubmitting] = useState(false);
@@ -39,7 +44,7 @@ const handleChange1 =e => {
     })
 }
 const getpostName = async () => {
-    const response = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getJobs");
+    const response = await fetch("http://localhost:8000/api/getJobs");
     const data = await response.json();
   
     const listnewtest = data.job;
@@ -52,10 +57,10 @@ const getpostName = async () => {
  
 const handleSubmit =e => { 
     e.preventDefault();
-    setErrors(validate(values));
+   // setErrors(validate(values));
    // setIsSubmitting(true);
    
-   const promise= axios.post('http://auditportal2.bourntec.com:3001/audit_portal/public/api/add_employee_first', values);
+   const promise= axios.post(`${process.env.REACT_APP_API_URL}/updaterecruitement`, values);
    promise.then(function(res) {
     if(res.data.status===200)
     {
@@ -83,4 +88,4 @@ const handleSubmit =e => {
 return {handleChange1,values,handleSubmit,errors,getpostName,job};
 
 }
-export default useForm;
+export default TableCandValidation;

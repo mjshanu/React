@@ -75,7 +75,7 @@ export default function BasicTabs() {
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Name</label>
-                                <input type="email" class="form-control" ></input>
+                                <input type="text" name="username" onChange={handleChange1} value={values.username} class="form-control" ></input>
                             </div>
                             </div>
                             <div class="col-md-4">

@@ -23,6 +23,7 @@ import Rejectionform from "./Rejectionform";
 import rejection_validation from "../validation/rejection_validation";
 import release_validation from "../validation/release_validation";
 import Releaseform from "./Releaseform";
+import EditKanbanboard from "./EditKanbanboard";
 import {
   DragDropContext,
   Draggable,
@@ -65,10 +66,12 @@ const Kanban = () => {
   const [value, setValue] = React.useState(0);
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  
+  const [modalIsOpenedit, setIsOpenedit] = React.useState(false);
+  const [editstate, setEditstate] = useState(false);
   const [isShowingrejectpopup, setIsShowingrejectpopup] = useState(false);
+  const [isShowingrejectpopupedit, setIsShowingrejectpopupEdit] = useState(false);
   const [isShowingreleasepopup, setIsShowingreleasepopup] = useState(false);
-
+  const [isShowingreleasepopupedit, setIsShowingreleasepopupEdit] = useState(false);
   const handlesTabs = (e, val) => {
     console.warn(val)
     setValue(val)
@@ -185,6 +188,30 @@ const Kanban = () => {
   setIsShowingreleasepopup(true);
 
 } 
+const editBoard = (column,id,e) => {
+  getBasicdetails(id,column);
+   if(column=='Inprogress')
+   {
+ 
+  setEditstate(true);
+   }
+   else if(column=='Schedule')
+   {
+    setIsOpenedit(true);
+   }
+   else if(column=='Rejection')
+   {
+    setIsShowingrejectpopupEdit(true);
+   }
+   else if(column=='Release')
+   {
+    setIsShowingreleasepopupEdit(true);
+   }
+   
+
+  
+
+}
 
   const onDragEnd = (result, columns, setColumns) => {
 
@@ -256,11 +283,483 @@ const Kanban = () => {
   };
 
   // const [columns, setColumns] = useState(columnsFromBackend);
+  const{getBasicdetails,editvalues,edithandleChange,handleSubmit_edit}=EditKanbanboard();
   const { handleChange, values,handleSubmit,errors } = ScheduleInterviewform(schedule_validation);
   const { handleChangerejection, valuesrejection,handleSubmitrejection,errorsrejection } = Rejectionform(rejection_validation);
   const { handleChangeRelease, valuesrelease, handleSubmitrelease, errorsrelease  } = Releaseform(release_validation);
+ 
   return (
     <div>
+       <Modal
+        isOpen={isShowingreleasepopupedit}
+        onAfterOpen={afterOpenModalRelease}
+        onRequestClose={closeModalRelease}
+        contentLabel="Example Modal" className="candiate-modal-bx">
+        <form  onSubmit={handleSubmitrelease}  className='form' noValidate>
+          <div className="popup-head-sty candidate-tab-outer">
+            <div className="popup-head-content-sty">
+              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Joining Details</h4>
+            </div>
+            <div className="popup-head-icon-sty">
+              <MdClose className="popup-close-btn" onClick={closeModalRelease} />
+            </div>
+          </div>
+          <div className="popup-content-bg">
+            <div class="row ">
+              <div class="col-md-6 candidate-inform-search">
+                <form class="form-group btn-secondary" >
+                  <input type="text" placeholder="Search.." name="search" class="form-control"></input>
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+              </div>
+              <div class="col-md-8">
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="candidate-tab-outer">
+                  <ul class="nav nav-tabs">
+
+                    <li><a href="#tab2" data-toggle="tab">Candidate Joining Details</a></li>
+
+                  </ul>
+
+                  <div class="tab-content">
+
+                    <div class="tab-pane active" id="tab2">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent=".tab-pane" href="#collapseTwo">
+                            Candidate Joining Details
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <div class="row popup-content-height popup-row-mrg  candiate-modal-inner-tab">
+
+                             
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                  <label for="exampleFormControlInput1">Joinng Date and Time</label>
+                                  <input type="date" name="edit_release_date"  onChange={edithandleChange} value={editvalues.edit_release_date} class="form-control" ></input>
+                               
+                                </div>
+                              </div>
+                           
+                             
+                              <input type="hidden" name="edit_release_id"  onChange={edithandleChange} value={editvalues.edit_release_id}  class="form-control"   ></input>
+                             
+                              
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div></div>
+              </div>
+            </div>
+
+          </div>
+          <div>
+            <button type="submit" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " onClick={closeModalRejection} > Cancel </button>
+          </div>
+
+
+        </form>
+      </Modal>
+      <Modal
+        isOpen={isShowingrejectpopupedit}
+        onAfterOpen={afterOpenModalRejection}
+        onRequestClose={closeModalRejection}
+        contentLabel="Example Modal" className="candiate-modal-bx">
+        <form  onSubmit={handleSubmitrejection}  className='form' noValidate>
+          <div className="popup-head-sty candidate-tab-outer">
+            <div className="popup-head-content-sty">
+              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Rejection Details</h4>
+            </div>
+            <div className="popup-head-icon-sty">
+              <MdClose className="popup-close-btn" onClick={closeModalRejection} />
+            </div>
+          </div>
+          <div className="popup-content-bg">
+            <div class="row ">
+              <div class="col-md-6 candidate-inform-search">
+                <form class="form-group btn-secondary" >
+                  <input type="text" placeholder="Search.." name="search" class="form-control"></input>
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+              </div>
+              <div class="col-md-8">
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="candidate-tab-outer">
+                  <ul class="nav nav-tabs">
+
+                    <li><a href="#tab2" data-toggle="tab">Rejection  Details</a></li>
+
+                  </ul>
+
+                  <div class="tab-content">
+
+                    <div class="tab-pane active" id="tab2">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent=".tab-pane" href="#collapseTwo">
+                            Rejection Details
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <div class="row popup-content-height popup-row-mrg  candiate-modal-inner-tab">
+
+                            <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Candidate Status</label>
+                               
+                                <select  class="form-control"  name="edit_rejectionstatus" onChange={edithandleChange} value={editvalues.edit_rejectionstatus}>
+                                   <option value="">Choose your status </option>
+                                   <option value="1">Rejected by admin</option>
+                                   <option value="2">Rejected by employee</option>
+                                   </select>
+                                  
+                            </div>
+                            </div>
+                             
+                              <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Reasons</label>
+                                    <input type="text" name="edit_reason" onChange={edithandleChange} class="form-control" value={editvalues.edit_reason}></input>
+                                   
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Remark</label>
+                                    <textarea class="form-control"  type="text"   name="edit_remark"  onChange={edithandleChange}  rows="3" value={editvalues.edit_remark}> </textarea>
+                                </div>
+                            </div>
+                             
+                           
+                             
+                              <input type="hidden" name="edit_r_id"  onChange={edithandleChange}  class="form-control"   ></input>
+                             
+                              
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div></div>
+              </div>
+            </div>
+
+          </div>
+          <div>
+            <button type="submit" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " onClick={closeModalRejection} > Cancel </button>
+          </div>
+
+
+        </form>
+      </Modal>
+      <Modal
+        isOpen={modalIsOpenedit}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        contentLabel="Example Modal" className="candiate-modal-bx">
+        <form  onSubmit={handleSubmit_edit}  className='form' noValidate>
+          <div className="popup-head-sty candidate-tab-outer">
+            <div className="popup-head-content-sty">
+              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Details</h4>
+            </div>
+            <div className="popup-head-icon-sty">
+              <MdClose className="popup-close-btn" onClick={closeModal} />
+            </div>
+          </div>
+          <div className="popup-content-bg">
+            <div class="row ">
+              <div class="col-md-6 candidate-inform-search">
+                <form class="form-group btn-secondary" >
+                  <input type="text" placeholder="Search.." name="search" class="form-control"></input>
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+              </div>
+              <div class="col-md-8">
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="candidate-tab-outer">
+                  <ul class="nav nav-tabs">
+
+                    <li><a href="#tab2" data-toggle="tab">Schedule Details</a></li>
+
+                  </ul>
+
+                  <div class="tab-content">
+
+                    <div class="tab-pane active" id="tab2">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent=".tab-pane" href="#collapseTwo">
+                              Schedule Details
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <div class="row popup-content-height popup-row-mrg  candiate-modal-inner-tab">
+
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label for="exampleFormControlInput1">Panel Members</label>
+                                  <input type="text" name="edit_panel_members"  onChange={edithandleChange} value={editvalues.edit_panel_members} class="form-control" ></input>
+                                  
+                                </div>
+
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label for="exampleFormControlInput1">Interview Date and Time</label>
+                                  <input type="date" name="edit_idatetime"  onChange={edithandleChange} value={editvalues.edit_idatetime} class="form-control" ></input>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label for="exampleFormControlInput1">Interview Place</label>
+                                  <input type="text" name="edit_iplace" onChange={edithandleChange} value={editvalues.edit_iplace} class="form-control" ></input>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label for="exampleFormControlInput1">Position/Job title</label>
+                                  <input type="text" name="edit_jobtitle" onChange={edithandleChange} value={editvalues.edit_jobtitle} class="form-control" ></input>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label for="exampleFormControlInput1">Department/team</label>
+                                  <input type="text" name="edit_department_team"  onChange={edithandleChange} value={editvalues.edit_department_team} class="form-control" ></input>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label for="exampleFormControlInput1">Interview Rating</label>
+                                  <input type="text" name="edit_interview_rating" onChange={edithandleChange} value={editvalues.edit_interview_rating} class="form-control" ></input>
+                                </div>
+                              </div>
+                              <input type="hidden" name="edit_s_id" onChange={edithandleChange} value={editvalues.s_id} class="form-control" ></input>
+                             
+<input type="hidden" name="edit_basic_column_name" onChange={edithandleChange} value={editvalues.edit_basic_column_name} ></input>
+                              <div class="col-md-12">
+                                <div class="form-group">
+                                  <label for="exampleFormControlInput1">Comments</label>
+                                  <textarea type="text" class="form-control" name="edit_comments" onChange={edithandleChange} value={editvalues.edit_comments} rows="3" > </textarea>
+                                </div>
+                              </div>
+                              
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div></div>
+              </div>
+            </div>
+
+          </div>
+          <div>
+            <button type="submit" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " onClick={closeModal} > Cancel </button>
+          </div>
+
+
+        </form>
+      </Modal>
+        <Modal
+        isOpen={editstate}
+       
+        contentLabel="Example Modal" className="candiate-modal-bx">
+        <form  onSubmit={handleSubmit_edit}  className='form' noValidate>
+          <div className="popup-head-sty candidate-tab-outer">
+            <div className="popup-head-content-sty">
+              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Details</h4>
+            </div>
+            <div className="popup-head-icon-sty">
+              <MdClose className="popup-close-btn" onClick={closeModal} />
+            </div>
+          </div>
+          <div class="candidate-tab-outer">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Basic Information</a></li>  
+  
+  </ul>
+  
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent=".tab-pane" href="#collapseOne">
+            Basic Information
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+          <div class="panel-body">
+          <div class="row popup-content-height popup-row-mrg  candiate-modal-inner-tab">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Name</label>
+                                <input type="text" name="username"  onChange={edithandleChange} value={editvalues.username} class="form-control" ></input>
+                            </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Post</label>
+                                    <input name="postvalue"  type="text" onChange={edithandleChange} value={editvalues.post}  class="form-control" ></input>
+                                   
+                                </div>
+                               
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Skill Set</label>
+                                    <input type="text"  name="skillset" onChange={edithandleChange} value={editvalues.skillset}  class="form-control" ></input>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Personal Email ID </label>
+                                    <input type="email" name="p_email"  onChange={edithandleChange} value={editvalues.p_email}  class="form-control" ></input>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Contact Number</label>
+                                    <input type="text"  name="phonenumber" onChange={edithandleChange} value={editvalues.phonenumber} class="form-control" ></input>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Education</label>
+                                    <input type="text" name="qualification" onChange={edithandleChange} value={editvalues.qualification} class="form-control" ></input>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Total years of experience</label>
+                                    <input type="text"  name="exp" onChange={edithandleChange} value={editvalues.exp}  class="form-control" ></input>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">CTC</label>
+                                    <input type="text" name="current_ctc" onChange={edithandleChange} value={editvalues.current_ctc}  class="form-control" ></input>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">EXP CTC</label>
+                                    <input type="text" name="expect_ctc"  onChange={edithandleChange} value={editvalues.expect_ctc}  class="form-control" ></input>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Notice Period</label>
+                                    <input type="text" name="noticeprd" onChange={edithandleChange} value={editvalues.noticeprd}  class="form-control" ></input>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Date Of Birth </label>
+                                    <input type="date" name="dob" onChange={edithandleChange} value={editvalues.dob} class="form-control" ></input>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Location</label>
+                                    <input type="text" name="location" onChange={edithandleChange} value={editvalues.location}  class="form-control" ></input>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Current Company</label>
+                                    <input type="text" name="current_company" onChange={edithandleChange} value={editvalues.current_company}  class="form-control" ></input>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Domain Experience</label>
+                                    <input type="text" name="domain_exp" onChange={edithandleChange} value={editvalues.domain_exp}  class="form-control" ></input>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Apply date</label>
+                                    <input type="date" name="app_date" onChange={edithandleChange} value={editvalues.app_date}  class="form-control" ></input>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Primary Skills</label>
+                                    <textarea class="form-control" onChange={edithandleChange} value={editvalues.primary_skill}   name="primary_skill" rows="2" > </textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Secondary Skills</label>
+                                    <textarea class="form-control" name="secskill"  onChange={edithandleChange} value={editvalues.secskill} rows="2" > </textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">References</label>
+                                    <textarea class="form-control"  name="ref" onChange={edithandleChange} value={editvalues.ref} rows="2" > </textarea>
+                                </div>
+                            </div>
+<input type="hidden" name="edit_b_id" onChange={edithandleChange} value={editvalues.edit_b_id} ></input>
+<input type="hidden" name="edit_basic_column_name" onChange={edithandleChange} value={editvalues.edit_basic_column_name} ></input>
+                      
+                        
+                     </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+   
+</div>
+
+</div>
+          <div>
+            <button type="submit" class="btn  btn-save "  > Save</button>
+            <button type="button" class="btn  btn-cancel " onClick={closeModal} > Cancel </button>
+          </div>
+
+
+        </form>
+      </Modal>
+
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
@@ -657,7 +1156,7 @@ const Kanban = () => {
                       <AccordionItem uuid="b">
                         <AccordionItemHeading className="accordion-schedule">
                           <AccordionItemButton>   <div className="accordion-head-text">
-                            <div className="name">Anil Kumar</div>
+                            <div className="name">Anil Kumar1</div>
                             <div className="desi">Java developer</div>
                           </div>   <div className="col-4 acc-status-change">
                               <select className="select-dropdow">
@@ -810,6 +1309,7 @@ const Kanban = () => {
                                           className="darg-inner-box"
                                         >
                                           {column.items.map((item, index) => {
+                                            console.log(column);
                                             return (
                                               <Draggable
                                                 key={item.id}
@@ -832,8 +1332,8 @@ const Kanban = () => {
                                                           <div className="in-progress-name-sty">
                                                             {item.name}
                                                           </div>
-                                                          <div className="eye-new-icon">
-                                                            <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                          <div className="eye-new-icon" onClick={() => editBoard(column.name,item.id)} >
+                                                            <svg width="14" height="8"  viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                               <path d="M0.957514 3.64635L3.25493 1.55779C5.53914 -0.519262 9.25705 -0.519262 11.5413 1.55779L13.8387 3.64635C14.0538 3.84189 14.0538 4.15798 13.8387 4.35353L11.5413 6.44209C10.3992 7.48037 8.8989 8 7.39811 8C5.89731 8 4.39706 7.48037 3.25496 6.44209L0.95754 4.35353C0.742414 4.15798 0.742414 3.84189 0.957514 3.64635ZM7.39811 6.50061C8.91486 6.50061 10.1489 5.3788 10.1489 3.99993C10.1489 2.62106 8.91486 1.49925 7.39811 1.49925C5.88135 1.49925 4.64736 2.62106 4.64736 3.99993C4.64736 5.3788 5.88135 6.50061 7.39811 6.50061Z" fill="#B93E86" />
                                                               <path d="M7.39802 2.49902C8.30795 2.49902 9.04846 3.17221 9.04846 3.99943C9.04846 4.82664 8.30795 5.49983 7.39802 5.49983C6.48808 5.49983 5.74757 4.82664 5.74757 3.99943C5.74757 3.17221 6.48805 2.49902 7.39802 2.49902Z" fill="#B93E86" />
                                                             </svg>
@@ -940,4 +1440,4 @@ function TabPanel(props) {
       }
     </div>
   )
-}
+};
