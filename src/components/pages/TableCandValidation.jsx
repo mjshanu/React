@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react";
 
 import axios from 'axios';
-const useForm = validate => {
+const TableCandValidation = () => {
 const[values, SetValues] = useState ({
     username : '',
     postvalue :'',
@@ -11,9 +11,12 @@ const[values, SetValues] = useState ({
     exp : '',
     ctc : '',
     expect_ctc : '',
+    noticeprd:'',
+    panel_members: '',
     dob : '',
     location : '',
     current_company : '',
+    interview_rating:'',
     domain_exp : '',
     app_date : '',
     primary_skill : '',
@@ -26,7 +29,8 @@ const[values, SetValues] = useState ({
     comments : '',
     c_status : '',
     reason : '',
-    reason : '',
+   
+    skillset:''
 })
 const[errors,setErrors]=useState({})
 const [isSubmitting, setIsSubmitting] = useState(false);
@@ -52,7 +56,7 @@ const getpostName = async () => {
  
 const handleSubmit =e => { 
     e.preventDefault();
-    setErrors(validate(values));
+   // setErrors(validate(values));
    // setIsSubmitting(true);
    
    const promise= axios.post('http://localhost:8000/api/add_employee_first', values);
@@ -83,4 +87,4 @@ const handleSubmit =e => {
 return {handleChange1,values,handleSubmit,errors,getpostName,job};
 
 }
-export default useForm;
+export default TableCandValidation;
