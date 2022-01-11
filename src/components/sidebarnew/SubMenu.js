@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 
+const $ = window.$;
 
 
 const SubMenu = (props) => {
@@ -34,7 +35,7 @@ const SubMenu = (props) => {
       >
         {items.map((item, index) => (
           <NavItem key={index} className="pl-4">
-            <NavLink tag={Link} to={item.target}>
+            <NavLink tag={Link} to={item.target} className="mob-menu-clik">
               {item.title}
               {item.icon}
              

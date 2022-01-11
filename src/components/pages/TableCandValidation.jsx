@@ -29,8 +29,9 @@ const[values, SetValues] = useState ({
     comments : '',
     c_status : '',
     reason : '',
-   
-    skillset:''
+    secskill:'',
+    skillset:'',
+    id:'',
 })
 const[errors,setErrors]=useState({})
 const [isSubmitting, setIsSubmitting] = useState(false);
@@ -59,7 +60,7 @@ const handleSubmit =e => {
    // setErrors(validate(values));
    // setIsSubmitting(true);
    
-   const promise= axios.post('http://localhost:8000/api/add_employee_first', values);
+   const promise= axios.post(`${process.env.REACT_APP_API_URL}/updaterecruitement`, values);
    promise.then(function(res) {
     if(res.data.status===200)
     {

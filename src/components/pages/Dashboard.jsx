@@ -11,7 +11,7 @@ import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
 
 
 import Select from 'react-select';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
  
 const options = [
   {

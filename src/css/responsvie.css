@@ -42,7 +42,22 @@
                         width: 12%;
                     }
                     
-
+                    .offer-map-width{
+                        width: 22%;
+                    }
+                    
+.onboarding-top-outer .box-inner .left {
+    width: 72%;
+}
+.onboarding-top-outer .box-inner .left p {
+     font-size: 20px;
+ }
+ .onboarding-top-outer .box-inner img {
+    width: 60px;
+}
+.onboard-top-select-outer .select-inner .left {
+    width: 23%;
+}
 }
 .ReactModal__Overlay{
     position: fixed;
@@ -135,7 +150,21 @@
            .job-edit-icon {
             margin-left: 4px;
                   }
-           
+                  .offer-map-width .inprograss-style {
+                          font-size: 12px;
+                }
+                .onboard-top-select-outer .select-inner .left {
+                    width: 27%;
+                }
+                .onboard-top-select-outer .select {
+                                     gap: 30px 35px;
+                }
+                .onboarding-top-outer .box {
+                             gap: 30px 35px;
+                }
+                .onboarding-top-outer .box-inner .left p {
+                    font-size: 18px;
+                }
 }
 
 
@@ -184,6 +213,24 @@
         .job-edit-icon {
                    padding: 2px 8px;
              }
+             .offer-map-width {
+                width: 24%;
+            }
+            .onboarding-top-outer .box-inner img {
+                width: 52px;
+            }
+            .onboarding-top-outer .box-inner .left {
+                width: 77%;
+            }
+            .onboarding-top-outer .box-inner .left p {
+                font-size: 17px;
+            }
+            .onboarding-top-outer .box-inner .left span {
+                         font-size: 37px;
+                     }
+                     .onboard-top-select-outer .select-inner .left {
+                        width: 85px;
+                    }
 }
 
 @media only screen and (max-width: 1300px){
@@ -303,6 +350,22 @@
             .organazation-new-table td,  .organazation-new-table th{
                 font-size: 13px;
             }
+            .offer-map-width {
+                width: 175px;
+            }
+            .onboarding-top-outer .box-inner {
+                        padding: 15px;
+            }
+            .onboarding-top-outer .box-inner .left {
+                width: 77%;
+            }
+            .onboarding-top-outer .box-inner img {
+                width: 48px;
+            }
+            .onboard-top-select-outer .select-inner .left {
+                width: 85px;
+                padding: 9px 7px;
+            }
        }
 @media only screen and (max-width: 1200px){
 .recruitment-top-right-box {
@@ -377,6 +440,21 @@
 }
 .organazation-new-table td,  .organazation-new-table th{
     font-size: 12px;    line-height: 17px;
+}
+.onboarding-top-outer .box-inner .left {
+    width: 65%;
+}
+.onboarding-top-outer .box {
+    grid-gap: 30px 24px;
+    gap: 30px 21px;
+}
+.onboard-top-select-outer .select {
+    grid-gap: 30px 24px;
+    gap: 30px 21px;
+}
+.onboard-top-select-outer .select-inner .left {
+    width: 75px;
+    padding: 9px 7px;
 }
 }
 @media only screen and (max-width: 980px){
@@ -971,7 +1049,41 @@ display:block;
             width: 29.4%;
             margin-right: 10px;
         }
+        .offer-release-right-top-box {
+                 padding-top: 0px;
+            }
+            .release-calendar-width {
+                        width: 146px;
+                    }
+                    .release-to-date {
+                                    padding-right: 7px;
+                    }
+                    .onboarding-top-outer .box {
+                        grid-template-columns: repeat(1,1fr);
+                         }
+                         .onboard-top-select-outer .select {
+                               grid-template-columns: repeat(1,1fr);
+                                     }
+                                     .onboarding-top-outer .box-inner .left span {
+                                        font-size: 34px;
+                                    }
+                                    .onboarding-top-outer {
+                                        padding-left: 10px;
+                                        padding-right: 10px;
+                                    }
+                                    .onboard-top-select-outer {
+                                        padding-right: 10px;
+                                        padding-left: 10px;
+                                                           }
+                                                           .onboard-top-select-outer .select-inner .left {
+                                                            width: 20%;
+                                                }
+                                                .sub-head {
+                                                     padding-left: 15px;
+                                                    padding-right:15px;
+                                     }
 }
+
 @media only screen and (max-width:573px)
 
 {
@@ -1034,6 +1146,19 @@ display:block;
         .addproperty-inner{
             padding: 20px 0px 10px;
         }
+  .onboar-main-top-right{
+      width: 100%;
+      margin-right: 0;
+      float: left;
+      margin-top: 15px;
+  }
+  .offer-release-top {
+    min-width: 100%;
+    float: left;
+    margin-bottom: 19px;
+    position: relative;
+    margin-right: 15px;
+}
 }
 @media only screen and (max-width:480px){
     .topbar-icon-right {
@@ -1066,7 +1191,7 @@ display:block;
         margin-top: -44px;
     }.sub-head {
         font-size: 17px;
-        padding-left: 6px;
+        padding-left: 10px;
         padding-right: 10px;
         padding-bottom: 25px;
         margin-bottom: 20px;
@@ -1237,6 +1362,40 @@ padding-bottom: 10px;
 .category-top-button button{
     margin-bottom: 15px;
 }
+.Offer-release-bt-buttons {
+    width: 238px;
+}
+.accordion-bottom-button .mapping-button {
+    width: 98px;
+}
+.offer-release-right-top-box {
+    padding-top: 15px;
+    width: 100%;
+    margin-right: 0px;
+}
+.offer-release-top-section{
+    float: left;
+    padding: 20px 11px;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: -10px;
+}
+.offer-release-seasrch {
+    min-width: 100%;
+
+}
+.release-calendar-width {
+    width: 85%;
+    float: right;
+    margin-right: 0;
+}
+
+.onboarding-top-outer .box {
+    grid-auto-rows: minmax(88px,auto);
+}
+.onboard-top-select-outer .select-inner .left {
+    width: 80px;
+}
 }
 
 @media only screen and (max-width:330px){
@@ -1256,5 +1415,7 @@ padding-bottom: 10px;
         margin-top: 0px ;
       }
      
-      
+      .release-calendar-width {
+        width: 82%;
+    }
   }

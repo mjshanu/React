@@ -32,7 +32,7 @@ import {
 import { v4 as uuid } from "uuid";
 
 import Select from 'react-select';
-import 'bootstrap/dist/css/bootstrap.min.css';
+ 
 
 import {
   Accordion,
@@ -90,11 +90,11 @@ const Kanban = () => {
   const [columns, setColumns] = useState([]);
   const loadData = async () => {
     // alert("hii");
-    const response = await fetch("http://localhost:8000/api/getcandidates/");
-    const scheduleresponse = await fetch("http://localhost:8000/api/getcandidates_schedule/");
-    const rejectionresponse = await fetch("http://localhost:8000/api/getcandidates_rejection/");
-    const waitingresponse = await fetch("http://localhost:8000/api/getcandidates_waiting/");
-    const releaseresponse = await fetch("http://localhost:8000/api/getcandidates_release/");
+    const response = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getcandidates");
+    const scheduleresponse = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getcandidates_schedule");
+    const rejectionresponse = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getcandidates_rejection");
+    const waitingresponse = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getcandidates_waiting");
+    const releaseresponse = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getcandidates_release");
     const data = await response.json();
     const scheduledata = await scheduleresponse.json();
     const rejectiondata = await rejectionresponse.json();
@@ -260,7 +260,7 @@ const editBoard = (column,id,e) => {
         values['index'] = destination.index;
         values['itemsnew'] = destItems;
         values['type'] = "another";
-        const update = axios.post('http://localhost:8000/api/updatecolumn', values);
+        const update = axios.post('http://auditportal2.bourntec.com:3001/audit_portal/public/api/updatecolumn', values);
       }
     } else {
       const column = columns[source.droppableId];
@@ -277,7 +277,7 @@ const editBoard = (column,id,e) => {
       values['type'] = "self";
 
       values['itemsnew'] = copiedItems;
-      const update = axios.post('http://localhost:8000/api/updatecolumn', values);
+      const update = axios.post('http://auditportal2.bourntec.com:3001/audit_portal/public/api/updatecolumn', values);
       // console.log(copiedItems);
     }
   };

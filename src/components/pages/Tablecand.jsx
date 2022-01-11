@@ -105,8 +105,9 @@ function SimpleTable(props) {
       values.panel_members=response.data.candidate[0].panelmembers;
       values.iplace=response.data.candidate[0].i_place;
       values.reason=response.data.candidate[0].reasons;
-    
+       values.secskill=response.data.candidate[0].sec_skill;
       values.remark=response.data.candidate[0].remark;
+      values.id=response.data.candidate[0].id;
 
    }
    setIsOpen(true);
@@ -248,7 +249,7 @@ function SimpleTable(props) {
                                     <textarea class="form-control" onChange={handleChange1} name="ref" value={values.ref} rows="2" > </textarea>
                                 </div>
                             </div>
-
+                            <input type="hidden"  name="id" onChange={handleChange1} value={values.id} class="form-control" ></input>
                       
                         
                      </div>
