@@ -98,7 +98,7 @@ const data = [
                                         <select id="dropdown" class="form-control"><option value="Status">Cochin</option></select>
                                     </div>
                                     <div className="asset-right-dropdwn ">  
-                                        <select id="dropdown" class="form-control"><option value="Status">Laptop</option></select>
+                                        <select id="dropdown" class="form-control"><option value="Status">Asset Category</option></select>
                                     </div> 
                                 </div>
                             </div>
@@ -109,12 +109,12 @@ const data = [
         
         <TableRow>
         
-            <TableCell className="width-18">Category</TableCell>
-            <TableCell className="width-18">Property /Brand</TableCell>
-            <TableCell className="width-12">Asset Id </TableCell>
-            <TableCell className="width-15">Connector Type</TableCell>
-            <TableCell className="width-18">Special Feature</TableCell>
-            <TableCell className="width-15">Number of Keys</TableCell>
+            <TableCell className="width-18">Asset Category</TableCell>
+            <TableCell className="width-18">Asset Name</TableCell>
+            <TableCell className="width-12">Brand</TableCell>
+            <TableCell className="width-15">Asset Id</TableCell>
+            <TableCell className="width-18">Status</TableCell>
+            <TableCell className="width-15">Location</TableCell>
                   <TableCell className="width-8">Action</TableCell>
            
           </TableRow>
