@@ -20,3 +20,6 @@ export const uploadicon = require('./upload.png').default;
 export const basicicon = require('./basic-information.svg').default;
 export const PencilNew = require('./pencil-new.svg').default;
 export const DeferTime = require('./defertime.svg').default;
+export const Hireprogress = require('./new-hire-progress.svg').default;
+export const Hirestatred = require('./new-hire-statred.svg').default;
+export const Hirecompleted = require('./hire-commpleted.svg').default;
