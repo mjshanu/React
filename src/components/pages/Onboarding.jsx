@@ -215,8 +215,12 @@ const data = [
          <div className="right">: 12/02/2022</div>
         </div>
         <div className="accord-detals-box">
-        <div className="left">Release DatE </div>
+        <div className="left">Release Date </div>
          <div className="right">: 30/12/2021</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="left">Location </div>
+         <div className="right">: Kochin</div>
         </div>
                     <div className="accord-detals-box">
         <div className="accordion-bottom-button Offer-release-bt-buttons">
@@ -231,93 +235,42 @@ const data = [
       <AccordionItem uuid="b">
       <AccordionItemHeading className="accordion-active-status">
           <AccordionItemButton >
-            <div className="accordion-head-text">
-            <div className="name notificatio-outer">Keyboard
+          <div className="accordion-head-text">
+            <div className="name notificatio-outer">Linto 
                   </div>
-            <div className="desi joblocation">
-            Logitech        
+                  <div className="desi joblocation">
+                  000000000       
             </div>
-            </div>   <div className="col-4 acc-status-change">
-            <div class="active-status-style">BTLP01</div>
+                    </div>   <div className="col-4 acc-status-change">
+            <div class="active-status-style">0101</div>
   </div></AccordionItemButton>
         </AccordionItemHeading>
         <AccordionItemPanel>
-          <div className="accord-detals-box">
-         <div className="left">Connector Type</div>
-         <div className="right">: USB</div>
+        <div className="accord-detals-box">
+         <div className="left">Department</div>
+         <div className="right">: Java </div>
         </div>
         <div className="accord-detals-box">
-        <div className="left">Special Feature </div>
-         <div className="right">:Not In Use</div>
-        </div>
-                    <div className="accord-detals-box">
-        <div className="accordion-bottom-button">
-<div className="more-button">View</div>
-<div className="more-button more-outer">Edit</div>
-<div className="more-button more-outer">Delete</div>
-        </div>
-        </div>
-        </AccordionItemPanel>
-      </AccordionItem>
-      <AccordionItem uuid="c">
-      <AccordionItemHeading className="accordion-active-status">
-          <AccordionItemButton >
-            <div className="accordion-head-text">
-            <div className="name notificatio-outer">Keyboard
-                  </div>
-            <div className="desi joblocation">
-            Logitech        
-            </div>
-            </div>   <div className="col-4 acc-status-change">
-            <div class="active-status-style">BTLP01</div>
-  </div></AccordionItemButton>
-        </AccordionItemHeading>
-        <AccordionItemPanel>
-          <div className="accord-detals-box">
-         <div className="left">Connector Type</div>
-         <div className="right">: USB</div>
+         <div className="left">POST</div>
+         <div className="right">: Java Developer</div>
         </div>
         <div className="accord-detals-box">
-        <div className="left">Special Feature </div>
-         <div className="right">:Not In Use</div>
-        </div>
-                    <div className="accord-detals-box">
-        <div className="accordion-bottom-button">
-<div className="more-button">View</div>
-<div className="more-button more-outer">Edit</div>
-<div className="more-button more-outer">Delete</div>
-        </div>
-        </div>
-        </AccordionItemPanel>
-      </AccordionItem>
-
-      <AccordionItem uuid="d">
-      <AccordionItemHeading className="accordion-active-status">
-          <AccordionItemButton >
-            <div className="accordion-head-text">
-            <div className="name notificatio-outer">Keyboard
-                  </div>
-            <div className="desi joblocation">
-            Logitech        
-            </div>
-            </div>   <div className="col-4 acc-status-change">
-            <div class="active-status-style">BTLP01</div>
-  </div></AccordionItemButton>
-        </AccordionItemHeading>
-        <AccordionItemPanel>
-          <div className="accord-detals-box">
-         <div className="left">Connector Type</div>
-         <div className="right">: USB</div>
+        <div className="left">Joining Date </div>
+         <div className="right">: 12/02/2022</div>
         </div>
         <div className="accord-detals-box">
-        <div className="left">Special Feature </div>
-         <div className="right">:Not In Use</div>
+        <div className="left">Release Date </div>
+         <div className="right">: 30/12/2021</div>
+        </div>
+        <div className="accord-detals-box">
+        <div className="left">Location </div>
+         <div className="right">: Kochin</div>
         </div>
                     <div className="accord-detals-box">
-        <div className="accordion-bottom-button">
-<div className="more-button">View</div>
+        <div className="accordion-bottom-button Offer-release-bt-buttons">
+<div className="more-button mapping-button">EMP Mapping</div>
 <div className="more-button more-outer">Edit</div>
-<div className="more-button more-outer">Delete</div>
+<div className="more-button more-outer">Defer</div>
         </div>
         </div>
         </AccordionItemPanel>
