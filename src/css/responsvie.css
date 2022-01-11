@@ -165,6 +165,9 @@
                 .onboarding-top-outer .box-inner .left p {
                     font-size: 18px;
                 }
+                .inprograss-style {
+                                   min-width: 80px;
+                }
 }
 
 
