@@ -455,7 +455,7 @@ const Kanban = () => {
                                <img src={location}/>  <span>{item.location}</span> 
                                    </div>
                                    <div class="in-progress-location t-r">
-                                   NP: {item.np}
+                                   NP: {item.notice_prd} Months
                  </div>
                                 </div>
 

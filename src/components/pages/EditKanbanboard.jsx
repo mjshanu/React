@@ -25,6 +25,7 @@ const EditKanbanboard = () => {
     secskill: '',
     ref: '',
     edit_b_id:'',
+    
     edit_panel_members: '',
     edit_idatetime: '',
     edit_iplace: '',
@@ -108,7 +109,7 @@ const EditKanbanboard = () => {
           edit_reason: reponse.data.rejectdata[0].reasons,
           edit_remark: reponse.data.rejectdata[0].remarks,
           edit_r_id: reponse.data.rejectdata[0].r_id,
-         
+          edit_basic_column_name:column
         })
       }
     }
@@ -119,7 +120,7 @@ const EditKanbanboard = () => {
         SetEditValues({
           edit_release_date: response.data.releasedata[0].offer_release_date,
           edit_release_id: response.data.releasedata[0].offer_id,
-         
+          edit_basic_column_name:column
          
         })
       }

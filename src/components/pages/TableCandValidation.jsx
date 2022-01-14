@@ -1,7 +1,8 @@
 import { useState,useEffect } from "react";
 
 import axios from 'axios';
-const TableCandValidation = () => {
+import swal from 'sweetalert';
+const TableCandValidation = (setIsOpen) => {
 const[values, SetValues] = useState ({
     username : '',
     postvalue :'',
@@ -54,7 +55,15 @@ const getpostName = async () => {
     setJob(listnewtest);
     
   }
- 
+  const deleteCandidate = async (e, id) => {
+    const thisclickrow = e.currentTarget;
+    thisclickrow.innerText = "Deleting";
+    const res = await axios.get(`http://localhost:8000/api/deleteCandidate/${id}`);
+    if (res.data.status == 200) {
+      thisclickrow.closest("tr").remove();
+      console.log(res.data.message);
+    }
+  }
 const handleSubmit =e => { 
     e.preventDefault();
    // setErrors(validate(values));
@@ -64,7 +73,13 @@ const handleSubmit =e => {
    promise.then(function(res) {
     if(res.data.status===200)
     {
-        console.log(res.data.message);
+        swal({
+            title: "Good job!",
+            text: "updated successfully",
+            icon: "success",    
+            button: "ok",
+        });
+        setIsOpen(false);
     }
   })
  
@@ -85,7 +100,7 @@ const handleSubmit =e => {
     
 
 
-return {handleChange1,values,handleSubmit,errors,getpostName,job};
+return {handleChange1,values,handleSubmit,errors,getpostName,job,deleteCandidate};
 
 }
 export default TableCandValidation;

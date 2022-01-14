@@ -9,6 +9,8 @@ import 'react-dropdown/style.css';
 import {AppBar} from '@material-ui/core';
 import BasicTabs from './Employeetabs';
 import 'react-tabs/style/react-tabs.css';
+import LoadDatafile from './LoadDatafile';
+
 const customStyles = {
     content: {
       top: '50%',
@@ -26,10 +28,10 @@ const customStyles = {
  
  
 
- 
+
 
 export default function Recruitmentnewmodal(){
-
+  //const{columns}=LoadDatafile();
    
     const CustomTab = ({ children }) => (
         <Tab >
@@ -39,20 +41,23 @@ export default function Recruitmentnewmodal(){
       CustomTab.tabsRole = 'Tab';
     let subtitle;
     const [modalIsOpen, setIsOpen] = React.useState(false);
-  
+    // console.log(columns);
     function openModal() {
       setIsOpen(true);
     }
   
-    function afterOpenModal() {
+    function afterOpenModal () {
       // references are now sync'd and can be accessed.
       subtitle.style.color = '#f00';
     }
   
-    function closeModal() {
+    function closeModal() { 
+     
       setIsOpen(false);
+     
+      window.location.reload(false);
     }
-  
+ 
     const [value, setValue]=React .useState(0)
     const handlesTabs=(e, val)=>{
       console.warn(val)
@@ -70,7 +75,7 @@ export default function Recruitmentnewmodal(){
           contentLabel="Example Modal"  className="candiate-modal-bx">
         <div className="popup-head-sty candidate-tab-outer">
             <div className="popup-head-content-sty">
-                <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Details</h4>
+                <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Details </h4>
             </div>
             <div className="popup-head-icon-sty">
                <MdClose className="popup-close-btn" onClick={closeModal} />
@@ -91,6 +96,7 @@ export default function Recruitmentnewmodal(){
             <div class ="row">
                 <div class="col-md-12">
                 <BasicTabs /> 
+                <button type="button" class="btn  btn-cancel " onClick={closeModal} > Cancel </button> 
                 </div>
             </div>
            
