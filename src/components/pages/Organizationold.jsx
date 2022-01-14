@@ -286,7 +286,7 @@ function Row(props: { row: ReturnType<typeof createData> }) {
 
           <div className="popup-head-sty modal-button-bg">
             <div className="popup-head-content-sty">
-              <h4 >Edit Branches</h4>
+              <h4 >Edit Branches1</h4>
             </div>
             <div className="popup-head-icon-sty">
               <MdClose className="popup-close-btn" onClick={closeModalbrach} />
@@ -458,7 +458,11 @@ export default function Organizationold() {
   const [rows, setRows] = useState([]);
 
   const fetchData = async () => {
+<<<<<<< HEAD
     const res = await axios.get("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getOrganizationvalues");
+=======
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}/getOrganizationvalues/`);
+>>>>>>> df2ef26227cc0173453930bbc16c9f0e6a820b94
     const org = res.data.org;
 
     setRows(org);
@@ -476,7 +480,7 @@ export default function Organizationold() {
       <header className="main-otrer-top"> Organization Branches </header>
       <section className="main-content-area">
         <div className="main-content-area-inner">
-          <div className="sub-head organization-sub-head"> Branch Details
+          <div className="sub-head organization-sub-head"> Branch Details -
             <div className="top-right-outer add-btn-div organization-top-rt">
               <div className="organization-button" >
                 <Addorganization />

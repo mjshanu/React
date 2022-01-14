@@ -50,7 +50,8 @@ export default function Popupmodal(){
     }
   
     function closeModal() {
-      setIsOpen(false);
+      alert("basic model");
+      setIsOpen(false); 
     }
   
     const [value, setValue]=React .useState(0)

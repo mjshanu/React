@@ -40,7 +40,7 @@ const ScheduleInterviewform  = schedule_validation  => {
   }, [errors]);
   const onSubmitform = e => 
   {
-    const response = axios.post('http://auditportal2.bourntec.com:3001/audit_portal/public/api/add_schedule', values);
+    const response = axios.post('http://localhost:8000/api/add_schedule', values);
     response.then(function (res) {
       if (res.data.status === 200) {
         //console.log(res.data.message);
@@ -50,6 +50,7 @@ const ScheduleInterviewform  = schedule_validation  => {
           icon: "success",
           button: "ok",
         });
+        window.location.reload(false);
         //setIsOpen(false);
       }
     })

@@ -47,7 +47,7 @@ const handleSubmit =e => {
    promise.then(function(res) {
     if(res.data.status===200)
     {
-        console.log(res.data.message);
+       // console.log(res.data.message);
     }
   })
  
