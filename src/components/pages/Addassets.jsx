@@ -210,26 +210,54 @@ window.addEventListener("resize", () => {
   
   <div className="basic-inform-inner padding-top-0">
 
-<div className="col-md-4">
-  <div class="form-group"><label for="exampleFormControlInput1">Category</label>
+<div className="col-md-3">
+  <div class="form-group"><label for="exampleFormControlInput1">Asset Category</label>
   <select id = "dropdown" class="form-control">
     <option value="Post">Keyboard</option>
  </select>
   </div>
   </div>
-  <div className="col-md-4">
-  <div class="form-group"><label for="exampleFormControlInput1">Property /Brand</label>
-  <select id = "dropdown" class="form-control">
-    <option value="Post">Logitech</option>
- </select>
+  <div className="col-md-3">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Asset Name</label>
+    <input type="email" className="form-control"/></div>
   </div>
+  <div className="col-md-3">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Brand</label>
+        <select id = "dropdown" class="form-control">
+          <option value="Post">Logitech</option>
+        </select>
+      </div>
   </div>
-  <div className="col-md-4">
-  <div class="form-group"><label for="exampleFormControlInput1">Asset ID</label><input type="email" className="form-control"/></div>
+  <div className="col-md-3">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Asset ID</label>
+        <input type="email" className="form-control"/>
+      </div>
   </div>
-  
-
-
+  <div className="col-md-3">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Model</label>
+        <input type="email" className="form-control"/>
+      </div>
+  </div>
+  <div className="col-md-3">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Location</label>
+        <select id = "dropdown" class="form-control">
+          <option value="Post">Headquarters</option>
+        </select>
+      </div>
+  </div>
+  <div className="col-md-3">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Individual or Bulk Order ?</label>
+        <select id = "dropdown" class="form-control">
+          <option value="Post">Individual</option>
+        </select>
+      </div>
+  </div>
   <div className="bottom-button-bg">
             <button type="button" class="btn  btn-save "  > Save</button>
             <button type="button" class="btn  btn-cancel " > Cancel </button> 
