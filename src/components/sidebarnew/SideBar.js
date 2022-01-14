@@ -165,6 +165,11 @@ const submenus = [
       icon:< FaTools/>,
       title: "Onboarding",
       target: "OfferReleasereport"
+    },
+    {
+      icon:< FaTools/>,
+      title: "Offboarding",
+      target: "Offboarding"
     }
   ],
   [
