@@ -52,9 +52,9 @@ const EditKanbanboard = () => {
 
   const getBasicdetails = async (id, column) => {
     const basic_id = id;
-    alert(column);
+    //alert(column);
     if (column == 'Inprogress') {
-      const reponse = await axios.get(`http://localhost:8000/api/editfecthbasicdata/${basic_id}`);
+      const reponse = await axios.get(`http://auditportal2.bourntec.com:3001/audit_portal/public/api/editfecthbasicdata/${basic_id}`);
       console.log(reponse.data.candidate[0]);
       if (reponse.data.status == 200) {
         SetEditValues({
@@ -84,7 +84,7 @@ const EditKanbanboard = () => {
 
     }
     else if (column == 'Schedule') {
-      const reponse = await axios.get(`http://localhost:8000/api/getscheduledata/${basic_id}`);
+      const reponse = await axios.get(`http://auditportal2.bourntec.com:3001/audit_portal/public/api/getscheduledata/${basic_id}`);
       if (reponse.data.status == 200) {
         SetEditValues({
           edit_panel_members: reponse.data.schedule[0].panelmembers,
@@ -101,7 +101,7 @@ const EditKanbanboard = () => {
       }
     }
     else if (column == 'Rejection') {
-      const reponse = await axios.get(`http://localhost:8000/api/getrejectdata/${basic_id}`);
+      const reponse = await axios.get(`http://auditportal2.bourntec.com:3001/audit_portal/public/api/getrejectdata/${basic_id}`);
       if (reponse.data.status == 200) {
         SetEditValues({
           edit_release_date: reponse.data.rejectdata[0].c_status,
@@ -114,7 +114,7 @@ const EditKanbanboard = () => {
     }
     else if(column == 'Release')
     {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/getreleasedata/${basic_id}`);
+      const response = await axios.get(`http://auditportal2.bourntec.com:3001/audit_portal/public/api/getreleasedata/${basic_id}`);
       if (response.data.status == 200) {
         SetEditValues({
           edit_release_date: response.data.releasedata[0].offer_release_date,
@@ -128,7 +128,7 @@ const EditKanbanboard = () => {
   const handleSubmit_edit = e => {
 
     e.preventDefault();
-    const response = axios.post('http://localhost:8000/api/edit_column_name_ref', editvalues);
+    const response = axios.post('http://auditportal2.bourntec.com:3001/audit_portal/public/api', editvalues);
   
 
   }

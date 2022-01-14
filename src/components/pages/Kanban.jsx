@@ -1352,8 +1352,8 @@ const editBoard = (column,id,e) => {
                                                           <div className="in-progress-location ">
                                                             <img src={location} />  <span>{item.location}</span>
                                                           </div>
-                                                          <div class="in-progress-location t-r">
-                                                            NP: {item.np}
+                                                          <div class="in-progress-location in-progress-location-map t-r">
+                                                            NP: {item.notice_prd} Months
                                                           </div>
                                                         </div>
 

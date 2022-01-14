@@ -58,6 +58,9 @@
 .onboard-top-select-outer .select-inner .left {
     width: 23%;
 }
+.in-progress-name-sty {
+        font-size: 17px;
+}
 }
 .ReactModal__Overlay{
     position: fixed;
