@@ -42,12 +42,12 @@ function a11yProps(index) {
 }
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
-
+  const [modalIsOpen, setIsOpen] = React.useState(false);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
   const { handleChange1, values, handleSubmit, errors,getpostName,job } = useForm(validate);
-
+  
   useEffect(() => {
    getpostName();
   });
@@ -306,7 +306,7 @@ export default function BasicTabs() {
 </div>
 <div>
             <button type="submit" class="btn  btn-save "  > Save</button>
-            <button type="button" class="btn  btn-cancel "  > Cancel </button> 
+        
         </div>
  </form>
 </div>

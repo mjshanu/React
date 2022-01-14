@@ -140,7 +140,7 @@ const Kanban = () => {
       });
       //console.log(destItems);
     } else {
-      alert("yes");
+      //alert("yes");
       const column = columns[source.droppableId];
       const copiedItems = [...column.items];
       const [removed] = copiedItems.splice(source.index, 1);
@@ -152,7 +152,7 @@ const Kanban = () => {
           items: copiedItems
         }
       });
-      alert(source.index);
+      //alert(source.index);
     }
    // const res= axios.post('http://localhost:8000/api/updatecolumn', source.droppableId);
   };

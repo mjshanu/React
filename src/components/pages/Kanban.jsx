@@ -90,11 +90,11 @@ const Kanban = () => {
   const [columns, setColumns] = useState([]);
   const loadData = async () => {
     // alert("hii");
-    const response = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getcandidates");
-    const scheduleresponse = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getcandidates_schedule");
-    const rejectionresponse = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getcandidates_rejection");
-    const waitingresponse = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getcandidates_waiting");
-    const releaseresponse = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getcandidates_release");
+    const response = await fetch("http://localhost:8000/api/getcandidates");
+    const scheduleresponse = await fetch("http://localhost:8000/api/getcandidates_schedule");
+    const rejectionresponse = await fetch("http://localhost:8000/api/getcandidates_rejection");
+    const waitingresponse = await fetch("http://localhost:8000/api/getcandidates_waiting");
+    const releaseresponse = await fetch("http://localhost:8000/api/getcandidates_release");
     const data = await response.json();
     const scheduledata = await scheduleresponse.json();
     const rejectiondata = await rejectionresponse.json();
@@ -116,35 +116,36 @@ const Kanban = () => {
       [uuid()]: {
         name: "Inprogress",
         items: inprogessObj,
-        count: 2
+        count: inprogessObj.length
 
       },
       [uuid()]: {
         name: "Schedule",
         items: scheduleObj,
-        count: 1
+        count:  scheduleObj.length
       },
       [uuid()]: {
         name: "Rejection",
         items: rejectionObj,
-        count: 3
+        count: rejectionObj.length
 
       },
       [uuid()]: {
         name: "Waiting",
         items: waitingObj,
-        count: 4
+        count: waitingObj.length
       },
       [uuid()]: {
         name: "Release",
         items: releaseObj,
-        count: 5
+        count: releaseObj.length
       }
     })
   };
   useEffect(() => {
     loadData();
-  }, []);
+  }, [loadData]);
+  console.log(columns);
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
     subtitle.style.color = '#f00';
@@ -152,6 +153,7 @@ const Kanban = () => {
 
   function closeModal() {
     setIsOpen(false);
+    window.location.reload(false);
   }
   function afterOpenModalRejection() {
     // references are now sync'd and can be accessed.
@@ -160,6 +162,7 @@ const Kanban = () => {
 
   function closeModalRejection() {
     setIsShowingrejectpopup(false);
+    window.location.reload(false);
   }
   function afterOpenModalRelease() {
     // references are now sync'd and can be accessed.
@@ -169,7 +172,11 @@ const Kanban = () => {
   function closeModalRelease() {
     setIsShowingreleasepopup(false);
   }
- 
+  function closeModaledit()
+  {
+    setEditstate(false);
+    window.location.reload(false);
+  }
   const ViewSchedulepopUp = async (dragid) => {
     const schid = dragid;
   
@@ -260,7 +267,7 @@ const editBoard = (column,id,e) => {
         values['index'] = destination.index;
         values['itemsnew'] = destItems;
         values['type'] = "another";
-        const update = axios.post('http://auditportal2.bourntec.com:3001/audit_portal/public/api/updatecolumn', values);
+        const update = axios.post('http://localhost:8000/api/updatecolumn', values);
       }
     } else {
       const column = columns[source.droppableId];
@@ -277,17 +284,17 @@ const editBoard = (column,id,e) => {
       values['type'] = "self";
 
       values['itemsnew'] = copiedItems;
-      const update = axios.post('http://auditportal2.bourntec.com:3001/audit_portal/public/api/updatecolumn', values);
+      const update = axios.post('http://localhost:8000/api/updatecolumn', values);
       // console.log(copiedItems);
     }
   };
-
+ 
   // const [columns, setColumns] = useState(columnsFromBackend);
   const{getBasicdetails,editvalues,edithandleChange,handleSubmit_edit}=EditKanbanboard();
   const { handleChange, values,handleSubmit,errors } = ScheduleInterviewform(schedule_validation);
   const { handleChangerejection, valuesrejection,handleSubmitrejection,errorsrejection } = Rejectionform(rejection_validation);
   const { handleChangeRelease, valuesrelease, handleSubmitrelease, errorsrelease  } = Releaseform(release_validation);
- 
+  
   return (
     <div>
        <Modal
@@ -295,10 +302,10 @@ const editBoard = (column,id,e) => {
         onAfterOpen={afterOpenModalRelease}
         onRequestClose={closeModalRelease}
         contentLabel="Example Modal" className="candiate-modal-bx">
-        <form  onSubmit={handleSubmitrelease}  className='form' noValidate>
+        <form  onSubmit={handleSubmit_edit}  className='form' noValidate>
           <div className="popup-head-sty candidate-tab-outer">
             <div className="popup-head-content-sty">
-              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Joining Details</h4>
+              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Joining Details-Edit</h4>
             </div>
             <div className="popup-head-icon-sty">
               <MdClose className="popup-close-btn" onClick={closeModalRelease} />
@@ -351,7 +358,7 @@ const editBoard = (column,id,e) => {
                            
                              
                               <input type="hidden" name="edit_release_id"  onChange={edithandleChange} value={editvalues.edit_release_id}  class="form-control"   ></input>
-                             
+                              <input type="hidden" name="edit_basic_column_name"  onChange={edithandleChange} value={editvalues.edit_basic_column_name}  class="form-control"   ></input>
                               
 
                             </div>
@@ -367,7 +374,7 @@ const editBoard = (column,id,e) => {
           </div>
           <div>
             <button type="submit" class="btn  btn-save "  > Save</button>
-            <button type="button" class="btn  btn-cancel " onClick={closeModalRejection} > Cancel </button>
+            <button type="button" class="btn  btn-cancel " onClick={closeModalRelease} > Cancel </button>
           </div>
 
 
@@ -378,10 +385,10 @@ const editBoard = (column,id,e) => {
         onAfterOpen={afterOpenModalRejection}
         onRequestClose={closeModalRejection}
         contentLabel="Example Modal" className="candiate-modal-bx">
-        <form  onSubmit={handleSubmitrejection}  className='form' noValidate>
+        <form  onSubmit={handleSubmit_edit}  className='form' noValidate>
           <div className="popup-head-sty candidate-tab-outer">
             <div className="popup-head-content-sty">
-              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Rejection Details</h4>
+              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Rejection Details1</h4>
             </div>
             <div className="popup-head-icon-sty">
               <MdClose className="popup-close-btn" onClick={closeModalRejection} />
@@ -454,9 +461,8 @@ const editBoard = (column,id,e) => {
                              
                            
                              
-                              <input type="hidden" name="edit_r_id"  onChange={edithandleChange}  class="form-control"   ></input>
-                             
-                              
+                              <input type="hidden" name="edit_r_id"  onChange={edithandleChange}  class="form-control"  value={editvalues.edit_r_id} ></input>
+                              <input type="hidden" name="edit_basic_column_name"  onChange={edithandleChange}  class="form-control"  value={editvalues.edit_basic_column_name} ></input>
 
                             </div>
                           </div>
@@ -485,7 +491,7 @@ const editBoard = (column,id,e) => {
         <form  onSubmit={handleSubmit_edit}  className='form' noValidate>
           <div className="popup-head-sty candidate-tab-outer">
             <div className="popup-head-content-sty">
-              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Details</h4>
+              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Details latest</h4>
             </div>
             <div className="popup-head-icon-sty">
               <MdClose className="popup-close-btn" onClick={closeModal} />
@@ -602,10 +608,10 @@ const editBoard = (column,id,e) => {
         <form  onSubmit={handleSubmit_edit}  className='form' noValidate>
           <div className="popup-head-sty candidate-tab-outer">
             <div className="popup-head-content-sty">
-              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Details</h4>
+              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Details Edit</h4>
             </div>
             <div className="popup-head-icon-sty">
-              <MdClose className="popup-close-btn" onClick={closeModal} />
+              <MdClose className="popup-close-btn" onClick={closeModaledit} />
             </div>
           </div>
           <div class="candidate-tab-outer">
@@ -753,7 +759,7 @@ const editBoard = (column,id,e) => {
 </div>
           <div>
             <button type="submit" class="btn  btn-save "  > Save</button>
-            <button type="button" class="btn  btn-cancel " onClick={closeModal} > Cancel </button>
+            <button type="button" class="btn  btn-cancel " onClick={closeModaledit} > Cancel </button>
           </div>
 
 
@@ -768,7 +774,7 @@ const editBoard = (column,id,e) => {
         <form  onSubmit={handleSubmit}  className='form' noValidate>
           <div className="popup-head-sty candidate-tab-outer">
             <div className="popup-head-content-sty">
-              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Details</h4>
+              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Details Schedule</h4>
             </div>
             <div className="popup-head-icon-sty">
               <MdClose className="popup-close-btn" onClick={closeModal} />
@@ -791,7 +797,7 @@ const editBoard = (column,id,e) => {
                 <div class="candidate-tab-outer">
                   <ul class="nav nav-tabs">
 
-                    <li><a href="#tab2" data-toggle="tab">Schedule Details</a></li>
+                    <li><a href="#tab2" data-toggle="tab">Schedule Details Candidates</a></li>
 
                   </ul>
 
@@ -1071,7 +1077,7 @@ const editBoard = (column,id,e) => {
               <div className="sub-head">Candidate Information
                 <div className="top-right-outer add-btn-div">
                   <div>
-                    <Recruitmentnewmodal />
+                    <Recruitmentnewmodal  />
                   </div>
                 </div>
 
@@ -1309,7 +1315,7 @@ const editBoard = (column,id,e) => {
                                           className="darg-inner-box"
                                         >
                                           {column.items.map((item, index) => {
-                                            console.log(column);
+                                           
                                             return (
                                               <Draggable
                                                 key={item.id}
@@ -1353,7 +1359,7 @@ const editBoard = (column,id,e) => {
                                                             <img src={location} />  <span>{item.location}</span>
                                                           </div>
                                                           <div class="in-progress-location t-r">
-                                                            NP: {item.np}
+                                                            NP: {item.notice_prd} Months
                                                           </div>
                                                         </div>
 

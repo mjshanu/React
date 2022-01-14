@@ -791,7 +791,12 @@ label {
     }
     .location-outer .in-progress-location {
         float: left;
-        width: 50%;
+        width: 40%;
+        font-size: 13px;
+    }
+    .location-outer .in-progress-location-map {
+        float: left;
+        width: 60%;
         font-size: 13px;
     }
     .in-progress-name-sty {
@@ -1417,6 +1422,7 @@ text-align: center;
     color: #fff;
     font-size: 14px;
     font-weight: 400;
+    min-width: 90px;
 }
 
 .job-detils-modal{
