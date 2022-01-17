@@ -458,11 +458,7 @@ export default function Organizationold() {
   const [rows, setRows] = useState([]);
 
   const fetchData = async () => {
-<<<<<<< HEAD
     const res = await axios.get("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getOrganizationvalues");
-=======
-    const res = await axios.get(`${process.env.REACT_APP_API_URL}/getOrganizationvalues/`);
->>>>>>> df2ef26227cc0173453930bbc16c9f0e6a820b94
     const org = res.data.org;
 
     setRows(org);

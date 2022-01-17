@@ -3373,3 +3373,25 @@ margin-left: 5px;
             border-top-right-radius: 3px;
             border-bottom-right-radius: 3px;
         }
+        .Candidate-search {
+            background-color: #EEEEEE;
+            border: 0.2px solid #eeeeee;
+        }
+        .Candidate-search-icon {
+            color: #595959;
+        }
+        .Candidate-file {           
+            right: 6px;
+            bottom: -58px;
+            cursor: pointer !important;;
+        }
+        .upload-Candidate img {
+            width: 38px !important;
+            height: 38px !important;
+            float: left;
+            border: 0px solid #cdcbcb;
+            border-radius: 0%;
+            background: #f3f3f3;
+            padding: 7px;
+            
+        }
