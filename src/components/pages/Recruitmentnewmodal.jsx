@@ -54,7 +54,7 @@ export default function Recruitmentnewmodal(){
     function closeModal() { 
      
       setIsOpen(false);
-     
+      //window.history.pushState("", "", "/Kanban");
       window.location.reload(false);
     }
  

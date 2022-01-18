@@ -144,8 +144,8 @@ const Kanban = () => {
   };
   useEffect(() => {
     loadData();
-  }, [loadData]);
-  console.log(columns);
+  }, []);
+  
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
     subtitle.style.color = '#f00';
