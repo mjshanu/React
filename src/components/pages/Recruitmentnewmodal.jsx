@@ -88,29 +88,7 @@ export default function Recruitmentnewmodal(){
             </div>
         </div>
         <div className="popup-content-bg">
-            <div class="row ">
-                            <div class="col-md-6 candidate-inform-search">
-                            <form class="form-group btn-secondary" >
-                                <input type="text" placeholder="Search.." name="search" class="form-control Candidate-search"></input>
-                                <button type="submit"><i class="fa fa-search Candidate-search-icon"></i></button>
-                                </form>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="top-right-outer add-btn-div">
-                                    
-                                    <div className="upload-phot-box upload-Candidate">
-                                            
-                                                  
-                                                <div class='file file--upload Candidate-file'>
-                                                <label for='input-file'>
-                                                <img src={uploadadd} alt=""/>
-                                                </label>
-                                                <input type="file" onChange={uploadadd} />
-                                              </div>
-                                            </div>
-                                </div>
-                            </div>
-            </div>
+            
             <div class ="row">
                 <div class="col-md-12">
                 <BasicTabs /> 
