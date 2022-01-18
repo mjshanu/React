@@ -28,6 +28,7 @@ import Assets from "../pages/Assets";
 import Assetsdetails from "../pages/Assetsdetails";
 import Organizationlist from "../pages/Organizationlist";
 import OfferReleasereport from "../pages/Onboarding";
+import Offboarding from "../pages/Offboarding";
 
 const Content = ({ sidebarIsOpen, toggleSidebar }) => (
   <Container
@@ -47,6 +48,7 @@ const Content = ({ sidebarIsOpen, toggleSidebar }) => (
     <Route exact path="/Addemployeetab" component={Addemployeetab} />  
 
     <Route exact path="/OfferReleasereport" component={OfferReleasereport} />  
+    <Route exact path="/Offboarding" component={Offboarding} />  
         <Router path="/Addemployeetab">
         <Addemployeetab/>
         </Router> 

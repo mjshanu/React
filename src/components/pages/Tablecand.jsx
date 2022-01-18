@@ -75,7 +75,7 @@ function SimpleTable(props) {
   console.log(values);
   const editCandidates = async(id,e) => {
     const can_id=id;
-     const response = await axios.get(`${process.env.REACT_APP_API_URL}/getCandidatefullDetails/${can_id}`);
+     const response = await axios.get(`http://auditportal2.bourntec.com:3001/audit_portal/public/api/getCandidatefullDetails/${can_id}`);
      console.log(response.data.candidate);
      if (response.data.status == 200) {
       values.username=response.data.candidate[0].name;

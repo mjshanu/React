@@ -23,3 +23,7 @@ export const DeferTime = require('./defertime.svg').default;
 export const Hireprogress = require('./new-hire-progress.svg').default;
 export const Hirestatred = require('./new-hire-statred.svg').default;
 export const Hirecompleted = require('./hire-commpleted.svg').default;
+export const Offboarding1 = require('./Offboarding1.svg').default;
+export const Offboarding2 = require('./Offboarding2.svg').default;
+export const Offboarding3 = require('./Offboarding3.svg').default;
+export const uploadadd = require('./uploadadd.svg').default;

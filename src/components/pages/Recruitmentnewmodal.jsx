@@ -10,7 +10,10 @@ import {AppBar} from '@material-ui/core';
 import BasicTabs from './Employeetabs';
 import 'react-tabs/style/react-tabs.css';
 import LoadDatafile from './LoadDatafile';
-
+import {uploadadd} from '../../images';
+import {uploadimage, uploadicon} from '../../images';
+ 
+import MultipleImageUpload from "./MultipleImageUpload";
 const customStyles = {
     content: {
       top: '50%',
@@ -25,8 +28,7 @@ const customStyles = {
     },
   };
   
- 
- 
+  
 
 
 
@@ -45,7 +47,11 @@ export default function Recruitmentnewmodal(){
     function openModal() {
       setIsOpen(true);
     }
-  
+    const [myimage, setMyImage] = React.useState(null);
+    const uploadImage = e => {
+      setMyImage(URL.createObjectURL(e.target.files[0]));
+    };
+   
     function afterOpenModal () {
       // references are now sync'd and can be accessed.
       subtitle.style.color = '#f00';
@@ -85,12 +91,24 @@ export default function Recruitmentnewmodal(){
             <div class="row ">
                             <div class="col-md-6 candidate-inform-search">
                             <form class="form-group btn-secondary" >
-                                <input type="text" placeholder="Search.." name="search" class="form-control"></input>
-                                <button type="submit"><i class="fa fa-search"></i></button>
+                                <input type="text" placeholder="Search.." name="search" class="form-control Candidate-search"></input>
+                                <button type="submit"><i class="fa fa-search Candidate-search-icon"></i></button>
                                 </form>
                             </div>
-                            <div class="col-md-8">
-                           
+                            <div class="col-md-6">
+                                <div class="top-right-outer add-btn-div">
+                                    
+                                    <div className="upload-phot-box upload-Candidate">
+                                            
+                                                  
+                                                <div class='file file--upload Candidate-file'>
+                                                <label for='input-file'>
+                                                <img src={uploadadd} alt=""/>
+                                                </label>
+                                                <input type="file" onChange={uploadadd} />
+                                              </div>
+                                            </div>
+                                </div>
                             </div>
             </div>
             <div class ="row">

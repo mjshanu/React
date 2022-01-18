@@ -699,7 +699,7 @@ label {
         float: left;
     }
     .candidate-boxouter{
-        width: 25% !important;
+        width: 20% !important;
         padding-left: 10px;
         padding-right: 10px;
         float: left;
@@ -716,7 +716,7 @@ label {
         width: 100%;
         float: left;
         flex: 50 0 200px;
-        padding: 16px;
+        padding: 11px;
         background-color: #F0F3FB;
         border-radius: 8px;
     }
@@ -791,7 +791,12 @@ label {
     }
     .location-outer .in-progress-location {
         float: left;
-        width: 50%;
+        width: 40%;
+        font-size: 13px;
+    }
+    .location-outer .in-progress-location-map {
+        float: left;
+        width: 60%;
         font-size: 13px;
     }
     .in-progress-name-sty {
@@ -3287,6 +3292,9 @@ margin-left: 5px;
     .onboarding-top-outer  .onboard-ligt-blue{
         background: #2B70A9;
     }
+    .onboarding-top-outer .onboard-ligt-violet {
+        background: #844ba1;
+    }
     .onboarding-top-outer .box-inner .left{
         width: 80%;
         float: left;
@@ -3305,7 +3313,7 @@ margin-left: 5px;
         width: 100%;
         float: left;
         display: block;
-        font-size: 40px;
+        font-size: 35px;
         color: #fff;
         line-height: 30px;
         font-weight: 600;
@@ -3364,4 +3372,26 @@ margin-left: 5px;
             border-left: 0;
             border-top-right-radius: 3px;
             border-bottom-right-radius: 3px;
+        }
+        .Candidate-search {
+            background-color: #EEEEEE;
+            border: 0.2px solid #eeeeee;
+        }
+        .Candidate-search-icon {
+            color: #595959;
+        }
+        .Candidate-file {           
+            right: 6px;
+            bottom: -58px;
+            cursor: pointer !important;;
+        }
+        .upload-Candidate img {
+            width: 38px !important;
+            height: 38px !important;
+            float: left;
+            border: 0px solid #cdcbcb;
+            border-radius: 0%;
+            background: #f3f3f3;
+            padding: 7px;
+            
         }

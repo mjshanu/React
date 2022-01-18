@@ -118,7 +118,7 @@ function Row(props: { row: ReturnType<typeof createData> }) {
   }
   const editbranch = async (id) => {
     const branch_id = id;
-    const reponse = await axios.get(`http://localhost:8000/api/editfecthbranchdata/${branch_id}`);
+    const reponse = await axios.get(`http://auditportal2.bourntec.com:3001/audit_portal/public/api/editfecthbranchdata/${branch_id}`);
     if (reponse.data.status == 200) {
       SetValues({
         branch_name: reponse.data.branch.branch_name,
@@ -458,7 +458,7 @@ export default function Organizationold() {
   const [rows, setRows] = useState([]);
 
   const fetchData = async () => {
-    const res = await axios.get(`${process.env.REACT_APP_API_URL}/getOrganizationvalues/`);
+    const res = await axios.get("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getOrganizationvalues");
     const org = res.data.org;
 
     setRows(org);
