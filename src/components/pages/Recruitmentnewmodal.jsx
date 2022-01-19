@@ -88,11 +88,13 @@ export default function Recruitmentnewmodal(){
             </div>
         </div>
         <div className="popup-content-bg">
-            
+            <div class="row ">
+                            
+            </div>
             <div class ="row">
                 <div class="col-md-12">
                 <BasicTabs /> 
-                <button type="button" class="btn  btn-cancel " onClick={closeModal} > Cancel </button> 
+                <button type="button" class="btn  btn-cancel " onClick={closeModal} > Cancel </button>
                 </div>
             </div>
            
