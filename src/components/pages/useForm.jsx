@@ -27,7 +27,7 @@ const[values, SetValues] = useState ({
     comments : '',
     c_status : '',
     reason : '',
-    reason : '',
+   
 })
 const itemsFromBackend = [
     { id: uuid(), applied_date: "2022-01-12", c_company: "Bourntec", contact_number: "1234567891", ctc: 5, dob: "2022-01-18", domain_exp: 5, education: "Btech", email: "teenu@gmail.com", exp_ctc: 15, job_id: 1,name: "shanuxcx",notice_prd: 3,position: 0,post: "PHP Developer",primary_skill: "test,css",ref: "ref",sec_skill: "testcss2",skillset: "Html,css,React js",status: "Inprogress",title: "JAVA DEVELOPER",total_exp: 6 }
@@ -91,8 +91,8 @@ const handleSubmit =e => {
         values.iplace = '';
         values.comments = '';
         values.c_status = '';
-        values.reason = '';
-     
+        values.department_team = '';
+        values.reason = ''
       
     }
   })
