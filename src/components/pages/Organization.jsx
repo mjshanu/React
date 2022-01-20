@@ -120,7 +120,7 @@ function Row(props: { row: ReturnType<typeof createData> }) {
   }
   const editbranch = async (id) => {
     const branch_id = id;
-    const reponse = await axios.get(`http://localhost:8000/api/editfecthbranchdata/${branch_id}`);
+    const reponse = await axios.get(`http://auditportal2.bourntec.com:3001/audit_portal/public/api/editfecthbranchdata/${branch_id}`);
     if (reponse.data.status == 200) {
       SetValues({
         branch_name: reponse.data.branch.branch_name,

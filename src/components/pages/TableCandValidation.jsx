@@ -58,7 +58,7 @@ const getpostName = async () => {
   const deleteCandidate = async (e, id) => {
     const thisclickrow = e.currentTarget;
     thisclickrow.innerText = "Deleting";
-    const res = await axios.get(`http://localhost:8000/api/deleteCandidate/${id}`);
+    const res = await axios.get(`http://auditportal2.bourntec.com:3001/audit_portal/public/api/deleteCandidate/${id}`);
     if (res.data.status == 200) {
       thisclickrow.closest("tr").remove();
       console.log(res.data.message);
