@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useState, useEffect } from "react";
 
 import PropTypes from 'prop-types';
@@ -6,6 +6,10 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import useForm from './useForm';
 import validate from '../validation/employee_val';
+import {uploadadd} from '../../images';
+import {uploadimage, uploadicon} from '../../images';
+ 
+import MultipleImageUpload from "./MultipleImageUpload";
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
 
 function TabPanel(props) {
@@ -52,7 +56,40 @@ export default function BasicTabs({setColumns}) {
   useEffect(() => {
    getpostName();
   });
+  const [myimage, setMyImage] = React.useState(null);
+    const uploadImage = e => {
+      setMyImage(URL.createObjectURL(e.target.files[0]));
+    };
   return (
+
+
+
+<div>
+<div class="row">
+<div class="col-md-6 candidate-inform-search">
+                            <form class="form-group btn-secondary" >
+                                <input type="text" placeholder="Search.." name="search" class="form-control Candidate-search"></input>
+                                <button type="submit"><i class="fa fa-search Candidate-search-icon"></i></button>
+                                </form>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="top-right-outer add-btn-div">
+                                    
+                                    <div className="upload-phot-box upload-Candidate">
+                                            
+                                                  
+                                                <div class='file file--upload Candidate-file'>
+                                                <label for='input-file'>
+                                                <img src={uploadadd} alt=""/>
+                                                </label>
+                                                <input type="file" onChange={uploadadd} />
+                                              </div>
+                                            </div>
+                                </div>
+                            </div>
+                            </div>
+ 
+    
    <div class="candidate-tab-outer">
   <ul class="nav nav-tabs">
     <li class="active"><a href="#tab1" data-toggle="tab">Basic Information</a></li>  
@@ -311,12 +348,12 @@ export default function BasicTabs({setColumns}) {
 
   </div>
 </div>
-<div>
+<div class="">
             <button type="submit" class="btn  btn-save "  > Save</button>
         
         </div>
  </form>
-</div>
+</div> </div>
   )
 }
 
