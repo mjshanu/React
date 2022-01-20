@@ -27,6 +27,7 @@ import {
 
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
+import { getLocationOrigin } from "next/dist/shared/lib/utils";
 const styles = theme => ({
   root: {
     display: 'flex',
@@ -60,6 +61,7 @@ const data = [
 
 export default function Job(props) {
   const [joblist, SetJoblist] = useState([]);
+  const [location, SetLocation] = useState([]);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [postvalues, SetPostvalues] = useState([]);
   const [values, SetValues] = useState({
@@ -85,24 +87,33 @@ export default function Job(props) {
   useEffect(() => {
     loadJobs();
     getPostname();
+    getLocation();
   }, []);
   const loadJobs = async () => {
-    const res = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getJobs");
+    const res = await fetch("http://localhost:8000/api/getJobs");
     const data = await res.json();
     const list = data.job;
     SetJoblist(list);
 
 
   }
+  const getLocation = async () => {
+    const res = await fetch("http://localhost:8000/api/getLocationBranch");
+    const data = await res.json();
+    const list = data.location;
+    SetLocation(list);
+
+
+  }
   const getPostname = async () => {
-    const response = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getposttype");
+    const response = await fetch("http://localhost:8000/api/getposttype");
     const data = await response.json();
     const list = data.post;
     SetPostvalues(list);
   }
   const Edit_job = async (id) => {
     const job_id = id;
-    const reponse = await axios.get(`http://auditportal2.bourntec.com:3001/audit_portal/public/api/editfecthjobdata/${job_id}`)
+    const reponse = await axios.get(`http://localhost:8000/api/editfecthjobdata/${job_id}`)
     console.log(reponse.data.job[0]);
     if (reponse.data.status == 200) {
       SetValues({
@@ -123,7 +134,7 @@ export default function Job(props) {
   }
   const updateOrganization = async (e) => {
     e.preventDefault();
-    const res = await axios.put('http://auditportal2.bourntec.com:3001/audit_portal/public/api/update_job', values);
+    const res = await axios.put('http://localhost:8000/api/update_job', values);
     if (res.data.status == 200) {
       swal({
         title: "Good job!",
@@ -143,6 +154,7 @@ export default function Job(props) {
     setIsOpen(false);
     window.location.reload();
   }
+ 
   return (
     <div>
       <Modal
@@ -154,7 +166,7 @@ export default function Job(props) {
         <form onSubmit={updateOrganization} className='form' noValidate>
           <div className="popup-head-sty modal-button-bg">
             <div className="popup-head-content-sty">
-              <h4 className="popup-head-h4">Job Settings</h4>
+              <h4 className="popup-head-h4"> Edit Job Settings</h4>
             </div>
             <div className="popup-head-icon-sty">
               <MdClose className="popup-close-btn" onClick={closeModal} />
@@ -261,7 +273,7 @@ export default function Job(props) {
             <div className="main-content-area-inner">
               <div className="sub-head"> Job Openings
                 <div className="top-right-outer add-btn-div">
-                  <Jobdetailsmodal />
+                  <Jobdetailsmodal location={location} method={loadJobs}/>
 
                 </div>
               </div>

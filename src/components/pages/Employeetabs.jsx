@@ -40,13 +40,14 @@ function a11yProps(index) {
     'aria-controls': `simple-tabpanel-${index}`,
   };
 }
-export default function BasicTabs() {
+export default function BasicTabs({setColumns}) {
+  
   const [value, setValue] = React.useState(0);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const { handleChange1, values, handleSubmit, errors,getpostName,job } = useForm(validate);
+  const { handleChange1, values, handleSubmit, errors,getpostName,job} = useForm(validate,setColumns);
   
   useEffect(() => {
    getpostName();
@@ -81,7 +82,13 @@ export default function BasicTabs() {
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Post</label>
-                                    <input name="postvalue" onChange={handleChange1} value={values.postvalue} type="text" class="form-control" ></input>
+                                   
+                                    <select id = "postvalue" name="postvalue" onChange={handleChange1} value={values.postvalue} class="form-control">
+                                <option value="">Select Job name</option>
+                                {job.map(({ post_name , id }, index) => 
+                                <option value={post_name} >{post_name}</option>
+                                )} 
+ </select>
                                     {errors.postvalue && <p>{errors.postvalue}</p>}
                                 </div>
                                

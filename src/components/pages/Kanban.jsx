@@ -108,6 +108,7 @@ const Kanban = () => {
     const releasesavedata = releasedata.candidate;
     //console.log(savedate);
     var inprogessObj = JSON.parse(savedate);
+   // console.log(inprogessObj);
     var scheduleObj = JSON.parse(schedulesavedata);
     var rejectionObj = JSON.parse(rejectionsavedata);
     var waitingObj = JSON.parse(waitingsavedata);
@@ -171,6 +172,7 @@ const Kanban = () => {
 
   function closeModalRelease() {
     setIsShowingreleasepopup(false);
+    isShowingreleasepopupedit(false);
   }
   function closeModaledit()
   {
@@ -1077,7 +1079,7 @@ const editBoard = (column,id,e) => {
               <div className="sub-head">Candidate Information
                 <div className="top-right-outer add-btn-div">
                   <div>
-                    <Recruitmentnewmodal  />
+                    <Recruitmentnewmodal method={loadData} />
                   </div>
                 </div>
 

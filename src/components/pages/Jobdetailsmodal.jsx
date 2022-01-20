@@ -28,9 +28,8 @@ const customStyles = {
 
 
 
-export default function Jobdetailsmodal() {
-
-
+export default function Jobdetailsmodal({location, method}) {
+  console.log(location);
   const CustomTab = ({ children }) => (
     <Tab >
       <div >{children}</div>
@@ -51,7 +50,8 @@ export default function Jobdetailsmodal() {
 
   function closeModal() {
     setIsOpen(false);
-    window.location.reload();
+    method();
+   // window.location.reload();
   }
 
   const [value, setValue] = React.useState(0)
@@ -155,7 +155,14 @@ export default function Jobdetailsmodal() {
                   <div class="col-md-4 mob-full">
                     <div class="form-group">
                       <label for="exampleFormControlInput1">Location</label>
-                      <input type="text" name="job_location" onChange={handleChange} value={values.job_location} class="form-control" ></input>
+                      <select id="job_location" name="job_location" onChange={handleChange} value={values.job_location} class="form-control">
+                        <option value="">Select Location</option>
+                        {location.map(({ branch_name, id,branch_location }, index) =>
+                          
+                          <option value={id} >{branch_name}-{branch_location}</option>
+                        )}
+
+                      </select>
                       {errors.job_location && <p>{errors.job_location}</p>}
                     </div>
                   </div>

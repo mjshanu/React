@@ -12,7 +12,7 @@ import 'react-tabs/style/react-tabs.css';
 import LoadDatafile from './LoadDatafile';
 import {uploadadd} from '../../images';
 import {uploadimage, uploadicon} from '../../images';
- 
+import { v4 as uuid } from "uuid";
 import MultipleImageUpload from "./MultipleImageUpload";
 const customStyles = {
     content: {
@@ -32,7 +32,7 @@ const customStyles = {
 
 
 
-export default function Recruitmentnewmodal(){
+export default function Recruitmentnewmodal({method}){
   //const{columns}=LoadDatafile();
    
     const CustomTab = ({ children }) => (
@@ -56,12 +56,18 @@ export default function Recruitmentnewmodal(){
       // references are now sync'd and can be accessed.
       subtitle.style.color = '#f00';
     }
-  
+    const itemsFromBackend = [
+      { id: uuid(), content: "First task", title: "JAVA DEVELOPER2", name: "shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript", view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+      { id: uuid(), content: "First task", title: "JAVA DEVELOPER", name: "shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript", view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+      { id: uuid(), content: "First task", title: "JAVA DEVELOPER2", name: "shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript", view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+      { id: uuid(), content: "First task", title: "JAVA DEVELOPER", name: "shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript", view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+      { id: uuid(), content: "First task", title: "JAVA DEVELOPER", name: "shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript", view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" }
+    ];
     function closeModal() { 
      
       setIsOpen(false);
-      //window.history.pushState("", "", "/Kanban");
-      window.location.reload(false);
+      method();
+    
     }
  
     const [value, setValue]=React .useState(0)
