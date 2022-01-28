@@ -27,20 +27,36 @@ const[values, SetValues] = useState ({
     comments : '',
     c_status : '',
     reason : '',
-   
+    skillset:'',
+    noticeprd:'',
+    secskill:'',
 })
+const[pics, SetPics] = useState ([]);
 const itemsFromBackend = [
     { id: uuid(), applied_date: "2022-01-12", c_company: "Bourntec", contact_number: "1234567891", ctc: 5, dob: "2022-01-18", domain_exp: 5, education: "Btech", email: "teenu@gmail.com", exp_ctc: 15, job_id: 1,name: "shanuxcx",notice_prd: 3,position: 0,post: "PHP Developer",primary_skill: "test,css",ref: "ref",sec_skill: "testcss2",skillset: "Html,css,React js",status: "Inprogress",title: "JAVA DEVELOPER",total_exp: 6 }
 ];
 const[errors,setErrors]=useState({})
 const [isSubmitting, setIsSubmitting] = useState(false);
 const[job,setJob]=useState([]);
+useEffect(() => {
+    getpostName();
+    if (Object.keys(errors).length === 0 && isSubmitting) {
+      onSubmitform();
+    }
+  }, [errors]);
+
 const handleChange1 =e => { 
     const{name,value}=e.target
     SetValues({
         ...values,
         [name]:value
     })
+}
+const handleImage =e =>
+{
+    SetPics({
+        resume:e.target.files[0]
+    });
 }
 const getpostName = async () => {
     const response = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getJobs");
@@ -53,49 +69,13 @@ const getpostName = async () => {
     setJob(listnewtest);
     
   }
- 
+
 const handleSubmit =e => { 
     e.preventDefault();
+  
     setErrors(validate(values));
-   // setIsSubmitting(true);
-   
-   const promise= axios.post('http://auditportal2.bourntec.com:3001/audit_portal/public/api/add_employee_first', values);
-   promise.then(function(res) {
-    if(res.data.status===200)
-    {
-
-        swal({
-            title: "Good job!",
-            text: "Candidate added successfully",
-            icon: "success",    
-            button: "ok",
-        });
-        values.username = '';
-        values.postvalue = '';
-        values.p_email = '';
-        values.phonenumber = '';
-        values.qualification = '';
-        values.exp = '';
-        values.ctc = '';
-        values.expect_ctc = '';
-        values.location = '';
-        values.dob = '';
-        values.location = '';
-        values.current_company = '';
-        values.domain_exp = '';
-        values.app_date = '';
-        values.primary_skill = '';
-        values.ref = '';
-        values.p_members = '';
-        values.idatetime = '';
-        values.iplace = '';
-        values.comments = '';
-        values.c_status = '';
-        values.department_team = '';
-        values.reason = ''
-      
-    }
-  })
+    setIsSubmitting(true);
+  
  
     ///.then(function (response) {
        // console.log(response.data.message);
@@ -109,12 +89,79 @@ const handleSubmit =e => {
     
 }
 
-
+const onSubmitform = e => {
+    const formData = new FormData();  
+    formData.append('resume', pics.resume);
+    formData.append('username',values.username);
+    formData.append('postvalue',values.postvalue);
+    formData.append('p_email',values.p_email);
+    formData.append('phonenumber',values.phonenumber);
+    formData.append('qualification',values.qualification);
+    formData.append('exp',values.exp);
+    formData.append('ctc',values.ctc);
+    formData.append('expect_ctc',values.expect_ctc);
+    formData.append('location',values.location);
+    formData.append('dob',values.dob);
+    formData.append('current_company',values.current_company);
+    formData.append('domain_exp',values.domain_exp);
+    formData.append('app_date',values.app_date);
+    formData.append('primary_skill',values.primary_skill);
+    formData.append('ref',values.ref);
+    formData.append('p_members',values.p_members);
+    formData.append('idatetime',values.idatetime);
+    formData.append('iplace',values.iplace);
+    formData.append('comments',values.comments);
+    formData.append('c_status',values.c_status);
+    formData.append('department_team',values.department_team);
+    formData.append('reason',values.reason);
+    formData.append('skillset',values.skillset);
+    formData.append('noticeprd',values.noticeprd);
+    formData.append('secskill',values.secskill);
+    //values.append('resume',pics.resume);
+    const promise= axios.post('http://localhost:8000/api/add_employee_first', formData);
+    promise.then(function(res) {
+     if(res.data.status===200)
+     {
+ 
+         swal({
+             title: "Good job!",
+             text: "Candidate added successfully",
+             icon: "success",    
+             button: "ok",
+         });
+         values.username = '';
+         values.postvalue = '';
+         values.p_email = '';
+         values.phonenumber = '';
+         values.qualification = '';
+         values.exp = '';
+         values.ctc = '';
+         values.expect_ctc = '';
+         values.location = '';
+         values.dob = '';
+         values.location = '';
+         values.current_company = '';
+         values.domain_exp = '';
+         values.app_date = '';
+         values.primary_skill = '';
+         values.ref = '';
+         values.p_members = '';
+         values.idatetime = '';
+         values.iplace = '';
+         values.comments = '';
+         values.c_status = '';
+         values.department_team = '';
+         values.reason = '';
+       //  pics.resume='';
+       
+     }
+   })  
+}
 
     
 
 
-return {handleChange1,values,handleSubmit,errors,getpostName,job};
+return {handleChange1,values,handleSubmit,errors,getpostName,job,handleImage};
 
 }
 export default useForm;

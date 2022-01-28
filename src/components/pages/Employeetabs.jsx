@@ -51,11 +51,9 @@ export default function BasicTabs({setColumns}) {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const { handleChange1, values, handleSubmit, errors,getpostName,job} = useForm(validate,setColumns);
+  const { handleChange1, values, handleSubmit, errors,getpostName,job,handleImage} = useForm(validate,setColumns);
   
-  useEffect(() => {
-   getpostName();
-  });
+  
   const [myimage, setMyImage] = React.useState(null);
     const uploadImage = e => {
       setMyImage(URL.createObjectURL(e.target.files[0]));
@@ -82,7 +80,7 @@ export default function BasicTabs({setColumns}) {
                                                 <label for='input-file'>
                                                 <img src={uploadadd} alt=""/>
                                                 </label>
-                                                <input type="file" onChange={uploadadd} />
+                                                <input type="file" name="resume" onChange={uploadadd} />
                                               </div>
                                             </div>
                                 </div>
@@ -96,7 +94,7 @@ export default function BasicTabs({setColumns}) {
     <li><a href="#tab2" data-toggle="tab">Schedule Details</a></li>
     <li><a href="#tab3" data-toggle="tab">Rejection Reasons</a></li>
   </ul>
-  <form onSubmit={handleSubmit} className='form' noValidate>
+  <form onSubmit={handleSubmit} className='form' noValidate encType="multipart/form-data">
   <div class="tab-content">
     <div class="tab-pane active" id="tab1">
       <div class="panel panel-default">
@@ -107,6 +105,7 @@ export default function BasicTabs({setColumns}) {
             </a>
           </h4>
         </div>
+        <input type="file" accept='.doc,.docx,application/pdf' name="resume" onChange={handleImage} class="form-control"/>
         <div id="collapseOne" class="panel-collapse collapse in">
           <div class="panel-body">
           <div class="row popup-content-height popup-row-mrg  candiate-modal-inner-tab">
