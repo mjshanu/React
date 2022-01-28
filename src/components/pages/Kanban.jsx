@@ -154,7 +154,9 @@ const Kanban = () => {
 
   function closeModal() {
     setIsOpen(false);
-    window.location.reload(false);
+    setIsOpenedit(false);
+    loadData();
+    //window.location.reload(false);
   }
   function afterOpenModalRejection() {
     // references are now sync'd and can be accessed.
@@ -163,7 +165,8 @@ const Kanban = () => {
 
   function closeModalRejection() {
     setIsShowingrejectpopup(false);
-    window.location.reload(false);
+    setIsShowingrejectpopupEdit(false);
+    loadData();
   }
   function afterOpenModalRelease() {
     // references are now sync'd and can be accessed.
@@ -172,12 +175,16 @@ const Kanban = () => {
 
   function closeModalRelease() {
     setIsShowingreleasepopup(false);
-    isShowingreleasepopupedit(false);
+    
+  }
+  function closeModalReleaseedit()
+  {
+    setIsShowingreleasepopupEdit(false);
   }
   function closeModaledit()
   {
     setEditstate(false);
-    window.location.reload(false);
+    loadData();
   }
   const ViewSchedulepopUp = async (dragid) => {
     const schid = dragid;
@@ -293,7 +300,7 @@ const editBoard = (column,id,e) => {
  
   // const [columns, setColumns] = useState(columnsFromBackend);
   const{getBasicdetails,editvalues,edithandleChange,handleSubmit_edit}=EditKanbanboard();
-  const { handleChange, values,handleSubmit,errors } = ScheduleInterviewform(schedule_validation);
+  const { handleChange, values,handleSubmit,errors } = ScheduleInterviewform(schedule_validation,loadData);
   const { handleChangerejection, valuesrejection,handleSubmitrejection,errorsrejection } = Rejectionform(rejection_validation);
   const { handleChangeRelease, valuesrelease, handleSubmitrelease, errorsrelease  } = Releaseform(release_validation);
   
@@ -302,7 +309,7 @@ const editBoard = (column,id,e) => {
        <Modal
         isOpen={isShowingreleasepopupedit}
         onAfterOpen={afterOpenModalRelease}
-        onRequestClose={closeModalRelease}
+        onRequestClose={closeModalReleaseedit}
         contentLabel="Example Modal" className="candiate-modal-bx">
         <form  onSubmit={handleSubmit_edit}  className='form' noValidate>
           <div className="popup-head-sty candidate-tab-outer">
@@ -310,7 +317,7 @@ const editBoard = (column,id,e) => {
               <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Joining Details-Edit</h4>
             </div>
             <div className="popup-head-icon-sty">
-              <MdClose className="popup-close-btn" onClick={closeModalRelease} />
+              <MdClose className="popup-close-btn" onClick={closeModalReleaseedit} />
             </div>
           </div>
           <div className="popup-content-bg">
@@ -376,7 +383,7 @@ const editBoard = (column,id,e) => {
           </div>
           <div>
             <button type="submit" class="btn  btn-save "  > Save</button>
-            <button type="button" class="btn  btn-cancel " onClick={closeModalRelease} > Cancel </button>
+            <button type="button" class="btn  btn-cancel " onClick={closeModalReleaseedit} > Cancel </button>
           </div>
 
 
@@ -390,7 +397,7 @@ const editBoard = (column,id,e) => {
         <form  onSubmit={handleSubmit_edit}  className='form' noValidate>
           <div className="popup-head-sty candidate-tab-outer">
             <div className="popup-head-content-sty">
-              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Rejection Details1</h4>
+              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Edit Candidate Rejection</h4>
             </div>
             <div className="popup-head-icon-sty">
               <MdClose className="popup-close-btn" onClick={closeModalRejection} />
@@ -493,7 +500,7 @@ const editBoard = (column,id,e) => {
         <form  onSubmit={handleSubmit_edit}  className='form' noValidate>
           <div className="popup-head-sty candidate-tab-outer">
             <div className="popup-head-content-sty">
-              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Details latest</h4>
+              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Edit Candidate Details</h4>
             </div>
             <div className="popup-head-icon-sty">
               <MdClose className="popup-close-btn" onClick={closeModal} />
@@ -546,7 +553,7 @@ const editBoard = (column,id,e) => {
                               <div class="col-md-4">
                                 <div class="form-group">
                                   <label for="exampleFormControlInput1">Interview Date and Time</label>
-                                  <input type="date" name="edit_idatetime"  onChange={edithandleChange} value={editvalues.edit_idatetime} class="form-control" ></input>
+                                  <input type="date" name="edit_idatetime"  onChange={edithandleChange} value={editvalues.edi_idatetime} class="form-control" ></input>
                                 </div>
                               </div>
                               <div class="col-md-4">
@@ -1019,7 +1026,7 @@ const editBoard = (column,id,e) => {
                 <div class="candidate-tab-outer">
                   <ul class="nav nav-tabs">
 
-                    <li><a href="#tab2" data-toggle="tab">Candidate Joining Details</a></li>
+                    <li><a href="#tab2" data-toggle="tab">Edit Candidate Joining Details</a></li>
 
                   </ul>
 
@@ -1362,6 +1369,9 @@ const editBoard = (column,id,e) => {
                                                           </div>
                                                           <div class="in-progress-location t-r">
                                                             NP: {item.notice_prd} Months
+                                                          </div>
+                                                          <div class="in-progress-location t-r">
+                                                          <a href={"http://localhost/audit_portal/public/uploads/resume/" + item.resume} target='_blank' rel='noopener noreferrer'>resume</a>
                                                           </div>
                                                         </div>
 

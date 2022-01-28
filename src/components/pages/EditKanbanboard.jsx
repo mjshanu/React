@@ -126,10 +126,21 @@ const EditKanbanboard = () => {
       }
     }
   }
-  const handleSubmit_edit = e => {
+  const handleSubmit_edit = async(e) => {
 
     e.preventDefault();
-    const response = axios.post('http://localhost:8000/api', editvalues);
+    const response = await axios.post('http://localhost:8000/api/Updateboarddetails', editvalues);
+   
+    if(response.data.status===200)
+    {
+
+        swal({
+            title: "Good job!",
+            text: "Data Updated successfully",
+            icon: "success",    
+            button: "ok",
+        });
+      }
   
 
   }

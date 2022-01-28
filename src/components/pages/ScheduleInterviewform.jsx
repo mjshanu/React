@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import swal from 'sweetalert';
-const ScheduleInterviewform  = schedule_validation  => {
+const ScheduleInterviewform  = (schedule_validation,loadData)  => {
     const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [values, SetValues] = useState({
@@ -50,7 +50,8 @@ const ScheduleInterviewform  = schedule_validation  => {
           icon: "success",
           button: "ok",
         });
-        window.location.reload(false);
+        loadData();
+       // window.location.reload(false);
         //setIsOpen(false);
       }
     })
