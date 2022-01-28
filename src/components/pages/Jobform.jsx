@@ -35,7 +35,7 @@ const Jobform = job_validation => {
   }, [errors]);
 
  /* const loadOrganization = async () => {
-    const orgresponse=await fetch("http://localhost:8000/api/getOrganization/");
+   
     setOrg(orgresponse.data);
   }*/
   const getPostname = async () => {

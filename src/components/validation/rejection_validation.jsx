@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-export default function rejection_validation(values) { 
+export default function rejection_validation(values) {
     let errorsrejection={}
     if(!values.rejectionstatus.trim())
     {

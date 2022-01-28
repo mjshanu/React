@@ -10,7 +10,10 @@ import {AppBar} from '@material-ui/core';
 import BasicTabs from './Employeetabs';
 import 'react-tabs/style/react-tabs.css';
 import LoadDatafile from './LoadDatafile';
-
+import {uploadadd} from '../../images';
+import {uploadimage, uploadicon} from '../../images';
+import { v4 as uuid } from "uuid";
+import MultipleImageUpload from "./MultipleImageUpload";
 const customStyles = {
     content: {
       top: '50%',
@@ -25,12 +28,11 @@ const customStyles = {
     },
   };
   
- 
- 
+  
 
 
 
-export default function Recruitmentnewmodal(){
+export default function Recruitmentnewmodal({method}){
   //const{columns}=LoadDatafile();
    
     const CustomTab = ({ children }) => (
@@ -45,17 +47,27 @@ export default function Recruitmentnewmodal(){
     function openModal() {
       setIsOpen(true);
     }
-  
+    const [myimage, setMyImage] = React.useState(null);
+    const uploadImage = e => {
+      setMyImage(URL.createObjectURL(e.target.files[0]));
+    };
+   
     function afterOpenModal () {
       // references are now sync'd and can be accessed.
       subtitle.style.color = '#f00';
     }
-  
+    const itemsFromBackend = [
+      { id: uuid(), content: "First task", title: "JAVA DEVELOPER2", name: "shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript", view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+      { id: uuid(), content: "First task", title: "JAVA DEVELOPER", name: "shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript", view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+      { id: uuid(), content: "First task", title: "JAVA DEVELOPER2", name: "shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript", view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+      { id: uuid(), content: "First task", title: "JAVA DEVELOPER", name: "shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript", view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" },
+      { id: uuid(), content: "First task", title: "JAVA DEVELOPER", name: "shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript", view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" }
+    ];
     function closeModal() { 
      
       setIsOpen(false);
-     
-      window.location.reload(false);
+      method();
+    
     }
  
     const [value, setValue]=React .useState(0)
@@ -83,20 +95,12 @@ export default function Recruitmentnewmodal(){
         </div>
         <div className="popup-content-bg">
             <div class="row ">
-                            <div class="col-md-6 candidate-inform-search">
-                            <form class="form-group btn-secondary" >
-                                <input type="text" placeholder="Search.." name="search" class="form-control"></input>
-                                <button type="submit"><i class="fa fa-search"></i></button>
-                                </form>
-                            </div>
-                            <div class="col-md-8">
-                           
-                            </div>
+                            
             </div>
             <div class ="row">
                 <div class="col-md-12">
                 <BasicTabs /> 
-                <button type="button" class="btn  btn-cancel " onClick={closeModal} > Cancel </button> 
+                <button type="button" class="btn  btn-cancel " onClick={closeModal} > Cancel </button>
                 </div>
             </div>
            

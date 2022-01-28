@@ -27,6 +27,7 @@ import {
 
 // Demo styles, see 'Styles' section below for some notes on use.
 import 'react-accessible-accordion/dist/fancy-example.css';
+import { getLocationOrigin } from "next/dist/shared/lib/utils";
 const styles = theme => ({
   root: {
     display: 'flex',
@@ -60,6 +61,7 @@ const data = [
 
 export default function Job(props) {
   const [joblist, SetJoblist] = useState([]);
+  const [location, SetLocation] = useState([]);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [postvalues, SetPostvalues] = useState([]);
   const [values, SetValues] = useState({
@@ -85,12 +87,21 @@ export default function Job(props) {
   useEffect(() => {
     loadJobs();
     getPostname();
+    getLocation();
   }, []);
   const loadJobs = async () => {
     const res = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getJobs");
     const data = await res.json();
     const list = data.job;
     SetJoblist(list);
+
+
+  }
+  const getLocation = async () => {
+    const res = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getLocationBranch");
+    const data = await res.json();
+    const list = data.location;
+    SetLocation(list);
 
 
   }
@@ -143,6 +154,7 @@ export default function Job(props) {
     setIsOpen(false);
     window.location.reload();
   }
+ 
   return (
     <div>
       <Modal
@@ -154,7 +166,7 @@ export default function Job(props) {
         <form onSubmit={updateOrganization} className='form' noValidate>
           <div className="popup-head-sty modal-button-bg">
             <div className="popup-head-content-sty">
-              <h4 className="popup-head-h4">Job Settings</h4>
+              <h4 className="popup-head-h4"> Edit Job Settings</h4>
             </div>
             <div className="popup-head-icon-sty">
               <MdClose className="popup-close-btn" onClick={closeModal} />
@@ -261,7 +273,7 @@ export default function Job(props) {
             <div className="main-content-area-inner">
               <div className="sub-head"> Job Openings
                 <div className="top-right-outer add-btn-div">
-                  <Jobdetailsmodal />
+                  <Jobdetailsmodal location={location} method={loadJobs}/>
 
                 </div>
               </div>

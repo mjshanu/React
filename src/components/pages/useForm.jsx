@@ -1,7 +1,8 @@
 import { useState,useEffect } from "react";
     import swal from 'sweetalert';
 import axios from 'axios';
-const useForm = validate => {
+import { v4 as uuid } from "uuid";
+const useForm = (validate) => {
 const[values, SetValues] = useState ({
     username : '',
     postvalue :'',
@@ -26,8 +27,11 @@ const[values, SetValues] = useState ({
     comments : '',
     c_status : '',
     reason : '',
-    reason : '',
+   
 })
+const itemsFromBackend = [
+    { id: uuid(), applied_date: "2022-01-12", c_company: "Bourntec", contact_number: "1234567891", ctc: 5, dob: "2022-01-18", domain_exp: 5, education: "Btech", email: "teenu@gmail.com", exp_ctc: 15, job_id: 1,name: "shanuxcx",notice_prd: 3,position: 0,post: "PHP Developer",primary_skill: "test,css",ref: "ref",sec_skill: "testcss2",skillset: "Html,css,React js",status: "Inprogress",title: "JAVA DEVELOPER",total_exp: 6 }
+];
 const[errors,setErrors]=useState({})
 const [isSubmitting, setIsSubmitting] = useState(false);
 const[job,setJob]=useState([]);
@@ -59,6 +63,7 @@ const handleSubmit =e => {
    promise.then(function(res) {
     if(res.data.status===200)
     {
+
         swal({
             title: "Good job!",
             text: "Candidate added successfully",
@@ -67,6 +72,28 @@ const handleSubmit =e => {
         });
         values.username = '';
         values.postvalue = '';
+        values.p_email = '';
+        values.phonenumber = '';
+        values.qualification = '';
+        values.exp = '';
+        values.ctc = '';
+        values.expect_ctc = '';
+        values.location = '';
+        values.dob = '';
+        values.location = '';
+        values.current_company = '';
+        values.domain_exp = '';
+        values.app_date = '';
+        values.primary_skill = '';
+        values.ref = '';
+        values.p_members = '';
+        values.idatetime = '';
+        values.iplace = '';
+        values.comments = '';
+        values.c_status = '';
+        values.department_team = '';
+        values.reason = ''
+      
     }
   })
  
