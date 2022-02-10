@@ -39,7 +39,7 @@ const Jobform = job_validation => {
     setOrg(orgresponse.data);
   }*/
   const getPostname = async () => {
-    const response = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getposttype");
+    const response = await fetch("http://localhost:8000/api/getposttype");
     const data = await response.json();
     const list = data.post;
     SetPost(list);

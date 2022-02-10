@@ -12,6 +12,13 @@ import Popupmodal from "./Popupmodal";
 import PropTypes from 'prop-types';
 import { constants } from 'smooth-dnd';
 import BasicTabs from "./Employeetabs";
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
 import Recruitmentnewmodal from "./Recruitmentnewmodal";
 import axios from 'axios';
@@ -24,6 +31,7 @@ import rejection_validation from "../validation/rejection_validation";
 import release_validation from "../validation/release_validation";
 import Releaseform from "./Releaseform";
 import EditKanbanboard from "./EditKanbanboard";
+
 import {
   DragDropContext,
   Draggable,
@@ -72,6 +80,7 @@ const Kanban = () => {
   const [isShowingrejectpopupedit, setIsShowingrejectpopupEdit] = useState(false);
   const [isShowingreleasepopup, setIsShowingreleasepopup] = useState(false);
   const [isShowingreleasepopupedit, setIsShowingreleasepopupEdit] = useState(false);
+  const [isviewlog, setIsViewLog] = useState(false);
   const handlesTabs = (e, val) => {
     console.warn(val)
     setValue(val)
@@ -86,7 +95,17 @@ const Kanban = () => {
     { id: uuid(), content: "First task", title: "JAVA DEVELOPER", name: "shanu", status: "Inprogress", Skill: "HTML, CSS, JavaScript", view: "", exp: "4.6Yrs", ctc: " 5LK/A", exctc: " 5LK/A", location: "kakkand", np: "2 Mth" }
   ];
   const [productsList, setProductsList] = useState([]);
-
+  function createData(name, calories, fat, carbs, protein) {
+    return { name, calories, fat, carbs, protein };
+  }
+  
+  const rows = [
+    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+    createData('Eclair', 262, 16.0, 24, 6.0),
+    createData('Cupcake', 305, 3.7, 67, 4.3),
+    createData('Gingerbread', 356, 16.0, 49, 3.9),
+  ];
   const [columns, setColumns] = useState([]);
   const loadData = async () => {
     // alert("hii");
@@ -185,6 +204,10 @@ const Kanban = () => {
   {
     setEditstate(false);
     loadData();
+  }
+  function closeViewlog()
+  {
+    setIsViewLog(false);
   }
   const ViewSchedulepopUp = async (dragid) => {
     const schid = dragid;
@@ -299,13 +322,55 @@ const editBoard = (column,id,e) => {
   };
  
   // const [columns, setColumns] = useState(columnsFromBackend);
-  const{getBasicdetails,editvalues,edithandleChange,handleSubmit_edit}=EditKanbanboard();
+  const{getBasicdetails,editvalues,edithandleChange,handleSubmit_edit,handleImage,Viewlog,log}=EditKanbanboard(setEditstate,setIsViewLog);
   const { handleChange, values,handleSubmit,errors } = ScheduleInterviewform(schedule_validation,loadData);
   const { handleChangerejection, valuesrejection,handleSubmitrejection,errorsrejection } = Rejectionform(rejection_validation);
   const { handleChangeRelease, valuesrelease, handleSubmitrelease, errorsrelease  } = Releaseform(release_validation);
   
   return (
     <div>
+       <Modal
+        isOpen={isviewlog}
+       
+        onRequestClose={closeViewlog}
+        contentLabel="Example Modal" className="candiate-modal-bx">
+          <div className="popup-head-sty candidate-tab-outer">
+            <div className="popup-head-content-sty">
+              <h4 ref={(_subtitle) => (subtitle = _subtitle)} className="popup-head-h4">Candidate Activity Log</h4>
+            </div>
+            <div className="popup-head-icon-sty">
+              <MdClose className="popup-close-btn" onClick={closeViewlog} />
+            </div>
+          </div>
+       <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Log Status</TableCell>
+            <TableCell align="right">Date</TableCell>
+            <TableCell align="right">Whom</TableCell>
+           
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {log.map((row) => (
+            <TableRow
+              key={row.	status_name}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
+              <TableCell component="th" scope="row">
+                {row.status_name}
+              </TableCell>
+              <TableCell align="right">{row.created_at}</TableCell>
+              <TableCell align="right">{row.whom}</TableCell>
+              
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+   
+        </Modal>
        <Modal
         isOpen={isShowingreleasepopupedit}
         onAfterOpen={afterOpenModalRelease}
@@ -612,7 +677,6 @@ const editBoard = (column,id,e) => {
       </Modal>
         <Modal
         isOpen={editstate}
-       
         contentLabel="Example Modal" className="candiate-modal-bx">
         <form  onSubmit={handleSubmit_edit}  className='form' noValidate>
           <div className="popup-head-sty candidate-tab-outer">
@@ -625,7 +689,10 @@ const editBoard = (column,id,e) => {
           </div>
           <div class="candidate-tab-outer">
   <ul class="nav nav-tabs">
-    <li class="active"><a href="#tab1" data-toggle="tab">Basic Information</a></li>  
+    <li class="active">
+      <a href="#tab1" data-toggle="tab">Basic Information
+      </a>
+      </li>  
   
   </ul>
   
@@ -642,6 +709,9 @@ const editBoard = (column,id,e) => {
         <div id="collapseOne" class="panel-collapse collapse in">
           <div class="panel-body">
           <div class="row popup-content-height popup-row-mrg  candiate-modal-inner-tab">
+            <div class="">Leave empty to keep the same
+            <input type="file" accept='.doc,.docx,application/pdf' name="resume" onChange={handleImage} class="form-control"/> 
+            </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Name</label>
@@ -769,6 +839,7 @@ const editBoard = (column,id,e) => {
           <div>
             <button type="submit" class="btn  btn-save "  > Save</button>
             <button type="button" class="btn  btn-cancel " onClick={closeModaledit} > Cancel </button>
+          <a target="_blank" name="edit_resume" onChange={edithandleChange} href={"http://localhost/audit_portal/public/uploads/resume/" + editvalues.edit_resume}>View Resume</a>
           </div>
 
 
@@ -1371,10 +1442,10 @@ const editBoard = (column,id,e) => {
                                                             NP: {item.notice_prd} Months
                                                           </div>
                                                           <div class="in-progress-location t-r">
-                                                          <a href={"http://localhost/audit_portal/public/uploads/resume/" + item.resume} target='_blank' rel='noopener noreferrer'>resume</a>
+                                                          <span  onClick={() => Viewlog(item.id)}>View Log</span>
                                                           </div>
                                                         </div>
-
+                                                        
                                                       </div>
 
                                                     </div>

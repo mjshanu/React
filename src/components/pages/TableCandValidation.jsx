@@ -45,7 +45,7 @@ const handleChange1 =e => {
     })
 }
 const getpostName = async () => {
-    const response = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getJobs");
+    const response = await fetch("http://localhost:8000/api/getJobs");
     const data = await response.json();
   
     const listnewtest = data.job;
@@ -69,7 +69,7 @@ const handleSubmit =e => {
    // setErrors(validate(values));
    // setIsSubmitting(true);
    
-   const promise= axios.post(`http://auditportal2.bourntec.com:3001/audit_portal/public/api/updaterecruitement`, values);
+   const promise= axios.post(`http://localhost:8000/api/updaterecruitement`, values);
    promise.then(function(res) {
     if(res.data.status===200)
     {

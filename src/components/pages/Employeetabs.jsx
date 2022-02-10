@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment} from 'react';
 import { useState, useEffect } from "react";
 
 import PropTypes from 'prop-types';
@@ -8,13 +8,17 @@ import useForm from './useForm';
 import validate from '../validation/employee_val';
 import {uploadadd} from '../../images';
 import {uploadimage, uploadicon} from '../../images';
- 
+import Select from 'react-select';
 import MultipleImageUpload from "./MultipleImageUpload";
+import Multiselect from "multiselect-react-dropdown";
+
+
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
+ 
   return (
     <div
       role="tabpanel"
@@ -51,13 +55,19 @@ export default function BasicTabs({setColumns}) {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const { handleChange1, values, handleSubmit, errors,getpostName,job,handleImage} = useForm(validate,setColumns);
-  
+  const { handleChange1, values, handleSubmit, errors,getpostName,job,handleImage,onSelect} = useForm(validate,setColumns);
+  const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' }
+  ]
   
   const [myimage, setMyImage] = React.useState(null);
     const uploadImage = e => {
       setMyImage(URL.createObjectURL(e.target.files[0]));
     };
+    const [skill, setSkill] = useState(["PHP", "JAVA", "MYSQL","HTML","PYTHON","JAVASCRIPT","JQUERY"]);
+   
   return (
 
 
@@ -132,8 +142,22 @@ export default function BasicTabs({setColumns}) {
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Skill Set</label>
-                                    <input type="text"  name="skillset" onChange={handleChange1} value={values.skillset} class="form-control" ></input>
+
+                                    <Multiselect
+        isObject={false}
+        onRemove={(event) => {
+         // console.log(event);
+        }}
+        onSelect={onSelect}
+        options={skill}
+       
+        showCheckbox
+        name="skillset"
+      
+      />
+                                   
                                 </div>
+                              
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
@@ -210,13 +234,35 @@ export default function BasicTabs({setColumns}) {
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Primary Skills</label>
-                                    <textarea class="form-control" onChange={handleChange1} name="primary_skill" value={values.primary_skill} rows="2" > </textarea>
+                                    <Multiselect
+        isObject={false}
+        onRemove={(event) => {
+         // console.log(event);
+        }}
+        onSelect={onSelect}
+        options={skill}
+       
+        showCheckbox
+        name="primary_skill"
+      
+      />
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="exampleFormControlInput1">Secondary Skills</label>
-                                    <textarea class="form-control" onChange={handleChange1} name="secskill" value={values.secskill} rows="2" > </textarea>
+                                    <Multiselect
+        isObject={false}
+        onRemove={(event) => {
+         // console.log(event);
+        }}
+        onSelect={onSelect}
+        options={skill}
+       
+        showCheckbox
+        name="secskill"
+      
+      />
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -226,7 +272,7 @@ export default function BasicTabs({setColumns}) {
                                 </div>
                             </div>
 
-                      
+                           
                         
                      </div>
           </div>

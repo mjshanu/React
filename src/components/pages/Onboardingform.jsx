@@ -3,7 +3,7 @@ import axios from 'axios';
 import swal from 'sweetalert';
 import Modal from 'react-modal';
 import ReactDOM from 'react-dom';
-const EditKanbanboard = (setEditstate,setIsViewLog) => {
+const Onboardingform = () => {
   const [modalState, setModalState] = useState(true);
   const[resume, SetResume] = useState ([]);
   const[log, SetLog] = useState ([]);

@@ -30,8 +30,10 @@ const[values, SetValues] = useState ({
     skillset:'',
     noticeprd:'',
     secskill:'',
+    skillset_input:''
 })
 const[pics, SetPics] = useState ([]);
+const [selectedOption, setSelectedOption] = useState(0);
 const itemsFromBackend = [
     { id: uuid(), applied_date: "2022-01-12", c_company: "Bourntec", contact_number: "1234567891", ctc: 5, dob: "2022-01-18", domain_exp: 5, education: "Btech", email: "teenu@gmail.com", exp_ctc: 15, job_id: 1,name: "shanuxcx",notice_prd: 3,position: 0,post: "PHP Developer",primary_skill: "test,css",ref: "ref",sec_skill: "testcss2",skillset: "Html,css,React js",status: "Inprogress",title: "JAVA DEVELOPER",total_exp: 6 }
 ];
@@ -71,6 +73,7 @@ const getpostName = async () => {
   }
 
 const handleSubmit =e => { 
+    //console.log(values);
     e.preventDefault();
   
     setErrors(validate(values));
@@ -87,6 +90,11 @@ const handleSubmit =e => {
   
  
     
+}
+const onSelect= (event) =>
+{
+   // console.log(event);
+    setSelectedOption(event)
 }
 
 const onSubmitform = e => {
@@ -117,6 +125,7 @@ const onSubmitform = e => {
     formData.append('skillset',values.skillset);
     formData.append('noticeprd',values.noticeprd);
     formData.append('secskill',values.secskill);
+    formData.append('skillset_input',selectedOption);
     //values.append('resume',pics.resume);
     const promise= axios.post('http://localhost:8000/api/add_employee_first', formData);
     promise.then(function(res) {
@@ -161,7 +170,7 @@ const onSubmitform = e => {
     
 
 
-return {handleChange1,values,handleSubmit,errors,getpostName,job,handleImage};
+return {handleChange1,values,handleSubmit,errors,getpostName,job,handleImage,onSelect};
 
 }
 export default useForm;
