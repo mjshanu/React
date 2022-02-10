@@ -129,7 +129,18 @@ const EditKanbanboard = () => {
   const handleSubmit_edit = async(e) => {
 
     e.preventDefault();
-    const response = axios.post('http://auditportal2.bourntec.com:3001/audit_portal/public/api', editvalues);
+    const response = await axios.post('http://auditportal2.bourntec.com:3001/audit_portal/public/api/Updateboarddetails', editvalues);
+   
+    if(response.data.status===200)
+    {
+
+        swal({
+            title: "Good job!",
+            text: "Data Updated successfully",
+            icon: "success",    
+            button: "ok",
+        });
+      }
   
 
   }
