@@ -76,6 +76,9 @@ const Content = ({ sidebarIsOpen, toggleSidebar }) => (
         <Route exact path="/Loginform">
           <Login />
         </Route> 
+        <Router path="/login">
+        < Login/>
+        </Router>
     </Switch>
   </Container>
 );
