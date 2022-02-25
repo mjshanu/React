@@ -7,7 +7,7 @@ import Topbar from "./Topbar";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,Redirect,
+  Route,
   Link
 } from "react-router-dom"; 
 import Employeeprofile from "../pages/Employeeprofile";
@@ -31,24 +31,13 @@ import OfferReleasereport from "../pages/Onboarding";
 import Offboarding from "../pages/Offboarding";
 import Login from "../login/Loginform";
 const Content = ({ sidebarIsOpen, toggleSidebar }) => (
-  
   <Container
     fluid
     className={classNames("content", { "is-open": sidebarIsOpen })}
   >
     <Topbar toggleSidebar={toggleSidebar} />
     <Switch>
-    <Route
-                exact
-                path="/"
-                render={() => {
-                    return (
-                      this.state.isUserAuthenticated ?
-                      <Redirect to="/Assetsdetails" /> :
-                      <Redirect to="/Employeeprofile" /> 
-                    )
-                }}
-              />
+
     <Route exactly path="/Dashboard" component={Dashboard} />
     <Route exactly path="/Kanban" component={Kanban} />
     <Route exact path="/Assets" component={Assets} />
