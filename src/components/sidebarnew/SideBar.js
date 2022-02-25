@@ -133,7 +133,12 @@ const $ = window.$;
              Organization  
           </NavLink>
         </NavItem>
-     
+        <NavItem>
+          <NavLink tag={Link} to={"/Loginform"} className="mob-menu-clik">
+          < MdOutlineAccountTree/>
+          Loginform  
+          </NavLink>
+        </NavItem>
       </Nav>
     </div>
   </div>
