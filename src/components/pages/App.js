@@ -8,7 +8,7 @@ import Topbar from './components/topbar/Topbar';
 import Mainouter from './components/page-main/main-outer';
 import SideBar from "./components/sidebarnew/SideBar";
 import Content from "./components/content/Content";
- 
+import Contlogin from "../content/Cont-login";
 import './css/style.css';
 import './css/responsvie.css';
 import {
@@ -73,7 +73,11 @@ class App extends React.Component {
       <div className="App wrapper">
         <SideBar toggle={this.toggle} isOpen={this.state.isOpen} />
         <Content toggle={this.toggle} isOpen={this.state.isOpen} />
+<<<<<<< HEAD
         <Route path="/login" component={Login} />
+=======
+        
+>>>>>>> 7d8a4cf43ea1064e0c9389515bbbe2ed0cd7bccd
         
       </div>
     );
