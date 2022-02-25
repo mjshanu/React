@@ -29,11 +29,7 @@ import Assetsdetails from "../pages/Assetsdetails";
 import Organizationlist from "../pages/Organizationlist";
 import OfferReleasereport from "../pages/Onboarding";
 import Offboarding from "../pages/Offboarding";
-<<<<<<< HEAD
-import Login from "../admin/auth/Login";
-=======
 import Login from "../login/Loginform";
->>>>>>> 7d8a4cf43ea1064e0c9389515bbbe2ed0cd7bccd
 const Content = ({ sidebarIsOpen, toggleSidebar }) => (
   
   <Container
@@ -42,17 +38,7 @@ const Content = ({ sidebarIsOpen, toggleSidebar }) => (
   >
     <Topbar toggleSidebar={toggleSidebar} />
     <Switch>
-    <Route
-                exact
-                path="/"
-                render={() => {
-                    return (
-                      this.state.isUserAuthenticated ?
-                      <Redirect to="/Assetsdetails" /> :
-                      <Redirect to="/Employeeprofile" /> 
-                    )
-                }}
-              />
+    <Route exactly path="/" component={Login} />
     <Route exactly path="/Dashboard" component={Dashboard} />
     <Route exactly path="/Kanban" component={Kanban} />
     <Route exact path="/Assets" component={Assets} />
@@ -88,16 +74,9 @@ const Content = ({ sidebarIsOpen, toggleSidebar }) => (
         <Router path="/Organizationold">
         < Organizationold/>
         </Router>
-<<<<<<< HEAD
-        <Router path="/login">
-        < Login/>
-        </Router>
-
-=======
         <Route exact path="/Loginform">
           <Login />
         </Route> 
->>>>>>> 7d8a4cf43ea1064e0c9389515bbbe2ed0cd7bccd
     </Switch>
   </Container>
 );
