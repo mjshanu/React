@@ -20,7 +20,7 @@ import {
 import Board from './components/pages/Board';
 import Employee from "./components/pages/Employee";
 import Kanban from "./components/pages/Kanban";
-
+import Login from "../admin/auth/Login";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -73,7 +73,7 @@ class App extends React.Component {
       <div className="App wrapper">
         <SideBar toggle={this.toggle} isOpen={this.state.isOpen} />
         <Content toggle={this.toggle} isOpen={this.state.isOpen} />
-
+        <Route path="/login" component={Login} />
         
       </div>
     );

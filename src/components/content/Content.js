@@ -29,7 +29,7 @@ import Assetsdetails from "../pages/Assetsdetails";
 import Organizationlist from "../pages/Organizationlist";
 import OfferReleasereport from "../pages/Onboarding";
 import Offboarding from "../pages/Offboarding";
-
+import Login from "../admin/auth/Login";
 const Content = ({ sidebarIsOpen, toggleSidebar }) => (
   <Container
     fluid
@@ -72,6 +72,9 @@ const Content = ({ sidebarIsOpen, toggleSidebar }) => (
         </Router>
         <Router path="/Organizationold">
         < Organizationold/>
+        </Router>
+        <Router path="/login">
+        < Login/>
         </Router>
 
     </Switch>
