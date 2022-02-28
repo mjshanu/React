@@ -73,11 +73,7 @@ class App extends React.Component {
       <div className="App wrapper">
         <SideBar toggle={this.toggle} isOpen={this.state.isOpen} />
         <Content toggle={this.toggle} isOpen={this.state.isOpen} />
-<<<<<<< HEAD
-        <Route path="/login" component={Login} />
-=======
         
->>>>>>> 7d8a4cf43ea1064e0c9389515bbbe2ed0cd7bccd
         
       </div>
     );

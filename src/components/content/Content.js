@@ -37,7 +37,7 @@ const Content = ({ sidebarIsOpen, toggleSidebar }) => (
   >
     <Topbar toggleSidebar={toggleSidebar} />
     <Switch>
-
+    <Route exactly path="/" component={Login} />
     <Route exactly path="/Dashboard" component={Dashboard} />
     <Route exactly path="/Kanban" component={Kanban} />
     <Route exact path="/Assets" component={Assets} />
@@ -76,9 +76,6 @@ const Content = ({ sidebarIsOpen, toggleSidebar }) => (
         <Route exact path="/Loginform">
           <Login />
         </Route> 
-        <Router path="/login">
-        < Login/>
-        </Router>
     </Switch>
   </Container>
 );
