@@ -19,7 +19,7 @@ import { FaFileAlt } from "@react-icons/all-files/fa/FaFileAlt";
 import { IconName } from "react-icons/ai";
 import { MdPersonSearch, MdOutlineScreenSearchDesktop, MdBusinessCenter, MdOutlineAccountTree } from "react-icons/md";
 import SubMenu from "./SubMenu";
-
+import logout_new from "../login/Logout_new";
 
 
 const $ = window.$;
@@ -136,8 +136,16 @@ const $ = window.$;
         <NavItem>
           <NavLink tag={Link} to={"/Loginform"} className="mob-menu-clik">
           < MdOutlineAccountTree/>
-          Loginform  
+          Loginform  1
           </NavLink>
+          
+        </NavItem>
+        <NavItem>
+          <NavLink tag={Link} to={"/logout_new"} className="mob-menu-clik">
+          < MdOutlineAccountTree/>
+        Logout
+          </NavLink>
+          
         </NavItem>
       </Nav>
     </div>
