@@ -28,7 +28,7 @@ const customStyles = {
  
  
 
-export default function Addbranches(){
+export default function Addbranches({method}){
 
    
     const CustomTab = ({ children }) => (
@@ -51,7 +51,7 @@ export default function Addbranches(){
   
     function closeModal() {
       setIsOpen(false);
-      window.location.reload();
+      method();
     }
   
     const [value, setValue]=React .useState(0)

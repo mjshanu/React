@@ -55,7 +55,7 @@ function SimpleTable(props) {
   }, []);
   const loadCandidates = async() =>
   {
-    const res = await fetch(`${process.env.REACT_APP_API_URL}/getcandidatesdetails`);
+    const res = await fetch('http://auditportal2.bourntec.com:3001/audit_portal/public/api/getcandidatesdetails');
     const data = await res.json();
     const candidates = data.candidate;
     SetCandidatelist(candidates);

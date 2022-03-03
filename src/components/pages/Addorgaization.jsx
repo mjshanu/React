@@ -28,7 +28,7 @@ const customStyles = {
  
  
 
-export default function Addorganization(){
+export default function Addorganization({method}){
 
  
     const CustomTab = ({ children }) => (
@@ -51,7 +51,7 @@ export default function Addorganization(){
   
     function closeModal() {
       setIsOpen(false);
-      window.location.reload();
+      method();
     }
   
     const [value, setValue]=React .useState(0)
@@ -64,7 +64,9 @@ export default function Addorganization(){
   return (
     <div>
       
-      <button type="button" class="btn  btn-maincolor btn-block" onClick={openModal} > <SiAddthis className="add-btn-icon"/> ADD Organization </button> 
+      <button type="button" class="btn  btn-maincolor btn-block" onClick={openModal} > 
+      <SiAddthis className="add-btn-icon"/> ADD Organization 
+      </button> 
    
       <Modal
         isOpen={modalIsOpen}

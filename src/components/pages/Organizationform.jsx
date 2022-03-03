@@ -37,7 +37,7 @@ const Organizationform = org_validation => {
     setOrg(orgresponse.data);
   }*/
   const getSelectDropdown = async () => {
-    const response = await fetch("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getOrgnaization_type");
+    const response = await fetch("hhttp://auditportal2.bourntec.com:3001/audit_portal/public/api/getOrgnaization_type");
     const data = await response.json();
     const list = data.list;
 

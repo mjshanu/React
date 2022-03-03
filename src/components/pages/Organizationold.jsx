@@ -104,11 +104,11 @@ function Row(props: { row: ReturnType<typeof createData> }) {
 
   function closeModal() {
     setIsOpen(false);
-    window.location.reload();
+   
   }
   function closeModalbrach() {
     setModalState(false);
-    window.location.reload();
+  
   }
   function afterOpenModalbrach() {
 
@@ -479,10 +479,10 @@ export default function Organizationold() {
           <div className="sub-head organization-sub-head"> Branch Details -
             <div className="top-right-outer add-btn-div organization-top-rt">
               <div className="organization-button" >
-                <Addorganization />
+                <Addorganization method={fetchData} />
               </div>
               <div className="organization-button">
-                <Addbranches />
+                <Addbranches method={fetchData}/>
               </div>
             </div>
           </div>

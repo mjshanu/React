@@ -461,11 +461,13 @@ export default function Organizationold() {
 
   const fetchData = async () => {
     const res = await axios.get("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getOrganizationvalues");
+   
     const org = res.data.org;
 
     setRows(org);
   }
   useEffect(() => {
+   
     fetchData();
 
   }, []);
@@ -475,13 +477,13 @@ export default function Organizationold() {
 
   return (
     <main className="inner-content-box">
-      <header className="main-otrer-top"> Organization Branches </header>
+      <header className="main-otrer-top"> Organization Branches1 </header>
       <section className="main-content-area">
         <div className="main-content-area-inner">
           <div className="sub-head organization-sub-head"> Branch Details
             <div className="top-right-outer add-btn-div organization-top-rt">
               <div className="organization-button" >
-                <Addorganization />
+                <Addorganization method={fetchData} />
               </div>
               <div className="organization-button">
                 <Addbranches />
