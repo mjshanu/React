@@ -7,7 +7,7 @@ import Topbar from "./Topbar";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,Redirect,
+  Route,
   Link
 } from "react-router-dom"; 
 import Employeeprofile from "../pages/Employeeprofile";
@@ -33,7 +33,6 @@ import Offboarding from "../pages/Offboarding";
 import Login from "../login/Loginform";
 import logout_new from "../login/Logout_new";
 const Content = ({ sidebarIsOpen, toggleSidebar }) => (
-  
   <Container
     fluid
     className={classNames("content", { "is-open": sidebarIsOpen })}
