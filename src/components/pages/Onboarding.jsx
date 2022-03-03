@@ -65,20 +65,32 @@ export default class OfferReleasereport extends Component {
       candidatelog: [],
       modalIsOpen: false,
       modalIsOpenedit: false,
+      modalIsStatus:false,
       formData: {
         edit_release_date: '',
         edit_release_id: '',
-        edit_basic_column_name:'Release'
+        edit_basic_column_name:'Release',
+        e_name:'',
+        e_id:'',
+        e_email:'',
+        e_joining_date:'',
+        e_designation:'',
+        e_c_id:'',
+
       }
     };
     this.closeModal = this.closeModal.bind(this);
-    this.closeModaledit = this.closeModal.bind(this);
+    this.closeModaledit = this.closeModaledit.bind(this);
+    this.closeModalstatus = this.closeModalstatus.bind(this);
   }
   closeModal() {
     this.setState({ modalIsOpen: false });
   }
   closeModaledit() {
     this.setState({ modalIsOpenedit: false });
+  }
+  closeModalstatus(){
+    this.setState({ modalIsStatus: false });
   }
   handleChangeRelease = (e) => {
     this.setState({
@@ -89,7 +101,11 @@ export default class OfferReleasereport extends Component {
     });
   };
   async componentDidMount() {
-    const res = await axios.get("http://auditportal2.bourntec.com:3001/audit_portal/public/api/getcandidates_release_details");
+    this.getDetails();
+  }
+  async getDetails()
+  {
+    const res = await axios.get("http://localhost:8000/api/getcandidates_release_details");
     // console.log(res.data.users)
     if (res.data.status === 200) {
       this.setState({
@@ -108,6 +124,21 @@ export default class OfferReleasereport extends Component {
     }
 
 
+  }
+  async ViewEmployeeStatus(id)
+  {
+    const response = await axios.get(`http://localhost:8000/api/editfetchCandidatestatusdata/${id}`);
+    console.log(response.data.users);
+   this.setState({
+    modalIsStatus:true,
+    formData:{
+      e_name: response.data.users[0].name,	
+      edit_release_id: response.data.users[0].offer_id,
+      e_c_id: response.data.users[0].id	,
+      e_joining_date: response.data.users[0].offer_release_date,
+      e_id: response.data.users[0].empcode
+    } 
+   })
   }
   async editLog(id) {
     const reponse = await axios.get(`http://auditportal2.bourntec.com:3001/audit_portal/public/api/editfetchCandidatefulldata/${id}`)
@@ -138,11 +169,103 @@ export default class OfferReleasereport extends Component {
   }
    
   };
+  addEmpolyeeFirst = async(e) =>
+  {
+  
+    e.preventDefault();
+   const res=await axios.post('http://localhost:8000/api/Addemployee',this.state.formData);
+  if(res.data.status==200)
+  {
+    alert("data updated successfully");
+    this.setState({
+      modalIsStatus: false,
+    })
+    this.getDetails();
+
+  }
+   
+  };
+
 
   render() {
 
     return (
       <div>
+        <Modal
+          isOpen={this.state.modalIsStatus}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModalstatus}
+          className="job-detils-modal addabrch-modal"
+          contentLabel="Example Modal" >
+          <form onSubmit={this.addEmpolyeeFirst} className='form' noValidate>
+
+            <div className="popup-head-sty modal-button-bg">
+              <div className="popup-head-content-sty">
+                <h4 >Add Employee Status</h4>
+              </div>
+              <div className="popup-head-icon-sty">
+                <MdClose className="popup-close-btn" onClick={this.closeModaledit} />
+              </div>
+            </div>
+            <div className="popup-content-bg">
+              <div class="row addabrch-content-box">
+                <div class="col-md-12">
+                  <div class="row ">
+                  <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Employee name</label>
+                      <input type="text" name="e_name" onChange={this.handleChangeRelease} value={this.state.formData.e_name} class="form-control" />
+
+
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Employee ID</label>
+                      <input type="text" name="e_id" onChange={this.handleChangeRelease} value={this.state.formData.e_id} class="form-control" />
+
+
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Employee Email</label>
+                      <input type="email" name="e_email"  onChange={this.handleChangeRelease}  class="form-control" />
+
+
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Joining Date</label>
+                      <input type="date" name="e_joining_date"   onChange={this.handleChangeRelease} value={this.state.formData.e_joining_date} class="form-control" />
+
+
+                      </div>
+                    </div>
+
+                    <input type="hidden" name="edit_release_id"  onChange={this.handleChangeRelease} value={this.state.formData.edit_release_id} class="form-control"   ></input>
+
+
+
+
+
+
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div className=" modal-footer-button-bg">
+              <button type="submit" class="btn  btn-save "  > Add</button>
+              <button type="button" class="btn  btn-cancel " onClick={this.closeModalststua} > Cancel </button>
+            </div>
+
+          </form>
+
+        </Modal>
         <Modal
           isOpen={this.state.modalIsOpenedit}
           onAfterOpen={this.afterOpenModal}
@@ -319,6 +442,7 @@ export default class OfferReleasereport extends Component {
                         <TableCell className="width-15">Post</TableCell>
                         <TableCell className="width-12">Joining Date</TableCell>
                         <TableCell className="width-15">Location</TableCell>
+                        <TableCell className="width-15">Status</TableCell>
                         <TableCell className="width-20 offer-map-width ">Action</TableCell>
 
                       </TableRow>
@@ -326,6 +450,7 @@ export default class OfferReleasereport extends Component {
                     <TableBody>
                       {
                         this.state.release_data.map(n => {
+                          
                           return (
                             <TableRow key={n.id} >
                               <TableCell className="width-15"> {n.offer_code}</TableCell>
@@ -333,8 +458,16 @@ export default class OfferReleasereport extends Component {
                               <TableCell numeric className=" width-15">{n.post} </TableCell>
                               <TableCell numeric className="width-12">{n.offer_release_date}</TableCell>
                               <TableCell numeric className="width-15">{n.location}</TableCell>
+                              <TableCell numeric className="width-15">
+                             
+                              <div className="emp-edit-new-icon ">
+                              {n.emp_status == 0?  <input type="checkbox" name="empstatus" onClick={() => this.ViewEmployeeStatus(n.id)}  />: <input type="checkbox" checked   /> }
+                             
+                              </div>
+                              </TableCell>
                               <TableCell numeric className="width-20 inprogress-td offer-map-width">
                                 <div className="emp-map-iocn-outer">
+                                  
                                   <div class="inprograss-style emp-map-outer">EMP Mapping</div>
 
                                   <div className="emp-edit-new-icon ">

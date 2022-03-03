@@ -27,3 +27,4 @@ export const Offboarding1 = require('./Offboarding1.svg').default;
 export const Offboarding2 = require('./Offboarding2.svg').default;
 export const Offboarding3 = require('./Offboarding3.svg').default;
 export const uploadadd = require('./uploadadd.svg').default;
+export const loginbg = require('./loginbg.svg').default; 
