@@ -115,7 +115,7 @@ export default class OfferReleasereport extends Component {
     }
   }
   async Viewlog(id) {
-    const response = await axios.get(`http://localhost:8000/api/viewlog/${id}`);
+    const response = await axios.get(`http://auditportal2.bourntec.com:3001/audit_portal/public/api/viewlog/${id}`);
     if (response.data.status == 200) {
       this.setState({
         candidatelog: response.data.log,
@@ -141,7 +141,7 @@ export default class OfferReleasereport extends Component {
    })
   }
   async editLog(id) {
-    const reponse = await axios.get(`http://localhost:8000/api/editfetchCandidatefulldata/${id}`)
+    const reponse = await axios.get(`http://auditportal2.bourntec.com:3001/audit_portal/public/api/editfetchCandidatefulldata/${id}`)
     if(reponse.data.status==200)
       {
        
@@ -158,7 +158,7 @@ export default class OfferReleasereport extends Component {
   {
   
     e.preventDefault();
-   const res=await axios.post('http://localhost:8000/api/Updateboarddetails',this.state.formData);
+   const res=await axios.post('http://auditportal2.bourntec.com:3001/audit_portal/public/api/Updateboarddetails',this.state.formData);
   if(res.data.status==200)
   {
     alert("data updated successfully");
