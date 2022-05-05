@@ -79,5 +79,4 @@ const Content = ({ sidebarIsOpen, toggleSidebar }) => (
     </Switch>
   </Container>
 );
-
 export default Content;
