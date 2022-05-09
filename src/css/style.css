@@ -3447,8 +3447,8 @@ margin-left: 5px;
         .calander-countryname{
             float: left;
             margin-left: 15px;
-            margin-top: 16px;
-            
+            margin-top: 18px;
+            font-size: 14px;
         }
         .accordion-head-text-right{
             padding: 4px 10px;
@@ -3462,4 +3462,33 @@ margin-left: 5px;
         }
         .m-t-25{
             margin-top: 25px;
+        }
+        .highlightOption {
+            background: #fff;
+            color: #515151;
+        }
+        .multiSelectContainer li:hover {
+            background: #ad4680;
+            color: #fff;
+            cursor: pointer;
+        }
+        .chip {
+            padding: 4px 10px;
+            background: #4A54D1;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            border-radius: 11px;
+            display: inline-flex;
+            align-items: center;
+            font-size: 13px;
+            line-height: 19px;
+            color: #fff;
+        }
+        .optionListContainer {
+            position: relative;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 4px;
+            margin-top: 1px;
+            z-index: 112;
         }

@@ -26,9 +26,6 @@ const customStyles = {
   },
 };
 
-
-
-
 export default function Holidaypopup({location, method}) {
   console.log(location);
   const CustomTab = ({ children }) => (
@@ -51,8 +48,7 @@ export default function Holidaypopup({location, method}) {
 
   function closeModal() {
     setIsOpen(false);
-    method();
-   // window.location.reload();
+    
   }
 
    
@@ -81,29 +77,39 @@ export default function Holidaypopup({location, method}) {
               <div class="col-md-12 m-b-25">
                 <div class="row popup-content-height">
                    
-                                    <div className=" col-md-6">
+                                    <div className=" col-md-4">
                                             <label for="exampleFormControlInput1">Name</label>
                                             <select id="dropdown" name="job_status" class="form-control">
+                                                <option value="">Select</option>
                                                 <option value="">Default Cochi</option>
                                                 <option value="1">Default Hyderabad</option>
                                                 <option value="0">Default US</option>
                                             </select>
                                         </div>
                                        
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <label for="exampleFormControlInput1">Type</label>
                                             <select id="dropdown" name="job_status" class="form-control">
+                                            <option value="">Select</option>
                                                 <option value="">Project</option>
-                                                <option value="1">Location</option>
-                                                
-                                            </select>
-                                                
-                                            </div>
-                                            <div class="col-md-12 m-t-25">
+                                                <option value="1">Location</option> 
+                                            </select> 
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="exampleFormControlInput1">Select</label>
+                                            <select id="dropdown" name="job_status" class="form-control">
+                                            <option value="">Select</option>
+                                                <option value="">WNC</option>
+                                                <option value="1">RandLog</option> 
+                                            </select> 
+                                        </div>
+                                        <div class="col-md-12 m-t-25">
                                             <label for="exampleFormControlInput1">Holidays</label>
                                             <Multyselect  class="form-control" />   
-                                                
-                                            </div>
+                                            <select class="select  "  >
+                                            <option value="1"> </option> 
+                                            </select> 
+                                        </div>
                   
 
 

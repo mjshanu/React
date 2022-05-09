@@ -30,3 +30,5 @@ export const uploadadd = require('./uploadadd.svg').default;
 export const loginbg = require('./loginbg.svg').default; 
 export const india = require('./india.png').default; 
 export const us = require('./us.png').default; 
+export const wnc = require('./wnc.png').default; 
+export const rand = require('./rand.png').default; 

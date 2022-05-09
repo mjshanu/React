@@ -779,6 +779,10 @@ display:block;
 .collapse.show .nav-item a.active {
     color: #fff !important;
 }
+.accordion-head-text-right{
+    padding: 18px 10px;
+    float: left;
+}
 }
 @media only screen and (max-width: 767px){
 .calendar-width {
