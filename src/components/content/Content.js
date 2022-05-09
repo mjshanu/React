@@ -30,27 +30,21 @@ import Organizationlist from "../pages/Organizationlist";
 import OfferReleasereport from "../pages/Onboarding";
 import Offboarding from "../pages/Offboarding";
 //import Login from "../admin/auth/Login";
-import Login from "../login/Loginform";
+import Loginform from "../login/Loginform";
 import logout_new from "../login/Logout_new";
+import Holidaycalendar from "../pages/Holidaycalendar";
+import Multyselect from "../pages/Multyselect";
+import Holidaypopup from "../pages/Holidaypopup";
 const Content = ({ sidebarIsOpen, toggleSidebar }) => (
   <Container
     fluid
     className={classNames("content", { "is-open": sidebarIsOpen })}
   >
+    
     <Topbar toggleSidebar={toggleSidebar} />
     <Switch>
-    <Route
-                exact
-                path="/"
-                render={() => {
-                    return (
-                      this.state.isUserAuthenticated ?
-                      <Redirect to="/Assetsdetails" /> :
-                      <Redirect to="/Employeeprofile" /> 
-                    )
-                }}
-              />
-               
+    
+    <Route exactly path="/Loginform" component={Loginform} />    
     <Route exactly path="/Dashboard" component={Dashboard} />
     <Route exactly path="/Kanban" component={Kanban} />
     <Route exact path="/Assets" component={Assets} />
@@ -59,9 +53,12 @@ const Content = ({ sidebarIsOpen, toggleSidebar }) => (
     <Route exact path="/Employeeprofile" component={Employeeprofile} />
     <Route exact path="/Job" component={Job} />
     <Route exact path="/Addemployeetab" component={Addemployeetab} />  
-
+    <Route exact path="/Holidaycalendar" component={Holidaycalendar} />
+    
+    <Route exact path="/Multyselect" component={Multyselect} />
     <Route exact path="/OfferReleasereport" component={OfferReleasereport} />  
     <Route exact path="/Offboarding" component={Offboarding} />  
+    <Route exact path="/Holidaypopup" component={Holidaypopup} />  
         <Router path="/Addemployeetab">
         <Addemployeetab/>
         </Router> 
@@ -86,13 +83,10 @@ const Content = ({ sidebarIsOpen, toggleSidebar }) => (
         <Router path="/Organizationold">
         < Organizationold/>
         </Router>
-        <Route exact path="/logout_new">
-          <logout_new />
-        </Route> 
-        <Route exact path="/logout_new">
-          <logout_new />
-        </Route> 
+       
+        
     </Switch>
   </Container>
 );
+
 export default Content;

@@ -1005,7 +1005,9 @@ label {
     .width-20{
         width: 20%;
     }
-    
+    .width-45{
+        width: 45%;
+    }
     .buttons-outer{
         width: auto;
         float: left;
@@ -3394,4 +3396,70 @@ margin-left: 5px;
             background: #f3f3f3;
             padding: 7px;
             
+        }
+        .searchWrapper {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 5px;
+            min-height: 22px;
+            position: relative;
+        }
+        .searchWrapper {
+            display: block;
+            width: 100%;
+            min-height: 38px;
+            padding: 6px 12px;
+            font-size: 13px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 0.2px solid #dadada;
+            border-radius: 0px;
+            box-shadow: inset 0 0px 0px rgb(0 0 0 / 8%);
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            border-radius: 2px;
+        }
+
+        .india-flag {
+            width: 40px;
+            margin-top: 5px;
+        }
+        .us-flag {
+            width: 33px;
+            margin-top: 5px;
+            float: left;
+        }
+        .star-black{
+            float: left;
+            margin-right: 15px;
+            margin-top: 16px;
+            font-size: 20px;
+            color: #c5c4c4;
+        }
+        .star-green {
+            float: left;
+            margin-right: 15px;
+            margin-top: 16px;
+            font-size: 20px;
+            color: #11b71a;
+        }
+        .calander-countryname{
+            float: left;
+            margin-left: 15px;
+            margin-top: 16px;
+            
+        }
+        .accordion-head-text-right{
+            padding: 4px 10px;
+            float: right;
+        }
+        .accordion-active-status1 .accordion__button:before {
+            background: #c5c4c4;
+        }
+        .m-b-25{
+            margin-bottom: 25px;
+        }
+        .m-t-25{
+            margin-top: 25px;
         }

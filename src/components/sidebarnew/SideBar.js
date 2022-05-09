@@ -114,7 +114,18 @@ const $ = window.$;
              Asset
           </NavLink>
         </NavItem>
-
+        <NavItem>
+          <NavLink tag={Link} to={"/Holidaycalendar"}  className="mob-menu-clik">
+          <FaChartLine/>
+          Holiday Calendar
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink tag={Link} to={"/Multyselect"}  className="mob-menu-clik">
+          <FaChartLine/>
+          Multyselect
+          </NavLink>
+        </NavItem>
         <NavItem>
           <NavLink tag={Link} to={"/"} className="mob-menu-clik" >
           <FaFileAlt/>
