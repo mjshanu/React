@@ -120,12 +120,7 @@ const $ = window.$;
           Holiday Calendar
           </NavLink>
         </NavItem>
-        <NavItem>
-          <NavLink tag={Link} to={"/Multyselect"}  className="mob-menu-clik">
-          <FaChartLine/>
-          Multyselect
-          </NavLink>
-        </NavItem>
+        
         <NavItem>
           <NavLink tag={Link} to={"/"} className="mob-menu-clik" >
           <FaFileAlt/>
